@@ -41,13 +41,9 @@
   startDate: "15.10.2025",
   titleEn: "Thesis Proposal: Something With Usability in PIX:E",
   titleDe: "Thesis Proposal: Irgendetwas mit Usability in PIX:E",
-  abstractEn: [
-    #lorem(60)
-  ],
-  abstractDe: [#todo[Hier kommt die deutsche Übersetzung des englischen Abstracts hin]],
-  acknowledgements: [
-    
-  ],
+  // abstractEn: [],
+  // abstractDe: [#todo[Hier kommt die deutsche Übersetzung des englischen Abstracts hin]],
+  //acknowledgements: [],
   submissionDate: datetime.today().display("[day].[month].[year]"),
   showTitleInHeader: true,
   draft: draft,
@@ -76,7 +72,7 @@
 
 // Set spacing
 #set par(leading: 0.9em, first-line-indent: 1.8em, justify: true)
-#show par: set block(spacing: 1em)
+#set par(spacing: 1em)
 #set table(inset: 6.5pt)
 #show table: set par(justify: false)
 #show figure: it => [#v(1em) #it #v(1em)]

@@ -2,4 +2,4 @@
 
 = Introduction <prop_intro>
 
-== Motivation
+- main goal: implementation of sustainable/maintainable and effective usability/accessibility principles

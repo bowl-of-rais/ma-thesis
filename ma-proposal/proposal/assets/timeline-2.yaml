@@ -1,0 +1,46 @@
+show-today: false
+# Either month or day
+viewport-snap: month
+# Can include `year`, `month`, `week`, or `day`
+headers:
+  - month
+# A start date. Not required.
+start: 2026-03-01
+# An end date. Not required.
+end: 2026-07-20
+taskgroups:
+  - name: Research
+    tasks:
+      - name: User Studies
+        start: 2026-03-01
+        end: 2026-04-01
+  - name: Improvements
+    tasks:
+      - name: Further Improvements
+        start: 2026-04-15
+        end: 2026-05-15
+  - name: User Study
+    tasks:
+        - name: Conduct
+          start: 2026-03-01
+          end: 2026-03-15
+        - name: Evaluate
+          start: 2026-03-15
+          end: 2026-03-15
+  - name: Writing
+    tasks:
+        - name: Introduction
+          start: 2026-06-01, 2026-06-05
+          end: 2026-06-05
+        - name: User Study
+          start: 2026-03-01
+          end: 2026-04-30
+        - name: Further Improvements
+          start: 2026-05-15
+          end: 2026-05-30
+        - name: Conclusion/Future Work
+          start: 2026-06-01
+          end: 2026-06-15
+milestones:
+  - name: Final Submission
+    date: 2026-07-15

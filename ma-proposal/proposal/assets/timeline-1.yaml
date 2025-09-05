@@ -1,0 +1,52 @@
+show-today: false
+# Either month or day
+viewport-snap: month
+# Can include `year`, `month`, `week`, or `day`
+headers:
+  - month
+# A start date. Not required.
+start: 2025-10-01
+# An end date. Not required.
+end: 2026-02-28
+taskgroups:
+  - name: Research
+    tasks:
+      - name: Usability Guidelines
+        start: 2025-10-15
+        end: 2025-11-10
+      - name: User Studies
+        start: 2026-01-01
+        end: 2026-02-28
+  - name: Improvements
+    tasks:
+      - name: Usability Inspection
+        start: 2025-11-01
+        end: 2025-11-30
+      - name: Initial Improvements
+        start: 2025-11-21
+        end: 2025-12-31
+  - name: User Study
+    tasks:
+        - name: Design
+          start: 2026-01-05
+          end: 2026-01-31
+        - name: Conduct
+          start: 2026-02-01
+          end: 2026-02-28
+  - name: Writing
+    tasks:
+        - name: Background/Related Work
+          start: 2025-10-25
+          end: 2025-10-31
+        - name: Methodology
+          start: 2025-11-15
+          end: 2026-02-28
+        - name: Usability Inspection
+          start: 2025-12-01
+          end: 2025-12-10
+        - name: Initial Improvements
+          start: 2026-01-05
+          end: 2026-01-15
+        - name: User Study
+          start: 2026-01-20
+          end: 2026-02-28
