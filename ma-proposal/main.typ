@@ -39,8 +39,8 @@
   advisors: ("Julian Geheeb M.Sc.",),
   author: "Rai Trouvain",
   startDate: "15.10.2025",
-  titleEn: "Something With Usability in PIX:E",
-  titleDe: "Irgendetwas mit Usability in PIX:E",
+  titleEn: "Thesis Proposal: Something With Usability in PIX:E",
+  titleDe: "Thesis Proposal: Irgendetwas mit Usability in PIX:E",
   abstractEn: [
     #lorem(60)
   ],
@@ -164,7 +164,10 @@
 // --- Main Chapters ---
 
 
-#include "Chapter_Introduction.typ"
+#include "proposal/01-introduction.typ"
+#include "proposal/02-background.typ"
+#include "proposal/03-methods.typ"
+#include "proposal/04-timeline.typ"
 
 //#include "Chapter_Background.typ"
 
@@ -182,29 +185,37 @@
 // --- Appendixes ---
 
 // restart page numbering using roman numbers
+/*
 #set page(numbering: "i")
 #counter(page).update(1)
 
 
-#include("Chapter_Appendix.typ")
+#include("appendix-a.typ")
+/*
 
 // List of Acronyms.
+/*
 #heading(numbering: none)[List of Acronyms]
 #print-glossary(glossary)
+*/
 
 // List of figures.
+/*
 #heading(numbering: none)[List of Figures]
 #outline(
   title: none,
   target: figure.where(kind: image),
 )
+*/
 
 // List of tables.
+/*
 #heading(numbering: none)[List of Tables]
 #outline(
   title: none,
   target: figure.where(kind: table)
-)  
+)
+*/ 
 
 
 // --- Bibliography ---

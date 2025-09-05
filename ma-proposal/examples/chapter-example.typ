@@ -1,4 +1,4 @@
-#import "utils.typ": todo
+#import "../utils.typ": todo
 
 = Introduction <chapter_introduction>
 
@@ -21,12 +21,12 @@ As shown in @figure_dummy, this is wonderful. Typst documentation #footnote(link
     grid(
         columns: 3,     // 2 means 2 auto-sized columns
         row-gutter: 2mm,    // space between columns
-        [#image("dummy_image.svg", width: 70%)],
-        [#image("dummy_image.svg", width: 70%)],
-        [#image("dummy_image.svg", width: 70%)],
-        [#image("dummy_image.svg", width: 70%)],
-        [#image("dummy_image.svg", width: 70%)],
-        [#image("dummy_image.svg", width: 70%)],
+        [#image("../images/dummy_image.svg", width: 70%)],
+        [#image("../images/dummy_image.svg", width: 70%)],
+        [#image("../images/dummy_image.svg", width: 70%)],
+        [#image("../images/dummy_image.svg", width: 70%)],
+        [#image("../images/dummy_image.svg", width: 70%)],
+        [#image("../images/dummy_image.svg", width: 70%)],
     ),
   caption: [
     #lorem(10)
