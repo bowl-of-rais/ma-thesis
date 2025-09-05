@@ -1,0 +1,6 @@
+- [ ] scout google scholar
+	- [x] usability ✅ 2025-08-17
+	- [ ] toolkits
+	- [x] usability and llms ✅ 2025-08-17
+	- [ ] llms for accessibility
+- [x] find connections between papers ✅ 2025-08-17

@@ -1,0 +1,89 @@
+{
+  "cascadeColors": true,
+  "colorBackground": false,
+  "palette": [
+    {
+      "id": "Ln0Klbi7WwKdRgOYMCgkK",
+      "name": "red",
+      "value": "#ff9494"
+    },
+    {
+      "id": "ECmPnyPJlcYeibmt-kTgL",
+      "name": "orange",
+      "value": "#ffc17a"
+    },
+    {
+      "id": "WjovDZkFyk54NQnBKxaPq",
+      "name": "yellow",
+      "value": "#fdff94"
+    },
+    {
+      "id": "WEJJh2vMZc6wTBUczIOxQ",
+      "name": "green",
+      "value": "#8fffbf"
+    },
+    {
+      "id": "CbuV19GdX1QtD9DkQGaa_",
+      "name": "blue",
+      "value": "#a3baff"
+    },
+    {
+      "id": "X5DotO0HBeXslplXHfXEI",
+      "name": "purple",
+      "value": "#c78fff"
+    },
+    {
+      "id": "CapMde9dA-VZpH9jmKDoC",
+      "name": "pink",
+      "value": "#ff99ca"
+    },
+    {
+      "id": "Gs3eUHLzF3A3qq9wnDbR5",
+      "name": "white",
+      "value": "#ffffff"
+    },
+    {
+      "id": "MVHKo1KZlXU5q09q5DHir",
+      "name": "gray",
+      "value": "#5c5c5c"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "papers",
+      "color": "MVHKo1KZlXU5q09q5DHir"
+    },
+    {
+      "path": "00-proposal",
+      "color": "Ln0Klbi7WwKdRgOYMCgkK"
+    },
+    {
+      "path": "milestones.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "01-application",
+      "color": "ECmPnyPJlcYeibmt-kTgL"
+    },
+    {
+      "path": "todo.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "00-proposal/x-tasks.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "00-proposal/x-readings.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "misc.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "TOPICS",
+      "color": "CapMde9dA-VZpH9jmKDoC"
+    }
+  ]
+}

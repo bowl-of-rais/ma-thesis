@@ -1,0 +1,10 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.folder == "papers"
+        - file.ext == "md"
+    order:
+      - file.name
+      - tags

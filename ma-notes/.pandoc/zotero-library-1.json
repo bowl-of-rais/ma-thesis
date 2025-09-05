@@ -1,0 +1,5 @@
+[
+  {"id":"nipkowProgrammingProvingIsabelle","author":[{"family":"Nipkow","given":"Tobias"}],"citation-key":"nipkowProgrammingProvingIsabelle","language":"en","source":"Zotero","title":"Programming and Proving in Isabelle/HOL","type":"article-journal"},
+  {"id":"paulsonOldIntroductionIsabelle","author":[{"family":"Paulson","given":"Lawrence C"}],"citation-key":"paulsonOldIntroductionIsabelle","language":"en","source":"Zotero","title":"Old Introduction to Isabelle","type":"article-journal"},
+  {"id":"wenzelIsabelleIsarReference","author":[{"family":"Wenzel","given":"Makarius"}],"citation-key":"wenzelIsabelleIsarReference","language":"en","source":"Zotero","title":"The Isabelle/Isar Reference Manual","type":"article-journal"}
+]

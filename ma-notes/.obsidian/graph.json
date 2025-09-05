@@ -1,0 +1,37 @@
+{
+  "collapse-filter": false,
+  "search": "path:\"papers\" OR path:\"TOPICS\"",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:papers",
+      "color": {
+        "a": 1,
+        "rgb": 12566463
+      }
+    },
+    {
+      "query": "path:TOPICS",
+      "color": {
+        "a": 1,
+        "rgb": 16382821
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
+  "textFadeMultiplier": -0.5,
+  "nodeSizeMultiplier": 0.993229166666667,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.385416666666667,
+  "repelStrength": 11.3541666666667,
+  "linkStrength": 1,
+  "linkDistance": 30,
+  "scale": 0.6780252644037272,
+  "close": true
+}

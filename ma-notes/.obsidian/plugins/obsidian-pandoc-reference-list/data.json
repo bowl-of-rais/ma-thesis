@@ -1,0 +1,19 @@
+{
+  "pathToPandoc": "/usr/bin/pandoc",
+  "tooltipDelay": 400,
+  "zoteroGroups": [
+    {
+      "id": 1,
+      "name": "My Library",
+      "lastUpdate": 1753276231170
+    }
+  ],
+  "renderCitations": true,
+  "renderCitationsReadingMode": true,
+  "renderLinkCitations": true,
+  "pullFromZotero": false,
+  "showCitekeyTooltips": true,
+  "enableCiteKeyCompletion": true,
+  "pathToBibliography": "/home/rai/Uni/ma-thesis/ma.bib",
+  "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/association-for-computational-linguistics.csl"
+}
