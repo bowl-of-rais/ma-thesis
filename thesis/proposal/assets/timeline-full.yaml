@@ -17,7 +17,7 @@ taskgroups:
       - name: User Studies
         start: 2026-01-01
         end: 2026-04-01
-  - name: Improvements
+  - name: Eval/Impl
     tasks:
       - name: Usability Inspection
         start: 2025-11-01
@@ -53,13 +53,13 @@ taskgroups:
         - name: Usability Inspection
           start: 2025-12-01
           end: 2025-12-10
-        - name: Initial Improvements
+        - name: Improvements 1
           start: 2026-01-05
           end: 2026-01-15
         - name: User Study
           start: 2026-01-20
           end: 2026-04-30
-        - name: Further Improvements
+        - name: Improvements 2
           start: 2026-05-15
           end: 2026-05-30
         - name: Conclusion/Future Work

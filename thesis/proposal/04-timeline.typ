@@ -1,5 +1,6 @@
 #import "../utils.typ": todo
 #import "@preview/gantty:0.4.0": gantt
+#import "../bib.typ": load-bib
 
 = Timeline <prop_timeline>
 
@@ -10,3 +11,6 @@
 
 //#set align(horizon)
 //#rotate(-90deg, gantt(yaml("assets/timeline-full.yaml")))
+
+
+#load-bib()

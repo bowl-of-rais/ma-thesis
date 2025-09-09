@@ -141,9 +141,6 @@
 #set cite(style: "chicago-author-date") if inwriting
 
 
-//#import "state.typ": bib_state
-//#bib_state.update(none)
-
 #import "bib.typ": load-bib
 
 

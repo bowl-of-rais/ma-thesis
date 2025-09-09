@@ -2,7 +2,7 @@
 
 = Methodology <prop_methods>
 
-== Research
+== Initial Research
 
 - fundamental guidelines and principles of usability
 - domains: open source software, planning tools, design toolkits...
@@ -16,7 +16,8 @@
 
 == Improvements - Iteration 1
 
-- implement (a selection of) improvements based on inspection and research
+- select improvements considering maintainability, impact, importance
+- implement improvements
 
 == Usability Test (User Study)
 
