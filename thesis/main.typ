@@ -141,6 +141,10 @@
 #set cite(style: "chicago-author-date") if inwriting
 
 
+//#import "state.typ": bib_state
+//#bib_state.update(none)
+
+#import "bib.typ": load-bib
 
 
 // ------ Content ------
@@ -184,10 +188,11 @@
 /*
 #set page(numbering: "i")
 #counter(page).update(1)
+*/
 
-
-#include("appendix-a.typ")
 /*
+#include("appendix-a.typ")
+*/
 
 // List of Acronyms.
 /*
@@ -217,4 +222,5 @@
 // --- Bibliography ---
 
 #set par(leading: 0.7em, first-line-indent: 0em, justify: true)
-#bibliography("items.bib", style: "apa")
+#load-bib(main: true)
+//#bibliography("ma.bib", style: "ieee")

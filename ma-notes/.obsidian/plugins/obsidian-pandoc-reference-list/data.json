@@ -14,6 +14,6 @@
   "pullFromZotero": false,
   "showCitekeyTooltips": true,
   "enableCiteKeyCompletion": true,
-  "pathToBibliography": "/home/rai/Uni/ma-thesis/ma.bib",
+  "pathToBibliography": "/home/rai/Uni/ma-thesis/thesis/ma.bib",
   "cslStyleURL": "https://raw.githubusercontent.com/citation-style-language/styles/master/association-for-computational-linguistics.csl"
 }
