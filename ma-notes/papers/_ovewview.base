@@ -8,3 +8,4 @@ views:
     order:
       - file.name
       - tags
+      - paper_title

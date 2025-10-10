@@ -70,12 +70,12 @@
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
-      "path": "00-proposal/x-tasks.md",
-      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+      "path": "00-proposal/tasks/initial-tasks.md",
+      "color": "Ln0Klbi7WwKdRgOYMCgkK"
     },
     {
-      "path": "00-proposal/x-readings.md",
-      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+      "path": "00-proposal/tasks/readings.md",
+      "color": "Ln0Klbi7WwKdRgOYMCgkK"
     },
     {
       "path": "misc.md",
@@ -84,6 +84,10 @@
     {
       "path": "TOPICS",
       "color": "CapMde9dA-VZpH9jmKDoC"
+    },
+    {
+      "path": "_templates",
+      "color": "MVHKo1KZlXU5q09q5DHir"
     }
   ]
 }

@@ -12,19 +12,19 @@ taskgroups:
   - name: Research
     tasks:
       - name: Usability Guidelines
-        start: 2025-10-15
-        end: 2025-11-10
+        start: 2025-11-01
+        end: 2025-11-30
       - name: User Studies
         start: 2026-01-01
         end: 2026-04-01
   - name: Eval/Impl
     tasks:
       - name: Usability Inspection
-        start: 2025-11-01
-        end: 2025-11-30
+        start: 2025-11-20
+        end: 2025-12-20
       - name: Improvements 1
-        start: 2025-11-21
-        end: 2025-12-31
+        start: 2025-12-01
+        end: 2026-01-15
       - name: Improvements 2
         start: 2026-04-15
         end: 2026-05-15
@@ -45,22 +45,22 @@ taskgroups:
           start: 2026-06-01, 2026-06-05
           end: 2026-06-05
         - name: Backgr./Related Work
-          start: 2025-11-01
-          end: 2025-11-15
-        - name: Methodology
           start: 2025-11-15
+          end: 2025-12-15
+        - name: Methodology
+          start: 2025-12-01
           end: 2026-05-10
         - name: Usability Inspection
-          start: 2025-12-01
-          end: 2025-12-10
-        - name: Improvements 1
-          start: 2026-01-05
+          start: 2025-12-15
           end: 2026-01-15
+        - name: Improvements 1
+          start: 2026-01-01
+          end: 2026-01-31
         - name: User Study
           start: 2026-01-20
           end: 2026-04-30
         - name: Improvements 2
-          start: 2026-05-15
+          start: 2026-05-01
           end: 2026-05-30
         - name: Conclusion/Future Work
           start: 2026-06-01
