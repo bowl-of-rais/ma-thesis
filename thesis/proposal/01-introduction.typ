@@ -11,12 +11,14 @@ Usability is a crucial, yet often underprioritized aspect of software developmen
 
 The main focus of my thesis are going to be the research and implementation of maintainable, effective, and research-backed principles of usability and accessibility. This includes both established guidelines and state-of-the-art findings.
 
-The software this thesis will work on is pix:e, a toolkit for video game developers @geheebPaceMakerPracticalTool2024. Specific aspects of this software to consider are the open-source context of the software, the NLP-based features, and the technical background of the intended user base. The aim will be to answer the following questions:
+The software this thesis will work on is pix:e, a toolkit for video game developers @geheebPaceMakerPracticalTool2024. Specific aspects of this software to consider are the open-source context of the software, the NLP-based features, and the technical background of the intended user base.
 
-/ RQ1: How can different approaches/methods to evaluating and implementing usability be combined?
-/ RQ2: How impactful are different usability features in the context of the software domain?
+With this context, the aim will be to answer the following research questions:
 
-The first question will be addressed by a literature review and usability audit, which includes implementation of usability features. For the second question, the aforementioned improvements will be evaluated in a user study.
+- RQ1: How can different approaches/methods to evaluating and implementing usability be combined?
+- RQ2: How impactful are different usability features in the context of pix:e's domain?
+
+The first question will be addressed by a literature review and usability audit. Based on the results, selected usability features will be implementated. For the second question, the aforementioned improvements will be evaluated in a user study.
 
 
 #load-bib()
