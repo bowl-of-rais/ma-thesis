@@ -39,7 +39,7 @@
   advisors: ("Julian Geheeb M.Sc.",),
   author: "Rai Trouvain",
   startDate: "15.10.2025",
-  titleEn: "Thesis Proposal: Something With Usability in PIX:E",
+  titleEn: "Thesis Proposal: Extension of Pacing Diagram and Pacing Analysis in p:xe",
   titleDe: "Thesis Proposal: Irgendetwas mit Usability in PIX:E",
   // abstractEn: [],
   // abstractDe: [#todo[Hier kommt die deutsche Übersetzung des englischen Abstracts hin]],
