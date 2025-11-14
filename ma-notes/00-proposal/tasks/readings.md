@@ -12,7 +12,7 @@
 - [x] [[dasilvaUserExperienceTechniques2024]] ✅ 2025-08-17
 - [x] [[dawoodUnifiedCriteriaModel2021]] ✅ 2025-08-17
 - [x] [[dominguezBuildingUsabilityAccessibility2025]] ✅ 2025-08-17
-- [ ] [[geheebPaceMakerPracticalTool2024]]
+- [x] [[geheebPaceMakerPracticalTool2024]] ✅ 2025-11-10
 - [x] [[greenUseToolsUX2021]] ✅ 2025-08-17
 - [x] [[lageUsabilityTechnicalDebt2019]] ✅ 2025-08-17
 - [x] [[ledoEvaluationStrategiesHCI2018]] ✅ 2025-08-17

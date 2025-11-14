@@ -6,6 +6,6 @@ tags:
 # Scoping
 
 
-see [[scoping_canvas.canvas|scoping_canvas]]
+see [[00-proposal/ressources/scoping_canvas.canvas|scoping_canvas]]
 
 

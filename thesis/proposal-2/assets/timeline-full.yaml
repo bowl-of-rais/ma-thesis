@@ -1,0 +1,67 @@
+show-today: false
+# Either month or day
+viewport-snap: month
+# Can include `year`, `month`, `week`, or `day`
+headers:
+  - month
+# A start date. Not required.
+start: 2025-11-01
+# An end date. Not required.
+end: 2026-08-15
+taskgroups:
+  - name: Research
+    tasks:
+      - name: Codebase
+        start: 2025-11-20
+        end: 2025-12-10
+      - name: Path Selection
+        start: 2025-12-01
+        end: 2025-12-20
+      - name: Lock/Key Dynamics
+        start: 2025-12-15
+        end: 2026-01-15
+  - name: Implementation
+    tasks:
+      - name: Pacemaker Functionality
+        start: 2025-11-25
+        end: 2025-12-15
+      - name: Lock/Key Dynamics
+        start: 2026-01-01
+        end: 2026-02-28
+      - name: LLM-based Analysis
+        start: 2026-03-01
+        end: 2026-03-31
+  - name: Evaluation
+    tasks:
+      - name: User Study?
+        start: 2026-04-01
+        end: 2026-05-15
+  - name: Writing
+    tasks:
+      - name: Path Selection*          
+        start: 2026-01-12
+        end: 2026-01-31
+      - name: Previous Functionality*  
+        start: 2026-02-01
+        end: 2026-02-28
+      - name: Lock/Key Dynamics*       
+        start: 2026-03-01
+        end: 2026-03-31
+      - name: LLM-based Analysis*      
+        start: 2026-04-01
+        end: 2026-04-30
+      - name: Evaluation*              
+        start: 2026-05-01
+        end: 2026-05-31
+      - name: Background                    
+        start: 2026-06-01
+        end: 2026-06-10
+      - name: Future Work                   
+        start: 2026-06-10
+        end: 2026-06-20
+      - name: Introduction + Conclusion     
+        start: 2026-06-20
+        end: 2026-06-30
+milestones:
+  - name: Final Submission
+    date: 2026-07-31

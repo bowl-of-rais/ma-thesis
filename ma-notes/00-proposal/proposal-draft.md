@@ -1,6 +1,6 @@
 # Something with Usability in PIX:E
 
-- [?] "Usability" in German - auch Usability? oder Gebrauchstauglichkeit?
+- [-] "Usability" in German - auch Usability? oder Gebrauchstauglichkeit?
 
 ## Goal
 

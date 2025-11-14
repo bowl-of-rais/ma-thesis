@@ -7,14 +7,14 @@ task-category:
 
 ## 2 Background
 
- - [ ] add some source for general usability guidelines
- - [ ] add source for user study on usability
- - [ ] formulate
+ - [-] add some source for general usability guidelines
+ - [-] add source for user study on usability
+ - [-] formulate
 
 ## 3 Methodology
 
-- [ ] formulate
+- [-] formulate
 
 ## 4 Timeline
 
-- [ ] add a few sentences
+- [-] add a few sentences

@@ -51,7 +51,7 @@
   "fileColors": [
     {
       "path": "papers",
-      "color": "MVHKo1KZlXU5q09q5DHir"
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
       "path": "00-proposal",
@@ -62,7 +62,7 @@
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
-      "path": "01-application",
+      "path": "01-start",
       "color": "ECmPnyPJlcYeibmt-kTgL"
     },
     {
@@ -83,11 +83,27 @@
     },
     {
       "path": "TOPICS",
-      "color": "CapMde9dA-VZpH9jmKDoC"
+      "color": "MVHKo1KZlXU5q09q5DHir"
     },
     {
       "path": "_templates",
       "color": "MVHKo1KZlXU5q09q5DHir"
+    },
+    {
+      "path": "02-implementation",
+      "color": "WjovDZkFyk54NQnBKxaPq"
+    },
+    {
+      "path": "_assets",
+      "color": "MVHKo1KZlXU5q09q5DHir"
+    },
+    {
+      "path": "proposal-draft-2.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "timeline.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
     }
   ]
 }
