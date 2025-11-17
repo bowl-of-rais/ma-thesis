@@ -6,6 +6,7 @@
   "obsidian-file-color",
   "dataview",
   "callout-manager",
-  "smart-gantt",
-  "symbols-prettifier"
+  "symbols-prettifier",
+  "code-styler",
+  "obsidian-icon-folder"
 ]

@@ -108,8 +108,8 @@
       },
       {
         "symbol": "*",
-        "name": "star",
-        "nextStatusSymbol": "/",
+        "name": "Milestone",
+        "nextStatusSymbol": "~",
         "availableAsCommand": false,
         "type": "TODO"
       },
@@ -133,6 +133,34 @@
         "nextStatusSymbol": "q",
         "availableAsCommand": false,
         "type": "NON_TASK"
+      },
+      {
+        "symbol": "&",
+        "name": "MIlestone Reached",
+        "nextStatusSymbol": "&",
+        "availableAsCommand": false,
+        "type": "DONE"
+      },
+      {
+        "symbol": "~",
+        "name": "Milestone In Progress",
+        "nextStatusSymbol": "&",
+        "availableAsCommand": false,
+        "type": "IN_PROGRESS"
+      },
+      {
+        "symbol": "m",
+        "name": "Meeting",
+        "nextStatusSymbol": "M",
+        "availableAsCommand": false,
+        "type": "TODO"
+      },
+      {
+        "symbol": "M",
+        "name": "Meeting Past",
+        "nextStatusSymbol": "M",
+        "availableAsCommand": false,
+        "type": "DONE"
       }
     ]
   },

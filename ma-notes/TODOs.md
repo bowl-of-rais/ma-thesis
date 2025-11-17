@@ -5,6 +5,8 @@ not done
 group by root
 group by filename
 filename does not include milestones
+filename does not include glossary
+root does not include meetings
 is not blocked
 short mode
 exclude sub-items

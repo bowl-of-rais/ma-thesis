@@ -44,6 +44,6 @@ start with pacemaker functionality
 ## To Do
 
 - [x] gather existing functionality from paper ✅ 2025-11-08
-- [ ] initial research path selection
+- [-] initial research path selection
 - [x] initial research lock/key dynamics ✅ 2025-11-08
-- [x] add details: what kind of LLM evaluation? ✅ 2025-11-08
+- [x] add details: what kind of LLM evaluation? ✅ 2025-11-14

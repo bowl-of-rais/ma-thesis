@@ -1,0 +1,46 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "LiCheckSquare",
+      "LiTimer",
+      "LiCalendar",
+      "LiLink",
+      "LiQuestionMarkGlyph"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "questions.md": "LiQuestionMarkGlyph",
+  "milestones.md": "LiMilestone",
+  "links.md": "LiLink",
+  "all-meetings.md": "LiCalendar",
+  "timeline.md": "LiTimer",
+  "TODOs.md": "LiCheckSquare",
+  "meetings/2025-11-17.md": "LiPresentation",
+  "meetings/2025-11-24.md": "LiCode2",
+  "meetings/2025-11-17-notes.md": "LiMilestone"
+}

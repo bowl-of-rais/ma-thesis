@@ -20,7 +20,7 @@
     {
       "id": "WEJJh2vMZc6wTBUczIOxQ",
       "name": "green",
-      "value": "#8fffbf"
+      "value": "#8fff9c"
     },
     {
       "id": "CbuV19GdX1QtD9DkQGaa_",
@@ -46,6 +46,16 @@
       "id": "MVHKo1KZlXU5q09q5DHir",
       "name": "gray",
       "value": "#5c5c5c"
+    },
+    {
+      "id": "vlaMySWfTIEogjx3P2SgJ",
+      "name": "turquoise",
+      "value": "#75fffd"
+    },
+    {
+      "id": "IuDxkdGxQ0Lz6K0W3OTgA",
+      "name": "indigo",
+      "value": "#968fff"
     }
   ],
   "fileColors": [
@@ -66,7 +76,7 @@
       "color": "ECmPnyPJlcYeibmt-kTgL"
     },
     {
-      "path": "todo.md",
+      "path": "TODOs.md",
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
@@ -78,11 +88,11 @@
       "color": "Ln0Klbi7WwKdRgOYMCgkK"
     },
     {
-      "path": "misc.md",
+      "path": "links.md",
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
-      "path": "TOPICS",
+      "path": "_archive/TOPICS",
       "color": "MVHKo1KZlXU5q09q5DHir"
     },
     {
@@ -90,20 +100,56 @@
       "color": "MVHKo1KZlXU5q09q5DHir"
     },
     {
-      "path": "02-implementation",
-      "color": "WjovDZkFyk54NQnBKxaPq"
-    },
-    {
       "path": "_assets",
       "color": "MVHKo1KZlXU5q09q5DHir"
     },
     {
-      "path": "proposal-draft-2.md",
+      "path": "00-proposal/proposal-draft-2.md",
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
       "path": "timeline.md",
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "02-codebase",
+      "color": "WjovDZkFyk54NQnBKxaPq"
+    },
+    {
+      "path": "_glossary.md",
+      "color": "MVHKo1KZlXU5q09q5DHir"
+    },
+    {
+      "path": "all-meetings.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "03-pacemaker-functions",
+      "color": "WEJJh2vMZc6wTBUczIOxQ"
+    },
+    {
+      "path": "meetings",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "04-advanced-path-selection",
+      "color": "vlaMySWfTIEogjx3P2SgJ"
+    },
+    {
+      "path": "05-lock-key-dynamic",
+      "color": "vlaMySWfTIEogjx3P2SgJ"
+    },
+    {
+      "path": "06-llm-evaluation",
+      "color": "vlaMySWfTIEogjx3P2SgJ"
+    },
+    {
+      "path": "questions.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "_archive",
+      "color": "MVHKo1KZlXU5q09q5DHir"
     }
   ]
 }

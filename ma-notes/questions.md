@@ -1,7 +1,8 @@
-# Milestones
+# Questions
 
 ```tasks
 filename does not include glossary
-status.name includes Milestone
+status.name includes question
 short mode
+group by root
 ```

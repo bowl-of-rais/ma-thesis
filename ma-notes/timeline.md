@@ -4,11 +4,11 @@ gantt
     title Thesis Timeline
     dateFormat YYYY-MM-DD
     section Research
-        Old/New Backend          :2025-11-20, 20d
+        Familiarize w/ Codebase  :2025-11-17, 23d
         Path Selection           :2025-12-01, 20d
         Lock/Key Dynamics        :2025-12-15, 30d
     section Implementation
-        Pacemaker Functionality  :2025-11-25, 20d
+        Pacemaker Functionality  :2025-11-21, 20d
         Lock/Key Dynamics        :2026-01-01, 60d
         LLM-based Analysis       :2026-03-01, 15d
     section Evaluation

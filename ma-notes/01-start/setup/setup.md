@@ -2,7 +2,7 @@
 ## First Commit
 
 - [x] get setup to run ⏳ 2025-11-14 ✅ 2025-11-14
-- [ ] add card with project description ⏳ 2025-11-14 
+- [x] add card with project description ⏳ 2025-11-14 ✅ 2025-11-14
 	- `frontend/app/pages/index.vue`
 	- branch `rai` -> rebase + force push. then open merge request
 
