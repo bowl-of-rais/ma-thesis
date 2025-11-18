@@ -27,6 +27,8 @@
     "start": "date",
     "end": "date",
     "goal": "date",
-    "milestone": "number"
+    "milestone": "number",
+    "chapter": "multitext",
+    "previous_milestone": "number"
   }
 }

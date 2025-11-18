@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiLayoutDashboard",
+      "LiPresentation",
       "LiCheckSquare",
       "LiTimer",
-      "LiCalendar",
-      "LiLink",
-      "LiQuestionMarkGlyph"
+      "LiCalendar"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -37,10 +37,12 @@
   "questions.md": "LiQuestionMarkGlyph",
   "milestones.md": "LiMilestone",
   "links.md": "LiLink",
-  "all-meetings.md": "LiCalendar",
   "timeline.md": "LiTimer",
-  "TODOs.md": "LiCheckSquare",
   "meetings/2025-11-17.md": "LiPresentation",
   "meetings/2025-11-24.md": "LiCode2",
-  "meetings/2025-11-17-notes.md": "LiMilestone"
+  "meetings/2025-11-17-notes.md": "LiMilestone",
+  "meetings.md": "LiCalendar",
+  "meetings/2025-12-15.md": "LiPresentation",
+  "DASHBOARD.md": "LiLayoutDashboard",
+  "other-todos.md": "LiCheckSquare"
 }

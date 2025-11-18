@@ -1,6 +1,6 @@
 
 - [x] immatrikulation
-- [ ] leistungen übertragen lassen
+- [w] leistungen übertragen lassen
 - [ ] anmelden
 
-- [?] wie läuft das mit der anrechnung?
+- [w] wie läuft das mit der anrechnung? -> julian testet

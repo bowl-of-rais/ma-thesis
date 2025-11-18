@@ -15,17 +15,17 @@
     {
       "id": "WjovDZkFyk54NQnBKxaPq",
       "name": "yellow",
-      "value": "#fdff94"
+      "value": "#dbdd88"
     },
     {
       "id": "WEJJh2vMZc6wTBUczIOxQ",
       "name": "green",
-      "value": "#8fff9c"
+      "value": "#98eca1"
     },
     {
       "id": "CbuV19GdX1QtD9DkQGaa_",
       "name": "blue",
-      "value": "#a3baff"
+      "value": "#afc3fd"
     },
     {
       "id": "X5DotO0HBeXslplXHfXEI",
@@ -50,7 +50,7 @@
     {
       "id": "vlaMySWfTIEogjx3P2SgJ",
       "name": "turquoise",
-      "value": "#75fffd"
+      "value": "#8ceeec"
     },
     {
       "id": "IuDxkdGxQ0Lz6K0W3OTgA",
@@ -59,10 +59,6 @@
     }
   ],
   "fileColors": [
-    {
-      "path": "papers",
-      "color": "Gs3eUHLzF3A3qq9wnDbR5"
-    },
     {
       "path": "00-proposal",
       "color": "Ln0Klbi7WwKdRgOYMCgkK"
@@ -76,7 +72,7 @@
       "color": "ECmPnyPJlcYeibmt-kTgL"
     },
     {
-      "path": "TODOs.md",
+      "path": "other-todos.md",
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
@@ -105,7 +101,7 @@
     },
     {
       "path": "00-proposal/proposal-draft-2.md",
-      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+      "color": "Ln0Klbi7WwKdRgOYMCgkK"
     },
     {
       "path": "timeline.md",
@@ -120,16 +116,12 @@
       "color": "MVHKo1KZlXU5q09q5DHir"
     },
     {
-      "path": "all-meetings.md",
+      "path": "meetings.md",
       "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
       "path": "03-pacemaker-functions",
       "color": "WEJJh2vMZc6wTBUczIOxQ"
-    },
-    {
-      "path": "meetings",
-      "color": "Gs3eUHLzF3A3qq9wnDbR5"
     },
     {
       "path": "04-advanced-path-selection",
@@ -150,6 +142,30 @@
     {
       "path": "_archive",
       "color": "MVHKo1KZlXU5q09q5DHir"
+    },
+    {
+      "path": "thesis-bullets",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "meetings",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "papers",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "07-evaluation",
+      "color": "CbuV19GdX1QtD9DkQGaa_"
+    },
+    {
+      "path": "DASHBOARD.md",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
+    },
+    {
+      "path": "tech-stack",
+      "color": "Gs3eUHLzF3A3qq9wnDbR5"
     }
   ]
 }

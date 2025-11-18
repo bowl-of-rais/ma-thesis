@@ -1,14 +1,32 @@
 {
   "callouts": {
     "custom": [
-      "star"
+      "star",
+      "purple",
+      "gray"
     ],
     "settings": {
       "star": [
         {
           "changes": {
             "icon": "lucide-stars",
-            "color": "57, 86, 116"
+            "color": "73, 86, 146"
+          }
+        }
+      ],
+      "purple": [
+        {
+          "changes": {
+            "icon": "lucide-stars",
+            "color": "115, 67, 147"
+          }
+        }
+      ],
+      "gray": [
+        {
+          "changes": {
+            "icon": "lucide-stars",
+            "color": "105, 105, 105"
           }
         }
       ]

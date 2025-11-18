@@ -929,7 +929,7 @@ li[data-task="c"]>p>input:checked::after {
 }
 
 
-/* Checkbox Star & */
+/* Checkbox Milestone done & */
 
   
 
@@ -959,13 +959,13 @@ li[data-task="&"]>p>input:checked::after {
 
     -webkit-mask-size: contain;
 
-    background-color: var(--color-yellow);
+    background-color: var(--color-purple);
 
     left: 0;
 
 }
 
-/* Checkbox Star * */
+/* Checkbox Milestone In Progress ~ */
 
   
 
@@ -995,7 +995,7 @@ li[data-task="~"]>p>input:checked::after {
 
     -webkit-mask-size: contain;
 
-    background-color: var(--color-base-100);
+    background-color: var(--color-yellow);
 
     left: 0;
 
@@ -1005,7 +1005,7 @@ li[data-task="~"]>p>input:checked::after {
 
   
 
-/* Checkbox Star * */
+/* Checkbox Milestone * */
 
   
 
