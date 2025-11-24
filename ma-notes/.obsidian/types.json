@@ -29,6 +29,8 @@
     "goal": "date",
     "milestone": "number",
     "chapter": "multitext",
-    "previous_milestone": "number"
+    "previous_milestone": "number",
+    "next-weekly": "date",
+    "current-weekly": "date"
   }
 }

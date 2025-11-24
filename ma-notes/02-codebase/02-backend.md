@@ -1,10 +1,12 @@
 ---
-start:
+start: 2025-11-18
 end:
 tags:
   - task
 milestone: 2512
 ---
+
+-> [[BACKEND.canvas|BACKEND]]
 
 # Implementations of different parts
 
@@ -15,7 +17,7 @@ milestone: 2512
 - [[django]]
 - each part is defined as a model
 
-- [ ] read through django tutorial
+- [ ] read through django tutorial 🔽 
 
 ## PxCharts
 

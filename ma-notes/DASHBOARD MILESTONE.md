@@ -8,6 +8,7 @@ milestone: 2512
 > limit to 1 tasks
 > hide task count
 > short mode
+> hide edit button
 > ```
 
 >[!gray] steps in current milestone
@@ -19,6 +20,9 @@ milestone: 2512
 > filter by function task.file.property('milestone') === query.file.property('milestone')
 > show tree
 > hide task count
+> hide postpone button
+> hide edit button
+> group by root
  > ```
 
 >[!gray] tasks in current milestone
@@ -32,4 +36,20 @@ milestone: 2512
 > group by filename
 > show tree
 > hide task count
+> hide edit button
+ > ```
+
+>[!gray] tasks outside of milestones
+>
+> ```tasks
+> not done
+> group by root
+> group by filename
+> filename does not include milestones
+> filename does not include glossary
+> filter by function ! task.file.hasProperty('milestone')
+> root does not include meetings
+> short mode
+> exclude sub-items
+> show tree
  > ```

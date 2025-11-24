@@ -12,16 +12,6 @@
 			"color":"6"
 		},
 		{
-			"id":"9e83533a088d38bf",
-			"type":"text",
-			"text":"### Node Container\n\n- edges to other containers",
-			"styleAttributes":{},
-			"x":-700,
-			"y":-340,
-			"width":380,
-			"height":160
-		},
-		{
 			"id":"0ee2abf21d077973",
 			"type":"text",
 			"text":"### PxNode\n-> name, description, components\n\n- can be associated to (multiple!) charts\n",
@@ -50,6 +40,16 @@
 			"y":-860,
 			"width":300,
 			"height":90
+		},
+		{
+			"id":"9e83533a088d38bf",
+			"type":"text",
+			"text":"### Node Container\n\n- edges to other containers",
+			"styleAttributes":{},
+			"x":-820,
+			"y":-340,
+			"width":380,
+			"height":160
 		}
 	],
 	"edges":[
