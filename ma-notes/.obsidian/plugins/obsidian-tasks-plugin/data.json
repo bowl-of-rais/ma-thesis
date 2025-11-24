@@ -136,7 +136,7 @@
       },
       {
         "symbol": "&",
-        "name": "MIlestone Reached",
+        "name": "Milestone Reached",
         "nextStatusSymbol": "&",
         "availableAsCommand": false,
         "type": "DONE"
@@ -161,6 +161,13 @@
         "nextStatusSymbol": "M",
         "availableAsCommand": false,
         "type": "DONE"
+      },
+      {
+        "symbol": "C",
+        "name": "Meeting Cancelled",
+        "nextStatusSymbol": "C",
+        "availableAsCommand": false,
+        "type": "CANCELLED"
       }
     ]
   },

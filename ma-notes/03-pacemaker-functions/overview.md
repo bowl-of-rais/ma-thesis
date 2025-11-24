@@ -7,7 +7,7 @@ milestone: 2512
 ---
 
 - [*] implement diagrams from Pacemaker
-	- [ ] simple path selection: plan, implement, test 📅 2025-12-01
+	- [/] simple path selection: plan, implement, test 📅 2025-12-01
 	- [ ] UI for diagrams: plan, implement, test
 	- [ ] diagram generation: plan, implement, test
 
