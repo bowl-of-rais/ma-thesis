@@ -161,22 +161,9 @@
 // --- Main Chapters ---
 
 
-#include "proposal/01-introduction.typ"
-#include "proposal/02-background.typ"
-#include "proposal/03-methods.typ"
-#include "proposal/04-timeline.typ"
-
-//#include "Chapter_Background.typ"
-
-//#include "Chapter_RelatedWork.typ"
-
-//#include "Chapter_Methodology.typ"
-
-//#include "Chapter_Experiments.typ"
-
-//#include "Chapter_Discussion.typ"
-
-//#include "Chapter_FutureResearch.typ"
+#include "thesis/01-introduction.typ"
+#include "thesis/02-background.typ"
+#include "thesis/03-basic-pb-diagrams.typ"
 
 
 // --- Appendixes ---
