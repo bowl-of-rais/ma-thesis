@@ -1,5 +1,5 @@
 ---
-package-id: a-path-sel
+package-id: adv-path
 start:
 end:
 package-status:
@@ -7,8 +7,8 @@ package-category:
 milestone: 2601
 ---
 
-- [*] think about/research path selection with nestedness/concurrency
-- [*] potentially implement path selection with nestedness/concurrency
+- [*] #26_02 think about/research path selection with nestedness/concurrency -> [[03-nestedness-concurrency]]
+- [*] #26_02 potentially implement path selection with nestedness/concurrency
 
 
 ## Sub-tasks

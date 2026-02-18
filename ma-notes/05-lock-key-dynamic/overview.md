@@ -8,7 +8,9 @@ package-category:
 
 ## Lock/Key Dynamic
 
-
+- [*] #26_03 research + implementation draft for lock/key dynamics
+- [*] #26_03 implementation of locks/keys
+- [*] #26_03 analysis based on locks/keys 
 
 ## Sub-tasks
 

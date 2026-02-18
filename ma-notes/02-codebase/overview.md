@@ -10,7 +10,7 @@ milestone: 2512
 
 - [~] get familiar with codebase + UI
 	- [x] understand how pxnodes + pxcharts are used 🛫 2025-11-18 📅 2025-11-24 ✅ 2025-11-23
-	- [/] understand pxnodes + pxcharts backend 🛫 2025-11-18 📅 2025-11-24 
+	- [-] understand pxnodes + pxcharts backend
 	- [x] understand pxnodes + pxcharts frontend 🛫 2025-11-21 📅 2025-11-24 ✅ 2025-11-23
 
 ## Subtasks

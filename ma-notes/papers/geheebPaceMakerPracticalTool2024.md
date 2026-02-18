@@ -1,7 +1,7 @@
 ---
 tags: []
 paper_title: 'PaceMaker: A Practical Tool for Pacing Video Games'
-$version: 0
+$version: 5
 $libraryID: 1
 $itemKey: AQ36PLCJ
 
@@ -13,7 +13,7 @@ $itemKey: AQ36PLCJ
 
 ## General
 
-## Pacing
+### Pacing
 
 > Pacing describes the rhythm that results from the recurring patterns of rhythmic parameters in time.
 
@@ -22,10 +22,9 @@ $itemKey: AQ36PLCJ
 *   **experience parameters**: experience of player while interacting with game
 
     *   intensity, also: engagement, threat, movement impetus, tempo
+    *   example: calculation of intensity $f_i$ based on number of jumps, enemies, tiles, etc
 
-    *   example: calculation of intensity  $f_i$  based on number of jumps, enemies, tiles, etc
-
-## Experience Chart
+### Experience Chart
 
 *   **beats** = nodes, represent part of game
 

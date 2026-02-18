@@ -25,6 +25,9 @@ graph TD
 	c2 --> c5(PxChartContainer<br>AddPxNodeForm)
 ```
 
+- `PxChartContainer` : used on overview page
+- `PxChartContainerNode`: used on canvas/chart
+
 ### `composables/`
 
 #### `usePxChartsCanvasApi`

@@ -27,7 +27,7 @@
     "start": "date",
     "end": "date",
     "goal": "date",
-    "milestone": "number",
+    "milestone": "text",
     "chapter": "multitext",
     "previous_milestone": "number",
     "next-weekly": "date",

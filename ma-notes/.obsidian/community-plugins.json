@@ -9,5 +9,6 @@
   "symbols-prettifier",
   "code-styler",
   "obsidian-icon-folder",
-  "typst"
+  "typst",
+  "keyword-highlighter"
 ]

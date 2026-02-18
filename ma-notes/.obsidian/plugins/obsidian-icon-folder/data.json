@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiTimer",
+      "LiPersonStanding",
+      "LiSun",
       "LiCode2",
-      "LiLayoutDashboard",
-      "LiPresentation",
-      "LiCheckSquare",
-      "LiTimer"
+      "LiLayoutDashboard"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -44,7 +44,12 @@
   "meetings.md": "LiCalendar",
   "meetings/2025-12-15.md": "LiPresentation",
   "other-todos.md": "LiCheckSquare",
-  "DASHBOARD MILESTONE.md": "LiLayoutDashboard",
   "DASHBOARD WEEKLY.md": "LiLayoutDashboard",
-  "meetings/2025-12-01.md": "LiCode2"
+  "meetings/2025-12-01.md": "LiCode2",
+  "_old-dashboards/DASHBOARD MILESTONE 1.md": "LiLayoutDashboard",
+  "DASHBOARD MILESTONE 2.md": "LiLayoutDashboard",
+  "TODAY.md": "LiSun",
+  "DASHBOARD MILESTONE 3.md": "LiLayoutDashboard",
+  "timeline new.md": "LiTimer",
+  "meetings/2026-01-27.md": "LiPersonStanding"
 }

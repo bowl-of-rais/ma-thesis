@@ -4,6 +4,6 @@
   "alwaysUpdateLinks": true,
   "propertiesInDocument": "visible",
   "vimMode": true,
-  "readableLineLength": true,
+  "readableLineLength": false,
   "attachmentFolderPath": "_assets"
 }

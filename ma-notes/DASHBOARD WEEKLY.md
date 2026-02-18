@@ -1,7 +1,7 @@
 ---
 milestone: 2512
-next-weekly: 2025-12-01
-prev-weekly: 2025-11-24
+next-weekly: 2025-12-08
+prev-weekly: 2025-12-01
 ---
 
 >[!purple] next meeting

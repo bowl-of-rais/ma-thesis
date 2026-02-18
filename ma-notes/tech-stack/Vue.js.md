@@ -7,6 +7,14 @@
 
 >Components allow us to split the UI into independent and reusable pieces, and think about each piece in isolation.
 
+- [i] components use logic from composables
+
+```js title="In Component"
+const {
+	...
+} = useComposable(arg)
+```
+
 ### Composables
 -> [docs](https://vuejs.org/guide/reusability/composables.html)
 
