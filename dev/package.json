@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@vue-flow/core": "^1.48.0",
+    "lodash.findindex": "^4.6.0",
+    "lodash.matchesproperty": "^4.7.0"
+  }
+}
