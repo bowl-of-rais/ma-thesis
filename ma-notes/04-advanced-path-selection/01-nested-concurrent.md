@@ -2,7 +2,6 @@
 start: 2025-12-15
 end:
 tags:
-  - task
 milestone: 26_01
 ---
 

@@ -2,9 +2,11 @@
 start: 2025-12-15
 end: 2025-12-31
 tags:
-  - task
+  - "#implementation"
 milestone: 26_01
 ---
+
+see [[03-pacemaker-functions/thoughts|thoughts]]
 
 ## Errors
 
@@ -148,6 +150,13 @@ debugging:
 - [x] multiple components ⏳ 2026-01-23 ✅ 2026-01-23
 	- multiple colors
 - [ ] missing values?
+
+- [/] changes to statechart should be reflected in diagrams immediately 🛫 2026-03-04 
+	- [x] adding/deleting of nodes -> only reflect nodes present in the statechart?? ✅ 2026-03-04
+	- [x] reflect containers without nodes in diagrams ✅ 2026-03-04
+	- [ ] reflect changes in components and componentdefinitions as well
+	- [ ] depending on used mechanism, also re-trigger pathfinding when edges are added
+		- [ ] also highlight edges
 
 ## Styling and UX
 

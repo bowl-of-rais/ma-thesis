@@ -8,10 +8,10 @@ package-category:
 milestone: 2512
 ---
 
-- [~] get familiar with codebase + UI
-	- [x] understand how pxnodes + pxcharts are used 🛫 2025-11-18 📅 2025-11-24 ✅ 2025-11-23
+- [&] get familiar with codebase + UI
+	- [x] understand how pxnodes + pxcharts are used 🛫 2025-11-18 📅 2025-11-24 ✅ 2025-11-23 -> [[01-usage]]
 	- [-] understand pxnodes + pxcharts backend
-	- [x] understand pxnodes + pxcharts frontend 🛫 2025-11-21 📅 2025-11-24 ✅ 2025-11-23
+	- [x] understand pxnodes + pxcharts frontend 🛫 2025-11-21 📅 2025-11-24 ✅ 2025-11-23 -> [[03-frontend]]
 
 ## Subtasks
 

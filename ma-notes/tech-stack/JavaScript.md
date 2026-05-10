@@ -1,3 +1,9 @@
+---
+tags:
+  - tech
+---
+
+
 # About JavaScript
 
 ## `async` function

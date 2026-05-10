@@ -2,7 +2,7 @@
 start: 2025-11-18
 end:
 tags:
-  - task
+  - "#onboard"
 milestone: 2512
 ---
 
@@ -17,7 +17,7 @@ milestone: 2512
 - [[django]]
 - each part is defined as a model
 
-- [ ] read through django tutorial 🔽 
+- [x] read through django tutorial ✅ 2026-03-16
 
 ## PxCharts
 

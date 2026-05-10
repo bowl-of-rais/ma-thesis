@@ -1,4 +1,9 @@
-## Dijkstra
+---
+tags:
+  - theory
+---
+
+# Dijkstra
 
 [Pseudocode (Wikipedia)](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm#Pseudocode)
 ```
@@ -57,7 +62,3 @@ function Dijkstra(Graph, source):
 
     return (dist, prev)
 ```
-
-## A*
-
-

@@ -2,6 +2,8 @@
 milestone: 2512
 next-weekly: 2025-12-08
 prev-weekly: 2025-12-01
+tags:
+  - meta
 ---
 
 >[!purple] next meeting

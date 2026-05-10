@@ -3,7 +3,8 @@
     "custom": [
       "star",
       "purple",
-      "gray"
+      "gray",
+      "goal"
     ],
     "settings": {
       "star": [
@@ -27,6 +28,22 @@
           "changes": {
             "icon": "lucide-stars",
             "color": "105, 105, 105"
+          }
+        }
+      ],
+      "goal": [
+        {
+          "changes": {
+            "icon": "lucide-goal",
+            "color": "185, 148, 255"
+          }
+        }
+      ],
+      "example": [
+        {
+          "changes": {
+            "icon": "lucide-eye",
+            "color": "102, 102, 102"
           }
         }
       ]

@@ -4,14 +4,13 @@ start: 2025-11-21
 end:
 milestone: 25_12
 tags:
-  - task
 ---
 
 - [x] define requirements 🛫 2025-11-21 ✅ 2025-11-24
 - [x] figure out where to implement what 🛫 2025-11-24 ✅ 2025-12-06
 - [x] implement simple path selection ✅ 2025-12-05
 	- [x] between two nodes ✅ 2025-12-01
-	- [F] between more than two nodes
+	- [x] between more than two nodes ✅ 2026-04-29
 - [F] test simple path selection
 
 - [F] prevent toast message for each

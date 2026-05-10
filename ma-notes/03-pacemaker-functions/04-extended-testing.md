@@ -2,7 +2,7 @@
 start: 2025-12-15
 end:
 tags:
-  - task
+  - "#testing"
 milestone: 26_01
 ---
 

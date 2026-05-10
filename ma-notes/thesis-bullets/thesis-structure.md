@@ -1,0 +1,20 @@
+
+- [d] introduction
+- [d] background
+	- [D] [[pacemaker]]
+	- [d] [[pixe]]
+	- [d] [[statecharts]]
+	- [d] [[lock-and-key]]
+- [d] related works
+- [d] implementation
+	- [d] pacemaker functionality 
+		- [D] [[thesis-bullets/04-implementation/01-path-selection|01-path-selection]]
+		- [D] [[02-diagram-generation]]
+	- [d] locks and keys 
+		- [d] [[03-lock-and-key-modelling]]
+		- [d] [[04-lock-and-key-pathfinding]]
+		- [d] [[05-lock-and-key-analysis]]
+- [d] evaluation 
+- [d] results
+- [d] future work 
+- [d] conclusion 

@@ -1,3 +1,8 @@
+---
+tags:
+  - meta
+---
+
 # Milestones
 
 ```tasks

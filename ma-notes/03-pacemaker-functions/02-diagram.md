@@ -2,7 +2,7 @@
 start: 2025-12-05
 end: 2025-12-15
 tags:
-  - task
+  - "#implementation"
 milestone: 2512
 ---
 
@@ -22,11 +22,7 @@ milestone: 2512
 ## Implementation Details
 
 - selector: [`USelect` component](https://ui.nuxt.com/docs/components/select)
-
-```mermaid
-graph TD
-	chart(PxChartCanvas.vue) --> line(LineChart.vue)
-```
-
+- [[path-selection-and-diagrams.canvas]]
+- [[path-selection-logic.canvas]]
 
 - [?] it seems to me like node names are used as ids in some places. are we working under the assumption that node names are unique?

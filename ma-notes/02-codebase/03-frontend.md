@@ -2,7 +2,7 @@
 start: 2025-11-21
 end: 2025-11-23
 tags:
-  - task
+  - "#onboard"
 milestone: 2512
 ---
 

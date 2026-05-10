@@ -3,7 +3,7 @@
 		{
 			"id":"2d907956c71bf671",
 			"type":"text",
-			"text":"### PxChart\n\n- has 1 associated node\n- holds node containers\n",
+			"text":"### [[PxChart]]\n\n- has 1 associated node\n- holds node containers\n",
 			"styleAttributes":{},
 			"x":-380,
 			"y":-635,
@@ -14,7 +14,7 @@
 		{
 			"id":"0ee2abf21d077973",
 			"type":"text",
-			"text":"### PxNode\n-> name, description, components\n\n- can be associated to (multiple!) charts\n",
+			"text":"### [[PxNodes]]\n-> name, description, components\n\n- can be associated to (multiple!) charts\n",
 			"styleAttributes":{},
 			"x":-1360,
 			"y":-635,
@@ -24,7 +24,7 @@
 		{
 			"id":"5f3b7d9378c58c2a",
 			"type":"text",
-			"text":"### PxComponentsDefinition\n\n-> name + data type of a component",
+			"text":"### [[PxComponentsDefinitions]]\n\n-> name + data type of a component",
 			"styleAttributes":{},
 			"x":-1355,
 			"y":-1100,
@@ -34,7 +34,7 @@
 		{
 			"id":"0c524d32f3e131d3",
 			"type":"text",
-			"text":"### PxComponent",
+			"text":"### [[PxComponents]]",
 			"styleAttributes":{},
 			"x":-1275,
 			"y":-860,

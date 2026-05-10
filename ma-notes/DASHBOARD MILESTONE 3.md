@@ -1,5 +1,7 @@
 ---
 milestone: 26_02
+tags:
+  - meta
 ---
 
 >[!purple] next meeting

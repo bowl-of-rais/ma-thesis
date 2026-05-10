@@ -45,7 +45,7 @@ bugs/observations -> open an issue
 - if not: **rebase** + force push
 
 ```sh
-git checkout new
+git checkout new-branch
 git rebase main
-git push origin main --force
+git push origin new-branch --force
 ```

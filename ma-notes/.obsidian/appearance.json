@@ -1,6 +1,7 @@
 {
   "enabledCssSnippets": [
-    "checkboxes"
+    "checkboxes",
+    "merm"
   ],
   "baseFontSize": 20
 }

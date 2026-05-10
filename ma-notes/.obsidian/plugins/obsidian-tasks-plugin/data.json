@@ -168,6 +168,55 @@
         "nextStatusSymbol": "C",
         "availableAsCommand": false,
         "type": "CANCELLED"
+      },
+      {
+        "symbol": "d",
+        "name": "Bulleting",
+        "nextStatusSymbol": "D",
+        "availableAsCommand": false,
+        "type": "TODO"
+      },
+      {
+        "symbol": "D",
+        "name": "Bullets done",
+        "nextStatusSymbol": "P",
+        "availableAsCommand": false,
+        "type": "TODO"
+      },
+      {
+        "symbol": "P",
+        "name": "Phrasing",
+        "nextStatusSymbol": "T",
+        "availableAsCommand": false,
+        "type": "TODO"
+      },
+      {
+        "symbol": "T",
+        "name": "Iterating",
+        "nextStatusSymbol": "W",
+        "availableAsCommand": false,
+        "type": "TODO"
+      },
+      {
+        "symbol": "W",
+        "name": "Done Writing",
+        "nextStatusSymbol": "d",
+        "availableAsCommand": false,
+        "type": "DONE"
+      },
+      {
+        "symbol": "F",
+        "name": "Forwarded",
+        "nextStatusSymbol": "F",
+        "availableAsCommand": false,
+        "type": "NON_TASK"
+      },
+      {
+        "symbol": "r",
+        "name": "Result",
+        "nextStatusSymbol": "r",
+        "availableAsCommand": false,
+        "type": "NON_TASK"
       }
     ]
   },

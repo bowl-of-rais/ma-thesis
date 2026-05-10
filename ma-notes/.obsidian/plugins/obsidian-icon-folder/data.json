@@ -6,11 +6,11 @@
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiHourglass",
+      "LiCheckSquare",
+      "LiInfo",
       "LiTimer",
-      "LiPersonStanding",
-      "LiSun",
-      "LiCode2",
-      "LiLayoutDashboard"
+      "LiPersonStanding"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -51,5 +51,9 @@
   "TODAY.md": "LiSun",
   "DASHBOARD MILESTONE 3.md": "LiLayoutDashboard",
   "timeline new.md": "LiTimer",
-  "meetings/2026-01-27.md": "LiPersonStanding"
+  "meetings/2026-01-27.md": "LiPersonStanding",
+  "DASHBOARD MILESTONE 4.md": "LiLayoutDashboard",
+  "glossary.md": "LiInfo",
+  "TASKS IN PROGRESS.md": "LiHourglass",
+  "TASKS TA DA.md": "LiCheckSquare"
 }

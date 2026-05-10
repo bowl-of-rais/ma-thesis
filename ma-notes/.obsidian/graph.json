@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "path:\"papers\" OR path:\"TOPICS\"",
+  "search": "-path:archive -path:meetings -path:proposal -path:_templates  -tag:#meta  -(#26) -path:01-start -PATH:PAPERS",
   "showTags": true,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -11,14 +11,56 @@
       "query": "path:papers",
       "color": {
         "a": 1,
-        "rgb": 12566463
+        "rgb": 5395026
       }
     },
     {
-      "query": "path:TOPICS",
+      "query": "path:tech-stack",
       "color": {
         "a": 1,
-        "rgb": 16382821
+        "rgb": 6052956
+      }
+    },
+    {
+      "query": "path:thesis-bullets",
+      "color": {
+        "a": 1,
+        "rgb": 0
+      }
+    },
+    {
+      "query": "path:03-pacemaker-functions  ",
+      "color": {
+        "a": 1,
+        "rgb": 64511
+      }
+    },
+    {
+      "query": "path:05-lock-key-dynamic  ",
+      "color": {
+        "a": 1,
+        "rgb": 9327359
+      }
+    },
+    {
+      "query": "path:02-codebase  ",
+      "color": {
+        "a": 1,
+        "rgb": 16774912
+      }
+    },
+    {
+      "query": "path:06-llm-evaluation  ",
+      "color": {
+        "a": 1,
+        "rgb": 13327615
+      }
+    },
+    {
+      "query": "path:theory-stack  ",
+      "color": {
+        "a": 1,
+        "rgb": 5526612
       }
     }
   ],
@@ -28,10 +70,10 @@
   "nodeSizeMultiplier": 0.993229166666667,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.385416666666667,
+  "centerStrength": 0.666666666666667,
   "repelStrength": 11.3541666666667,
   "linkStrength": 1,
-  "linkDistance": 30,
-  "scale": 0.6780252644037272,
+  "linkDistance": 133,
+  "scale": 0.7403113593448214,
   "close": true
 }
