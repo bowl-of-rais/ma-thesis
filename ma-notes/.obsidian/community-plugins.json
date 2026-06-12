@@ -11,5 +11,7 @@
   "obsidian-icon-folder",
   "typst",
   "keyword-highlighter",
-  "obsidian-latex-suite"
+  "obsidian-latex-suite",
+  "better-embedded-canvas",
+  "unicode-search"
 ]

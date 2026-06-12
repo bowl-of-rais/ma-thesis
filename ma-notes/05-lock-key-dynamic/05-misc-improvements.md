@@ -107,7 +107,7 @@ e.g. key types:
 should be capitalized
 -> figure out where this is best defined, maybe there is a way to add this centrally
 
-- [ ] use consistent display names in SelectMenus
+- [x] use consistent display names in SelectMenus ✅ 2026-05-12
 
 ## Improve Multi-Select
 
@@ -126,7 +126,14 @@ should be capitalized
 
 ## Check Emit Types
 
-- [ ] prevent ts error regarding emit payload types
+- [/] prevent ts error regarding emit payload types
+	- fixed in: PxChartSettings, PxLockEditForm
+
+```ts
+defineEmits<{
+	close: [returnName: returnType]
+}>()
+```
 
 ## Improve Edge Label Background
 
@@ -135,8 +142,6 @@ should be capitalized
 ## Add Cross-Links Wherever Possible
 
 - [ ] links to keys in unlockedBy
-
-
 
 ### WIP
 
@@ -169,4 +174,68 @@ should be capitalized
       }
     }
   }
+```
+
+```ts title="PxChartInfoModal"
+<script setup lang="ts">
+const items = [
+    /*
+  {
+    label: 'General',
+    icon: 'i-lucide-settings',
+    slot: 'general'
+  },*/
+  {
+    label: 'Paths',
+    icon: 'i-lucide-waypoints',
+    slot: 'pathfinding',
+  },
+]
+
+const colorLegend = ref([
+  {
+    state: 'Path',
+    color: 'primary',
+    description: 'Node is part of a path.'
+  },
+  {
+    state: 'No Path',
+    color: 'error',
+    description: 'No (unlocked) path could be found between the nodes.'
+  },
+  {
+    state: 'Path',
+    color: 'primary',
+    description: 'Node is part of a path.'
+  },
+  {
+    state: 'Path',
+    color: 'primary',
+    description: 'Node is part of a path.'
+  },
+  {
+    state: 'Path',
+    color: 'primary',
+    description: 'Node is part of a path.'
+  },
+])
+</script>
+
+<template>
+  <UModal :title="'PxChart Settings'">
+    <template #body>
+      <UTabs :items="items" class="gap-8 w-full">
+        <template #pathfinding>
+          Select two (or more) nodes to start path calculation.
+
+          Depending on your settings, nodes will be highlighted:
+
+
+        </template>
+      </UTabs>
+    </template>
+  </UModal>
+</template>
+
+<style scoped></style>
 ```

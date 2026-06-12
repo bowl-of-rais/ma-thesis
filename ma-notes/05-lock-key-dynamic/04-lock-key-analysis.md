@@ -33,7 +33,7 @@ milestone: 26-05
 
 - [x] improve key consumption logic: maintain variants of keysets ✅ 2026-04-27
 	- this results in soft-lock detection
-- [ ] highlight possible soft-locks
+- [x] highlight possible soft-locks ✅ 2026-05-12
 
 >[!example]
 >```mermaid

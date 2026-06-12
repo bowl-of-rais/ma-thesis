@@ -64,7 +64,7 @@ milestone: 26-03
 - [x] fix adding lock definition ✅ 2026-04-28
 	- fixed `soft_gate` name
 	- `unlocked_by` is actually required -> reflect in UI
-- [ ] fix lock visualization directly after adding lock ⏳ 2026-04-29 
+- [x] fix lock visualization directly after adding lock ⏳ 2026-04-29 ✅ 2026-05-12
 - [x] more expressive failure: info instead of error toast, but highlight start/end node in red? ✅ 2026-04-28
 - [x] add settings for path calculation 🛫 2026-04-29 ✅ 2026-05-10
 	- [x] make modal ✅ 2026-04-29
@@ -225,4 +225,105 @@ function canUnlock(keys: PxKey[], locks: PxLock[]) {
       ),
     )
   }
+```
+
+```ts title="PxLockCreationForm"
+<script setup lang="ts">
+const props = defineProps<{ selectedEdgeId: string; chartId: string }>()
+
+const {
+  createItem: createPxLock,
+  items: pxLocks,
+  fetchAll: fetchPxLocks,
+} = usePxLocks(props.chartId)
+const { items: pxDefinitions, fetchAll: fetchPxDefinitions } = usePxLockDefinitions()
+
+onMounted(() => {
+  fetchPxLocks()
+  fetchPxDefinitions()
+})
+
+const emit = defineEmits<{
+  close: (payload: { edgeId: string; pxlockId: string }) => void
+}>()
+
+const state = ref({
+  edgeRef: props.selectedEdgeId,
+  definitionRef: undefined,
+  count: undefined,
+})
+
+const availableDefinitionsForSelectedEdge = computed(() => {
+  return pxDefinitions.value.filter(
+    (definition) =>
+      pxLocks.value.filter(
+        (pxlock) => pxlock.edge === state.value.edgeRef && pxlock.definition === definition.id,
+      ).length === 0,
+  )
+})
+
+const selectedDefinition = computed(() => {
+  if (!availableDefinitionsForSelectedEdge.value) {
+    return undefined
+  }
+  return availableDefinitionsForSelectedEdge.value
+    .filter((def) => def.id === state.value.definitionRef)
+    .pop()
+})
+
+async function onSubmit() {
+  if (!selectedDefinition.value) return
+
+  if (state.value.count === undefined) return
+
+  const pxlockId = await createPxLock({
+    edge: state.value.edgeRef,
+    definition: state.value.definitionRef,
+    count: state.value.count,
+  })
+  emit('close', { edgeId: state.value.edgeRef, pxlockId })
+}
+</script>
+
+<template>
+  <UModal :title="'Add new Lock'">
+    <template #body>
+      <UForm :state="state" class="space-y-4" @submit="onSubmit">
+        <UFormField label="Definition Reference" name="definitionRef" class="max-w-96" required>
+          <div v-if="availableDefinitionsForSelectedEdge.length === 0">
+            The selected edge already has a pxlock for each definition available.
+          </div>
+          <USelect
+            v-else
+            v-model="state.definitionRef"
+            value-key="id"
+            label-key="name"
+            :items="availableDefinitionsForSelectedEdge"
+            class="w-full"
+            placeholder="Select Definition Reference"
+          />
+        </UFormField>
+
+        <UInputNumber v-model="state.count" placeholder="Count" :min="0" />
+
+        <UButton type="submit"> Submit </UButton>
+      </UForm>
+    </template>
+  </UModal>
+</template>
+
+<style scoped></style>
+
+```
+
+```ts title="PxLockEdgeLabel.vue"
+<script setup lang="ts">
+const props = defineProps<{ pxlock: PxLock; definition: PxLockDefinition }>()
+</script>
+<template>
+  <UButton :to="{ name: 'pxpxlocks-id', params: { id: props.pxlock.id } }">
+    <p class="font-semibold">{{ props.definition.name }}</p>
+  </UButton>
+</template>
+<style scoped></style>
 ```

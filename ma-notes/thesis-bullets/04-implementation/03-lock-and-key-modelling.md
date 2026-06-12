@@ -44,4 +44,6 @@ based on
 
 ### Visual Representation of Locks and Keys
 
-- TODO
+- principle based on [@brownHowMyBoss2026]: high-level charts that focus on lock/key relations
+
+- [ ] add more details about visualizing locks/keys?
