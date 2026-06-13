@@ -1,7 +1,7 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= Basic Path-Based Diagrams <basic_diagrams>
+= Path-Based Diagrams <basic_diagrams>
 
 - basic idea already present in PaceMaker: select path in statechart and visualize data along path
 - main design guideline: build upon high configurability already present in the system
