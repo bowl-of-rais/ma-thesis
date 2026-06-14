@@ -19,6 +19,9 @@ requirements/context:
 - multiple locks possible per node
 - pathfinding and reachability analysis
 
+== Definition and Taxononmy
+
+
 == Creating and Visualizing Locks and Keys
 
 
@@ -54,7 +57,7 @@ canUnlock(K, L):
 		return FALSE
 ```
 
-
+/*
 #pseudocode-list[
 + canUnlock(K, L):
 	+ if $L = emptyset$
@@ -67,17 +70,32 @@ canUnlock(K, L):
 	+ else
 		+ return FALSE
 ]
+*/
 
 ==== Example
 
-![[can-unlock-without-consume.canvas]]
+#pad(
+  rest: 10pt,
+  figure(
+    image("assets/04/can-unlock-without-consume.drawio.png", width: 50%),
+    caption: "Calculation of unlocking keysets",
+    gap: 2em
+  )
+)
 
 - $I = {X, Y}$ -> false
 - $I = X, Y, Z$ -> true
 
 ==== Full Algorithm
 
-![[basic-lock-key-pathfinding.canvas|800]]
+#pad(
+  rest: 10pt,
+  figure(
+    image("assets/04/lock-key-pathfinding-basic.drawio.png", width: 50%),
+    caption: "Calculation of unlocking keysets for key consumption",
+    gap: 2em
+  )
+)
 
 ==== Example Iteration
 
@@ -118,16 +136,16 @@ canUnlock(K, L):
 
 ==== Pathfinding with Consumable Keys
 
-===== Extending Unlocking Check
+*Extending Unlocking Check*
 
 given multiset of keys in inventory $K$ and locks on edge $L$:
 
-```pseudo title="Unlocking function"
+```
 canUnlock(K, L):
 	if L = ∅
 		return TRUE
 	
-	unlockingKeysets = required(l1) ⨉ ... ⨉ required(ln)
+	unlockingKeysets = required(l1) × ... × required(ln)
 	
 	if ∃ U ∈ unlockingKeysets where U ⊆ K:
 		return TRUE
@@ -137,22 +155,29 @@ canUnlock(K, L):
 
 - note: subset of multiset
 
-![[can-unlock-with-consume.canvas]]
+#pad(
+  rest: 10pt,
+  figure(
+    image("assets/04/can-unlock-with-consume.drawio.png", width: 50%),
+    caption: "Calculation of unlocking keysets",
+    gap: 2em
+  )
+)
+
 
 - now: $I = {X, Z}$ -> false
 
-===== Removing Consumable Keys from Inventory
+*Removing Consumable Keys from Inventory*
 
 given inventory $I$ containing multisets of keys $K$ and locks on edge $L$:
 
-```pseudo title="Removing consumed keys"
+```
 canUnlock(I, L):
 	if L = ∅
 		return TRUE
 		
-	consumableRequirements = locks with at least one consumable key unlocking
-	
-	unlockingKeysets = required(l1) ⨉ ... ⨉ required(ln)
+	consumableRequirements = locks with at least one consumable key unlocking	
+	unlockingKeysets = required(l1) × ... × required(ln)
 	
 	updatedInventory = {}
 	for K_i ∈ I:
@@ -173,25 +198,28 @@ canUnlock(I, L):
 
 - $I = \{X, X, Z\}$ -> $\{Z\}$
 
-===== Example
-
 - #todo("example in pixe for consumable keys")
 
 
 ==== Soft-Locks
 
-[@mawhorterSoftlockDetectionSuper2021]:
+#cite(<mawhorterSoftlockDetectionSuper2021>):
 >it is possible to reach the goal state from every reachable state
 
 - here: not nodes, but *states in which nodes are visited*
 
-![[soft-lock-example.canvas|200]]
+#pad(
+  rest: 10pt,
+  figure(
+    image("assets/04/soft-lock-example.drawio.png", width: 80%),
+    caption: "Calculation of unlocking keysets for key consumption",
+    gap: 2em
+  )
+)
 
 *implementation*:
 - potential soft-lock state: node unlockable with some, but not all keysets
 - when removing consumed keys: remove empty keysets entirely. then, compare inventory length before and after consumption
-
-===== Example
 
 - #todo("example in pixe for consumable keys")
 
@@ -209,11 +237,25 @@ canUnlock(I, L):
 	- add limiting constant for revisits
 	- also maintain unlocked edges
 
-![[backtracking.canvas]]
+#pad(
+  rest: 10pt,
+  figure(
+    image("assets/04/backtracking.drawio.png", width: 80%),
+    caption: "Calculation of unlocking keysets for key consumption",
+    gap: 2em
+  )
+)
 
 - critical path: $A - B - A - C$
 
-![[lock-key-pathfinding-backtracking.canvas|800]]
+#pad(
+  rest: 10pt,
+  figure(
+    image("assets/04/lock-key-pathfinding-backtracking.drawio.png", width: 50%),
+    caption: "Calculation of unlocking keysets for key consumption",
+    gap: 2em
+  )
+)
 
 === Example
 

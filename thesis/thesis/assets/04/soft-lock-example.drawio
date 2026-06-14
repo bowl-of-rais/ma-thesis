@@ -1,0 +1,35 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="ZD5XOnoFwJaS9lhgXarV">
+    <mxGraphModel dx="1294" dy="895" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wW9D3HRj2DZR-5gYMAUc-4" edge="1" parent="1" source="wW9D3HRj2DZR-5gYMAUc-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="wW9D3HRj2DZR-5gYMAUc-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wW9D3HRj2DZR-5gYMAUc-6" connectable="0" parent="wW9D3HRj2DZR-5gYMAUc-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="unlocked by&lt;br&gt;X or Y" vertex="1">
+          <mxGeometry relative="1" x="-0.0998" y="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wW9D3HRj2DZR-5gYMAUc-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="\(A\)" vertex="1">
+          <mxGeometry height="40" width="80" x="80" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="wW9D3HRj2DZR-5gYMAUc-5" edge="1" parent="1" source="wW9D3HRj2DZR-5gYMAUc-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="wW9D3HRj2DZR-5gYMAUc-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wW9D3HRj2DZR-5gYMAUc-7" connectable="0" parent="wW9D3HRj2DZR-5gYMAUc-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="unlocked by&lt;br&gt;Y" vertex="1">
+          <mxGeometry relative="1" x="-0.0627" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wW9D3HRj2DZR-5gYMAUc-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="\(B\)" vertex="1">
+          <mxGeometry height="40" width="80" x="281" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="wW9D3HRj2DZR-5gYMAUc-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="\(C\)" vertex="1">
+          <mxGeometry height="40" width="80" x="480" y="440" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
