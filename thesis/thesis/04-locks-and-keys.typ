@@ -19,11 +19,87 @@ requirements/context:
 - multiple locks possible per node
 - pathfinding and reachability analysis
 
-== Definition and Taxononmy
+== Definition
 
+#cite(<ashmoreQuestGeneratedWorld2007>):
+"The puzzle is finding out what is an obstacle, what and where is a key to overcome it, and finally using the key to master the challenge."
+
+- in statechart: conditional transition
+
+#cite(<ashmoreQuestGeneratedWorld2007>):
+"Obstacles may not be passed until the player obtains some token (such as an item or skill)""
+
+- keys as abstract tokens, different kinds to distinguish: keys/locks should have some category to specify this
+
+#cite(<dormansCyclicGeneration2017>):
+"Some locks are barriers that might be navigated without a key, but this crossing the barrier might be uncertain or impose a certain risk."
+
+#cite(<ashmoreQuestGeneratedWorld2007>) present lock/key puzzles as a type of quest
+- future work: model/analyze other types of quests (explicit, specific tasks, mission objectives)
+
+== Taxonomy
+
+#cite(<dormansCyclicGeneration2017>):
+"When you unlock a door, that door might remain unlocked forever (permanent), for a short period of time (temporary), or until it is relocked (reversible). Sometimes, a lock collapses after use, allowing the player only to pass once."
+
+-> locks: *permanent, temporary, reversible, collapsible*
+
+#cite(<dormansCyclicGeneration2017>):
+"Single-purpose keys can only be used to open a lock, and for nothing else, while multipurpose keys can also be used in different ways."
+
+-> keys: *single-purpose or multi-purpose*
+- attribute `type` on keys: `ability`, `item`
+
+#cite(<dormansCyclicGeneration2017>):
+"Particular keys are the only thing that unlocks a particular lock, whereas several nonparticular keys might unlock a single lock."
+
+-> keys: *particular or non-particular*
+- probably easier to understand when this is a property of a lock, i.e. key requirement
+
+#cite(<dormansCyclicGeneration2017>):
+"Keys that are destroyed somehow in the process of unlocking a door are consumable, while keys that are not are persistent."
+
+-> keys: *consumable or persistent*
+
+#cite(<dormansCyclicGeneration2017>):
+"Levers and switches are the best example of keys that are fixed in place (and typically single purpose and particular as well)."
+
+-> keys: *fixed or not*
+
+=== Not Modeled Currently
+
+#cite(<dormansCyclicGeneration2017>):
+"Certain locks allow you to cross only in one direction (valves), while others can only be opened from one direction but traversed in two directions after they are opened (asymmetrical). \[...\] Valves do not always require a key.""
+
+-> locks: *valve, asymmetrical*
+- locks are assigned to edges, so valves can already be modeled. only question: what if one unlock opens it for both directions?
+
+#cite(<dormansCyclicGeneration2017>):
+"A safe lock is guaranteed to have a solution, while an unsafe lock is not."
+
+=== Data Model Overview
+
+#todo("add diagram of data model")
 
 == Creating and Visualizing Locks and Keys
 
+#cite(<brownHowMyBoss2026>): high-level visual representation. only focuses on locks and keys and where they are in relation to each other
+
+to integrate into player experience chart: assign keys to nodes and locks to edges (to maintain clear structure)
+
+=== Modeling Keys
+
+- similar to PxComponents: definitions separate from instantiations in nodes
+- multiple instances of same definitions possible per node
+
+#todo("add screenshots of key definitions and assignments in UI + explain options")
+
+=== Modeling Locks
+
+- same split between definitions and instantiations
+- instantiations on edges: additional UI/modal
+
+#todo("add screenshots of lock definitions and assignments in UI + explain options")
 
 == Pathfinding with Locks and Keys
 
@@ -40,7 +116,7 @@ requirements/context:
 
 - `canUnlock()`: given (multi-)sets of locks and keys, determine whether locks can be unlocked
 	- added complexity due to an edge potentially having multiple locks, and each locks potentially being unlocked by multiple keys
-	- exponential blowup, but no optimization so far as average case is expected to be less complex // TODO citation
+	- exponential blowup, but no optimization so far as average case is expected to be less complex #todo("citation")
 
 given set of keys in inventory $K$ and locks on edge $L$:
 
@@ -48,9 +124,7 @@ given set of keys in inventory $K$ and locks on edge $L$:
 canUnlock(K, L):
 	if L = ∅
 		return TRUE
-	
 	unlockingKeysets = required(l1) × ... × required(ln)
-	
 	if ∃ U ∈ unlockingKeysets where ∀ u ∈ U. u ∈ K:
 		return TRUE
 	else
@@ -99,7 +173,7 @@ canUnlock(K, L):
 
 ==== Example Iteration
 
-- TODO add small example of iteration
+- #todo("add small example of iteration")
 
 === Fixed Keys
 
@@ -144,9 +218,7 @@ given multiset of keys in inventory $K$ and locks on edge $L$:
 canUnlock(K, L):
 	if L = ∅
 		return TRUE
-	
 	unlockingKeysets = required(l1) × ... × required(ln)
-	
 	if ∃ U ∈ unlockingKeysets where U ⊆ K:
 		return TRUE
 	else
@@ -175,15 +247,12 @@ given inventory $I$ containing multisets of keys $K$ and locks on edge $L$:
 canUnlock(I, L):
 	if L = ∅
 		return TRUE
-		
 	consumableRequirements = locks with at least one consumable key unlocking	
 	unlockingKeysets = required(l1) × ... × required(ln)
-	
 	updatedInventory = {}
 	for K_i ∈ I:
 		if ∃ U ∈ unlockingKeysets with K_i ⊆ U:
-			updatedInventory.push(K_i - { key∈U. consumable(key)})
-			
+			updatedInventory.push(K_i - { key∈U. consumable(key)})	
 	return updatedIinventory
 ```
 
@@ -203,10 +272,11 @@ canUnlock(I, L):
 
 ==== Soft-Locks
 
+definition:
+"it is possible to reach the goal state from every reachable state"
 #cite(<mawhorterSoftlockDetectionSuper2021>):
->it is possible to reach the goal state from every reachable state
 
-- here: not nodes, but *states in which nodes are visited*
+- here: not nodes, but _states_ in which nodes are visited
 
 #pad(
   rest: 10pt,
@@ -269,13 +339,17 @@ canUnlock(I, L):
 
 - #todo("describe pathfinding options")
 
+== Code Architexture
+
+#todo("add diagram for code architecture?")
+
 == Testing
 
 - #todo("describe")
 
 == Limitations and Future Workflow
 
-- difficulty estimation // TODO citation-needed
+- difficulty estimation #todo("add citation")
 - recommendations for lock/key types #cite(<dormansCyclicGeneration2017>)
 - LLM-based consistency check with descriptions
 

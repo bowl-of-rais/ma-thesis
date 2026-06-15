@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="ZD5XOnoFwJaS9lhgXarV">
-    <mxGraphModel dx="511" dy="980" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+    <mxGraphModel dx="588" dy="1127" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12,17 +12,29 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="BJ-tKim8hU4mZnXyoshS-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;perimeterSpacing=0;" value="START" vertex="1">
-          <mxGeometry height="40" width="80" x="80" y="240" as="geometry" />
+        <mxCell id="BJ-tKim8hU4mZnXyoshS-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;perimeterSpacing=0;" value="\(A\)" vertex="1">
+          <mxGeometry height="40" width="80" x="160" y="240" as="geometry" />
         </mxCell>
-        <mxCell id="BJ-tKim8hU4mZnXyoshS-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="GOAL" vertex="1">
-          <mxGeometry height="40" width="80" x="340" y="240" as="geometry" />
+        <mxCell id="BJ-tKim8hU4mZnXyoshS-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="\(C\)" vertex="1">
+          <mxGeometry height="40" width="80" x="400" y="240" as="geometry" />
         </mxCell>
         <mxCell id="Nvmq5F3VZafhhvdtT3rn-3" edge="1" parent="1" source="BJ-tKim8hU4mZnXyoshS-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" target="BJ-tKim8hU4mZnXyoshS-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="BJ-tKim8hU4mZnXyoshS-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="node containing key \(X\)" vertex="1">
-          <mxGeometry height="40" width="160" x="40" y="160" as="geometry" />
+        <mxCell id="BJ-tKim8hU4mZnXyoshS-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="\(B\) containing key \(X\)" vertex="1">
+          <mxGeometry height="40" width="160" x="120" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="UVC39QpAZnGQbHE0l50s-1" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="BJ-tKim8hU4mZnXyoshS-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="80" y="260" as="sourcePoint" />
+            <mxPoint x="410" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UVC39QpAZnGQbHE0l50s-2" edge="1" parent="1" source="BJ-tKim8hU4mZnXyoshS-5" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="660" y="530" as="sourcePoint" />
+            <mxPoint x="560" y="260" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
