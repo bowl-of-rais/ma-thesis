@@ -19,17 +19,10 @@ const runmigration = process.platform === 'win32'
 runCommand(runmigration, { cwd: backendDir, shell: true });
 ```
 
-```sh
-[0] 
-[0] > pix-e-root@0.0.0 start-backend
-[0] > cd backend && (.venv\Scripts\python.exe manage.py runserver || ./.venv/bin/python manage.py runserver)
-[0] 
-[1] 
-[1] > pix-e-root@0.0.0 start-frontend
-[1] > cd frontend && npm run dev
-[1] 
-[0] sh: 1: .venvScriptspython.exe: not found
-[1] 
-```
 
-- [ ] debug installation
+```sh
+sudo docker compose up -d
+sudo docker compose stop backend-dev
+sudo docker compose cp ../backend/db.sqlite3 backend-dev:/app/data/db.sqlite3
+sudo docker compose start backend-dev
+```

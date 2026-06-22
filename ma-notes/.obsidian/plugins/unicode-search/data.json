@@ -78958,21 +78958,27 @@
     "version": "0.7.0",
     "codepoints": [
       {
-        "firstUsed": "2026-06-12T15:19:57.898Z",
-        "lastUsed": "2026-06-12T15:19:57.898Z",
+        "firstUsed": "2026-06-13T12:04:39.655Z",
+        "lastUsed": "2026-06-13T12:04:39.655Z",
         "useCount": 1,
+        "codepoint": "∀"
+      },
+      {
+        "firstUsed": "2026-06-12T15:19:57.898Z",
+        "lastUsed": "2026-06-13T12:19:29.271Z",
+        "useCount": 3,
         "codepoint": "⊆"
       },
       {
         "firstUsed": "2026-06-12T15:18:55.205Z",
-        "lastUsed": "2026-06-12T15:18:55.205Z",
-        "useCount": 1,
+        "lastUsed": "2026-06-13T12:22:24.542Z",
+        "useCount": 6,
         "codepoint": "∈"
       },
       {
         "firstUsed": "2026-06-12T15:18:32.752Z",
-        "lastUsed": "2026-06-12T15:18:32.752Z",
-        "useCount": 1,
+        "lastUsed": "2026-06-13T12:19:40.290Z",
+        "useCount": 2,
         "codepoint": "∃"
       },
       {

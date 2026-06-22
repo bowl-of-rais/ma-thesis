@@ -1,0 +1,10 @@
+{
+	"id": "canvas-svg-export",
+	"name": "Canvas SVG Export",
+	"version": "0.1.0",
+	"minAppVersion": "1.8.7",
+	"authorUrl": "https://hesprs.github.io",
+	"description": "Export canvases to clean SVG images.",
+	"author": "Hēsperus",
+	"isDesktopOnly": false
+}

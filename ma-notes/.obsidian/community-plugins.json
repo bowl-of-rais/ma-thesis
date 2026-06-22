@@ -13,5 +13,6 @@
   "keyword-highlighter",
   "obsidian-latex-suite",
   "better-embedded-canvas",
-  "unicode-search"
+  "unicode-search",
+  "canvas-svg-export"
 ]

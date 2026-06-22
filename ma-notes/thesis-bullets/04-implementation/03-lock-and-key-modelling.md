@@ -47,3 +47,5 @@ based on
 - principle based on [@brownHowMyBoss2026]: high-level charts that focus on lock/key relations
 
 - [ ] add more details about visualizing locks/keys?
+
+- TODO example screenshots
