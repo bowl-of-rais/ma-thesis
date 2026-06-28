@@ -153,6 +153,14 @@ breakdown:
 
 ### Diagrams Tasks
 
+#### Data
+
+- either construct examples myself
+- or:
+	- Detroit Become Human
+	- Return to Monkey Island
+	- The Stanley Parable
+
 #### Topics
 
 - difficulty course/learning curve
@@ -225,3 +233,7 @@ breakdown:
 potential extensions:
 - stacked bar chart for strings components
 - visualization of keys in diagrams
+
+---
+
+
