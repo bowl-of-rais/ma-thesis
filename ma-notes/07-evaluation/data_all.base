@@ -1,0 +1,24 @@
+views:
+  - type: table
+    name: Table
+    filters:
+      and:
+        - file.inFolder("07-evaluation/user-study-data")
+    order:
+      - file.name
+      - date
+      - group
+      - p_answered_miro
+      - p_answered_pizie
+      - p_answered_correct_miro
+      - p_answered_correct_pixie
+      - p_id
+    sort:
+      - property: user_id
+        direction: ASC
+      - property: user-id
+        direction: DESC
+      - property: issues_correct_pixie
+        direction: ASC
+    columnSize:
+      note.p_answered_miro: 149
