@@ -1,0 +1,10 @@
+participant,p_id,date,group,s_issues_miro,s_issues_pixie,s_issues_correct_miro,s_issues_correct_pixie,p_answered_miro,p_answered_pixie,p_answered_correct_miro,p_answered_correct_pixie
+p7,MB24145,2026-06-30,BM,3,2,,,1,4,,
+p1,MA12534,2026-06-29,AM,3,0,,,2,3,,
+p8,PB34703,2026-06-30,BP,,,,,,,,
+p3,MB67500,2026-06-29,BM,6,3,,,4,5,,
+p2,PA40344,2026-06-29,AP,5,3,,,6,6,,
+p4,PB54700,2026-06-30,BP,3,2,,,2,1,,
+p6,PA45003,2026-06-30,AP,2,1,,,3,4,,
+p5,MA7125,2026-06-30,AM,2,3,,,2,3,,
+p9,MA95935,2026-06-30,AM,,,,,,,,
