@@ -30,12 +30,12 @@
 
 ## Note Tagging
 
-- OBS: observation from me
+- OBS: observation by me
 - CMT: comment from participant, but not an answer
 - QNA: answer to question
 - QNR: reasoning for question answer
-- QnT: thought about question
-- QnC: comment to question
+- QNT: thought about question
+- QNC: comment to question
 - ISS: issue identified
 - ISR: issue reasoning
 - ISF: issue fixed
@@ -46,6 +46,7 @@
 - GOB: general observation
 - END: end
 - STA: start
+- COR: correction
 
 ---
 
