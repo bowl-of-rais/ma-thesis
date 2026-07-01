@@ -1,0 +1,9 @@
+timestamp,tag,note
+01:27:30,STA,
+01:27:44,OBS,pathfinding start-room after boss
+01:28:08,vb ,ath blocked to boss
+01:28:45,OBS,successive pathfinding
+01:28:56,vb ,oftlock 14
+01:30:36,che,k locks on edges 19-12
+01:30:46,fou,d boss lock
+01:32:29,END,timer
