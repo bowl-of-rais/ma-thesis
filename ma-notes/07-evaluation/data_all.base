@@ -6,13 +6,14 @@ views:
         - file.inFolder("07-evaluation/user-study-data")
     order:
       - file.name
+      - p_id
       - date
       - group
       - p_answered_miro
-      - p_answered_pizie
-      - p_answered_correct_miro
-      - p_answered_correct_pixie
-      - p_id
+      - p_answered_pixie
+      - s_issues_miro
+      - s_issues_pixie
+      - participant
     sort:
       - property: user_id
         direction: ASC
