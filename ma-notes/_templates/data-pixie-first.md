@@ -1,48 +1,45 @@
 
 
-#### Solvability
-
-##### StatePx
+#### solvability_pixie
 
 map: 
 
-start:
+ STA
 
 
 
-end:
+ END
 
-##### Miro
-
-map: 
-
-start:
-
-
-
-end:
-
-
-#### Pacing Analysis
-##### StatePx
+#### solvability_miro
 
 map: 
 
-start:
+ STA
 
 
 
-end:
+ END
 
-##### Miro
+
+#### pacing_pixie
 
 map: 
 
-start:
+ STA
 
 
 
-end:
+ END
+
+#### pacing_miro
+
+map: 
+
+ STA
+
+
+
+ END
 
 #### General Feedback
 

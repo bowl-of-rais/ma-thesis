@@ -1,7 +1,7 @@
 ---
-participant: 
-group: 
-date: 
+participant:
+group:
+date:
 s_issues_miro:
 s_issues_pixie:
 s_issues_correct_miro:
@@ -10,4 +10,5 @@ p_answered_miro:
 p_answered_pixie:
 p_answered_correct_miro:
 p_answered_correct_pixie:
+p_id:
 ---
