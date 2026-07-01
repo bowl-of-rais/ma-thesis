@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB50964,BM,solvability_miro,LA_4,11:27:45,STA,,0
+MB50964,BM,solvability_miro,LA_4,11:27:47,CLR,can use pen etc in miro,2
+MB50964,BM,solvability_miro,LA_4,11:29:06,ISS,"can get to 11, but not out again -> hardlock",81
+MB50964,BM,solvability_miro,LA_4,11:29:53,ISS,softlock 26 to 27 if using key from 4 to 6,128
+MB50964,BM,solvability_miro,LA_4,11:30:52,OBS,does not use additional notes in miro,187
+MB50964,BM,solvability_miro,LA_4,11:31:22,COR,25-28- 18- 26 softlock? -> self-correction: no,217
+MB50964,BM,solvability_miro,LA_4,11:32:50,END,timer,305

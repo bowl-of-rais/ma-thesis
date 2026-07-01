@@ -1,0 +1,17 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA81918,AP,pacing_pixie,LA_1,10:48:22,STA,,0
+PA81918,AP,pacing_pixie,LA_1,10:49:11,pat,finding START - A,49
+PA81918,AP,pacing_pixie,LA_1,10:49:22,CMT,total in each room,60
+PA81918,AP,pacing_pixie,LA_1,10:49:29,CMT,y axis not at 0,67
+PA81918,AP,pacing_pixie,LA_1,10:49:41,Q1R,11 in A,79
+PA81918,AP,pacing_pixie,LA_1,10:50:20,OBS,pathfinding start - B,118
+PA81918,AP,pacing_pixie,LA_1,10:50:39,OBS,sum of enemies per section,137
+PA81918,AP,pacing_pixie,LA_1,10:51:08,Q1A,"enemy numbers are not increasing, rather decreasing",166
+PA81918,AP,pacing_pixie,LA_1,10:51:50,OBS,pathfinding start - B,208
+PA81918,AP,pacing_pixie,LA_1,10:52:02,Q2A,takes longer to beat A,220
+PA81918,AP,pacing_pixie,LA_1,10:52:15,Q2R,compares curves for sections),233
+PA81918,AP,pacing_pixie,LA_1,10:52:19,Q3A,"no, see reasoning from earlier",237
+PA81918,AP,pacing_pixie,LA_1,10:52:46,Q4A,room 11 for miniboss,264
+PA81918,AP,pacing_pixie,LA_1,10:52:57,Q4R,takes 20 seconds,275
+PA81918,AP,pacing_pixie,LA_1,10:53:07,CMT,expected miniboss for key,285
+PA81918,AP,pacing_pixie,LA_1,10:53:27,END,timer,305

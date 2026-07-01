@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA7125,AM,pacing_miro,LA_1,11:40:30,CLR,combined rooms and valid paths,0
+MA7125,AM,pacing_miro,LA_1,11:41:01,CMT,hard to keep track of keys,31
+MA7125,AM,pacing_miro,LA_1,11:41:16,Q1A,number not increasing,46
+MA7125,AM,pacing_miro,LA_1,11:42:19,CLR,enemies respawn,109
+MA7125,AM,pacing_miro,LA_1,11:42:46,Q2A,avg shorter A than B (7/10 vs 2x2),136
+MA7125,AM,pacing_miro,LA_1,11:43:40,Q3A,more enemies in C than B,190
+MA7125,AM,pacing_miro,LA_1,11:43:52,Q4A,miniboss in 11,202
+MA7125,AM,pacing_miro,LA_1,11:44:17,CLR,number of enemies meant in Q5 -> added note to instructions,227

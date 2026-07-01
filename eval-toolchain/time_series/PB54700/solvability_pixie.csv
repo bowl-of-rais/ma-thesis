@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB54700,BP,solvability_pixie,LA_4,10:23:53,CMT,boss not reachable,0
+PB54700,BP,solvability_pixie,LA_4,10:25:37,ISS,can't get to boss key (ability lock),104
+PB54700,BP,solvability_pixie,LA_4,10:26:38,OBS,more trying out different paths than looking at edge highlighting -> could maybe be clearer?,165
+PB54700,BP,solvability_pixie,LA_4,10:27:11,ISS,can't get to 12 from 6 bc simple key missing,198
+PB54700,BP,solvability_pixie,LA_4,10:27:54,ISF,added simple key,241
+PB54700,BP,solvability_pixie,LA_4,10:28:25,ISF,made edge to 26 bidirectional,272
+PB54700,BP,solvability_pixie,LA_4,10:28:42,OBS,path to boss possible,289

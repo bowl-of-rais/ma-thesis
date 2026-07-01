@@ -1,0 +1,5 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA45003,AP,solvability_miro,LA_4,12:30:25,STA,,0
+PA45003,AP,solvability_miro,LA_4,12:32:41,ISS,"27 not reachable: 3 simple keys needed, only 1 available",136
+PA45003,AP,solvability_miro,LA_4,12:34:57,NMI,no more issues after 27,272
+PA45003,AP,solvability_miro,LA_4,12:35:21,END,participant,296

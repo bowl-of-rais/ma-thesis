@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB67500,BM,pacing_miro,LA_2,15:35:45,STA,,0
+MB67500,BM,pacing_miro,LA_2,15:36:37,cla,ification: valid path?,52
+MB67500,BM,pacing_miro,LA_2,15:38:03,CMT,44 vs 38,138
+MB67500,BM,pacing_miro,LA_2,15:38:52,Q1A," 44 total, 15 rooms -> 4s",187
+MB67500,BM,pacing_miro,LA_2,15:39:08,OBS,counting B - C,203
+MB67500,BM,pacing_miro,LA_2,15:39:55,sec,ion A faster on average,250
+MB67500,BM,pacing_miro,LA_2,15:40:25,inc,"eases: 16-18, 21-2 to 21-3",280
+MB67500,BM,pacing_miro,LA_2,15:40:45,rem,"rk: need boss key, but same result",300
+MB67500,BM,pacing_miro,LA_2,15:41:07,Q4A,miniboss ~~21-3~~ 15,322
+MB67500,BM,pacing_miro,LA_2,15:41:00,END,timer,315

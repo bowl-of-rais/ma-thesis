@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA95935,AM,solvability_pixie,LA_4,16:32:09,STA,,0
+MA95935,AM,solvability_pixie,LA_4,16:32:21,OBS,path start - boss,12
+MA95935,AM,solvability_pixie,LA_4,16:32:52,CLR,locked edges,43
+MA95935,AM,solvability_pixie,LA_4,16:33:52,CMT,boss unreachable,103
+MA95935,AM,solvability_pixie,LA_4,16:34:52,OBS,multi-select on and off?,163
+MA95935,AM,solvability_pixie,LA_4,16:35:36,OBS,checked boss edge,207
+MA95935,AM,solvability_pixie,LA_4,16:35:45,OBS,found boss key,216
+MA95935,AM,solvability_pixie,LA_4,16:35:50,CMT,can't reach boss key,221
+MA95935,AM,solvability_pixie,LA_4,16:36:36,CMT,ability unreachable,267
+MA95935,AM,solvability_pixie,LA_4,16:37:18,END,timer,309

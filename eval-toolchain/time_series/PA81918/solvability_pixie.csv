@@ -1,0 +1,14 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA81918,AP,solvability_pixie,LA_3,10:34:33,STA,,0
+PA81918,AP,solvability_pixie,LA_3,10:35:07,CMT,found boss,34
+PA81918,AP,solvability_pixie,LA_3,10:35:12,pat,finding start - boss,39
+PA81918,AP,solvability_pixie,LA_3,10:35:29,sto, (highlighting),56
+PA81918,AP,solvability_pixie,LA_3,10:35:57,con,inue,84
+PA81918,AP,solvability_pixie,LA_3,10:36:10,ISS,hardlock in 6,97
+PA81918,AP,solvability_pixie,LA_3,10:36:57,OBS,used shift instead of control,144
+PA81918,AP,solvability_pixie,LA_3,10:37:21,OBS,checks lock 1 - 3,168
+PA81918,AP,solvability_pixie,LA_3,10:37:48,ISS,room 2 not reachable unless ability somewhere,195
+PA81918,AP,solvability_pixie,LA_3,10:38:50,ISS,"could go start - 10 - 4: no ability lock, no path back (w/o hl)",257
+PA81918,AP,solvability_pixie,LA_3,10:40:09,OBS,found ability,336
+PA81918,AP,solvability_pixie,LA_3,10:40:15,OBS,found boss key,342
+PA81918,AP,solvability_pixie,LA_3,10:40:35,END,timer,362

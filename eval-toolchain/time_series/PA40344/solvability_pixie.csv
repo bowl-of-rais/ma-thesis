@@ -1,9 +1,9 @@
-timestamp,tag,note
-01:27:30,STA,
-01:27:44,OBS,pathfinding start-room after boss
-01:28:08,vb ,ath blocked to boss
-01:28:45,OBS,successive pathfinding
-01:28:56,vb ,oftlock 14
-01:30:36,che,k locks on edges 19-12
-01:30:46,fou,d boss lock
-01:32:29,END,timer
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA40344,AP,solvability_pixie,LA_3,01:27:30,STA,,0
+PA40344,AP,solvability_pixie,LA_3,01:27:44,OBS,pathfinding start-room after boss,14
+PA40344,AP,solvability_pixie,LA_3,01:28:08,vb ,ath blocked to boss,38
+PA40344,AP,solvability_pixie,LA_3,01:28:45,OBS,successive pathfinding,75
+PA40344,AP,solvability_pixie,LA_3,01:28:56,vb ,oftlock 14,86
+PA40344,AP,solvability_pixie,LA_3,01:30:36,che,k locks on edges 19-12,186
+PA40344,AP,solvability_pixie,LA_3,01:30:46,fou,d boss lock,196
+PA40344,AP,solvability_pixie,LA_3,01:32:29,END,timer,299

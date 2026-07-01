@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB67500,BM,solvability_miro,LA_4,15:22:21,STA,,0
+MB67500,BM,solvability_miro,LA_4,15:22:45,ISS,can't get to 12,24
+MB67500,BM,solvability_miro,LA_4,15:22:51,ISS,cant get to 11 without new ability,30
+MB67500,BM,solvability_miro,LA_4,15:23:08,ISS,can't get to 39,47
+MB67500,BM,solvability_miro,LA_4,15:23:42,ISS,missing key 26-27,81
+MB67500,BM,solvability_miro,LA_4,15:25:05,ISS,16-37 blocked bc no bombs,164
+MB67500,BM,solvability_miro,LA_4,15:25:46,ISS,can't get to area 28 bc one-directional edge,205
+MB67500,BM,solvability_miro,LA_4,15:26:07,END,participant,226

@@ -1,0 +1,4 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA7125,AM,solvability_miro,LA_3,11:25:20,OBS,draws path,0
+MA7125,AM,solvability_miro,LA_3,11:27:20,ISS,cannot got further than marked path,120
+MA7125,AM,solvability_miro,LA_3,11:27:49,ISS,one-directional path 12-15,149

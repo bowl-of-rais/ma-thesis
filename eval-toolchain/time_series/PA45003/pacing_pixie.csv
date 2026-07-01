@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA45003,AP,pacing_pixie,LA_1,12:37:33,STA,,0
+PA45003,AP,pacing_pixie,LA_1,12:38:12,OBS,path START - A,39
+PA45003,AP,pacing_pixie,LA_1,12:37:57,Q1A,"no, not steadily increasing",24
+PA45003,AP,pacing_pixie,LA_1,12:40:11,Q2A,yes,158
+PA45003,AP,pacing_pixie,LA_1,12:40:21,Q2R,identified rooms that differ in diagram,168
+PA45003,AP,pacing_pixie,LA_1,12:41:33,Q3A,yes,240
+PA45003,AP,pacing_pixie,LA_1,12:42:14,Q4A,11,281
+PA45003,AP,pacing_pixie,LA_1,12:42:47,END,timer,314

@@ -1,3 +1,3 @@
-timestamp,tag,note
-01:34:13,STA,
-01:39:19,END,timer
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA40344,AP,solvability_miro,LA_4,01:34:13,STA,,0
+PA40344,AP,solvability_miro,LA_4,01:39:19,END,timer,306

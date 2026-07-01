@@ -1,0 +1,13 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB34703,BP,solvability_pixie,LA_4,15:22:59,STA,,0
+PB34703,BP,solvability_pixie,LA_4,15:23:17,OBS,tried double clicking to open lock menu,18
+PB34703,BP,solvability_pixie,LA_4,15:23:58,ISS,hard lock in 11,59
+PB34703,BP,solvability_pixie,LA_4,15:24:39,ISS,soft lock in 7 (no highlight),100
+PB34703,BP,solvability_pixie,LA_4,15:25:05,ISS,soft lock in 37 (no highlight),126
+PB34703,BP,solvability_pixie,LA_4,15:25:40,OBS,path start-boss,161
+PB34703,BP,solvability_pixie,LA_4,15:26:42,OBS,path start - room before boss successively,223
+PB34703,BP,solvability_pixie,LA_4,15:27:12,OBS,path - left,253
+PB34703,BP,solvability_pixie,LA_4,15:27:32,OBS,start - 32,273
+PB34703,BP,solvability_pixie,LA_4,15:27:39,CMT,unsolvable bc 6-12,280
+PB34703,BP,solvability_pixie,LA_4,15:27:54,ISS,edge locked 6 - 12,295
+PB34703,BP,solvability_pixie,LA_4,15:28:10,END,timer,311

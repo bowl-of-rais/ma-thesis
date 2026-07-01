@@ -1,0 +1,379 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA40344,AP,solvability_pixie,LA_3,01:27:30,STA,,0
+PA40344,AP,solvability_pixie,LA_3,01:27:44,OBS,pathfinding start-room after boss,14
+PA40344,AP,solvability_pixie,LA_3,01:28:08,vb ,ath blocked to boss,38
+PA40344,AP,solvability_pixie,LA_3,01:28:45,OBS,successive pathfinding,75
+PA40344,AP,solvability_pixie,LA_3,01:28:56,vb ,oftlock 14,86
+PA40344,AP,solvability_pixie,LA_3,01:30:36,che,k locks on edges 19-12,186
+PA40344,AP,solvability_pixie,LA_3,01:30:46,fou,d boss lock,196
+PA40344,AP,solvability_pixie,LA_3,01:32:29,END,timer,299
+PA40344,AP,solvability_miro,LA_4,01:34:13,STA,,0
+PA40344,AP,solvability_miro,LA_4,01:39:19,END,timer,306
+PA40344,AP,pacing_pixie,LA_1,01:43:11,STA,,0
+PA40344,AP,pacing_pixie,LA_1,01:43:52,Q1A,q1 not steadily increasing,41
+PA40344,AP,pacing_pixie,LA_1,01:45:10,Q2A,b shorter than a,119
+PA40344,AP,pacing_pixie,LA_1,01:45:36,Q3A,more enemies in b than c,145
+PA40344,AP,pacing_pixie,LA_1,01:46:51,Q4A,miniboss 18 or 7,220
+PA40344,AP,pacing_pixie,LA_1,01:47:17,Q5A,9-3 to 5 sharpest increase,246
+PA40344,AP,pacing_pixie,LA_1,01:48:00,Q6A,9-3 fewer enemies/lower completion time after intense encounter,289
+PA40344,AP,pacing_pixie,LA_1,01:48:24,END,timer,313
+PA40344,AP,pacing_miro,LA_2,01:48:59,STA,,0
+PA40344,AP,pacing_miro,LA_2,01:50:18,Q1A,number of enemies does not steadily increase,79
+PA40344,AP,pacing_miro,LA_2,01:51:13,Q2A,b shorter than section a,134
+PA40344,AP,pacing_miro,LA_2,01:51:38,Q3A,b more enemies than c,159
+PA40344,AP,pacing_miro,LA_2,01:51:59,Q4A,miniboss 15,180
+PA40344,AP,pacing_miro,LA_2,01:52:18,Q5A,21-1 to 21-3 sharpest increase,199
+PA40344,AP,pacing_miro,LA_2,01:53:23,Q6A,room 16 after intense encounter,264
+PA40344,AP,pacing_miro,LA_2,01:53:38,END,participant,279
+MA7125,AM,solvability_pixie,LA_4,11:31:05,OBS,pathfinding start-boss,0
+MA7125,AM,solvability_pixie,LA_4,11:31:09,CMT,no path between start and boss,4
+MA7125,AM,solvability_pixie,LA_4,11:31:44,CMT,unsure where it fails,39
+MA7125,AM,solvability_pixie,LA_4,11:31:52,OBS,tries different paths from start,47
+MA7125,AM,solvability_pixie,LA_4,11:32:16,ISS,missing key between 31 and Boss,71
+MA7125,AM,solvability_pixie,LA_4,11:33:16,ISS,12 not reachable,131
+MA7125,AM,solvability_pixie,LA_4,11:34:18,CMT,"could put boss key directly in previous node, but game design wise it would be better to hide it elsewhere",193
+MA7125,AM,solvability_pixie,LA_4,11:35:21,OBS,"added keys to nodes on the right (2x simple in 11, 6)",256
+MA7125,AM,solvability_pixie,LA_4,11:36:42,ISS,one-directional path 12-11,337
+MA7125,AM,solvability_miro,LA_3,11:25:20,OBS,draws path,0
+MA7125,AM,solvability_miro,LA_3,11:27:20,ISS,cannot got further than marked path,120
+MA7125,AM,solvability_miro,LA_3,11:27:49,ISS,one-directional path 12-15,149
+MA7125,AM,pacing_pixie,LA_2,11:46:26,CMT,bigger node titles would be nice,0
+MA7125,AM,pacing_pixie,LA_2,11:47:08,CMT,sum of values would be nice,42
+MA7125,AM,pacing_pixie,LA_2,11:47:46,CMT,baseline in diagrams not at zero,80
+MA7125,AM,pacing_pixie,LA_2,11:47:53,Q1A,number is increasing except boss,87
+MA7125,AM,pacing_pixie,LA_2,11:48:54,CMT,path from A to B needs keys from STArt to A,148
+MA7125,AM,pacing_pixie,LA_2,11:49:08,OBS,multi-select Start - A - B,162
+MA7125,AM,pacing_pixie,LA_2,11:49:15,Q2R,section B ,169
+MA7125,AM,pacing_pixie,LA_2,11:49:58,Q2A,section A slightly lower than B,212
+MA7125,AM,pacing_pixie,LA_2,11:51:02,Q3A,more enemies in C than B,276
+MA7125,AM,pacing_miro,LA_1,11:40:30,CLR,combined rooms and valid paths,0
+MA7125,AM,pacing_miro,LA_1,11:41:01,CMT,hard to keep track of keys,31
+MA7125,AM,pacing_miro,LA_1,11:41:16,Q1A,number not increasing,46
+MA7125,AM,pacing_miro,LA_1,11:42:19,CLR,enemies respawn,109
+MA7125,AM,pacing_miro,LA_1,11:42:46,Q2A,avg shorter A than B (7/10 vs 2x2),136
+MA7125,AM,pacing_miro,LA_1,11:43:40,Q3A,more enemies in C than B,190
+MA7125,AM,pacing_miro,LA_1,11:43:52,Q4A,miniboss in 11,202
+MA7125,AM,pacing_miro,LA_1,11:44:17,CLR,number of enemies meant in Q5 -> added note to instructions,227
+PA45003,AP,solvability_pixie,LA_3,12:22:25,STA,,0
+PA45003,AP,solvability_pixie,LA_3,12:22:51,OBS,path to boss,26
+PA45003,AP,solvability_pixie,LA_3,12:24:26,OBS,sub-paths in start area (around 9),121
+PA45003,AP,solvability_pixie,LA_3,12:25:04,CMT,not sure why 21-19 is red,159
+PA45003,AP,solvability_pixie,LA_3,12:26:10,CLR,issues after locked edges may not be found,225
+PA45003,AP,solvability_pixie,LA_3,12:26:47,CMT,not sure how edge is reached,262
+PA45003,AP,solvability_pixie,LA_3,12:26:58,OBS,path start - boss,273
+PA45003,AP,solvability_pixie,LA_3,12:27:03,ISS,21-19 not unlockable bc simple key is missing,278
+PA45003,AP,solvability_pixie,LA_3,12:28:32,CMT,not trivial to see where non-existent path might go,367
+PA45003,AP,solvability_pixie,LA_3,12:29:12,END,timer,407
+PA45003,AP,solvability_miro,LA_4,12:30:25,STA,,0
+PA45003,AP,solvability_miro,LA_4,12:32:41,ISS,"27 not reachable: 3 simple keys needed, only 1 available",136
+PA45003,AP,solvability_miro,LA_4,12:34:57,NMI,no more issues after 27,272
+PA45003,AP,solvability_miro,LA_4,12:35:21,END,participant,296
+PA45003,AP,pacing_pixie,LA_1,12:37:33,STA,,0
+PA45003,AP,pacing_pixie,LA_1,12:38:12,OBS,path START - A,39
+PA45003,AP,pacing_pixie,LA_1,12:37:57,Q1A,"no, not steadily increasing",24
+PA45003,AP,pacing_pixie,LA_1,12:40:11,Q2A,yes,158
+PA45003,AP,pacing_pixie,LA_1,12:40:21,Q2R,identified rooms that differ in diagram,168
+PA45003,AP,pacing_pixie,LA_1,12:41:33,Q3A,yes,240
+PA45003,AP,pacing_pixie,LA_1,12:42:14,Q4A,11,281
+PA45003,AP,pacing_pixie,LA_1,12:42:47,END,timer,314
+PA45003,AP,pacing_miro,LA_2,12:44:03,STA,,0
+PA45003,AP,pacing_miro,LA_2,12:44:41,Q1A,no,38
+PA45003,AP,pacing_miro,LA_2,12:44:45,Q1R,3 or 5 -> 2  on the way to A,42
+PA45003,AP,pacing_miro,LA_2,12:47:28,Q2R,,205
+PA45003,AP,pacing_miro,LA_2,12:47:54,Q2A,"no, B takes longer on average",231
+PA45003,AP,pacing_miro,LA_2,12:48:24,Q2R,"rooms with 12, 4 s, other path has rooms with smaller completion times",261
+PA45003,AP,pacing_miro,LA_2,12:48:50,CMT,hard to tell without calculating,287
+PA45003,AP,pacing_miro,LA_2,12:48:56,Q3R,"C has 8 enemies, B has 5",293
+PA45003,AP,pacing_miro,LA_2,12:49:03,Q3A,more enemies in section C,300
+PB54700,BP,solvability_pixie,LA_4,10:23:53,CMT,boss not reachable,0
+PB54700,BP,solvability_pixie,LA_4,10:25:37,ISS,can't get to boss key (ability lock),104
+PB54700,BP,solvability_pixie,LA_4,10:26:38,OBS,more trying out different paths than looking at edge highlighting -> could maybe be clearer?,165
+PB54700,BP,solvability_pixie,LA_4,10:27:11,ISS,can't get to 12 from 6 bc simple key missing,198
+PB54700,BP,solvability_pixie,LA_4,10:27:54,ISF,added simple key,241
+PB54700,BP,solvability_pixie,LA_4,10:28:25,ISF,made edge to 26 bidirectional,272
+PB54700,BP,solvability_pixie,LA_4,10:28:42,OBS,path to boss possible,289
+PB54700,BP,solvability_miro,LA_3,10:32:39,ISS,cannot unlock 20-19,0
+PB54700,BP,solvability_miro,LA_3,10:32:50,ISS,~~stuck in 14 bc missing ability~~,11
+PB54700,BP,solvability_miro,LA_3,10:33:26,ISS,softlock in 14,47
+PB54700,BP,solvability_miro,LA_3,10:34:06,ISF,removed wooden door 13-14,87
+PB54700,BP,solvability_miro,LA_3,10:34:21,ISS,not enough bombs for 22-23,102
+PB54700,BP,solvability_miro,LA_3,10:34:25,ISF,changed to 2 bombs,106
+PB54700,BP,solvability_miro,LA_3,10:35:07,OBS,solvable,148
+PB54700,BP,pacing_pixie,LA_2,10:37:41,OBS,path: full to boss,0
+PB54700,BP,pacing_pixie,LA_2,10:37:49,Q1A,"yes, steadily increasing overall",8
+PB54700,BP,pacing_pixie,LA_2,10:38:26,OBS,path: start - A,45
+PB54700,BP,pacing_pixie,LA_2,10:39:51,OBS,path: start - B,130
+PB54700,BP,pacing_pixie,LA_2,10:40:11,Q2A,"not sure, kind of even",150
+PB54700,BP,pacing_pixie,LA_2,10:41:17,CMT,not sure where section A ends (obs: diagram ticks only every second node on path),216
+PB54700,BP,pacing_pixie,LA_2,10:41:38,Q3A,"probably yes, not quite sure",237
+PB54700,BP,pacing_pixie,LA_2,10:42:11,OBS,counting,270
+PB54700,BP,pacing_pixie,LA_2,10:42:31,CMT,unsure whether start/end are parts of sections,290
+PB54700,BP,pacing_miro,LA_1,10:44:24,Q1A,"no, not steadily increasing (never higher than 4)",0
+PB54700,BP,pacing_miro,LA_1,10:45:53,Q2A,"no, roughly the same",89
+PB54700,BP,pacing_miro,LA_1,10:46:07,Q2C,section 1 might take a little longer,103
+PB54700,BP,pacing_miro,LA_1,10:46:45,Q3A,yes,141
+PB54700,BP,pacing_miro,LA_1,10:46:57,Q4A,room 11,153
+PB54700,BP,pacing_miro,LA_1,10:47:24,Q4C,confirm q4,180
+PB54700,BP,pacing_miro,LA_1,10:48:03,Q5A,9-3 to 5,219
+PB54700,BP,pacing_miro,LA_1,10:48:23,Q6A,room 15 after miniboss,239
+MB24145,BM,solvability_pixie,LA_3,01:30:07,STA,,0
+MB24145,BM,solvability_pixie,LA_3,01:30:15,OBS,path Start-Boss,8
+MB24145,BM,solvability_pixie,LA_3,01:30:38,CMT,no path to boss,31
+MB24145,BM,solvability_pixie,LA_3,01:31:06,ISS,hardlock in 6 from highlighting,59
+MB24145,BM,solvability_pixie,LA_3,01:31:57,CMT,hard to differentiate node - background,110
+MB24145,BM,solvability_pixie,LA_3,01:33:00,OBS,sub-paths incrementally,173
+MB24145,BM,solvability_pixie,LA_3,01:33:25,ISS,room 2 not reachable,198
+MB24145,BM,solvability_pixie,LA_3,01:33:42,CLR,same symbol for all lock types,215
+MB24145,BM,solvability_pixie,LA_3,01:34:37,OBS,subpath to 23 (new ability),270
+MB24145,BM,solvability_pixie,LA_3,01:35:48,END,timer,341
+MB24145,BM,solvability_pixie,LA_3,01:36:53,IAT," can't get ability, softlock at 14 highlighted but not sure why",406
+MB24145,BM,solvability_miro,LA_4,01:21:21,CLR,empty inventory at beginning,0
+MB24145,BM,solvability_miro,LA_4,01:22:17,STA,,56
+MB24145,BM,solvability_miro,LA_4,01:23:15,ISS,can't unlock boss lock 31-39,114
+MB24145,BM,solvability_miro,LA_4,01:24:38,ISS,"can't reach 12/parts after 12, missing key",197
+MB24145,BM,solvability_miro,LA_4,01:25:27,ISS,soft-lock at 6,246
+MB24145,BM,solvability_miro,LA_4,01:27:06,CLR,also look for issues in non-reachable part,345
+MB24145,BM,solvability_miro,LA_4,01:27:24,ISS,unlockable edge: 26-27,363
+MB24145,BM,solvability_miro,LA_4,01:27:57,END,timer,396
+MB24145,BM,pacing_pixie,LA_1,01:47:03,STA,,0
+MB24145,BM,pacing_pixie,LA_1,01:47:13,OBS,path Start-A,10
+MB24145,BM,pacing_pixie,LA_1,01:47:43,OBS,path A - B,40
+MB24145,BM,pacing_pixie,LA_1,01:47:54,CLR,multi-select,51
+MB24145,BM,pacing_pixie,LA_1,01:48:33,CMT,more enemies in A than B,90
+MB24145,BM,pacing_pixie,LA_1,01:49:12,OBS,browser zoom ,129
+MB24145,BM,pacing_pixie,LA_1,01:49:57,CLR,black line in diagram,174
+MB24145,BM,pacing_pixie,LA_1,01:50:06,CMT,C has most enemies probably,183
+MB24145,BM,pacing_pixie,LA_1,01:50:37,OBS,full path,214
+MB24145,BM,pacing_pixie,LA_1,01:50:41,Q2A,about the same time to beat A and B,218
+MB24145,BM,pacing_pixie,LA_1,01:51:11,Q3A,more enemies in C than B (obs: confident),248
+MB24145,BM,pacing_pixie,LA_1,01:52:01,Q4A,"12-B as potential miniboss - based on context, not enemy/ttb",298
+MB24145,BM,pacing_pixie,LA_1,01:52:32,END,,329
+MB24145,BM,pacing_miro,LA_2,01:38:50,STA,,0
+MB24145,BM,pacing_miro,LA_2,01:41:07,OBS,just looks at chart,137
+MB24145,BM,pacing_miro,LA_2,01:41:50,CLR,enemies respawn,180
+MB24145,BM,pacing_miro,LA_2,01:43:07,Q1A,number is increasing from A to B to C,257
+MB24145,BM,pacing_miro,LA_2,01:43:55,CLR,completion times are written in notes,305
+MB24145,BM,pacing_miro,LA_2,01:44:16,END,timer,326
+MB50964,BM,solvability_pixie,LA_3,11:35:20,STA,,0
+MB50964,BM,solvability_pixie,LA_3,11:35:23,OBS,pathfinding start - 2,3
+MB50964,BM,solvability_pixie,LA_3,11:36:20,ISS,can't get from start to 2,60
+MB50964,BM,solvability_pixie,LA_3,11:37:07,OBS,successive pathfinding,107
+MB50964,BM,solvability_pixie,LA_3,11:37:16,ISS,softlocked in 6,116
+MB50964,BM,solvability_pixie,LA_3,11:38:07,CLR,boss room location,167
+MB50964,BM,solvability_pixie,LA_3,11:38:35,OBS,pathfinding start - boss,195
+MB50964,BM,solvability_pixie,LA_3,11:39:20,ISS,"softlocked between 1-2, 14, 21-22",240
+MB50964,BM,solvability_pixie,LA_3,11:39:48,CMT,"not sure whether softlock, but definitely not unlockable",268
+MB50964,BM,solvability_pixie,LA_3,11:40:54,CMT,"after 3 not hardlock, but softlock",334
+MB50964,BM,solvability_pixie,LA_3,11:41:00,END,timer,340
+MB50964,BM,solvability_miro,LA_4,11:27:45,STA,,0
+MB50964,BM,solvability_miro,LA_4,11:27:47,CLR,can use pen etc in miro,2
+MB50964,BM,solvability_miro,LA_4,11:29:06,ISS,"can get to 11, but not out again -> hardlock",81
+MB50964,BM,solvability_miro,LA_4,11:29:53,ISS,softlock 26 to 27 if using key from 4 to 6,128
+MB50964,BM,solvability_miro,LA_4,11:30:52,OBS,does not use additional notes in miro,187
+MB50964,BM,solvability_miro,LA_4,11:31:22,COR,25-28- 18- 26 softlock? -> self-correction: no,217
+MB50964,BM,solvability_miro,LA_4,11:32:50,END,timer,305
+MB50964,BM,pacing_pixie,LA_1,11:49:12,STA,,0
+MB50964,BM,pacing_pixie,LA_1,11:49:19,OBS,path start-boss,7
+MB50964,BM,pacing_pixie,LA_1,11:49:38,Q1A,not steadily increasing,26
+MB50964,BM,pacing_pixie,LA_1,11:49:45,Q1R,ups and downs throughout dungeon,33
+MB50964,BM,pacing_pixie,LA_1,11:50:38,OBS,path start-A,86
+MB50964,BM,pacing_pixie,LA_1,11:51:42,OBS,path start - b (after realizing path A-B cannot be calculated directly),150
+MB50964,BM,pacing_pixie,LA_1,11:53:09,Q2A,"yes, A does take longer",237
+MB50964,BM,pacing_pixie,LA_1,11:53:37,Q2R,A has a few rooms with longer times to beat (from diagram),265
+MB50964,BM,pacing_pixie,LA_1,11:54:14,END,,302
+MB50964,BM,pacing_miro,LA_2,11:42:47,STA,,0
+MB50964,BM,pacing_miro,LA_2,11:42:57,OBS,adds sticky note,10
+MB50964,BM,pacing_miro,LA_2,11:47:14,Q1A,increasing throughout dungeon,267
+MB50964,BM,pacing_miro,LA_2,11:47:31,Q1R,"after A 4 enemies, with some exceptions",284
+MB50964,BM,pacing_miro,LA_2,11:47:48,END,timer,301
+PA81918,AP,solvability_pixie,LA_3,10:34:33,STA,,0
+PA81918,AP,solvability_pixie,LA_3,10:35:07,CMT,found boss,34
+PA81918,AP,solvability_pixie,LA_3,10:35:12,pat,finding start - boss,39
+PA81918,AP,solvability_pixie,LA_3,10:35:29,sto, (highlighting),56
+PA81918,AP,solvability_pixie,LA_3,10:35:57,con,inue,84
+PA81918,AP,solvability_pixie,LA_3,10:36:10,ISS,hardlock in 6,97
+PA81918,AP,solvability_pixie,LA_3,10:36:57,OBS,used shift instead of control,144
+PA81918,AP,solvability_pixie,LA_3,10:37:21,OBS,checks lock 1 - 3,168
+PA81918,AP,solvability_pixie,LA_3,10:37:48,ISS,room 2 not reachable unless ability somewhere,195
+PA81918,AP,solvability_pixie,LA_3,10:38:50,ISS,"could go start - 10 - 4: no ability lock, no path back (w/o hl)",257
+PA81918,AP,solvability_pixie,LA_3,10:40:09,OBS,found ability,336
+PA81918,AP,solvability_pixie,LA_3,10:40:15,OBS,found boss key,342
+PA81918,AP,solvability_pixie,LA_3,10:40:35,END,timer,362
+PA81918,AP,solvability_miro,LA_4,10:41:12,STA,,0
+PA81918,AP,solvability_miro,LA_4,10:41:46,ISS,"locked in 11, no edge out",34
+PA81918,AP,solvability_miro,LA_4,10:42:08,ISS,19/21/19 not reachable/no incoming edge,56
+PA81918,AP,solvability_miro,LA_4,10:42:24,OBS,trace with mouse,72
+PA81918,AP,solvability_miro,LA_4,10:42:53,ISS,"missing key for 6 - 12, rest of the graph/boss key unreachable",101
+PA81918,AP,solvability_miro,LA_4,10:43:25,ISS,missing key for 26 - 27,133
+PA81918,AP,solvability_miro,LA_4,10:44:06,ISS,"when reaching 7 without ability (which is possible from 25), player is stuck",174
+PA81918,AP,solvability_miro,LA_4,10:44:45,CMT,ability check would fix it,213
+PA81918,AP,solvability_miro,LA_4,10:45:14,ISS,soft-lock in 37 when approaching with just once bomb,242
+PA81918,AP,solvability_miro,LA_4,10:46:09,CMT,not sure about assumptions for reachability within unreachable parts of the dungeon,297
+PA81918,AP,solvability_miro,LA_4,10:46:18,END,timer,306
+PA81918,AP,pacing_pixie,LA_1,10:48:22,STA,,0
+PA81918,AP,pacing_pixie,LA_1,10:49:11,pat,finding START - A,49
+PA81918,AP,pacing_pixie,LA_1,10:49:22,CMT,total in each room,60
+PA81918,AP,pacing_pixie,LA_1,10:49:29,CMT,y axis not at 0,67
+PA81918,AP,pacing_pixie,LA_1,10:49:41,Q1R,11 in A,79
+PA81918,AP,pacing_pixie,LA_1,10:50:20,OBS,pathfinding start - B,118
+PA81918,AP,pacing_pixie,LA_1,10:50:39,OBS,sum of enemies per section,137
+PA81918,AP,pacing_pixie,LA_1,10:51:08,Q1A,"enemy numbers are not increasing, rather decreasing",166
+PA81918,AP,pacing_pixie,LA_1,10:51:50,OBS,pathfinding start - B,208
+PA81918,AP,pacing_pixie,LA_1,10:52:02,Q2A,takes longer to beat A,220
+PA81918,AP,pacing_pixie,LA_1,10:52:15,Q2R,compares curves for sections),233
+PA81918,AP,pacing_pixie,LA_1,10:52:19,Q3A,"no, see reasoning from earlier",237
+PA81918,AP,pacing_pixie,LA_1,10:52:46,Q4A,room 11 for miniboss,264
+PA81918,AP,pacing_pixie,LA_1,10:52:57,Q4R,takes 20 seconds,275
+PA81918,AP,pacing_pixie,LA_1,10:53:07,CMT,expected miniboss for key,285
+PA81918,AP,pacing_pixie,LA_1,10:53:27,END,timer,305
+PA81918,AP,pacing_miro,LA_2,10:54:01,STA,,0
+PA81918,AP,pacing_miro,LA_2,10:54:36,OBS,pathfinding in head,35
+PA81918,AP,pacing_miro,LA_2,10:55:36,CMT,depends on whether direct path,95
+PA81918,AP,pacing_miro,LA_2,10:55:56,OBS,start counting enemies per section,115
+PA81918,AP,pacing_miro,LA_2,10:56:27,15 ,n section A,146
+PA81918,AP,pacing_miro,LA_2,10:56:32,12 ,n section B,151
+PA81918,AP,pacing_miro,LA_2,10:56:39,8 i, section C,158
+PA81918,AP,pacing_miro,LA_2,10:56:40,les,,159
+PA81918,AP,pacing_miro,LA_2,10:57:11,CMT,spare keys,190
+PA81918,AP,pacing_miro,LA_2,10:58:02,CMT,average hard to calculate,241
+PA81918,AP,pacing_miro,LA_2,10:58:19,OBS,assumes different possible paths,258
+PA81918,AP,pacing_miro,LA_2,10:58:31,sec,ion A 28s,270
+PA81918,AP,pacing_miro,LA_2,10:59:08,sec,ion A takes longer,307
+PA81918,AP,pacing_miro,LA_2,10:59:17,END,timer,316
+MA12534,AM,solvability_pixie,LA_4,11:27:24,?,,0
+MA12534,AM,solvability_pixie,LA_4,11:29:03,?,,99
+MA12534,AM,solvability_miro,LA_3,11:18:42,sta,t,0
+MA12534,AM,solvability_miro,LA_3,11:20:11,CLR,clarified new ability lock,89
+MA12534,AM,solvability_miro,LA_3,11:21:16,CLR,clarified unidirectional edge,154
+MA12534,AM,solvability_miro,LA_3,11:21:21,ISS,"hard lock 6, pretty confident",159
+MA12534,AM,solvability_miro,LA_3,11:21:39,ISS,"lock 9 without ability, pretty confident",177
+MA12534,AM,solvability_miro,LA_3,11:23:34,ISS,in 38 locked out of other rooms when going to 39 first,292
+MA12534,AM,solvability_miro,LA_3,11:24:16,end,(timer),334
+MA12534,AM,pacing_pixie,LA_2,11:40:53,STA,,0
+MA12534,AM,pacing_pixie,LA_2,11:41:57,OBS,component on x axis,64
+MA12534,AM,pacing_pixie,LA_2,11:42:20,CLR,hint: x axis,87
+MA12534,AM,pacing_pixie,LA_2,11:42:54,Q1A,q1,121
+MA12534,AM,pacing_pixie,LA_2,11:43:02,OBS,both components as f(x),129
+MA12534,AM,pacing_pixie,LA_2,11:44:48,OBS,missing keys from earlier (A->B),235
+MA12534,AM,pacing_pixie,LA_2,11:45:04,Q2A,,251
+MA12534,AM,pacing_pixie,LA_2,11:45:21,CLR,clarification keys missing -> multi-select,268
+MA12534,AM,pacing_pixie,LA_2,11:48:07,Q3A,q3,434
+MA12534,AM,pacing_pixie,LA_2,11:48:50,Q3R,reasoning,477
+MA12534,AM,pacing_pixie,LA_2,11:48:45,END,timer,472
+MA12534,AM,pacing_miro,LA_1,11:35:18,Q1A,,0
+MA12534,AM,pacing_miro,LA_1,11:36:38,Q1R,reasoning,80
+MA12534,AM,pacing_miro,LA_1,11:38:44,Q2A,,206
+MA12534,AM,pacing_miro,LA_1,11:38:58,Q2R,reasoning,220
+MA12534,AM,pacing_miro,LA_1,11:39:04,END,timer,226
+MA95935,AM,solvability_pixie,LA_4,16:32:09,STA,,0
+MA95935,AM,solvability_pixie,LA_4,16:32:21,OBS,path start - boss,12
+MA95935,AM,solvability_pixie,LA_4,16:32:52,CLR,locked edges,43
+MA95935,AM,solvability_pixie,LA_4,16:33:52,CMT,boss unreachable,103
+MA95935,AM,solvability_pixie,LA_4,16:34:52,OBS,multi-select on and off?,163
+MA95935,AM,solvability_pixie,LA_4,16:35:36,OBS,checked boss edge,207
+MA95935,AM,solvability_pixie,LA_4,16:35:45,OBS,found boss key,216
+MA95935,AM,solvability_pixie,LA_4,16:35:50,CMT,can't reach boss key,221
+MA95935,AM,solvability_pixie,LA_4,16:36:36,CMT,ability unreachable,267
+MA95935,AM,solvability_pixie,LA_4,16:37:18,END,timer,309
+MA95935,AM,solvability_miro,LA_3,16:24:14,STA,,0
+MA95935,AM,solvability_miro,LA_3,16:25:01,CLR,ability lock,47
+MA95935,AM,solvability_miro,LA_3,16:26:41,CLR,6 bombs,147
+MA95935,AM,solvability_miro,LA_3,16:26:50,ISS,not enough bombs 22-23,156
+MA95935,AM,solvability_miro,LA_3,16:27:46,CMT,lost count of keys,212
+MA95935,AM,solvability_miro,LA_3,16:27:58,CLR,hint: note functionality in miro,224
+MA95935,AM,solvability_miro,LA_3,16:28:31,CLR,"edge from 11 to 13, not to 12",257
+MA95935,AM,solvability_miro,LA_3,16:29:02,ISS,21 not reachable ,288
+MA95935,AM,solvability_miro,LA_3,16:29:27,ISR,not enough simple keys,313
+MA95935,AM,solvability_miro,LA_3,16:29:59,END,timer,345
+MA95935,AM,pacing_pixie,LA_2,16:45:33,STA,,0
+MA95935,AM,pacing_pixie,LA_2,16:45:48,OBS,path start-a,15
+MA95935,AM,pacing_pixie,LA_2,16:46:42,OBS,path start-boss,69
+MA95935,AM,pacing_pixie,LA_2,16:47:40,OBS,both components in graph,127
+MA95935,AM,pacing_pixie,LA_2,16:47:27,no ,ig increases in enemy numbers between rooms,114
+MA95935,AM,pacing_pixie,LA_2,16:47:50,?? ,o 21-3 3 vs 5 enemies,137
+MA95935,AM,pacing_pixie,LA_2,16:48:08,Q1A,number of enemies kind of steadily increases,155
+MA95935,AM,pacing_pixie,LA_2,16:48:32,Q1R,"across sections, later rooms tend to have more enemies",179
+MA95935,AM,pacing_pixie,LA_2,16:49:21,CLR,missing keys from before for section A - B,228
+MA95935,AM,pacing_pixie,LA_2,16:50:14,Q2A,does not take longer to beat A than B,281
+MA95935,AM,pacing_pixie,LA_2,16:50:38,Q2R,room 15 takes the longesg,305
+MA95935,AM,pacing_pixie,LA_2,16:50:48,END,timer,315
+MA95935,AM,pacing_miro,LA_1,16:38:48,STA,,0
+MA95935,AM,pacing_miro,LA_1,16:39:54,OBS,adds text to track numbers,66
+MA95935,AM,pacing_miro,LA_1,16:41:07,Q4A,miniboss 18 (7s for 2 enemies),139
+MA95935,AM,pacing_miro,LA_1,16:42:31,Q6A,"18 - 4, no enemies after intense encounter",223
+MA95935,AM,pacing_miro,LA_1,16:43:35,Q4A,miniboss 11 (20s for 1 enemy),287
+MA95935,AM,pacing_miro,LA_1,16:43:53,END,timer,305
+PB34703,BP,solvability_pixie,LA_4,15:22:59,STA,,0
+PB34703,BP,solvability_pixie,LA_4,15:23:17,OBS,tried double clicking to open lock menu,18
+PB34703,BP,solvability_pixie,LA_4,15:23:58,ISS,hard lock in 11,59
+PB34703,BP,solvability_pixie,LA_4,15:24:39,ISS,soft lock in 7 (no highlight),100
+PB34703,BP,solvability_pixie,LA_4,15:25:05,ISS,soft lock in 37 (no highlight),126
+PB34703,BP,solvability_pixie,LA_4,15:25:40,OBS,path start-boss,161
+PB34703,BP,solvability_pixie,LA_4,15:26:42,OBS,path start - room before boss successively,223
+PB34703,BP,solvability_pixie,LA_4,15:27:12,OBS,path - left,253
+PB34703,BP,solvability_pixie,LA_4,15:27:32,OBS,start - 32,273
+PB34703,BP,solvability_pixie,LA_4,15:27:39,CMT,unsolvable bc 6-12,280
+PB34703,BP,solvability_pixie,LA_4,15:27:54,ISS,edge locked 6 - 12,295
+PB34703,BP,solvability_pixie,LA_4,15:28:10,END,timer,311
+PB34703,BP,solvability_miro,LA_3,15:28:53,STA,,0
+PB34703,BP,solvability_miro,LA_3,15:29:23,CLR,deleted ability lock,30
+PB34703,BP,solvability_miro,LA_3,15:29:52,ISS,softlock in 4/9/10,59
+PB34703,BP,solvability_miro,LA_3,15:31:35,OBS,"no drawing, just looking",162
+PB34703,BP,solvability_miro,LA_3,15:32:43,ISS,unreachable area: 15/28/16/etc,230
+PB34703,BP,solvability_miro,LA_3,15:33:01,CMT,path to boss possible,248
+PB34703,BP,solvability_miro,LA_3,15:34:10,END,timer,317
+PB34703,BP,pacing_pixie,LA_2,15:37:09,STA,,0
+PB34703,BP,pacing_pixie,LA_2,15:37:53,OBS,reset path from ?? -> start to boss,44
+PB34703,BP,pacing_pixie,LA_2,15:38:16,Q1A,overall increasing with exceptions,67
+PB34703,BP,pacing_pixie,LA_2,15:38:43,CLR,no x,94
+PB34703,BP,pacing_pixie,LA_2,15:39:11,OBS,multi-select ranging all nodes before A,122
+PB34703,BP,pacing_pixie,LA_2,15:39:52,Q2A,section B takes longer than section A,163
+PB34703,BP,pacing_pixie,LA_2,15:40:09,OBS,not sure whether path was selected correctly for Q2,180
+PB34703,BP,pacing_pixie,LA_2,15:41:01,CMT,section C takes longer than A,232
+PB34703,BP,pacing_pixie,LA_2,15:41:12,Q3A,less enemies in C,243
+PB34703,BP,pacing_pixie,LA_2,15:42:07,Q4A,miniboss in 15 or 16,298
+PB34703,BP,pacing_pixie,LA_2,15:42:37,END,,328
+PB34703,BP,pacing_miro,LA_1,15:43:09,STA,,0
+PB34703,BP,pacing_miro,LA_1,15:44:29,Q1A,number does not increase,80
+PB34703,BP,pacing_miro,LA_1,15:44:54,Q2A,B takes longer than A,105
+PB34703,BP,pacing_miro,LA_1,15:45:04,Q3T,less enemies?,115
+PB34703,BP,pacing_miro,LA_1,15:45:12,Q3A,same number of enemies in B and C,123
+PB34703,BP,pacing_miro,LA_1,15:45:28,Q4A,miniboss in 11,139
+PB34703,BP,pacing_miro,LA_1,15:46:02,Q5A,9-3 to 5,173
+PB34703,BP,pacing_miro,LA_1,15:46:43,Q6A,15 after 11,214
+PB34703,BP,pacing_miro,LA_1,15:47:04,Q6A,"9-1, 8",235
+PB34703,BP,pacing_miro,LA_1,15:48:05,END,timer,296
+MB67500,BM,solvability_pixie,LA_3,15:28:06,STA,,0
+MB67500,BM,solvability_pixie,LA_3,15:28:12,ISS,boss node not reachable,6
+MB67500,BM,solvability_pixie,LA_3,15:29:11,CLR,lock symbol the same for all,65
+MB67500,BM,solvability_pixie,LA_3,15:29:55,ISS,hard-lock rechte abzweigung,109
+MB67500,BM,solvability_pixie,LA_3,15:31:20,ISS,not enough keys 19-21,194
+MB67500,BM,solvability_pixie,LA_3,15:32:44,ISF,deletes keys + corresponding locks,278
+MB67500,BM,solvability_pixie,LA_3,15:33:54,END,timer,348
+MB67500,BM,solvability_miro,LA_4,15:22:21,STA,,0
+MB67500,BM,solvability_miro,LA_4,15:22:45,ISS,can't get to 12,24
+MB67500,BM,solvability_miro,LA_4,15:22:51,ISS,cant get to 11 without new ability,30
+MB67500,BM,solvability_miro,LA_4,15:23:08,ISS,can't get to 39,47
+MB67500,BM,solvability_miro,LA_4,15:23:42,ISS,missing key 26-27,81
+MB67500,BM,solvability_miro,LA_4,15:25:05,ISS,16-37 blocked bc no bombs,164
+MB67500,BM,solvability_miro,LA_4,15:25:46,ISS,can't get to area 28 bc one-directional edge,205
+MB67500,BM,solvability_miro,LA_4,15:26:07,END,participant,226
+MB67500,BM,pacing_pixie,LA_1,15:42:00,STA,,0
+MB67500,BM,pacing_pixie,LA_1,15:42:40,Q1A,number of enemies does not increase,40
+MB67500,BM,pacing_pixie,LA_1,15:42:52,ttb,goes up dramatically at end,52
+MB67500,BM,pacing_pixie,LA_1,15:44:11,cor,ection: ability,131
+MB67500,BM,pacing_pixie,LA_1,15:45:14,sec,ion B longer than section A (may have switched start/end markers),194
+MB67500,BM,pacing_pixie,LA_1,15:45:24,Q4A,miniboss 11,204
+MB67500,BM,pacing_pixie,LA_1,15:45:47,inc,ease: 9-1 to 9,227
+MB67500,BM,pacing_pixie,LA_1,15:46:25,9-3,"only one enemy after 4 before, also 11-15",265
+MB67500,BM,pacing_pixie,LA_1,15:47:05,END,participant,305
+MB67500,BM,pacing_miro,LA_2,15:35:45,STA,,0
+MB67500,BM,pacing_miro,LA_2,15:36:37,cla,ification: valid path?,52
+MB67500,BM,pacing_miro,LA_2,15:38:03,CMT,44 vs 38,138
+MB67500,BM,pacing_miro,LA_2,15:38:52,Q1A," 44 total, 15 rooms -> 4s",187
+MB67500,BM,pacing_miro,LA_2,15:39:08,OBS,counting B - C,203
+MB67500,BM,pacing_miro,LA_2,15:39:55,sec,ion A faster on average,250
+MB67500,BM,pacing_miro,LA_2,15:40:25,inc,"eases: 16-18, 21-2 to 21-3",280
+MB67500,BM,pacing_miro,LA_2,15:40:45,rem,"rk: need boss key, but same result",300
+MB67500,BM,pacing_miro,LA_2,15:41:07,Q4A,miniboss ~~21-3~~ 15,322
+MB67500,BM,pacing_miro,LA_2,15:41:00,END,timer,315
