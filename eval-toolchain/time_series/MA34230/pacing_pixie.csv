@@ -1,0 +1,14 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA34230,AM,pacing_pixie,LA_2,17:44:48,STA,,0
+MA34230,AM,pacing_pixie,LA_2,17:44:53,OBS,pathfinding start - boss,5
+MA34230,AM,pacing_pixie,LA_2,17:45:06,Q1A,"no (obs: two consecutive rooms, not overall)",18
+MA34230,AM,pacing_pixie,LA_2,17:45:59,OBS,pathfinding A- b,71
+MA34230,AM,pacing_pixie,LA_2,17:46:05,OBS,pathfinding start - b,77
+MA34230,AM,pacing_pixie,LA_2,17:46:51,Q2A,no (obs: based on diagram + calculation),123
+MA34230,AM,pacing_pixie,LA_2,17:47:37,OBS,"confusion about colors (not per component, but per order of selection)",169
+MA34230,AM,pacing_pixie,LA_2,17:48:15,Q3A,yes (obs: summed from diagram),207
+MA34230,AM,pacing_pixie,LA_2,17:48:35,Q4A,15 (obs: both components in diagram),227
+MA34230,AM,pacing_pixie,LA_2,17:49:05,Q5A,15 to 18,257
+MA34230,AM,pacing_pixie,LA_2,17:49:30,cor,ection: 16 to 18,282
+MA34230,AM,pacing_pixie,LA_2,17:50:05,15 ,o 16,317
+MA34230,AM,pacing_pixie,LA_2,17:50:08,END,,320

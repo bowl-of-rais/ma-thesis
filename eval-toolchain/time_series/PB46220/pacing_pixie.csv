@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB46220,BP,pacing_pixie,LA_2,14:43:14,STA,,0
+PB46220,BP,pacing_pixie,LA_2,14:43:42,Q1A,overall increase with exceptions (obs: from diagram),28
+PB46220,BP,pacing_pixie,LA_2,14:46:17,Q2A,B longer on average than A (obs: pathfinding start - b + calc),183
+PB46220,BP,pacing_pixie,LA_2,14:47:27,OBS,diagram + calc for Q3,253
+PB46220,BP,pacing_pixie,LA_2,14:47:52,Q3A,"yes, there are more enemies in C",278
+PB46220,BP,pacing_pixie,LA_2,14:48:20,END,,306

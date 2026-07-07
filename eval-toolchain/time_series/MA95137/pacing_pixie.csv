@@ -1,0 +1,10 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA95137,AM,pacing_pixie,LA_2,15:47:59,STA,,0
+MA95137,AM,pacing_pixie,LA_2,15:48:24,OBS,pathfinding start - A,25
+MA95137,AM,pacing_pixie,LA_2,15:48:45,OBS,pathfinding start - boss,46
+MA95137,AM,pacing_pixie,LA_2,15:49:20,Q1A,number of enemies does not (?) increase (from diagram),81
+MA95137,AM,pacing_pixie,LA_2,15:49:52,OBS,multiple diagrams,113
+MA95137,AM,pacing_pixie,LA_2,15:51:38,OBS,may be under the assumption that diagrams are saved with current path?,219
+MA95137,AM,pacing_pixie,LA_2,15:52:24,Q2A,A takes longer on average,265
+MA95137,AM,pacing_pixie,LA_2,15:53:01,OBS,pathfinding B - C,302
+MA95137,AM,pacing_pixie,LA_2,15:53:22,END,,323

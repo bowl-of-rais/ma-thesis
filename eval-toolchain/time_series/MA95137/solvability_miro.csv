@@ -1,0 +1,5 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA95137,AM,solvability_miro,LA_3,15:25:35,STA,,0
+MA95137,AM,solvability_miro,LA_3,15:26:14,ISS,hardlocked in 6,39
+MA95137,AM,solvability_miro,LA_3,15:29:45,ISS,get stuck in 4 without ability,250
+MA95137,AM,solvability_miro,LA_3,15:30:43,END,,308

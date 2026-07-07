@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB71184,BM,solvability_miro,LA_4,11:27:25,STA,,0
+MB71184,BM,solvability_miro,LA_4,11:28:43,CMT,stuck,78
+MB71184,BM,solvability_miro,LA_4,11:28:50,ISS,can't go further than 6,85
+MB71184,BM,solvability_miro,LA_4,11:29:00,ISS,don't have boss key,95
+MB71184,BM,solvability_miro,LA_4,11:30:17,ISS,missing key for 26-27,172
+MB71184,BM,solvability_miro,LA_4,11:31:36,OBS,tracing path with mouse,251
+MB71184,BM,solvability_miro,LA_4,11:32:05,CMT,14/21/28 unnecessary,280
+MB71184,BM,solvability_miro,LA_4,11:32:32,END,timer,307

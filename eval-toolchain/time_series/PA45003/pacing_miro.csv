@@ -8,3 +8,4 @@ PA45003,AP,pacing_miro,LA_2,12:48:24,Q2R,"rooms with 12, 4 s, other path has roo
 PA45003,AP,pacing_miro,LA_2,12:48:50,CMT,hard to tell without calculating,287
 PA45003,AP,pacing_miro,LA_2,12:48:56,Q3R,"C has 8 enemies, B has 5",293
 PA45003,AP,pacing_miro,LA_2,12:49:03,Q3A,more enemies in section C,300
+PA45003,AP,pacing_miro,LA_2,12:49:10,END,,307

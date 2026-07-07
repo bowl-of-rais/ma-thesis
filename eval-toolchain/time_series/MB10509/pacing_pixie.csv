@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB10509,BM,pacing_pixie,LA_1,13:46:52,STA,,0
+MB10509,BM,pacing_pixie,LA_1,13:47:20,OBS,"pathfinding start-a, then start-boss",28
+MB10509,BM,pacing_pixie,LA_1,13:47:54,Q1A,not really,62
+MB10509,BM,pacing_pixie,LA_1,13:48:00,Q1R,"spike at beginning, and then more again at the end",68
+MB10509,BM,pacing_pixie,LA_1,13:49:49,Q2A,yes as far as they can tell,177
+MB10509,BM,pacing_pixie,LA_1,13:50:32,Q3A,yes if direct path (6 vs 4),220
+MB10509,BM,pacing_pixie,LA_1,13:51:20,Q3C,not sure if different when indirect path,268
+MB10509,BM,pacing_pixie,LA_1,13:51:27,Q4A,11 based on diagram,275
+MB10509,BM,pacing_pixie,LA_1,13:52:08,Q5A,9-1 to 9,316
+MB10509,BM,pacing_pixie,LA_1,13:52:08,END,,316

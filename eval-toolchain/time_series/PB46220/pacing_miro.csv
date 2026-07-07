@@ -1,0 +1,10 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB46220,BP,pacing_miro,LA_1,14:49:29,STA,,0
+PB46220,BP,pacing_miro,LA_1,14:49:53,OBS,traces path with mouse,24
+PB46220,BP,pacing_miro,LA_1,14:50:05,Q1A,not steadily increasing,36
+PB46220,BP,pacing_miro,LA_1,14:51:34,Q2A,"yes, A longer than B on avg",125
+PB46220,BP,pacing_miro,LA_1,14:52:36,Q3A,yes,187
+PB46220,BP,pacing_miro,LA_1,14:53:06,Q4A,9-1 for miniboss,217
+PB46220,BP,pacing_miro,LA_1,14:53:55,Q5A,"9-3 to 5, from 1 to 4 enemies",266
+PB46220,BP,pacing_miro,LA_1,14:54:32,Q4A,miniboss 11,303
+PB46220,BP,pacing_miro,LA_1,14:54:35,END,,306

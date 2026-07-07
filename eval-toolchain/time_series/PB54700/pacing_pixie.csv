@@ -1,10 +1,12 @@
 p_id,group,task,map,timestamp,tag,note,timedelta
-PB54700,BP,pacing_pixie,LA_2,10:37:41,OBS,path: full to boss,0
-PB54700,BP,pacing_pixie,LA_2,10:37:49,Q1A,"yes, steadily increasing overall",8
-PB54700,BP,pacing_pixie,LA_2,10:38:26,OBS,path: start - A,45
-PB54700,BP,pacing_pixie,LA_2,10:39:51,OBS,path: start - B,130
-PB54700,BP,pacing_pixie,LA_2,10:40:11,Q2A,"not sure, kind of even",150
-PB54700,BP,pacing_pixie,LA_2,10:41:17,CMT,not sure where section A ends (obs: diagram ticks only every second node on path),216
-PB54700,BP,pacing_pixie,LA_2,10:41:38,Q3A,"probably yes, not quite sure",237
-PB54700,BP,pacing_pixie,LA_2,10:42:11,OBS,counting,270
-PB54700,BP,pacing_pixie,LA_2,10:42:31,CMT,unsure whether start/end are parts of sections,290
+PB54700,BP,pacing_pixie,LA_2,10:37:32,STA,,0
+PB54700,BP,pacing_pixie,LA_2,10:37:41,OBS,path: full to boss,9
+PB54700,BP,pacing_pixie,LA_2,10:37:49,Q1A,"yes, steadily increasing overall",17
+PB54700,BP,pacing_pixie,LA_2,10:38:26,OBS,path: start - A,54
+PB54700,BP,pacing_pixie,LA_2,10:39:51,OBS,path: start - B,139
+PB54700,BP,pacing_pixie,LA_2,10:40:11,Q2A,"not sure, kind of even",159
+PB54700,BP,pacing_pixie,LA_2,10:41:17,CMT,not sure where section A ends (obs: diagram ticks only every second node on path),225
+PB54700,BP,pacing_pixie,LA_2,10:41:38,Q3A,"probably yes, not quite sure",246
+PB54700,BP,pacing_pixie,LA_2,10:42:11,OBS,counting,279
+PB54700,BP,pacing_pixie,LA_2,10:42:31,CMT,unsure whether start/end are parts of sections,299
+PB54700,BP,pacing_pixie,LA_2,10:42:38,END,(timer),306

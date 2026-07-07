@@ -1,0 +1,10 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA34230,AM,pacing_miro,LA_1,17:39:07,STA,,0
+MA34230,AM,pacing_miro,LA_1,17:39:33,Q1A,no,26
+MA34230,AM,pacing_miro,LA_1,17:39:35,in ,ome rooms there are less enemies than before,28
+MA34230,AM,pacing_miro,LA_1,17:40:26,Q2A,yes,79
+MA34230,AM,pacing_miro,LA_1,17:41:05,Q3A,yes,118
+MA34230,AM,pacing_miro,LA_1,17:41:13,Q4A,11,126
+MA34230,AM,pacing_miro,LA_1,17:42:34,Q5A,9-3 to 5,207
+MA34230,AM,pacing_miro,LA_1,17:43:13,Q6A,-1 after 9,246
+MA34230,AM,pacing_miro,LA_1,17:43:23,END,participant,256

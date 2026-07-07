@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA89964,AP,solvability_miro,LA_4,10:31:20,STA,,0
+PA89964,AP,solvability_miro,LA_4,10:32:47,ISS,can't go past room 6 bc not enough simple keys,87
+PA89964,AP,solvability_miro,LA_4,10:33:05,CMT,"can get to boss? -> never mind, did not see boss key",105
+PA89964,AP,solvability_miro,LA_4,10:33:31,ISS,can't get to boss key/room 39 is locked,131
+PA89964,AP,solvability_miro,LA_4,10:34:14,CLR,can look further,174
+PA89964,AP,solvability_miro,LA_4,10:35:26,ISS,"37 could be softlock, not sure what players would have at that point",246
+PA89964,AP,solvability_miro,LA_4,10:36:20,END,,300

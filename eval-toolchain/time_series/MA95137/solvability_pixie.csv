@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA95137,AM,solvability_pixie,LA_4,15:33:32,STA,,0
+MA95137,AM,solvability_pixie,LA_4,15:34:38,OBS,different paths in start area,66
+MA95137,AM,solvability_pixie,LA_4,15:35:47,OBS,successive path to boss,135
+MA95137,AM,solvability_pixie,LA_4,15:36:13,CMT,no valid way from start to boss,161
+MA95137,AM,solvability_pixie,LA_4,15:38:38,CMT,large parts of map not accessible (upper left),306
+MA95137,AM,solvability_pixie,LA_4,15:38:47,END,,315

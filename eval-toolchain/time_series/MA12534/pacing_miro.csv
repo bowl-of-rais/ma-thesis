@@ -1,6 +1,7 @@
 p_id,group,task,map,timestamp,tag,note,timedelta
-MA12534,AM,pacing_miro,LA_1,11:35:18,Q1A,,0
-MA12534,AM,pacing_miro,LA_1,11:36:38,Q1R,reasoning,80
-MA12534,AM,pacing_miro,LA_1,11:38:44,Q2A,,206
-MA12534,AM,pacing_miro,LA_1,11:38:58,Q2R,reasoning,220
-MA12534,AM,pacing_miro,LA_1,11:39:04,END,timer,226
+MA12534,AM,pacing_miro,LA_1,11:34:01,STA,,0
+MA12534,AM,pacing_miro,LA_1,11:35:18,Q1A,,77
+MA12534,AM,pacing_miro,LA_1,11:36:38,Q1R,reasoning,157
+MA12534,AM,pacing_miro,LA_1,11:38:44,Q2A,,283
+MA12534,AM,pacing_miro,LA_1,11:38:58,Q2R,reasoning,297
+MA12534,AM,pacing_miro,LA_1,11:39:04,END,timer,303

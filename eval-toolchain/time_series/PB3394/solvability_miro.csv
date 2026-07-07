@@ -1,0 +1,5 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB3394,BP,solvability_miro,LA_3,12:33:22,STA,,0
+PB3394,BP,solvability_miro,LA_3,12:36:27,ISS,lock 22-23 not unlockable bc not enough bombs in dungeon,185
+PB3394,BP,solvability_miro,LA_3,12:37:33,ISS,"if bomb used to open edge 13-14, can't open 24 anymore -> softlock",251
+PB3394,BP,solvability_miro,LA_3,12:38:23,END,,301

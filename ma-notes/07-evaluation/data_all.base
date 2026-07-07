@@ -22,4 +22,8 @@ views:
       - property: issues_correct_pixie
         direction: ASC
     columnSize:
-      note.p_answered_miro: 149
+      note.p_answered_miro: 11
+      note.p_answered_pixie: 7
+      note.s_issues_miro: 17
+      note.s_issues_pixie: 11
+      note.participant: 355

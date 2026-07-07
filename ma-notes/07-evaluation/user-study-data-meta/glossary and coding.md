@@ -47,6 +47,7 @@
 - END: end
 - STA: start
 - COR: correction
+- GNO: general note
 
 ---
 

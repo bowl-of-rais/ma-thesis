@@ -1,0 +1,12 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB46220,BP,solvability_pixie,LA_4,14:28:32,x S,A,0
+PB46220,BP,solvability_pixie,LA_4,14:28:54,STA,,22
+PB46220,BP,solvability_pixie,LA_4,14:28:55,OBS,path start - boss,23
+PB46220,BP,solvability_pixie,LA_4,14:29:05,OBS,successive pathfinding in direction of 12,33
+PB46220,BP,solvability_pixie,LA_4,14:30:17,pat,finding start - 11? - 12,105
+PB46220,BP,solvability_pixie,LA_4,14:31:49,OBS,pathfinding start - left - boss,197
+PB46220,BP,solvability_pixie,LA_4,14:32:27,OBS,checks locks on edges around 6,235
+PB46220,BP,solvability_pixie,LA_4,14:32:52,ISS,"12 not reachable, not enough simple keys",260
+PB46220,BP,solvability_pixie,LA_4,14:33:43,ISS,can't reach rest of dungeon bc 12 is blocked,311
+PB46220,BP,solvability_pixie,LA_4,14:33:58,ISS,"can't reach boss, only until 31",326
+PB46220,BP,solvability_pixie,LA_4,14:34:20,END,,348

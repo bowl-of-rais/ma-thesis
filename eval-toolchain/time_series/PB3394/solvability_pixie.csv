@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB3394,BP,solvability_pixie,LA_4,12:27:15,STA,,0
+PB3394,BP,solvability_pixie,LA_4,12:27:17,CLR,"whole graph, every room should be reachable and players should not get locked anywhere",2
+PB3394,BP,solvability_pixie,LA_4,12:27:52,OBS,panning around,37
+PB3394,BP,solvability_pixie,LA_4,12:28:06,OBS,pathfinding start - boss,51
+PB3394,BP,solvability_pixie,LA_4,12:28:31,OBS,checks edge 6 - 12,76
+PB3394,BP,solvability_pixie,LA_4,12:29:23,OBS,checks more edges,128
+PB3394,BP,solvability_pixie,LA_4,12:31:26,OBS,checks edge 26-27,251
+PB3394,BP,solvability_pixie,LA_4,12:31:36,OBS,checks edge 24-25,261
+PB3394,BP,solvability_pixie,LA_4,12:32:14,OBS,pathfinding 33-37,299
+PB3394,BP,solvability_pixie,LA_4,12:32:21,END,,306

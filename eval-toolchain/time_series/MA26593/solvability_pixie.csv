@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA26593,AM,solvability_pixie,LA_4,11:29:29,STA,,0
+MA26593,AM,solvability_pixie,LA_4,11:29:44,OBS,pathfinding start - boss,15
+MA26593,AM,solvability_pixie,LA_4,11:29:56,CMT,hardlock somewhere (obs: where player can't progress),27
+MA26593,AM,solvability_pixie,LA_4,11:30:28,OBS,"successive pathfinding in start area (start - 12, start - 9, start - 19, start - 20, 31, 39)",59
+MA26593,AM,solvability_pixie,LA_4,11:33:48,CLR,"different lock types, have to check what's on the edge",259
+MA26593,AM,solvability_pixie,LA_4,11:34:52,OBS,"identified boss lock, looking for boss key",323
+MA26593,AM,solvability_pixie,LA_4,11:35:04,END,,335

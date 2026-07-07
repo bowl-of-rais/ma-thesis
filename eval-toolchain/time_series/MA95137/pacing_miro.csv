@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA95137,AM,pacing_miro,LA_1,15:41:12,STA,,0
+MA95137,AM,pacing_miro,LA_1,15:41:49,Q1A,"no, at least not per room (?)",37
+MA95137,AM,pacing_miro,LA_1,15:42:53,OBS,counting in head,101
+MA95137,AM,pacing_miro,LA_1,15:44:17,Q2A,a takes longer on average than B,185
+MA95137,AM,pacing_miro,LA_1,15:45:57,Q3A,more enemies in C than B,285
+MA95137,AM,pacing_miro,LA_1,15:46:24,END,,312
