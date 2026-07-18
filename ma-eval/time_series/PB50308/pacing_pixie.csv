@@ -1,0 +1,14 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB50308,BP,pacing_pixie,LA_2,14:40:29,STA,,0
+PB50308,BP,pacing_pixie,LA_2,14:40:31,CLR,throughout dungeon means A to B to C,2
+PB50308,BP,pacing_pixie,LA_2,14:41:04,pat,finding start - A,35
+PB50308,BP,pacing_pixie,LA_2,14:41:05,Q1A,R no (based on start - A),36
+PB50308,BP,pacing_pixie,LA_2,14:42:36,OBS,sums up along diagram for q2,127
+PB50308,BP,pacing_pixie,LA_2,14:43:02,Q2R,25 in section A,153
+PB50308,BP,pacing_pixie,LA_2,14:43:15,pat,finding start - B,166
+PB50308,BP,pacing_pixie,LA_2,14:43:41,Q2R,26 in section B,192
+PB50308,BP,pacing_pixie,LA_2,14:44:15,Q2R,counts all nodes (not just with enemies),226
+PB50308,BP,pacing_pixie,LA_2,14:44:46,Q2A,R yes,257
+PB50308,BP,pacing_pixie,LA_2,14:44:59,OBS,pathfinding + C,270
+PB50308,BP,pacing_pixie,LA_2,14:45:17,OBS,browser zoom,288
+PB50308,BP,pacing_pixie,LA_2,14:45:52,END,,323

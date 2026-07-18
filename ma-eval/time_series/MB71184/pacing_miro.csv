@@ -1,0 +1,6 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB71184,BM,pacing_miro,LA_2,11:42:13,STA,,0
+MB71184,BM,pacing_miro,LA_2,11:46:04,OBS,uses text field to record path/ttb along,231
+MB71184,BM,pacing_miro,LA_2,11:47:43,Q1A,"R non-linear enemy counts, some progression but not as distinctly",330
+MB71184,BM,pacing_miro,LA_2,11:48:01,Q4A,W 11 miniboss,348
+MB71184,BM,pacing_miro,LA_2,11:48:06,END,timer,353

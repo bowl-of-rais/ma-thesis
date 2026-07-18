@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB24145,BM,pacing_miro,LA_2,01:38:50,STA,,0
+MB24145,BM,pacing_miro,LA_2,01:41:07,OBS,just looks at chart,137
+MB24145,BM,pacing_miro,LA_2,01:41:50,CLR,enemies respawn,180
+MB24145,BM,pacing_miro,LA_2,01:43:07,Q1A,R number is increasing from A to B to C,257
+MB24145,BM,pacing_miro,LA_2,01:43:55,CLR,completion times are written in notes,305
+MB24145,BM,pacing_miro,LA_2,01:44:16,END,timer,326

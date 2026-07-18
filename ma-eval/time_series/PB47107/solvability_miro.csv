@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB47107,BP,solvability_miro,LA_3,16:38:41,STA,,0
+PB47107,BP,solvability_miro,LA_3,16:39:31,CLR,new ability gained from node with symbol,50
+PB47107,BP,solvability_miro,LA_3,16:39:43,ISS,TP can't get out of 6,62
+PB47107,BP,solvability_miro,LA_3,16:39:55,ISS,TP soft-locked in 9/7/4 if no ability yet,74
+PB47107,BP,solvability_miro,LA_3,16:41:41,OBS,traces path with mouse + talking,180
+PB47107,BP,solvability_miro,LA_3,16:42:26,ISS,TP not enough bombs for 23-22,225
+PB47107,BP,solvability_miro,LA_3,16:43:40,CMT,not sure if enough keys for path to boss,299
+PB47107,BP,solvability_miro,LA_3,16:43:49,END,,308

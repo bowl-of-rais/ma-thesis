@@ -1,0 +1,14 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB24145,BM,pacing_pixie,LA_1,01:47:03,STA,,0
+MB24145,BM,pacing_pixie,LA_1,01:47:13,OBS,path Start-A,10
+MB24145,BM,pacing_pixie,LA_1,01:47:43,OBS,path A - B,40
+MB24145,BM,pacing_pixie,LA_1,01:47:54,CLR,multi-select,51
+MB24145,BM,pacing_pixie,LA_1,01:48:33,CMT,more enemies in A than B,90
+MB24145,BM,pacing_pixie,LA_1,01:49:12,OBS,browser zoom ,129
+MB24145,BM,pacing_pixie,LA_1,01:49:57,CLR,black line in diagram,174
+MB24145,BM,pacing_pixie,LA_1,01:50:06,CMT,C has most enemies probably,183
+MB24145,BM,pacing_pixie,LA_1,01:50:37,OBS,full path,214
+MB24145,BM,pacing_pixie,LA_1,01:50:41,Q2A,? about the same time to beat A and B,218
+MB24145,BM,pacing_pixie,LA_1,01:51:11,Q3A,R more enemies in C than B (obs: confident),248
+MB24145,BM,pacing_pixie,LA_1,01:52:01,Q4A,"? 12-B as potential miniboss - based on context, not enemy/ttb",298
+MB24145,BM,pacing_pixie,LA_1,01:52:32,END,,329

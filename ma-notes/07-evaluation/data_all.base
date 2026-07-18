@@ -1,3 +1,5 @@
+formulas:
+  s_sob_miro: ""
 views:
   - type: table
     name: Table
@@ -9,12 +11,24 @@ views:
       - p_id
       - date
       - group
-      - p_answered_miro
-      - p_answered_pixie
-      - s_issues_miro
-      - s_issues_pixie
+      - s_iss_miro
+      - s_tp_miro
+      - s_fp_miro
+      - s_iss_pixie
+      - s_tp_pixie
+      - s_fp_pixie
+      - p_ans_miro
+      - p_ans_pixie
+      - p_right_miro
+      - p_right_pixie
       - participant
+      - s_sob_miro
+      - s_sob_pixie
+      - s_used_miro
+      - p_used_miro
     sort:
+      - property: participant
+        direction: ASC
       - property: user_id
         direction: ASC
       - property: user-id
@@ -22,8 +36,14 @@ views:
       - property: issues_correct_pixie
         direction: ASC
     columnSize:
-      note.p_answered_miro: 11
-      note.p_answered_pixie: 7
-      note.s_issues_miro: 17
-      note.s_issues_pixie: 11
-      note.participant: 355
+      note.s_iss_miro: 97
+      note.s_tp_miro: 97
+      note.s_fp_miro: 99
+      note.s_iss_pixie: 97
+      note.s_tp_pixie: 93
+      note.s_fp_pixie: 92
+      note.p_ans_miro: 106
+      note.p_ans_pixie: 110
+      note.p_right_miro: 122
+      note.p_right_pixie: 131
+      note.participant: 104

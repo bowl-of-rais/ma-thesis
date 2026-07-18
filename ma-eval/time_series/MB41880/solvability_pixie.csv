@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB41880,BM,solvability_pixie,LA_3,15:36:43,STA,,0
+MB41880,BM,solvability_pixie,LA_3,15:36:48,OBS,pathfinding start - boss,5
+MB41880,BM,solvability_pixie,LA_3,15:38:08,OBS,pathfinding start - 2,85
+MB41880,BM,solvability_pixie,LA_3,15:38:45,OBS,successive pathfinding,122
+MB41880,BM,solvability_pixie,LA_3,15:40:52,CLR,same symbol for all locks,249
+MB41880,BM,solvability_pixie,LA_3,15:42:25,END,,342

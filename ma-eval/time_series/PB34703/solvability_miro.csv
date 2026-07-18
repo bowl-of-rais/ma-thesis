@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB34703,BP,solvability_miro,LA_3,15:28:53,STA,,0
+PB34703,BP,solvability_miro,LA_3,15:29:23,CLR,deleted ability lock,30
+PB34703,BP,solvability_miro,LA_3,15:29:52,ISS,TP softlock in 4/9/10,59
+PB34703,BP,solvability_miro,LA_3,15:31:35,OBS,"no drawing, just looking",162
+PB34703,BP,solvability_miro,LA_3,15:32:43,ISS,TP unreachable area: 15/28/16/etc,230
+PB34703,BP,solvability_miro,LA_3,15:33:01,CMT,path to boss possible,248
+PB34703,BP,solvability_miro,LA_3,15:34:10,END,timer,317

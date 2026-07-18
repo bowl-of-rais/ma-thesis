@@ -1,0 +1,15 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA81918,AP,pacing_miro,LA_2,10:54:01,STA,,0
+PA81918,AP,pacing_miro,LA_2,10:54:36,OBS,pathfinding in head,35
+PA81918,AP,pacing_miro,LA_2,10:55:36,CMT,depends on whether direct path,95
+PA81918,AP,pacing_miro,LA_2,10:55:56,OBS,start counting enemies per section,115
+PA81918,AP,pacing_miro,LA_2,10:56:27,15 ,n section A,146
+PA81918,AP,pacing_miro,LA_2,10:56:32,12 ,n section B,151
+PA81918,AP,pacing_miro,LA_2,10:56:39,8 i, section C,158
+PA81918,AP,pacing_miro,LA_2,10:56:40,Q1A,R enemies become less,159
+PA81918,AP,pacing_miro,LA_2,10:57:11,CMT,spare keys,190
+PA81918,AP,pacing_miro,LA_2,10:58:02,CMT,average hard to calculate,241
+PA81918,AP,pacing_miro,LA_2,10:58:19,OBS,assumes different possible paths,258
+PA81918,AP,pacing_miro,LA_2,10:58:31,sec,ion A 28s,270
+PA81918,AP,pacing_miro,LA_2,10:59:08,Q2A,R section A takes longer,307
+PA81918,AP,pacing_miro,LA_2,10:59:17,END,timer,316

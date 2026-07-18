@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA40344,AP,pacing_pixie,LA_1,01:43:11,STA,,0
+PA40344,AP,pacing_pixie,LA_1,01:43:52,Q1A,R not steadily increasing,41
+PA40344,AP,pacing_pixie,LA_1,01:45:10,Q2A,R b shorter than a,119
+PA40344,AP,pacing_pixie,LA_1,01:45:36,Q3A,W more enemies in b than c,145
+PA40344,AP,pacing_pixie,LA_1,01:46:51,Q4A,W miniboss 18 or 7,220
+PA40344,AP,pacing_pixie,LA_1,01:47:17,Q5A,W 9-3 to 5 sharpest increase,246
+PA40344,AP,pacing_pixie,LA_1,01:48:00,Q6A,R 9-3 fewer enemies/lower completion time after intense encounter,289
+PA40344,AP,pacing_pixie,LA_1,01:48:24,END,timer,313

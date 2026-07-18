@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA26593,AM,pacing_miro,LA_1,11:36:26,STA,,0
+MA26593,AM,pacing_miro,LA_1,11:37:55,OBS,traces path with mouse,89
+MA26593,AM,pacing_miro,LA_1,11:39:07,Q4A,? probably room 4,161
+MA26593,AM,pacing_miro,LA_1,11:39:48,Q2A,R yes,202
+MA26593,AM,pacing_miro,LA_1,11:40:55,Q3A,"R yes, more enemies in section C under assumption that enemies don't respawn",269
+MA26593,AM,pacing_miro,LA_1,11:41:41,END,,315

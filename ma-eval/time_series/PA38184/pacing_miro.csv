@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA38184,AP,pacing_miro,LA_2,14:41:17,STA,,0
+PA38184,AP,pacing_miro,LA_2,14:42:36,CMT,"more enemies until A than until B, so no (obs: counted enemies accidentally instead of time for Q2)",79
+PA38184,AP,pacing_miro,LA_2,14:43:59,Q2A,R A takes longer than B,162
+PA38184,AP,pacing_miro,LA_2,14:44:08,Q4A,R room 15,171
+PA38184,AP,pacing_miro,LA_2,14:45:09,Q3A,"W no, B has more enemies than C",232
+PA38184,AP,pacing_miro,LA_2,14:46:07,Q5A,? 21-2 to 21-3,290
+PA38184,AP,pacing_miro,LA_2,14:46:18,END,,301

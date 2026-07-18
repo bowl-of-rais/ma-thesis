@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB41880,BM,pacing_pixie,LA_1,15:52:21,STA,,0
+MB41880,BM,pacing_pixie,LA_1,15:52:58,Q1A,R no,37
+MB41880,BM,pacing_pixie,LA_1,15:55:43,OBS,pathfinding start - a - B,202
+MB41880,BM,pacing_pixie,LA_1,15:55:56,Q2A,"R yes, it takes longer in section A",215
+MB41880,BM,pacing_pixie,LA_1,15:56:11,OBS,pathfinding start - a,230
+MB41880,BM,pacing_pixie,LA_1,15:57:00,OBS,"sum for A: 13, pathfinding + B, sum for B: 8, pathfinding + C",279
+MB41880,BM,pacing_pixie,LA_1,15:57:35,Q3A,"R yes, more enemies in C",314
+MB41880,BM,pacing_pixie,LA_1,15:57:43,END,,322

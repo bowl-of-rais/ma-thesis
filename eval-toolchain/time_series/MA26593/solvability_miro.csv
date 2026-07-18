@@ -1,5 +1,0 @@
-p_id,group,task,map,timestamp,tag,note,timedelta
-MA26593,AM,solvability_miro,LA_3,11:22:18,STA,,0
-MA26593,AM,solvability_miro,LA_3,11:23:57,ISS,softlock in 4 if ability check not passed,99
-MA26593,AM,solvability_miro,LA_3,11:25:31,OBS,traces path with mouse,193
-MA26593,AM,solvability_miro,LA_3,11:27:20,END,,302

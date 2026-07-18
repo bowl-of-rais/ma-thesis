@@ -1,0 +1,10 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB46220,BP,solvability_miro,LA_3,14:35:23,STA,,0
+PB46220,BP,solvability_miro,LA_3,14:36:13,CLR,ability (did not see node with ability),50
+PB46220,BP,solvability_miro,LA_3,14:36:35,ISS,TP hardlock in 6,72
+PB46220,BP,solvability_miro,LA_3,14:36:51,ISS,TP softlock in 4 if ability not acquired,88
+PB46220,BP,solvability_miro,LA_3,14:37:55,OBS,"trace path with mouse, but no drawing",152
+PB46220,BP,solvability_miro,LA_3,14:38:34,ISS,TP 15/16/26/27/28 not reachable,191
+PB46220,BP,solvability_miro,LA_3,14:39:42,ISS,FP hardlock in 14 bc before ability,259
+PB46220,BP,solvability_miro,LA_3,14:40:19,ISS,TP ?? hardlock in 18-20,296
+PB46220,BP,solvability_miro,LA_3,14:40:25,END,,302

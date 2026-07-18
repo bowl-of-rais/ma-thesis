@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA95935,AM,pacing_miro,LA_1,16:38:48,STA,,0
+MA95935,AM,pacing_miro,LA_1,16:39:54,OBS,adds text to track numbers,66
+MA95935,AM,pacing_miro,LA_1,16:41:07,Q4A,? miniboss 18 (7s for 2 enemies),139
+MA95935,AM,pacing_miro,LA_1,16:42:31,Q6A,"R 18 - 4, no enemies after intense encounter",223
+MA95935,AM,pacing_miro,LA_1,16:43:35,Q4A,R miniboss 11 (20s for 1 enemy),287
+MA95935,AM,pacing_miro,LA_1,16:43:53,END,timer,305

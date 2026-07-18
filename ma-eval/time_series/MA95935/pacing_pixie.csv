@@ -1,0 +1,13 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA95935,AM,pacing_pixie,LA_2,16:45:33,STA,,0
+MA95935,AM,pacing_pixie,LA_2,16:45:48,OBS,path start-a,15
+MA95935,AM,pacing_pixie,LA_2,16:46:42,OBS,path start-boss,69
+MA95935,AM,pacing_pixie,LA_2,16:47:40,OBS,both components in graph,127
+MA95935,AM,pacing_pixie,LA_2,16:47:27,no ,ig increases in enemy numbers between rooms,114
+MA95935,AM,pacing_pixie,LA_2,16:47:50,?? ,o 21-3 3 vs 5 enemies,137
+MA95935,AM,pacing_pixie,LA_2,16:48:08,Q1A,R number of enemies kind of steadily increases,155
+MA95935,AM,pacing_pixie,LA_2,16:48:32,Q1R,"across sections, later rooms tend to have more enemies",179
+MA95935,AM,pacing_pixie,LA_2,16:49:21,CLR,missing keys from before for section A - B,228
+MA95935,AM,pacing_pixie,LA_2,16:50:14,Q2A,? does not take longer to beat A than B,281
+MA95935,AM,pacing_pixie,LA_2,16:50:38,Q2R,room 15 takes the longesg,305
+MA95935,AM,pacing_pixie,LA_2,16:50:48,END,timer,315

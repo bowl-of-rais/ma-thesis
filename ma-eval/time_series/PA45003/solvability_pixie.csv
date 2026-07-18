@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA45003,AP,solvability_pixie,LA_3,12:22:25,STA,,0
+PA45003,AP,solvability_pixie,LA_3,12:22:51,OBS,path to boss,26
+PA45003,AP,solvability_pixie,LA_3,12:24:26,OBS,sub-paths in start area (around 9),121
+PA45003,AP,solvability_pixie,LA_3,12:25:04,CMT,not sure why 21-19 is red,159
+PA45003,AP,solvability_pixie,LA_3,12:26:10,CLR,issues after locked edges may not be found,225
+PA45003,AP,solvability_pixie,LA_3,12:26:47,CMT,not sure how edge is reached,262
+PA45003,AP,solvability_pixie,LA_3,12:26:58,OBS,path start - boss,273
+PA45003,AP,solvability_pixie,LA_3,12:27:03,ISS,TP 21-19 not unlockable bc simple key is missing,278
+PA45003,AP,solvability_pixie,LA_3,12:28:32,CMT,not trivial to see where non-existent path might go,367
+PA45003,AP,solvability_pixie,LA_3,12:29:12,END,timer,407

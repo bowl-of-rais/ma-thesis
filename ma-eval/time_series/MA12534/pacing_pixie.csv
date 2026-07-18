@@ -1,0 +1,12 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA12534,AM,pacing_pixie,LA_2,11:40:53,STA,,0
+MA12534,AM,pacing_pixie,LA_2,11:41:57,OBS,component on x axis,64
+MA12534,AM,pacing_pixie,LA_2,11:42:20,CLR,hint: x axis,87
+MA12534,AM,pacing_pixie,LA_2,11:42:54,Q1A,R yes,121
+MA12534,AM,pacing_pixie,LA_2,11:43:02,OBS,both components as f(x),129
+MA12534,AM,pacing_pixie,LA_2,11:44:48,OBS,missing keys from earlier (A->B),235
+MA12534,AM,pacing_pixie,LA_2,11:45:04,Q2A,R yes,251
+MA12534,AM,pacing_pixie,LA_2,11:45:21,CLR,clarification keys missing -> multi-select,268
+MA12534,AM,pacing_pixie,LA_2,11:48:07,Q3A,R yes,434
+MA12534,AM,pacing_pixie,LA_2,11:48:50,Q3R,reasoning,477
+MA12534,AM,pacing_pixie,LA_2,11:48:45,END,timer,472

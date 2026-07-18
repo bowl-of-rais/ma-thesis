@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA4076,AP,pacing_pixie,LA_1,11:34:37,STA,,0
+PA4076,AP,pacing_pixie,LA_1,11:35:57,OBS,"pathfinding start-A, a-b, start-b",80
+PA4076,AP,pacing_pixie,LA_1,11:36:55,Q1A,"R no, number of enemies varies throughout dungeon",138
+PA4076,AP,pacing_pixie,LA_1,11:37:44,Q2A,R A takes slightly longer (obs: diagram start-B),187
+PA4076,AP,pacing_pixie,LA_1,11:38:07,Q3A,R more enemies in C,210
+PA4076,AP,pacing_pixie,LA_1,11:39:16,OBS,reset pathfinding accidentally -> then start - C,279
+PA4076,AP,pacing_pixie,LA_1,11:39:27,Q4A,R room 11 (looking at diagram),290
+PA4076,AP,pacing_pixie,LA_1,11:40:01,END,timer,324

@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA4076,AP,solvability_pixie,LA_3,11:24:53,STA,,0
+PA4076,AP,solvability_pixie,LA_3,11:24:57,OBS,pathfinding start - boss,4
+PA4076,AP,solvability_pixie,LA_3,11:26:05,OBS,zoom around with pathfinding result still active,72
+PA4076,AP,solvability_pixie,LA_3,11:26:27,ISS,TP locked around 7/left path when using key for ability lock,94
+PA4076,AP,solvability_pixie,LA_3,11:26:58,ISS,TP hardlock in 6,125
+PA4076,AP,solvability_pixie,LA_3,11:27:07,CMT,not enough keys in total,134
+PA4076,AP,solvability_pixie,LA_3,11:27:39,ISS,FP stuck in 11,166
+PA4076,AP,solvability_pixie,LA_3,11:27:52,ISS,TP stuck 19-21 bc not enough keys,179
+PA4076,AP,solvability_pixie,LA_3,11:28:07,ISS,TP 12/17 unidirectional,194
+PA4076,AP,solvability_pixie,LA_3,11:28:28,END,participant,215

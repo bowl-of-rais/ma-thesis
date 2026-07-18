@@ -12,7 +12,7 @@
   text(it)
 )
 
-= Locks and Keys <id>
+= Locks and Keys <impl_lk>
 
 requirements/context:
 - multiple keys possible per node

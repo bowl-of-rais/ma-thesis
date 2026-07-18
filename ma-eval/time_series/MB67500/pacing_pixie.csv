@@ -1,0 +1,10 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB67500,BM,pacing_pixie,LA_1,15:42:00,STA,,0
+MB67500,BM,pacing_pixie,LA_1,15:42:40,Q1A,R number of enemies does not increase,40
+MB67500,BM,pacing_pixie,LA_1,15:42:52,ttb,goes up dramatically at end,52
+MB67500,BM,pacing_pixie,LA_1,15:44:11,cor,ection: ability,131
+MB67500,BM,pacing_pixie,LA_1,15:45:14,Q2A,? section B longer than section A (may have switched start/end markers),194
+MB67500,BM,pacing_pixie,LA_1,15:45:24,Q4A,R miniboss 11,204
+MB67500,BM,pacing_pixie,LA_1,15:45:47,Q5A,R increase: 9-1 to 9,227
+MB67500,BM,pacing_pixie,LA_1,15:46:25,Q5A,"RW 9-3 only one enemy after 4 before, also 11-15",265
+MB67500,BM,pacing_pixie,LA_1,15:47:05,END,participant,305

@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB10509,BM,pacing_miro,LA_2,13:40:10,STA,,0
+MB10509,BM,pacing_miro,LA_2,13:42:58,OBS,added sticky notes with sums,168
+MB10509,BM,pacing_miro,LA_2,13:43:36,Q3A,W no not more enemies in C than B,206
+MB10509,BM,pacing_miro,LA_2,13:43:56,Q4A,R 15,226
+MB10509,BM,pacing_miro,LA_2,13:44:10,Q4R,only one enemy but takes a long time,240
+MB10509,BM,pacing_miro,LA_2,13:44:21,Q1A,R yes,251
+MB10509,BM,pacing_miro,LA_2,13:45:19,END,,309

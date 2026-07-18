@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB67500,BM,solvability_pixie,LA_3,15:28:06,STA,,0
+MB67500,BM,solvability_pixie,LA_3,15:28:12,SOB,boss node not reachable ,6
+MB67500,BM,solvability_pixie,LA_3,15:29:11,CLR,lock symbol the same for all,65
+MB67500,BM,solvability_pixie,LA_3,15:29:55,ISS,TP hard-lock rechte abzweigung,109
+MB67500,BM,solvability_pixie,LA_3,15:31:20,ISS,TP not enough keys 19-21,194
+MB67500,BM,solvability_pixie,LA_3,15:32:44,ISF,deletes keys + corresponding locks,278
+MB67500,BM,solvability_pixie,LA_3,15:33:54,END,timer,348

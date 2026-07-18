@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB10509,BM,solvability_pixie,LA_3,13:33:23,STA,,0
+MB10509,BM,solvability_pixie,LA_3,13:33:32,OBS,path start - boss,9
+MB10509,BM,solvability_pixie,LA_3,13:34:03,ISS,TP hardlock in 6,40
+MB10509,BM,solvability_pixie,LA_3,13:35:06,OBS,reset pathfinding,103
+MB10509,BM,solvability_pixie,LA_3,13:35:10,OBS,path start - 10,107
+MB10509,BM,solvability_pixie,LA_3,13:35:40,OBS,path start - 2,137
+MB10509,BM,solvability_pixie,LA_3,13:36:17,OBS,checks lock on edge to 2,174
+MB10509,BM,solvability_pixie,LA_3,13:37:03,ISS,FP locked simple door to 39 (from just looking),220
+MB10509,BM,solvability_pixie,LA_3,13:37:29,COR,never mind the last one,246
+MB10509,BM,solvability_pixie,LA_3,13:38:28,END,,305

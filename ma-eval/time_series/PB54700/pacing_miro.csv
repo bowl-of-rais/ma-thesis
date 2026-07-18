@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB54700,BP,pacing_miro,LA_1,10:43:47,STA,,0
+PB54700,BP,pacing_miro,LA_1,10:44:24,Q1A,"no, not steadily increasing (never higher than 4)",37
+PB54700,BP,pacing_miro,LA_1,10:45:53,Q2A,"R no, roughly the same",126
+PB54700,BP,pacing_miro,LA_1,10:46:07,Q2C,R section 1 might take a little longer,140
+PB54700,BP,pacing_miro,LA_1,10:46:45,Q3A,R yes,178
+PB54700,BP,pacing_miro,LA_1,10:46:57,Q4A,R room 11,190
+PB54700,BP,pacing_miro,LA_1,10:47:24,Q4C,confirm q4,217
+PB54700,BP,pacing_miro,LA_1,10:48:03,Q5A,R 9-3 to 5,256
+PB54700,BP,pacing_miro,LA_1,10:48:23,Q6A,R room 15 after miniboss,276
+PB54700,BP,pacing_miro,LA_1,10:48:52,END,(timer),305

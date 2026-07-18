@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA89964,AP,solvability_pixie,LA_3,10:24:49,STA,,0
+PA89964,AP,solvability_pixie,LA_3,10:24:53,OBS,pathfinding start - 2 (like before start lol),4
+PA89964,AP,solvability_pixie,LA_3,10:25:31,OBS,pathfinding start - 23?,42
+PA89964,AP,solvability_pixie,LA_3,10:26:14,ISS,TP hardlock in 6 bc no outgoing edge,85
+PA89964,AP,solvability_pixie,LA_3,10:26:52,CMT,not sure whether room 2 is a problem (obs: on way to boss ig),123
+PA89964,AP,solvability_pixie,LA_3,10:27:46,OBS,pathfinding start - boss,177
+PA89964,AP,solvability_pixie,LA_3,10:28:16,OBS,inspect edge with 6x bomb to 23,207
+PA89964,AP,solvability_pixie,LA_3,10:29:55,END,,306

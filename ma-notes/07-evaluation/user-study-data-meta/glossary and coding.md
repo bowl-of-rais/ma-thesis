@@ -39,6 +39,7 @@
 - ISS: issue identified
 - ISR: issue reasoning
 - ISF: issue fixed
+- SOB: solvability observation
 - NMI: no more issues
 - IAT: issue after timer
 - CLR: clarification

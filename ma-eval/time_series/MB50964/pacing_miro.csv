@@ -1,0 +1,6 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB50964,BM,pacing_miro,LA_2,11:42:47,STA,,0
+MB50964,BM,pacing_miro,LA_2,11:42:57,OBS,adds sticky note,10
+MB50964,BM,pacing_miro,LA_2,11:47:14,Q1A,R increasing throughout dungeon,267
+MB50964,BM,pacing_miro,LA_2,11:47:31,Q1R,"after A 4 enemies, with some exceptions",284
+MB50964,BM,pacing_miro,LA_2,11:47:48,END,timer,301

@@ -1,0 +1,10 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA4076,AP,pacing_miro,LA_2,11:40:56,STA,,0
+PA4076,AP,pacing_miro,LA_2,11:41:38,OBS,"trace path with mouse, but no drawing",42
+PA4076,AP,pacing_miro,LA_2,11:42:15,Q1A,R number of enemies also varies up and down,79
+PA4076,AP,pacing_miro,LA_2,11:42:55,Q2A,R section A longer than B,119
+PA4076,AP,pacing_miro,LA_2,11:43:32,Q3A,R section C has more enemies,156
+PA4076,AP,pacing_miro,LA_2,11:44:04,Q4A,R room 15 could have miniboss,188
+PA4076,AP,pacing_miro,LA_2,11:44:39,Q5A,R room 21-2 21-3,223
+PA4076,AP,pacing_miro,LA_2,11:45:34,Q6A,W room 23 to 17,278
+PA4076,AP,pacing_miro,LA_2,11:45:46,END,participant,290

@@ -1,0 +1,12 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA7125,AM,solvability_pixie,LA_4,11:30:58,STA,,0
+MA7125,AM,solvability_pixie,LA_4,11:31:05,OBS,pathfinding start-boss,7
+MA7125,AM,solvability_pixie,LA_4,11:31:09,CMT,no path between start and boss,11
+MA7125,AM,solvability_pixie,LA_4,11:31:44,CMT,unsure where it fails,46
+MA7125,AM,solvability_pixie,LA_4,11:31:52,OBS,tries different paths from start,54
+MA7125,AM,solvability_pixie,LA_4,11:32:16,SOB,missing key between 31 and Boss,78
+MA7125,AM,solvability_pixie,LA_4,11:33:16,ISS,TP 12 not reachable,138
+MA7125,AM,solvability_pixie,LA_4,11:34:18,CMT,"could put boss key directly in previous node, but game design wise it would be better to hide it elsewhere",200
+MA7125,AM,solvability_pixie,LA_4,11:35:21,OBS,"added keys to nodes on the right (2x simple in 11, 6)",263
+MA7125,AM,solvability_pixie,LA_4,11:36:42,ISS,TP one-directional path 12-11,344
+MA7125,AM,solvability_pixie,LA_4,11:36:45,END,,347

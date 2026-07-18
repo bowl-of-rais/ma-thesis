@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MA34230,AM,solvability_pixie,LA_4,17:32:16,STA,,0
+MA34230,AM,solvability_pixie,LA_4,17:32:21,OBS,successive pathfinding,5
+MA34230,AM,solvability_pixie,LA_4,17:32:41,OBS,path start - 12,25
+MA34230,AM,solvability_pixie,LA_4,17:33:12,OBS,looking for reachable nodes,56
+MA34230,AM,solvability_pixie,LA_4,17:36:39,CMT,lots if unreachable,263
+MA34230,AM,solvability_pixie,LA_4,17:36:46,ISS,TP 6-12 not unlockable,270
+MA34230,AM,solvability_pixie,LA_4,17:37:02,SOB,can reach 31 but not further,286
+MA34230,AM,solvability_pixie,LA_4,17:37:18,END,,302

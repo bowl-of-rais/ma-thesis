@@ -1,0 +1,12 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB50964,BM,solvability_pixie,LA_3,11:35:20,STA,,0
+MB50964,BM,solvability_pixie,LA_3,11:35:23,OBS,pathfinding start - 2,3
+MB50964,BM,solvability_pixie,LA_3,11:36:20,ISS,FP can't get from start to 2,60
+MB50964,BM,solvability_pixie,LA_3,11:37:07,OBS,successive pathfinding,107
+MB50964,BM,solvability_pixie,LA_3,11:37:16,ISS,TP softlocked in 6,116
+MB50964,BM,solvability_pixie,LA_3,11:38:07,CLR,boss room location,167
+MB50964,BM,solvability_pixie,LA_3,11:38:35,OBS,pathfinding start - boss,195
+MB50964,BM,solvability_pixie,LA_3,11:39:20,ISS,"softlocked between 1-2, 14, 21-20 (evl: includes duplicate FP locked edge to 2, TP softlock at 14, FP missing key 21-20)",240
+MB50964,BM,solvability_pixie,LA_3,11:39:48,CMT,"not sure whether softlock, but definitely not unlockable",268
+MB50964,BM,solvability_pixie,LA_3,11:40:54,CMT,"after 3 not hardlock, but softlock",334
+MB50964,BM,solvability_pixie,LA_3,11:41:00,END,timer,340

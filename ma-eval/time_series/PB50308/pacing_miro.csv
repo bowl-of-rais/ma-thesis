@@ -1,0 +1,15 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB50308,BP,pacing_miro,LA_1,14:46:21,STA,,0
+PB50308,BP,pacing_miro,LA_1,14:47:17,CLR,"one path, just ",56
+PB50308,BP,pacing_miro,LA_1,14:47:40,Q1A,R no,79
+PB50308,BP,pacing_miro,LA_1,14:47:41,Q1R,3 enemies then 1,80
+PB50308,BP,pacing_miro,LA_1,14:47:58,OBS,sum times in head,97
+PB50308,BP,pacing_miro,LA_1,14:48:54,Q2A,"R yes, B is quicker than A (via calculating in head)",153
+PB50308,BP,pacing_miro,LA_1,14:49:35,Q3A,"R yes, more in section C (via calculating in head)",194
+PB50308,BP,pacing_miro,LA_1,14:49:51,Q4A,R 11 is miniboss,210
+PB50308,BP,pacing_miro,LA_1,14:49:55,Q4R,only one enemy but 20s,214
+PB50308,BP,pacing_miro,LA_1,14:50:36,Q5A,R 9-3 to 5,255
+PB50308,BP,pacing_miro,LA_1,14:51:01,CLR,high intensity,280
+PB50308,BP,pacing_miro,LA_1,14:51:42,Q6A,R 15,321
+PB50308,BP,pacing_miro,LA_1,14:51:44,Q6R,after miniboss,323
+PB50308,BP,pacing_miro,LA_1,14:51:49,END,participant,328

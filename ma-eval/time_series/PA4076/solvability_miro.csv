@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA4076,AP,solvability_miro,LA_4,11:29:15,STA,,0
+PA4076,AP,solvability_miro,LA_4,11:30:03,CLR,use functionality of tool,48
+PA4076,AP,solvability_miro,LA_4,11:30:27,SOB,"stuck around 20, boss key, only one regular key",72
+PA4076,AP,solvability_miro,LA_4,11:30:26,ISS,TP 12 not reachable,71
+PA4076,AP,solvability_miro,LA_4,11:31:47,CMT,upper left part unreachable,152
+PA4076,AP,solvability_miro,LA_4,11:32:15,END,participant,180

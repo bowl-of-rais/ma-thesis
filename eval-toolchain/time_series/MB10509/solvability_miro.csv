@@ -1,6 +1,0 @@
-p_id,group,task,map,timestamp,tag,note,timedelta
-MB10509,BM,solvability_miro,LA_4,13:25:43,STA,,0
-MB10509,BM,solvability_miro,LA_4,13:27:50,can,"get to 31, but no further",127
-MB10509,BM,solvability_miro,LA_4,13:28:03,can,not get from 6 to 12/hard lock,140
-MB10509,BM,solvability_miro,LA_4,13:29:49,can,not get from 26 to 27,246
-MB10509,BM,solvability_miro,LA_4,13:30:48,END,,305

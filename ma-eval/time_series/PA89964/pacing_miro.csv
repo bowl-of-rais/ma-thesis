@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA89964,AP,pacing_miro,LA_2,10:45:19,STA,,0
+PA89964,AP,pacing_miro,LA_2,10:45:34,OBS,uses text fields to record path from start to boss,15
+PA89964,AP,pacing_miro,LA_2,10:48:48,OBS,seems done with pathfinding,209
+PA89964,AP,pacing_miro,LA_2,10:49:06,Q1A,W no,227
+PA89964,AP,pacing_miro,LA_2,10:49:49,Q2A,R yes,270
+PA89964,AP,pacing_miro,LA_2,10:50:09,Q3A,W no,290
+PA89964,AP,pacing_miro,LA_2,10:50:21,END,,302

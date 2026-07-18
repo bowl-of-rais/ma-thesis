@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB24145,BM,solvability_miro,LA_4,01:21:21,CLR,empty inventory at beginning,0
+MB24145,BM,solvability_miro,LA_4,01:22:17,STA,,56
+MB24145,BM,solvability_miro,LA_4,01:23:15,ISS,? can't unlock boss lock 31-39,114
+MB24145,BM,solvability_miro,LA_4,01:24:38,ISS,"TP can't reach 12/parts after 12, missing key",197
+MB24145,BM,solvability_miro,LA_4,01:25:27,ISS,TP soft-lock at 6,246
+MB24145,BM,solvability_miro,LA_4,01:27:06,CLR,also look for issues in non-reachable part,345
+MB24145,BM,solvability_miro,LA_4,01:27:24,ISS,TP unlockable edge: 26-27,363
+MB24145,BM,solvability_miro,LA_4,01:27:57,END,timer,396

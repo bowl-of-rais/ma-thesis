@@ -1,0 +1,9 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA40344,AP,pacing_miro,LA_2,01:48:59,STA,,0
+PA40344,AP,pacing_miro,LA_2,01:50:18,Q1A,W number of enemies does not steadily increase,79
+PA40344,AP,pacing_miro,LA_2,01:51:13,Q2A,R b shorter than section a,134
+PA40344,AP,pacing_miro,LA_2,01:51:38,Q3A,W b more enemies than c,159
+PA40344,AP,pacing_miro,LA_2,01:51:59,Q4A,R miniboss 15,180
+PA40344,AP,pacing_miro,LA_2,01:52:18,Q5A,W 21-1 to 21-3 sharpest increase,199
+PA40344,AP,pacing_miro,LA_2,01:53:23,Q6A,R room 16 after intense encounter,264
+PA40344,AP,pacing_miro,LA_2,01:53:38,END,participant,279

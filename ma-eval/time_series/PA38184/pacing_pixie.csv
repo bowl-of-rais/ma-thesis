@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA38184,AP,pacing_pixie,LA_1,14:35:09, ST,,0
+PA38184,AP,pacing_pixie,LA_1,14:35:18,Q1A,R no,9
+PA38184,AP,pacing_pixie,LA_1,14:36:04,OBS,pathfinding start - A: sum numbers from diagram,55
+PA38184,AP,pacing_pixie,LA_1,14:36:19,OBS,pathfinding A - B,70
+PA38184,AP,pacing_pixie,LA_1,14:36:54,OBS,removed lock 17 to 9-4,105
+PA38184,AP,pacing_pixie,LA_1,14:36:58,OBS,pathfinding A - B,109
+PA38184,AP,pacing_pixie,LA_1,14:37:13,Q2A,? same length,124
+PA38184,AP,pacing_pixie,LA_1,14:39:02,OBS,pathfinding ,233
+PA38184,AP,pacing_pixie,LA_1,14:39:12,OBS,"removed another lock, check later -> 12-13, 13 - 9-2",243
+PA38184,AP,pacing_pixie,LA_1,14:40:11,END,,302

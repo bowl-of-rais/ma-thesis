@@ -89,8 +89,8 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 - data recorded in semi-structured or format -> parsing script to transform
 - different sets of data:
   - demographics
-  - task meta data per participant and task: total counts/points
-  - time series per participant and task: timestamp + individual answers, comments, etc
+  - task meta data per participant and task: total counts/points - based on protocol, may contain some human error
+  - time series per participant and task: timestamp + individual answers, comments, etc - based on protocol, may also contain some human error
   - UEQ-S
   - comparison questionnaire
 
@@ -98,7 +98,7 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 ==== Participants
 
-- total number
+- total number: 24
 - demographics
 - group breakdown
 
@@ -111,8 +111,36 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 ==== Results Pacing
 
 - total number of answered questions
-- correctly identified issues (f1)
+- correctly answered questions (f1)
+- wrongly answered questions
 - time per question
+
+==== Results UEQ-S
+
+- using provided analysis tool
+- pragmatic quality ("relate to the tasks or goals the user aims to reach"): 0.823, hedonic quality ("related to pleasure or fun while using the product"): 1.385, overall: 1.104
+- #todo("contextualize")
+- weakest item: confusing vs clear
+  - potentially relates to: UI quirks, lock visualization
+
+==== Results Comparative Questions
+
+- C-Q1: "Compared to Miro, the system made it easier to analyze dungeon designs. "
+- C-Q2: "Compared to Miro, I felt more confident in my answers. "
+- C-Q3: "Compared to Miro, I was able to complete the tasks more efficiently. "
+- C-Q4: "If I were analyzing game levels in practice, I would prefer using the system over a general-purpose whiteboard."
+
+5-point Likert scale, fully disagree (1) to fully agree (5)
+
+#figure(
+  image("assets/05/comparative-questions-histogram.png")
+)
+
+- overall, participants indicated preference for statepx over miro, mixed answers with a slight preference for pixie in first three questions
+- in line with high hedonic quality reported in UEQ-S
+
+- previous whiteboard experience correlated with lower preference for pix:e #todo("back this up with calculation")
+
 
 ==== Validity of A/B Test
 

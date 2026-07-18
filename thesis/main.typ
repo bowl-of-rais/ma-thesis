@@ -165,7 +165,7 @@
 #include "thesis/02-background.typ"
 #include "thesis/03-basic-pb-diagrams.typ"
 #include "thesis/04-locks-and-keys.typ"
-
+#include "thesis/05-evaluation.typ"
 
 // --- Appendixes ---
 

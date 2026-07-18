@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB41880,BM,pacing_miro,LA_2,15:44:49,STA,,0
+MB41880,BM,pacing_miro,LA_2,15:47:58,Q1A,"R no, one room with 5 enemies and 3 in the next",189
+MB41880,BM,pacing_miro,LA_2,15:49:25,CLR,"enemies do respawn, rooms without enemies do not count (cannot be completed)",276
+MB41880,BM,pacing_miro,LA_2,15:49:36,Q2A,"W no, section b takes longer (somewhat confident)",287
+MB41880,BM,pacing_miro,LA_2,15:50:14,CLR,enemies in checkpoint room count for section,325
+MB41880,BM,pacing_miro,LA_2,15:50:31,END,,342

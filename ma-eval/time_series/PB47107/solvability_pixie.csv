@@ -1,0 +1,11 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB47107,BP,solvability_pixie,LA_4,16:31:40,STA,,0
+PB47107,BP,solvability_pixie,LA_4,16:32:13,CMT,no way from start to boss,33
+PB47107,BP,solvability_pixie,LA_4,16:33:06,OBS,successive pathfinding,86
+PB47107,BP,solvability_pixie,LA_4,16:33:29,CMT,can't get to room 12,109
+PB47107,BP,solvability_pixie,LA_4,16:33:54,CLR,pathfinding with multiselect uses last selected node as start,134
+PB47107,BP,solvability_pixie,LA_4,16:34:47,ISS,TP can't get from 6 to 12,187
+PB47107,BP,solvability_pixie,LA_4,16:35:32,CMT,no way from 9 to 17,232
+PB47107,BP,solvability_pixie,LA_4,16:36:23,CMT,no way from start to 17,283
+PB47107,BP,solvability_pixie,LA_4,16:36:43,OBS,pathfinding 25 - start,303
+PB47107,BP,solvability_pixie,LA_4,16:36:51,END,,311

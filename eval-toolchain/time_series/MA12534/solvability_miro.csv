@@ -1,8 +1,0 @@
-p_id,group,task,map,timestamp,tag,note,timedelta
-MA12534,AM,solvability_miro,LA_3,11:18:42,STA,,0
-MA12534,AM,solvability_miro,LA_3,11:20:11,CLR,clarified new ability lock,89
-MA12534,AM,solvability_miro,LA_3,11:21:16,CLR,clarified unidirectional edge,154
-MA12534,AM,solvability_miro,LA_3,11:21:21,ISS,"hard lock 6, pretty confident",159
-MA12534,AM,solvability_miro,LA_3,11:21:39,ISS,"lock 9 without ability, pretty confident",177
-MA12534,AM,solvability_miro,LA_3,11:23:34,ISS,in 38 locked out of other rooms when going to 39 first,292
-MA12534,AM,solvability_miro,LA_3,11:24:16,END,(timer),334

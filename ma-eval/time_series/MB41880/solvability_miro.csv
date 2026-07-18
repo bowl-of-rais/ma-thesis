@@ -1,0 +1,7 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+MB41880,BM,solvability_miro,LA_4,15:28:50,STA,,0
+MB41880,BM,solvability_miro,LA_4,15:29:38,OBS,adds emoji reactions to sticky notes -> seems to track used keys / reached nodes,48
+MB41880,BM,solvability_miro,LA_4,15:30:31,CLR,what ability means on edge vs on node,101
+MB41880,BM,solvability_miro,LA_4,15:31:56,ISS,TP hardlocked 6 to 12,186
+MB41880,BM,solvability_miro,LA_4,15:32:58,CMT,confirm hardlock,248
+MB41880,BM,solvability_miro,LA_4,15:33:58,END,,308

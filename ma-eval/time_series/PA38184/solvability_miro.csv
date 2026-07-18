@@ -1,0 +1,8 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PA38184,AP,solvability_miro,LA_4,14:27:46,STA,,0
+PA38184,AP,solvability_miro,LA_4,14:28:31,CMT,maybe can't progress past 6? unsure,45
+PA38184,AP,solvability_miro,LA_4,14:29:18,ISS,TP can't unlock edge 6 - 12,92
+PA38184,AP,solvability_miro,LA_4,14:30:00,OBS,traces path with mouse,134
+PA38184,AP,solvability_miro,LA_4,14:30:18,SOB,can't unlock 12-11 (ability unreachable),152
+PA38184,AP,solvability_miro,LA_4,14:31:24,ISS,TP 14/21/28 unreachable bc unidirectional edge,218
+PA38184,AP,solvability_miro,LA_4,14:32:46,END,,300

@@ -1,0 +1,10 @@
+p_id,group,task,map,timestamp,tag,note,timedelta
+PB3394,BP,pacing_miro,LA_1,12:47:21,STA,,0
+PB3394,BP,pacing_miro,LA_1,12:47:45,OBS,traces path with mouse,24
+PB3394,BP,pacing_miro,LA_1,12:48:24,Q1A,"R  no, it does not (highest in the first few rooms)",63
+PB3394,BP,pacing_miro,LA_1,12:48:48,Q2A,R section A takes more time than B,87
+PB3394,BP,pacing_miro,LA_1,12:49:10,Q3A,"R yes, more enemies in C than B",109
+PB3394,BP,pacing_miro,LA_1,12:49:31,Q4A,R room 11 probably (longest completion time except boss),130
+PB3394,BP,pacing_miro,LA_1,12:50:23,Q5A,R 9-1 and 9 largest increase,182
+PB3394,BP,pacing_miro,LA_1,12:50:59,Q6A,R room 5 to room 9-3,218
+PB3394,BP,pacing_miro,LA_1,12:51:11,END,participant,230
