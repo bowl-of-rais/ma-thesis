@@ -37,7 +37,8 @@
     [*Variant B first*],
     [MB],
     [PB],
-    )
+    ),
+    caption: "Definition of the 4 user study participant groups"
 )
 
 - use case: zelda dungeons #cite(<summervilleVGLCVideoGame2016>) -> ensure realistic tasks. data pool big enough to choose 2 comparable dungeons per task. same game: consistency in terms of details like item/key types, dungeon structure, etc.
@@ -106,29 +107,27 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
     - Miro: e.g. draw in paths, use pens/sticky notes to note down calculations and answers
     - pix:e: pathfinding functionality w/ highlighting, diagrams
 
-=== Collected Data
+=== Data Collection and Processing
 
-- demographics: age, gender, background, occupation experience, previous experience with whiteboard tools
+- demographics: age, gender, background, occupation experience, previous experience with whiteboard tools. collected via Google Forms
 
 #todo("add complete demographics")
 
 - recorded during tasks: issues found/questions answered + timestamps, comments, clarifications/hints, observations about tool use
+  - semi-structured live protocol
+- separate pix:e accounts/miro boards for participants -> edits
 
-- additionally: UEQ-S #cite(<schreppDesignEvaluationShort2017>), questionnaire comparing Miro and StatePx
+- additionally: UEQ-S #cite(<schreppDesignEvaluationShort2017>) (short version recommended for evaluations of multiple versions of a system), questionnaire comparing Miro and StatePx. collected via Google Forms
+
+#todo("disclaimer: questionnaires team effort")
+
+post-processing:
+- manual tagging of task meta data per participant and task: total counts/points based on protocol. parsing script to transform into csv
+- codification of free-form answers
+
+-> different sets of data
 
 == User Study Results
-
-=== Data Processing
-
-#todo("potentially more of a methodology section? check wiki")
-
-- data recorded in semi-structured or format -> parsing script to transform
-- different sets of data:
-  - demographics
-  - task meta data per participant and task: total counts/points - based on protocol, may contain some human error
-  - time series per participant and task: timestamp + individual answers, comments, etc - based on protocol, may also contain some human error
-  - UEQ-S
-  - comparison questionnaire
 
 === Data Analysis
 
@@ -140,11 +139,15 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 ==== Results Solvability
 
+#todo("add disclaimer human error")
+
 - total number of identified issues
 - correctly identified issues (f1)
 - times to first identified issues
 
 ==== Results Pacing
+
+#todo("add disclaimer human error")
 
 - total number of answered questions
 - correctly answered questions (f1)
@@ -169,7 +172,8 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 5-point Likert scale, fully disagree (1) to fully agree (5)
 
 #figure(
-  image("assets/05/comparative-questions-histogram.png")
+  image("assets/05/comparative-questions-histogram.png"),
+  caption: "Answer distributions for system preference questions, across all participants"
 )
 
 - overall, participants indicated preference for statepx over miro, mixed answers with a slight preference for pixie in first three questions
@@ -194,6 +198,17 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 == Post-Study Improvements
 
 - based on feedback/observations
+
+=== Improved Visual Representation of Locks & Keys
+
+- initial version: all locks on edges represented by same symbol respectively. high number of participants feedbacked that distinct visualization of different lock types would improve the experience, or expressed/showed confusion due to the initial representation.
+
+- addition to data model: `symbol` for both locks and keys, can be selected in picker when creating definitions.
+    - key assignments show symbol in preview, tooltip shows name of definition on hover
+    - edges show symbols of all assigned locks as label. tooltip more involved in current framework. instead: legend popover
+- legend: bottom right corner of chart. can be shown/hidden via button. shows overview of available lock + key definitions in separate tabs, including most important informations for users (e.g. symbol, name, for keys: consumability, for locks: unlocking key definitions)
+
+#todo("add screenshots")
 
 === Reachability Analysis
 

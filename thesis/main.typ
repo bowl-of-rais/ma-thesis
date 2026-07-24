@@ -53,7 +53,7 @@
 
 
 // Set numbering mode
-#set page(numbering: "1")
+#set page(numbering: none)
 #set math.equation(numbering: "(1)")
 #set heading(numbering: "1.1")
 
@@ -157,6 +157,9 @@
 )
 #pagebreak(weak: false)
 
+#set page(numbering: "1")
+#counter(page).update(1)
+
 
 // --- Main Chapters ---
 
@@ -166,18 +169,21 @@
 #include "thesis/03-basic-pb-diagrams.typ"
 #include "thesis/04-locks-and-keys.typ"
 #include "thesis/05-evaluation.typ"
+#include "thesis/06-discussion.typ"
+#include "thesis/07-related-works.typ"
+#include "thesis/08-future-work.typ"
+#include "thesis/09-conclusion.typ"
 
 // --- Appendixes ---
 
 // restart page numbering using roman numbers
-/*
+
 #set page(numbering: "i")
 #counter(page).update(1)
-*/
 
-/*
-#include("appendix-a.typ")
-*/
+#include("thesis/a1-user-study.typ")
+#include("thesis/a2-further-evaluation.typ")
+
 
 // List of Acronyms.
 /*
@@ -186,22 +192,19 @@
 */
 
 // List of figures.
-/*
 #heading(numbering: none)[List of Figures]
 #outline(
   title: none,
   target: figure.where(kind: image),
 )
-*/
 
 // List of tables.
-/*
 #heading(numbering: none)[List of Tables]
 #outline(
   title: none,
   target: figure.where(kind: table)
 )
-*/ 
+
 
 
 // --- Bibliography ---

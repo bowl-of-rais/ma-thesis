@@ -166,7 +166,7 @@ canUnlock(K, L):
   rest: 10pt,
   figure(
     image("assets/04/lock-key-pathfinding-basic.drawio.png", width: 50%),
-    caption: "Calculation of unlocking keysets for key consumption",
+    caption: "Pathfinding Algorithm with Locks & Keys (Basic)",
     gap: 2em
   )
 )
@@ -231,7 +231,7 @@ canUnlock(K, L):
   rest: 10pt,
   figure(
     image("assets/04/can-unlock-with-consume.drawio.png", width: 50%),
-    caption: "Calculation of unlocking keysets",
+    caption: "Calculation of unlocking keysets as multisets",
     gap: 2em
   )
 )
@@ -282,7 +282,7 @@ definition:
   rest: 10pt,
   figure(
     image("assets/04/soft-lock-example.drawio.png", width: 80%),
-    caption: "Calculation of unlocking keysets for key consumption",
+    caption: "Example: Soft-lock",
     gap: 2em
   )
 )
@@ -311,7 +311,7 @@ definition:
   rest: 10pt,
   figure(
     image("assets/04/backtracking.drawio.png", width: 80%),
-    caption: "Calculation of unlocking keysets for key consumption",
+    caption: "Example: Backtracking",
     gap: 2em
   )
 )
@@ -322,7 +322,7 @@ definition:
   rest: 10pt,
   figure(
     image("assets/04/lock-key-pathfinding-backtracking.drawio.png", width: 50%),
-    caption: "Calculation of unlocking keysets for key consumption",
+    caption: "Pathfinding Algorithm with Locks & Keys (Complete)",
     gap: 2em
   )
 )
