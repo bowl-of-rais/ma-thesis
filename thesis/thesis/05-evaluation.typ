@@ -21,9 +21,28 @@
 === Overall Setup
 
 - task-based within-subject: StatePx vs Miro
-  - two task variants -> 4 groups
+  - two task variants, varying order of tools + dungeons -> 4 groups:
+
+#figure(
+    table(
+    columns: (auto, auto, auto),
+    inset: 10pt,
+    align: horizon,
+    table.header(
+        [], [*Miro first*], [*StatePx first*],
+    ),
+    [*Variant A first*],
+    [MA],
+    [PA],
+    [*Variant B first*],
+    [MB],
+    [PB],
+    )
+)
+
 - use case: zelda dungeons #cite(<summervilleVGLCVideoGame2016>) -> ensure realistic tasks. data pool big enough to choose 2 comparable dungeons per task. same game: consistency in terms of details like item/key types, dungeon structure, etc.
 - target demographic: people with some understanding of game design -> recruitment: university lecture in games engineering study course, also computer science students who are familiar with videogames
+- complete tasks (all dungeons) + answer keys in appendix #todo("add to appendix")
 
 === Modeling Zelda Dungeons
 
@@ -53,7 +72,13 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
   - structural: #todo("add structural adaptations")
   - information: remove puzzles, "vision" edges, enemies
 
+- added issues: 6 for each dungeon, of varying difficulty
+  - 2x missing key(s), 1x no outgoing edge, 1x unreachable due to edge directionality, 2x softlock
+
 - task: find as many issues -> specified kinds of issues
+- participants were allowed to use tool functionalities
+    - Miro: e.g. draw in paths, use pens/sticky notes to mark found issues
+    - pix:e: pathfinding functionality w/ highlighting, fixing issues after reporting
 
 === Pacing Analysis Tasks
 
@@ -68,11 +93,22 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
   - information: remove puzzles, "vision" edges
   - additional information: completion time based on YouTube walkthrough (100% completion to get data for all rooms) #todo("add ref to walkthroughs")
 
-- task: answer questions about pacing. includes comparisons of path sections, overall enemy distribution in nodes
+- task: answer questions about pacing. includes comparisons of path sections, overall enemy distribution in nodes:
+
+1. Is the number of enemies steadily increasing throughout the dungeon?
+2. Does it take longer on average to complete rooms in Section A than in Section B?
+3. Are there more enemies in Section C than in Section B?
+4. Which room most likely contains a miniboss?
+5. Between which two consecutive rooms does the number increase the most?
+6. Which room after a high-intensity encounter has notably fewer enemies or lower completion time? 
+
+- participants were allowed to use tool functionalities
+    - Miro: e.g. draw in paths, use pens/sticky notes to note down calculations and answers
+    - pix:e: pathfinding functionality w/ highlighting, diagrams
 
 === Collected Data
 
-- demographics: age, gender, background, occupation experience
+- demographics: age, gender, background, occupation experience, previous experience with whiteboard tools
 
 #todo("add complete demographics")
 
@@ -141,6 +177,9 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 - previous whiteboard experience correlated with lower preference for pix:e #todo("back this up with calculation")
 
+==== Additional Feedback from participants
+
+#todo("add freeform feedback")
 
 ==== Validity of A/B Test
 
@@ -148,6 +187,30 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 - compare demographics across groups
 
 == Limitations
+
+- data collection: human errors
+- not all functionality included (e.g. soft gates)
+
+== Post-Study Improvements
+
+- based on feedback/observations
+
+=== Reachability Analysis
+
+- many participants (number) either explicitly reported missing a reachability analysis functionality in open feedback or were observed to conduct a reachability analysis during the solvability task by selecting various end nodes for the given start node and subsequently identifying locked edges as those between a node reachable from the start and a node not reachable from the start. #todo("add numbers")
+
+- dijkstra algorithm tracks distances of nodes from start nodes. initial value: `Infinity`, i.e., all nodes with distance < `Infinity` are reachable. -> simply filter after pathfinding has concluded
+
+- in case of failed pathfinding: highlight unreachable nodes #todo("confirm/wait for julians pr feedback")
+
+#todo("add screenshots")
+
+=== Increased Contrast of Nodes Against Background
+
+- high number of participants reported low contrast between nodes and background as a usability issue, especially when zoomed out #todo("add numbers")
+- new color in css theme for background for both dark and light mode
+
+#todo("add screenshots")
 
 
 #load-bib()

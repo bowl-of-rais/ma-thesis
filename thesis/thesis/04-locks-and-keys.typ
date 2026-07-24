@@ -66,13 +66,13 @@ requirements/context:
 
 -> keys: *fixed or not*
 
-=== Not Modeled Currently
-
 #cite(<dormansCyclicGeneration2017>):
 "Certain locks allow you to cross only in one direction (valves), while others can only be opened from one direction but traversed in two directions after they are opened (asymmetrical). \[...\] Valves do not always require a key.""
 
 -> locks: *valve, asymmetrical*
-- locks are assigned to edges, so valves can already be modeled. only question: what if one unlock opens it for both directions?
+- modeled via bidirectional edges with locks vs two uni-directional edges, one with lock and one without
+
+=== Not Modeled Currently
 
 #cite(<dormansCyclicGeneration2017>):
 "A safe lock is guaranteed to have a solution, while an unsafe lock is not."
@@ -347,8 +347,10 @@ definition:
 
 - #todo("describe")
 
-== Limitations and Future Workflow
+== Limitations and Future Work
 
+- fixed keys for non-adjacent locks
+- in pathfinding: temporary, reversible, collapsible locks
 - difficulty estimation #todo("add citation")
 - recommendations for lock/key types #cite(<dormansCyclicGeneration2017>)
 - LLM-based consistency check with descriptions
