@@ -14,5 +14,7 @@
   "obsidian-latex-suite",
   "better-embedded-canvas",
   "unicode-search",
-  "canvas-svg-export"
+  "canvas-svg-export",
+  "obsidian-timestamper",
+  "status-bar-clock"
 ]

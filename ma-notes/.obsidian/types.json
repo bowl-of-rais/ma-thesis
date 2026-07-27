@@ -31,6 +31,22 @@
     "chapter": "multitext",
     "previous_milestone": "number",
     "next-weekly": "date",
-    "current-weekly": "date"
+    "current-weekly": "date",
+    "study-date": "date",
+    "s_tp_miro": "number",
+    "s_tp_pixie": "number",
+    "s_iss_miro": "number",
+    "s_iss_pixie": "number",
+    "s_fp_miro": "number",
+    "s_fp_pixie": "number",
+    "p_ans_miro": "number",
+    "p_ans_pixie": "number",
+    "p_right_miro": "number",
+    "p_right_pixie": "number",
+    "p_wrong_miro": "number",
+    "s_sob_miro": "number",
+    "s_sob_pixie": "number",
+    "s_used_miro": "checkbox",
+    "p_used_miro": "checkbox"
   }
 }

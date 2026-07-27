@@ -49,6 +49,11 @@
 - STA: start
 - COR: correction
 - GNO: general note
+- IFB informal feedback
+- CFP comment from protocol
+- OFP observation from protocol
+- CLG clarification given
+- CAM comment against miro
 
 ---
 
