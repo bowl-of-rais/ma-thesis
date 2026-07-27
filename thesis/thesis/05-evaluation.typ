@@ -20,6 +20,7 @@
 
 === Overall Setup
 
+- joint user study/team effort. first part of study was concerned with usability, participants asked to model zelda dungeon in tool -> participants were already familiarized with context and basic functions of the tool when approaching the tasks described here. task-specific functionalities (pathfinding + solvability-related highlightings, diagrams) were shown to participants prior to respective tasks.
 - task-based within-subject: StatePx vs Miro
   - two task variants, varying order of tools + dungeons -> 4 groups:
 
@@ -41,7 +42,7 @@
     caption: "Definition of the 4 user study participant groups"
 )
 
-- use case: zelda dungeons #cite(<summervilleVGLCVideoGame2016>) -> ensure realistic tasks. data pool big enough to choose 2 comparable dungeons per task. same game: consistency in terms of details like item/key types, dungeon structure, etc.
+- use case: zelda dungeons #cite(<summervilleVGLCVideoGame2016>) -> ensure realistic tasks. data pool big enough to choose 2 comparable dungeons per task. same game: consistency in terms of details like item/key types, dungeon structure, etc. dataset provides graphs for each level and full layout/map of dungeons.
 - target demographic: people with some understanding of game design -> recruitment: university lecture in games engineering study course, also computer science students who are familiar with videogames
 - complete tasks (all dungeons) + answer keys in appendix #todo("add to appendix")
 
@@ -50,6 +51,7 @@
 ==== General Modeling
 
 - rooms numbered based on location in map (approx from bottom left to top right)
+- some rooms spanned multiple screens and were split (e.g. 9-1, 9-2, 9-3) to more accurately reflect pacing (e.g. enemies that are technically in the same room but do not spawn/become visible and defeatable until the respective screen/part of room is entered)
 
 #todo("image showing room numbering")
 
@@ -65,7 +67,7 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 - larger Zelda dungeons
 - Link's Awakening LA_3, LA_4 #cite(<summervilleVGLCVideoGame2016>)
-- selection criteria: size (35 vs 41 nodes), number of keys/locks. comparable size + complexity (outgoing ranks of nodes) #todo("add details")
+- selection criteria: size -> non-trivial while still being feasible manually in Miro. comparable size (35 vs 41 nodes) + complexity (outgoing ranks of nodes), similar number of keys/locks. #todo("add details")
 
 #todo("images: original maps/graphs, versions in Miro/pix:e")
 
@@ -92,7 +94,7 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 - adaptations: #todo("add adaptations")
   - structural: #todo("add structural adaptations")
   - information: remove puzzles, "vision" edges
-  - additional information: completion time based on YouTube walkthrough (100% completion to get data for all rooms) #todo("add ref to walkthroughs")
+  - additional information: completion time and enemy count based on YouTube walkthrough (100% completion to get data for all rooms) #todo("add ref to walkthroughs").
 
 - task: answer questions about pacing. includes comparisons of path sections, overall enemy distribution in nodes:
 
@@ -107,7 +109,7 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
     - Miro: e.g. draw in paths, use pens/sticky notes to note down calculations and answers
     - pix:e: pathfinding functionality w/ highlighting, diagrams
 
-=== Data Collection and Processing
+=== Collected Data and Processing
 
 - demographics: age, gender, background, occupation experience, previous experience with whiteboard tools. collected via Google Forms
 
@@ -123,7 +125,7 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 post-processing:
 - manual tagging of task meta data per participant and task: total counts/points based on protocol. parsing script to transform into csv
-- codification of free-form answers
+- codification of google form free-form answers (whiteboard experience, education, occupation)
 
 -> different sets of data
 
@@ -134,33 +136,45 @@ post-processing:
 ==== Participants
 
 - total number: 24
-- demographics
-- group breakdown
+- demographics:
+  - ages 19-32, average 23.625
+  - #todo("educational/occupational background")
+  - 15 indicated previous experience with Whiteboard tools (62.5%)
+- group breakdown?
 
 ==== Results Solvability
 
 #todo("add disclaimer human error")
+#todo("add graphs/numbers")
 
-- total number of identified issues
-- correctly identified issues (f1)
-- times to first identified issues
+- total number of identified issues: overall less issues claimed in pix:e, both across all participants as well as within participants. more issues claimed by people with whiteboard experience #todo("check statistical significance"). different distribution (wider?) in difference in number of identified issues between tools in participants with whiteboard experience #todo("specify")
+- correctly identified issues (f1): lower in pix:e overall, again both across and within participants. higher diff/pix:e F1 in people with whiteboard experience
+- possible explanation: tool better suited for power users (extrapolated: people familiar with tool-supported game design). in line with feedback regarding the tool having a learning curve -> may be easier to use when building on pre-existing knowledge. but also good, incentive for Miro users to switch
+- #todo("times to first identified issues")
+- compare A/B groups and orderings
 
 ==== Results Pacing
 
 #todo("add disclaimer human error")
+#todo("add graphs/numbers")
 
-- total number of answered questions
-- correctly answered questions (f1)
-- wrongly answered questions
-- time per question
+- total number of answered questions: median of number of answered questions higher for pix:e, even though distribution skews higher for miro. within participants: median same, but 25th percentile skews a bit lower. participants with whiteboard experience tended to answer more questions in pix:e, while participants without whiteboard experience tended to answer less questions in pix:e. #todo("check statistical significance")
+- correctly answered questions (f1): similar trend as total number of answered questions, median higher in pix:e, but distribution skews higher for miro. median of number of correctly answered questions higher in pix:e than miro for participants with whiteboard experience, while for people without whiteboard experience the median is the same, but the distribution skews lower overall.
+//- wrongly answered questions:
+- #todo("time per question")
+- compare A/B groups and orderings
 
 ==== Results UEQ-S
 
-- using provided analysis tool
-- pragmatic quality ("relate to the tasks or goals the user aims to reach"): 0.823, hedonic quality ("related to pleasure or fun while using the product"): 1.385, overall: 1.104
+- using provided analysis tool based on benchmark for the UEQ-S #cite(<hinderksBenchmarkShortVersion2018>)
+- 8 items are divided into 2 categories: pragmatic quality ("relate to the tasks or goals the user aims to reach") and hedonic quality ("related to pleasure or fun while using the product"). overall scale ranges from -3 to 3. 
+- pragmatic quality: 0.823 (-> below average?), hedonic quality: 1.385 (-> good), overall: 1.104 (-> above average) #todo("verify in excel")
 - #todo("contextualize")
 - weakest item: confusing vs clear
   - potentially relates to: UI quirks, lock visualization
+
+#todo("add image")
+#todo("control for whiteboard experience?")
 
 ==== Results Comparative Questions
 
@@ -179,15 +193,15 @@ post-processing:
 - overall, participants indicated preference for statepx over miro, mixed answers with a slight preference for pixie in first three questions
 - in line with high hedonic quality reported in UEQ-S
 
-- previous whiteboard experience correlated with lower preference for pix:e #todo("back this up with calculation")
+- previous whiteboard experience correlated with lower scores in first three questions #todo("back this up with calculation, significance?"), even though task answers suggest otherwise. for last question, participants with previous whiteboard experience indicated stronger preference for pix:e #todo("back this up"). in line with high hedonic quality. might be because "power users" are better equipped to recognize advantage of tool compared to whiteboard tools.
 
-==== Additional Feedback from participants
+==== Additional Feedback from Participants
 
 #todo("add freeform feedback")
 
 ==== Validity of A/B Test
 
-- compare results across groups -> statistical test
+- compare results across groups -> statistical test?
 - compare demographics across groups
 
 == Limitations
