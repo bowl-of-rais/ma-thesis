@@ -14,13 +14,13 @@
 
 = Evaluation <eval>
 
-- user study
+- user study. this section described design/setup and results.
 
 == User Study Design
 
 === Overall Setup
 
-- joint user study/team effort. first part of study was concerned with usability, participants asked to model zelda dungeon in tool -> participants were already familiarized with context and basic functions of the tool when approaching the tasks described here. task-specific functionalities (pathfinding + solvability-related highlightings, diagrams) were shown to participants prior to respective tasks.
+- joint user study/team effort. first part of study was concerned with usability, participants asked to model zelda dungeon in tool (including locks & keys) -> participants were already familiarized with context and basic functions of the tool when approaching the tasks described here. task-specific functionalities (pathfinding + solvability-related highlightings, diagrams) were shown to participants prior to respective tasks.
 - task-based within-subject: StatePx vs Miro
   - two task variants, varying order of tools + dungeons -> 4 groups:
 
@@ -195,9 +195,17 @@ post-processing:
 
 - previous whiteboard experience correlated with lower scores in first three questions #todo("back this up with calculation, significance?"), even though task answers suggest otherwise. for last question, participants with previous whiteboard experience indicated stronger preference for pix:e #todo("back this up"). in line with high hedonic quality. might be because "power users" are better equipped to recognize advantage of tool compared to whiteboard tools.
 
-==== Additional Feedback from Participants
+==== Feedback from Participants
 
-#todo("add freeform feedback")
+- all freeform answers in @app_us_data
+- describe answers (common topics + counts, outlier topics)
+- also include verbal feedback
+
+==== Observed Behavior in Participants
+
+- 5 participants required clarification that all locks were visualized by the same symbol (4 of them completed the task in Miro first, thus may have been primed to expect similar visualization)
+- 10 participants did some form of successive pathfinding in pix:e
+- 3 participants (all Miro-first groups) asked whether enemies respawn for the pacing task. while unclear in task description, still notable that only Miro-first participants asked this. setup in pix:e may have primed participants to understand the respawn implicitly and apply the same principle in Miro. -> potential improvement for diagrams setup, users should be prevented from making/falling victim to implicit assumptions!
 
 ==== Validity of A/B Test
 
@@ -226,7 +234,7 @@ post-processing:
 
 === Reachability Analysis
 
-- many participants (number) either explicitly reported missing a reachability analysis functionality in open feedback or were observed to conduct a reachability analysis during the solvability task by selecting various end nodes for the given start node and subsequently identifying locked edges as those between a node reachable from the start and a node not reachable from the start. #todo("add numbers")
+- many participants (number) either explicitly reported missing a reachability analysis functionality in open feedback or were observed to conduct a reachability analysis during the solvability task by selecting various end nodes for the given start node and subsequently identifying locked edges as those between a node reachable from the start and a node not reachable from the start (10 participants). #todo("add numbers")
 
 - dijkstra algorithm tracks distances of nodes from start nodes. initial value: `Infinity`, i.e., all nodes with distance < `Infinity` are reachable. -> simply filter after pathfinding has concluded
 

@@ -95,9 +95,9 @@
     if it.level == 1 [Part]
     else if it.level == 2 [Chapter]
     else [Section]
-  } else {
+  } /*else {
     [ERROR, this should not happen]
-  }
+  }*/
 })
 
 
@@ -178,11 +178,14 @@
 
 // restart page numbering using roman numbers
 
+#set heading(numbering: "A.1")
+#counter(heading).update(0)
 #set page(numbering: "i")
 #counter(page).update(1)
 
 #include("thesis/a1-user-study.typ")
-#include("thesis/a2-further-evaluation.typ")
+#include("thesis/a2-user-study-data.typ")
+#include("thesis/a3-further-evaluation.typ")
 
 
 // List of Acronyms.

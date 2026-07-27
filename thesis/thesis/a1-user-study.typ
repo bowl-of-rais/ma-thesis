@@ -1,7 +1,7 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= Appendix A: User Study <id>
+= User Study Tasks and Descriptions <app_us_design>
 
 
 #load-bib()
