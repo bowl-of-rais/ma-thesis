@@ -1,0 +1,51 @@
+p_id,group,tag,note
+PA40344,AP,IFB,"nice tool, to work with"
+PA40344,AP,IFB,movement/unclear
+PA40344,AP,IFB,would use again
+PA40344,AP,OFP,successive pathfinding
+MA7125,AM,CFP,unsure where pathfinding fails
+MA7125,AM,CFP,bigger node titles would be nice
+MA7125,AM,CFP,sum of values would be nice
+MA7125,AM,CFP,baseline in diagrams not at 0
+MA7125,AM,CLG,"enemies respawn (miro, first)"
+MA7125,AM,CAM,hard to keep track of keys
+MA26593,AM,OFP,successive pathfinding
+MA26593,AM,CLG,same symbol for all lock types
+PB46220,BP,OFP,successive pathfinding
+PA45003,AP,IFB,color coding for which nodes were reachable when path not found
+PA45003,AP,CAM,hard to answer question without calculating
+PB54700,BP,IFB,zoomed out view
+PB54700,BP,IFB,"coole tools/functinality, potential mit mehr usability"
+PB54700,BP,IFB,missing: comparing multiple paths
+PB54700,BP,IFB,"usability (edge editing without toolbar e.g. double click, more descriptive lock symbols)"
+PB54700,BP,IFB,idea: setting color of nodes
+PB54700,BP,IFB,from protocol: not sure where section A ends (obs: diagram ticks only every second node on path)
+PB54700,BP,OFP,successive pathfinding
+MB24145,BM,CFP,hard to differentiate node - background
+MB24145,BM,OFP,sub-paths incrementally
+MB24145,BM,CLG,same symbol for all lock types
+MB24145,BM,CLG,"enemies respawn (miro, first)"
+MB10509,BM,OFP,successive pathfinding
+MB50964,BM,OFP,successive pathfinding
+MA95137,AM,OFP,successive pathfinding
+PB50308,BP,CFP,would be nice to see kind of lock via hover
+PB50308,BP,CFP,overlapping edges difficult
+PB50308,BP,IFB,reasonably performant
+MA34230,AM,OFP,successive pathfinding
+MB41880,BM,CLG,same symbol for all lock types
+MB41880,BM,CLG,"enemies respawn (miro, first)"
+MB71184,BM,CFP,unhappy with zoom
+MB71184,BM,CFP,unsure whether red edges are on path or locked in general
+MB71184,BM,CLG,no pathfinding beyond locked edges
+PA81918,AP,CFP,y axis not at 0
+PA81918,AP,CAM,hard to calculate averages
+PA89964,AP,IFB,indicate state of nodes during pathfinding (available keys etc)
+MA12534,AM,IFB,"interesting tool, but a learning curve (familiarization, miro more simple)"
+PB47107,BP,OFP,successive pathfinding
+MA95935,AM,IFB,text size small in nodes when zoomed out
+PB34703,BP,IFB,lock symbols in pixe
+PB34703,BP,IFB,select individual nodes for diagrams
+MB67500,BM,IFB,fix lock icons
+MB67500,BM,IFB,improve zoomed out overview
+MB67500,BM,CLG,same symbol for all lock types
+PA38184,AP,CLG,same symbol for all lock types
