@@ -116,7 +116,7 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 #todo("add complete demographics")
 
 - recorded during tasks: issues found/questions answered + timestamps, comments, clarifications/hints, observations about tool use
-  - semi-structured live protocol
+  - semi-structured live protocol, written in Markdown with YAML frontmatter for participant data (id, group)
 - separate pix:e accounts/miro boards for participants -> edits
 
 - additionally: UEQ-S #cite(<schreppDesignEvaluationShort2017>) (short version recommended for evaluations of multiple versions of a system), questionnaire comparing Miro and StatePx. collected via Google Forms
@@ -131,9 +131,7 @@ post-processing:
 
 == User Study Results
 
-=== Data Analysis
-
-==== Participants
+=== Participants
 
 - total number: 24
 - demographics:
@@ -142,41 +140,77 @@ post-processing:
   - 15 indicated previous experience with Whiteboard tools (62.5%)
 - group breakdown?
 
-==== Results Solvability
+=== Results Solvability
 
 #todo("add disclaimer human error")
 #todo("add graphs/numbers")
+#todo("compare A/B groups and orderings")
 
-- total number of identified issues: overall less issues claimed in pix:e, both across all participants as well as within participants. more issues claimed by people with whiteboard experience #todo("check statistical significance"). different distribution (wider?) in difference in number of identified issues between tools in participants with whiteboard experience #todo("specify")
-- correctly identified issues (f1): lower in pix:e overall, again both across and within participants. higher diff/pix:e F1 in people with whiteboard experience
+==== Data Processing
+
+- spoken answers recorded in protocol -> manual count of total identified issues, manual check against answer key and count of true positives
+- inspection of miro boards -> modifications to boards and if so, which ones
+
+==== Task Completion
+
+- total number of identified issues: overall less issues claimed in pix:e, both across all participants as well as within participants. difference is statistically significant (according to Wilcoxon signed-rank test #todo("add numbers") #todo("effect size?"))
+- correctly identified issues (f1): significantly lower in pix:e overall, again both across and within participants (according to Wilcoxon signed-rank test #todo("add numbers") #todo("effect size?")).
+- in pixie: more issues claimed by people with whiteboard experience. median 1 for participants without whiteboard experience, 2 for participants with whiteboard experience, Mann-Whitney $U = 96.5$, $p < 0.05$. #todo("effect size")
+- different distribution (wider?) in difference in number of identified issues between tools in participants with whiteboard experience #todo("specify")
+- higher diff/pix:e F1 in people with whiteboard experience. F1 medians 0.25 and 0.285, Mann-Whitney $U = 99.5$, $p < 0.05$
+- control for actual usage of Miro functionality (6 participants): no obvious difference #todo("back this up") in task completion in Miro depending on tool use
 - possible explanation: tool better suited for power users (extrapolated: people familiar with tool-supported game design). in line with feedback regarding the tool having a learning curve -> may be easier to use when building on pre-existing knowledge. but also good, incentive for Miro users to switch
-- #todo("times to first identified issues")
-- compare A/B groups and orderings
 
-==== Results Pacing
+==== Recorded Times
+
+- #todo("times to first identified issues")
+
+=== Results Pacing
 
 #todo("add disclaimer human error")
 #todo("add graphs/numbers")
+#todo("compare A/B groups and orderings")
+
+==== Data Processing
+
+analogous to solvability task:
+- spoken answers recorded in protocol -> manual count of total answered questions, manual check against answer key and count of correct answers.
+- inspection of miro boards -> modifications to boards and if so, which ones
+
+==== Task Completion
 
 - total number of answered questions: median of number of answered questions higher for pix:e, even though distribution skews higher for miro. within participants: median same, but 25th percentile skews a bit lower. participants with whiteboard experience tended to answer more questions in pix:e, while participants without whiteboard experience tended to answer less questions in pix:e. #todo("check statistical significance")
 - correctly answered questions (f1): similar trend as total number of answered questions, median higher in pix:e, but distribution skews higher for miro. median of number of correctly answered questions higher in pix:e than miro for participants with whiteboard experience, while for people without whiteboard experience the median is the same, but the distribution skews lower overall.
+- control for usage of Miro functionalities (6 participants): participants using functionality in Miro gave fewer total answers, but also fewer wrong answers in Miro version of the task. also, participants using Miro functionality gave more + more correct answers in pix:ie than in miro. #todo("check statistical significance")
 //- wrongly answered questions:
+
+==== Recorded Times
+
 - #todo("time per question")
-- compare A/B groups and orderings
 
-==== Results UEQ-S
+=== Results UEQ-S
 
-- using provided analysis tool based on benchmark for the UEQ-S #cite(<hinderksBenchmarkShortVersion2018>)
-- 8 items are divided into 2 categories: pragmatic quality ("relate to the tasks or goals the user aims to reach") and hedonic quality ("related to pleasure or fun while using the product"). overall scale ranges from -3 to 3. 
-- pragmatic quality: 0.823 (-> below average?), hedonic quality: 1.385 (-> good), overall: 1.104 (-> above average) #todo("verify in excel")
-- #todo("contextualize")
+- using provided analysis tool based on benchmark for the UEQ-S #cite(<hinderksBenchmarkShortVersion2018>) #todo("what is the benchmark?")
+- 8 items divided into 2 categories: pragmatic quality ("relate to the tasks or goals the user aims to reach") and hedonic quality ("related to pleasure or fun while using the product"). overall scale ranges from -3 to 3. 
+
+#figure(
+  image("assets/05/ueq-mean-value-per-item.png"),
+  caption: "Mean values per item in the UEQ-S"
+)
+
 - weakest item: confusing vs clear
   - potentially relates to: UI quirks, lock visualization
 
-#todo("add image")
+- pragmatic quality: mean 0.823 (-> below average, i.e. better than 25% of benchmark), hedonic quality: mean 1.385 (-> good, i.e. better than 75% of benchmark), overall: mean 1.104 (-> above average, i.e. better than 50% of benchmark)
+
+#figure(
+  image("assets/05/ueq-against-benchmark.png"),
+  caption: "Comparison of UEQ-S scores against benchmark"
+)
+
 #todo("control for whiteboard experience?")
 
-==== Results Comparative Questions
+=== Results Comparative Questions
 
 - C-Q1: "Compared to Miro, the system made it easier to analyze dungeon designs. "
 - C-Q2: "Compared to Miro, I felt more confident in my answers. "
@@ -195,21 +229,35 @@ post-processing:
 
 - previous whiteboard experience correlated with lower scores in first three questions #todo("back this up with calculation, significance?"), even though task answers suggest otherwise. for last question, participants with previous whiteboard experience indicated stronger preference for pix:e #todo("back this up"). in line with high hedonic quality. might be because "power users" are better equipped to recognize advantage of tool compared to whiteboard tools.
 
-==== Feedback from Participants
+=== Written Feedback from Participants
 
-- all freeform answers in @app_us_data
-- describe answers (common topics + counts, outlier topics)
-- also include verbal feedback
+- context: once after first part of user study (not described here #todo("add to appendix + reference?")), once at very end of study
+- see complete (relevant) freeform answers in @app_us_data
 
-==== Observed Behavior in Participants
+==== Usability/UI
+
+- issues/confusion when adding locks (5x) due to menu placement
+- addition of keys not included in right-click menu of nodes (2x)
+- low contrast between background and nodes (6x)
+
+==== Functionality
+
+- locks not visually distinguishable (6x)
+- confusion about diagram tick labels
+- sum/average in diagrams, more interactivity in general
+
+=== Observed Behavior and Verbal Feedback from Participants
+
+- all protocol data, thus may contain human error
+- contains: verbal comments/questions while completing the tasks, specific approaches to tool use, verbal feedback
 
 - 5 participants required clarification that all locks were visualized by the same symbol (4 of them completed the task in Miro first, thus may have been primed to expect similar visualization)
 - 10 participants did some form of successive pathfinding in pix:e
 - 3 participants (all Miro-first groups) asked whether enemies respawn for the pacing task. while unclear in task description, still notable that only Miro-first participants asked this. setup in pix:e may have primed participants to understand the respawn implicitly and apply the same principle in Miro. -> potential improvement for diagrams setup, users should be prevented from making/falling victim to implicit assumptions!
 
-==== Validity of A/B Test
+=== Validity of A/B Test
 
-- compare results across groups -> statistical test?
+- compare results across groups -> statistical test? (ANIVA for 3+ groups)
 - compare demographics across groups
 
 == Limitations

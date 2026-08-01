@@ -3,6 +3,8 @@
 
 = Path-Based Diagrams <basic_diagrams>
 
+#todo("potentially refactor: 1 chapter for implementation, provide context (tech stack etc)")
+
 - basic idea already present in PaceMaker: select path in statechart and visualize data along path
 - main design guideline: build upon high configurability already present in the system
 - following sections describe functionalities, implementation choices and wokflow/usage of these features implemented in pixe

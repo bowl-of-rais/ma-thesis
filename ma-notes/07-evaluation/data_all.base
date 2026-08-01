@@ -11,6 +11,9 @@ views:
       - p_id
       - date
       - group
+      - s_used_miro
+      - p_used_miro
+      - miro_usage
       - s_iss_miro
       - s_tp_miro
       - s_fp_miro
@@ -24,9 +27,11 @@ views:
       - participant
       - s_sob_miro
       - s_sob_pixie
-      - s_used_miro
-      - p_used_miro
     sort:
+      - property: file.name
+        direction: ASC
+      - property: s_iss_miro
+        direction: DESC
       - property: participant
         direction: ASC
       - property: user_id
@@ -36,6 +41,7 @@ views:
       - property: issues_correct_pixie
         direction: ASC
     columnSize:
+      note.miro_usage: 142
       note.s_iss_miro: 97
       note.s_tp_miro: 97
       note.s_fp_miro: 99
@@ -47,3 +53,5 @@ views:
       note.p_right_miro: 122
       note.p_right_pixie: 131
       note.participant: 104
+      note.s_sob_miro: 108
+      note.s_sob_pixie: 111

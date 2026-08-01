@@ -36,7 +36,10 @@ DATA_KEYS = [
     'p_right_miro',
     'p_right_pixie',
     's_sob_miro',
-    's_sob_pixie'
+    's_sob_pixie',
+    's_used_miro',
+    'p_used_miro',
+    'miro_usage'
 ]
 
 with open("protocol-data.csv", "w", newline="") as f:
@@ -230,7 +233,7 @@ DATA_KEYS_FEEDBACK = [
     'note'
 ]
 
-with open(f'feedback_comments_observations.csv', "w", newline="") as f:
+with open(f'feedback-comments-observations.csv', "w", newline="") as f:
     w = csv.DictWriter(f, DATA_KEYS_FEEDBACK)
     w.writeheader()
     for d in feedback_data:

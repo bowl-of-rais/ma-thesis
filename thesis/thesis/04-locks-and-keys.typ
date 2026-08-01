@@ -39,6 +39,8 @@ requirements/context:
 
 == Taxonomy
 
+#todo("add context on dormans")
+
 #cite(<dormansCyclicGeneration2017>):
 "When you unlock a door, that door might remain unlocked forever (permanent), for a short period of time (temporary), or until it is relocked (reversible). Sometimes, a lock collapses after use, allowing the player only to pass once."
 
@@ -77,11 +79,11 @@ requirements/context:
 #cite(<dormansCyclicGeneration2017>):
 "A safe lock is guaranteed to have a solution, while an unsafe lock is not."
 
-=== Data Model Overview
+=== Data Model
 
 #todo("add diagram of data model")
 
-== Creating and Visualizing Locks and Keys
+== Creation and Visualization of Locks and Keys
 
 #cite(<brownHowMyBoss2026>): high-level visual representation. only focuses on locks and keys and where they are in relation to each other
 
@@ -343,9 +345,16 @@ definition:
 
 #todo("add diagram for code architecture?")
 
+modular architecture for extendability and maintainability. 4 main components:
+
+- `PathCalculation`: main algorithm loop/logic
+- `PathUnlocking`: logic specific to unlocking/key consumption
+- `PathResult`: data type for results + computed values
+- `PathStyling`: styling of edges/nodes based on results
+
 == Testing
 
-- #todo("describe")
+- #todo("describe test cases")
 
 == Limitations and Future Work
 
@@ -354,6 +363,6 @@ definition:
 - difficulty estimation #todo("add citation")
 - recommendations for lock/key types #cite(<dormansCyclicGeneration2017>)
 - LLM-based consistency check with descriptions
-
+- implementation: currently done in frontend. may benefit from porting to backend + specialized algorithm. trade-off: maintainability/extendability
 
 #load-bib()
