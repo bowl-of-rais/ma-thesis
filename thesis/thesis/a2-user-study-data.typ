@@ -3,7 +3,31 @@
 
 = User Study Data <app_us_data>
 
-== Written Feedback
+== Results of Comparative Questions by Whiteboard Experience <app_cq_by_wb_exp>
+
+#todo("hint shared y-axis")
+
+#figure(
+  image("assets/app/c-q1-by-wb-exp.png"),
+  caption: "Distribution of answers to C-Q1 by indicated whiteboard tool experience"
+)
+
+#figure(
+  image("assets/app/c-q2-by-wb-exp.png"),
+  caption: "Distribution of answers to C-Q2 by indicated whiteboard tool experience"
+)
+
+#figure(
+  image("assets/app/c-q3-by-wb-exp.png"),
+  caption: "Distribution of answers to C-Q3 by indicated whiteboard tool experience"
+)
+
+#figure(
+  image("assets/app/c-q4-by-wb-exp.png"),
+  caption: "Distribution of answers to C-Q4 by indicated whiteboard tool experience"
+)
+
+== Written Feedback <app_written_feedback>
 
 === After Part 1
 

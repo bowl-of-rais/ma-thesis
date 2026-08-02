@@ -142,8 +142,6 @@ post-processing:
 
 === Results Solvability
 
-#todo("add disclaimer human error")
-#todo("add graphs/numbers")
 #todo("compare A/B groups and orderings")
 
 ==== Data Processing
@@ -151,15 +149,61 @@ post-processing:
 - spoken answers recorded in protocol -> manual count of total identified issues, manual check against answer key and count of true positives
 - inspection of miro boards -> modifications to boards and if so, which ones
 
+#todo("add disclaimer human error")
+
 ==== Task Completion
 
-- total number of identified issues: overall less issues claimed in pix:e, both across all participants as well as within participants. difference is statistically significant (according to Wilcoxon signed-rank test #todo("add numbers") #todo("effect size?"))
-- correctly identified issues (f1): significantly lower in pix:e overall, again both across and within participants (according to Wilcoxon signed-rank test #todo("add numbers") #todo("effect size?")).
-- in pixie: more issues claimed by people with whiteboard experience. median 1 for participants without whiteboard experience, 2 for participants with whiteboard experience, Mann-Whitney $U = 96.5$, $p < 0.05$. #todo("effect size")
-- different distribution (wider?) in difference in number of identified issues between tools in participants with whiteboard experience #todo("specify")
-- higher diff/pix:e F1 in people with whiteboard experience. F1 medians 0.25 and 0.285, Mann-Whitney $U = 99.5$, $p < 0.05$
-- control for actual usage of Miro functionality (6 participants): no obvious difference #todo("back this up") in task completion in Miro depending on tool use
-- possible explanation: tool better suited for power users (extrapolated: people familiar with tool-supported game design). in line with feedback regarding the tool having a learning curve -> may be easier to use when building on pre-existing knowledge. but also good, incentive for Miro users to switch
+- total number of identified issues: overall less issues claimed in pix:e, both across all participants as well as within participants, see @fig:s_total. difference is statistically significant (according to Wilcoxon signed-rank test, $T = 48.5$, $p = 0.00564929988211376$, #todo("effect size?"))
+- correctly identified issues (f1): significantly lower in pix:e overall, again both across and within participants (according to Wilcoxon signed-rank test, $T = 34.0$, $p = 0.0009066055498154164$ #todo("effect size?")), see @fig:s_f1.
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-total-boxplot.png"),
+        caption: "Distribution of total number of identified issues by tool"
+    ) <fig:s_total> ]),
+    grid.cell([#figure(
+        image("assets/05/solvability-f1-boxplot.png"),
+        caption: "Distribution of F1 scores by tool"
+    ) <fig:s_f1> ])
+)
+
+- in pixie: more issues claimed by people with whiteboard experience, see @fig:s_total_by_wb_exp. median 1 for participants without whiteboard experience, 2 for participants with whiteboard experience, Mann-Whitney $U = 96.5$, $p < 0.05$. #todo("effect size"). however, participants with whiteboard experience still identified significantly fewer issues in pixie than in Miro (Wilcoxon signed-rank test, $T = 97.5$, $p < 0.05$)
+- significantly higher pix:e F1 in people with whiteboard experience, see @fig:s_f1_by_wb_exp. F1 medians 0.25 and 0.285, Mann-Whitney $U = 99.5$, $p < 0.05$ #todo("effect size?")
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-total-by-wb-exp.png"),
+        caption: "Distribution of total number of identified issues by tool and indicated whiteboard tool experience"
+    ) <fig:s_total_by_wb_exp>]),
+    grid.cell([#figure(
+        image("assets/05/solvability-f1-by-wb-exp.png"),
+        caption: "Distribution of F1 scores by tool and indicated whiteboard tool experience"
+    ) <fig:s_f1_by_wb_exp> ])
+)
+
+- control for actual usage of Miro functionality (6 participants): 3x marking issues, 1x drawing reachability, 2x inventory tracking
+- no obvious difference in task completion in Miro depending on tool use, see @fig:s_total_by_miro_usage and @fig:s_f1_by_miro_usage. total issues identified: median 2 without Miro usage, 2.5 with Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$ #todo("effect size?"). F1: median 0.5 with Miro usage, 0.39285714285714285 without Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$ #todo("effect size?")
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-total-by-miro-usage.png"),
+        caption: "Distribution of total number of identified issues by tool and use of Miro functionalities"
+    ) <fig:s_total_by_miro_usage> ]),
+    grid.cell([#figure(
+        image("assets/05/solvability-f1-by-miro-usage.png"),
+        caption: "Distribution of F1 scores by tool and use of Miro functionalities"
+    ) <fig:s_f1_by_miro_usage> ])
+)
+
+- overall lower task completion and answer quality in pix:e than Miro. within pix:e, participants with whiteboard experience achieved better results than participants without. within Miro, participants using Miro functionalities did not achieve better results than participants not using Miro functionalities.
+- possible explanation/interpretation: similar to first task. pix:e caters better to power users. Miro functionalities (without involved custom setup/templating) seem to be less suited to support users with this specific analytical task type.
+- #todo("reference feedback")
 
 ==== Recorded Times
 
@@ -179,10 +223,77 @@ analogous to solvability task:
 
 ==== Task Completion
 
-- total number of answered questions: median of number of answered questions higher for pix:e, even though distribution skews higher for miro. within participants: median same, but 25th percentile skews a bit lower. participants with whiteboard experience tended to answer more questions in pix:e, while participants without whiteboard experience tended to answer less questions in pix:e. #todo("check statistical significance")
-- correctly answered questions (f1): similar trend as total number of answered questions, median higher in pix:e, but distribution skews higher for miro. median of number of correctly answered questions higher in pix:e than miro for participants with whiteboard experience, while for people without whiteboard experience the median is the same, but the distribution skews lower overall.
-- control for usage of Miro functionalities (6 participants): participants using functionality in Miro gave fewer total answers, but also fewer wrong answers in Miro version of the task. also, participants using Miro functionality gave more + more correct answers in pix:ie than in miro. #todo("check statistical significance")
-//- wrongly answered questions:
+- total number of answered questions: no indication of significant difference in distributions according to Wilcoxon signed-rank test ($T = 96.5$, $p=0.7473513186644183$).
+//median of number of answered questions higher for pix:e, even though distribution skews higher for miro. within participants: median same, but 25th percentile skews a bit lower.
+- correctly answered questions: also no indication of significant difference in distributions. Wilcoxon signed-rank test: $T=98.5$, $p=0.8058983773663436$
+- slight trend: median higher in pix:e, but distribution skews higher for miro.
+
+#grid(
+    columns: 3,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-total.png"),
+        caption: "Distribution of total number of answered questions by tool"
+    ) <fig:p_total> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-right.png"),
+        caption: "Distribution of number of correctly answered questions by tool"
+    ) <fig:p_right> ]),
+    /*
+    grid.cell([#figure(
+        image("assets/05/pacing-wrong.png"),
+        caption: "Distribution of number of wrongly answered questions by tool"
+    ) <fig:p_wrong> ])
+    */
+)
+
+- within pix:e, participants with whiteboard experience tended to answer significantly more questions (see @fig:p_total_by_wb_exp): median 4 with whiteboard experience, 3 without whiteboard experience, Mann-Whitney $U = 103.5$, $p = 0.015198521622538362)$. they also gave significantly more correct answers (see @fig:p_right_by_wb_exp): median 3 with whiteboard experience, 2 without, Mann-Whitney $U = 103.0$, $p=0.01660439188879628)$
+- slight skews in median/distribution: number of answered questions higher in pix:e than miro for participants with whiteboard experience, total number and number of correct answers lower in pix:e than Miro for people without whiteboard experience. however, differences in distribution do not seem to be statistically significant (Wilcoxon signed-rank test: $38.0, 0.325888948764388$ for total answers in pix:e vs Miro from participants with Whiteboard experience, $(15.0, 0.20703125)$ for total answers from participants without whiteboard experience)
+
+#grid(
+    columns: 3,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-total-by-wb-exp.png"),
+        caption: "Distribution of total number of answered questions by tool and indicated whiteboard tool experience"
+    ) <fig:p_total_by_wb_exp> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-right-by-wb-exp.png"),
+        caption: "Distribution of number of correctly answered questions by tool and indicated whiteboard tool experience"
+    ) <fig:p_right_by_wb_exp> ]),
+    /*
+    grid.cell([#figure(
+        image("assets/05/pacing-wrong-by-wb-exp.png"),
+        caption: "Distribution of number of wrongly answered questions by tool and indicated whiteboard tool experience"
+    ) <fig:p_wrong> ])
+    */
+)
+
+- control for usage of Miro functionalities (6 participants): 1x sticky note color change to highlight a node/room, 4x calculations in textbox/sticky note/via pen, 1x recording path in textbox
+- median of total answered questions and correctly answered questions in Miro lower for participants using functionality in Miro (see @fig:p_total_by_miro_usage and @fig:p_right_by_miro_usage), but not significantly so (Mann-Whitney test: $U = 32.5$, $p=0.07540184146884174$ for total answers, $U = 33.5$, $p=0.08497339144083382$ for correct answers).
+- also, median for total number of answered questions and number of correctly answered questions larger in pix:e than miro for participants using Miro functionality, but not statistically significant (Wilcoxon signed-rank test: $T = 11.0$, $p=0.1875$ for total answers, $T=13.5$, $p=0.296875$ for correct answers)
+
+#grid(
+    columns: 3,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-total-by-miro-usage.png"),
+        caption: "Distribution of total number of answered questions by tool and use of Miro functionalities"
+    ) <fig:p_total_by_miro_usage> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-right-by-miro-usage.png"),
+        caption: "Distribution of number of correctly answered questions by tool and use of Miro functionalities"
+    ) <fig:p_right_by_miro_usage> ]),
+    /*
+    grid.cell([#figure(
+        image("assets/05/pacing-wrong-by-miro-usage.png"),
+        caption: "Distribution of number of wrongly answered questions by tool and use of Miro functionalities"
+    ) <fig:p_wrong> ])
+    */
+)
+
+- overall, no significant difference in task completion and answer quality between tools. within pix:e, participants with whiteboard experience achieved better results than participants without. within Miro, participants using Miro functionalities did not achieve better results than participants not using Miro functionalities. 
+- possible explanation/interpretation: similar to first task. pix:e caters better to power users. Miro functionalities (without involved custom setup/templating) seem to be less suited to support users with this specific analytical task type.
 
 ==== Recorded Times
 
@@ -227,12 +338,12 @@ analogous to solvability task:
 - overall, participants indicated preference for statepx over miro, mixed answers with a slight preference for pixie in first three questions
 - in line with high hedonic quality reported in UEQ-S
 
-- previous whiteboard experience correlated with lower scores in first three questions #todo("back this up with calculation, significance?"), even though task answers suggest otherwise. for last question, participants with previous whiteboard experience indicated stronger preference for pix:e #todo("back this up"). in line with high hedonic quality. might be because "power users" are better equipped to recognize advantage of tool compared to whiteboard tools.
+- higher score variance/split observed in participants with whiteboard tool experience in the first three questions, see @app_cq_by_wb_exp. for last question, participants with previous whiteboard experience in particular indicated strong preference for pix:e #todo("back this up"). in line with high hedonic quality. might be because "power users" are better equipped to recognize advantage of tool compared to whiteboard tools.
 
-=== Written Feedback from Participants
+=== Written Feedback from Participants <feedback_written>
 
 - context: once after first part of user study (not described here #todo("add to appendix + reference?")), once at very end of study
-- see complete (relevant) freeform answers in @app_us_data
+- see complete (relevant) freeform answers in Appendix @app_written_feedback
 
 ==== Usability/UI
 
@@ -245,8 +356,9 @@ analogous to solvability task:
 - locks not visually distinguishable (6x)
 - confusion about diagram tick labels
 - sum/average in diagrams, more interactivity in general
+- unclear highlighting in pathfinding (2x)
 
-=== Observed Behavior and Verbal Feedback from Participants
+=== Observed Behavior and Verbal Feedback from Participants <observed_verbal>
 
 - all protocol data, thus may contain human error
 - contains: verbal comments/questions while completing the tasks, specific approaches to tool use, verbal feedback
@@ -257,7 +369,7 @@ analogous to solvability task:
 
 === Validity of A/B Test
 
-- compare results across groups -> statistical test? (ANIVA for 3+ groups)
+- compare results across groups -> statistical test? (ANOVA for 3+ groups)
 - compare demographics across groups
 
 == Limitations

@@ -41,7 +41,7 @@ views:
       - property: issues_correct_pixie
         direction: ASC
     columnSize:
-      note.miro_usage: 142
+      note.miro_usage: 253
       note.s_iss_miro: 97
       note.s_tp_miro: 97
       note.s_fp_miro: 99
