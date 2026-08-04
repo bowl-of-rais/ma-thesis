@@ -19,21 +19,29 @@
 
 === Implementation
 
-- select start + end node, optionally intermediate -> calculate path using dijkstra
+- select start + end node, optionally intermediate nodes -> calculate path using dijkstra
 - `pathsApi.ts`: to allow for different algorithms in the future (e.g. specific pathfinding for nestedness and concurrency)
+
+#todo("add high-level flowchart for path calculation logic (from node selection to highlighting)")
 
 === Workflow
 
 - selection of at least two nodes
 	- Ctrl + click
 - path is calculated along nodes *in order of selection*
-- if path is found, the corresponding nodes are highlighted
+- if path is found, nodes along the path are highlighted in purple. if not, start/end nodes are highlighted in red.
 - path can be de-selected by removing node selection (clicking anywhere)
 
 #figure(
   image("assets/03/path-selected-highlight.png"),
   caption: [Path highlighted in state chart],
 ) <fig_path_hl>
+
+=== Limitations
+
+- calculation fully done in frontend
+- paths are not persisted
+- no visual indicator for start/end nodes
 
 == Diagram Generation
 
@@ -59,7 +67,7 @@
 ) <fig_axis_sel>
 
 - selected path along x axis
-	- if no path selected: all nodes, #todo("sorted")
+	- if no path selected: all nodes, in no specific order
 
 #grid(
   columns: 2,
@@ -98,6 +106,5 @@
 - diagrams do not persist (reset when reloading page)
 - only line diagrams for now
 - same path selection for all diagrams
-
 
 #load-bib()

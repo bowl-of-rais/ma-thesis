@@ -3,8 +3,18 @@
 
 = Future Work <id>
 
-mentioned previously/feedbacked from user study:
+== Implementation
+
 #todo("collect from other chapters")
+
+=== UI/UX
+
+- easier editing of component/key assignments #todo("add reference")
+- 
+
+=== Existing Functionalities
+
+=== Extended and Additional Functionalities
 
 branching out:
 - using LLMS:
@@ -19,6 +29,9 @@ branching out:
 - diagrams:
   - #todo("think of something")
 
+== Other
+
+- larger case study where system is used more in-depth/over a longer amount of time #todo("find citation where someone did this")
 
 
 #load-bib()

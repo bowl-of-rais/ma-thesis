@@ -16,9 +16,9 @@
 
 - user study. this section described design/setup and results.
 
-== User Study Design
+== Methodology
 
-=== Overall Setup
+=== High-Level User Study Design
 
 - joint user study/team effort. first part of study was concerned with usability, participants asked to model zelda dungeon in tool (including locks & keys) -> participants were already familiarized with context and basic functions of the tool when approaching the tasks described here. task-specific functionalities (pathfinding + solvability-related highlightings, diagrams) were shown to participants prior to respective tasks.
 - task-based within-subject: StatePx vs Miro
@@ -87,13 +87,17 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 - smaller Zelda dungeons
 - Link's Awakening LA_1, LA_2 #cite(<summervilleVGLCVideoGame2016>)
-- selection criteria: size, number of keys/locks. comparable size + complexity #todo("add details")
+- selection criteria: size, number of keys/locks. comparable size + complexity #todo("add details").
+- additional criterium: little backtracking, clear division into three sections that can be used for comparative analysis of component values along (sub-)paths:
+  - A: start to ability
+  - B: ability to boss key
+  - C: boss key to boss fight
 
 #todo("images: original maps/graphs, versions in Miro/pix:e")
 
 - adaptations: #todo("add adaptations")
   - structural: #todo("add structural adaptations")
-  - information: remove puzzles, "vision" edges
+  - information: remove puzzles, "vision" edges. locks/keys stay.
   - additional information: completion time and enemy count based on YouTube walkthrough (100% completion to get data for all rooms) #todo("add ref to walkthroughs").
 
 - task: answer questions about pacing. includes comparisons of path sections, overall enemy distribution in nodes:
@@ -212,7 +216,7 @@ post-processing:
 === Results Pacing
 
 #todo("add disclaimer human error")
-#todo("add graphs/numbers")
+#todo("effect sizes")
 #todo("compare A/B groups and orderings")
 
 ==== Data Processing
@@ -375,7 +379,7 @@ analogous to solvability task:
 == Limitations
 
 - data collection: human errors
-- not all functionality included (e.g. soft gates)
+- not all functionality included (e.g. soft gates, creation of component/lock/key definitions, broder functionalities of pix:e)
 
 == Post-Study Improvements
 
@@ -385,7 +389,7 @@ analogous to solvability task:
 
 - initial version: all locks on edges represented by same symbol respectively. high number of participants feedbacked that distinct visualization of different lock types would improve the experience, or expressed/showed confusion due to the initial representation.
 
-- addition to data model: `symbol` for both locks and keys, can be selected in picker when creating definitions.
+- addition to data model: `symbol` for both locks and keys, can be selected in picker when creating definitions. defaults: 🔒 and 🔑.
     - key assignments show symbol in preview, tooltip shows name of definition on hover
     - edges show symbols of all assigned locks as label. tooltip more involved in current framework. instead: legend popover
 - legend: bottom right corner of chart. can be shown/hidden via button. shows overview of available lock + key definitions in separate tabs, including most important informations for users (e.g. symbol, name, for keys: consumability, for locks: unlocking key definitions)

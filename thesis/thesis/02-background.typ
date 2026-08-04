@@ -3,6 +3,14 @@
 
 = Background <backg>
 
+== Game Design Tools??
+
+#todo("")
+
+== Player Experience
+
+#todo("")
+
 == PaceMaker
 
 #cite(<geheebPaceMakerPracticalTool2024>)
@@ -19,7 +27,7 @@
 
 === Functionalities and Evaluation of PaceMaker
 
-1. statecharts for modeling [@harelStatechartsVisualFormalism1987]
+1. statecharts for modeling #cite(<harelStatechartsVisualFormalism1987>)
 	- nodes = beats
 2. experience specification: properties that can be assigned to a beat
 	- name, description, narrative/gameplay/overall intensity, gameplay category, expected playtime
@@ -34,21 +42,74 @@
   - comparison of different properties per beat
   - comparison of different paths
 
-
 - usability issues
 - nesting/concurrency
 
 == Lock-and-Key Puzzles
 
-#cite(<ashmoreQuestGeneratedWorld2007>)
+=== Definition
+
+#cite(<ashmoreQuestGeneratedWorld2007>):
 "The puzzle is finding out what is an obstacle, what and where is a key to overcome it, and finally using the key to master the challenge."
 
-#cite(<ashmoreQuestGeneratedWorld2007>)
+#cite(<ashmoreQuestGeneratedWorld2007>):
 "Obstacles may not be passed until the player obtains some token (such as an item or skill)"
 
--> keys as abstract tokens more than literal items
+may be literal locks and keys, but may also be other items (e.g. weapons) or skills (e.g. double jump).
 
-== Game Design?? Level Design??
+#todo("add more content")
+
+=== Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
+
+by #cite(<dormansCyclicGeneration2017>)
+
+- overview of different aspects/types of locks and keys that may appear in puzzles
+
+#todo("add context on dormans?")
+
+==== Locks
+
+#cite(<dormansCyclicGeneration2017>):
+"When you unlock a door, that door might remain unlocked forever (permanent), for a short period of time (temporary), or until it is relocked (reversible). Sometimes, a lock collapses after use, allowing the player only to pass once."
+
+-> locks: *permanent, temporary, reversible, collapsible*
+
+#cite(<dormansCyclicGeneration2017>):
+"Certain locks allow you to cross only in one direction (valves), while others can only be opened from one direction but traversed in two directions after they are opened (asymmetrical). \[...\] Valves do not always require a key.""
+
+-> locks: *valve, asymmetrical*
+
+#cite(<dormansCyclicGeneration2017>):
+"A safe lock is guaranteed to have a solution, while an unsafe lock is not."
+
+-> locks: *safe or unsafe*
+
+#cite(<dormansCyclicGeneration2017>):
+"Some locks are barriers that might be navigated without a key, but this crossing the barrier might be uncertain or impose a certain risk."
+
+==== Keys
+
+#cite(<dormansCyclicGeneration2017>):
+"Single-purpose keys can only be used to open a lock, and for nothing else, while multipurpose keys can also be used in different ways."
+
+-> keys: *single-purpose or multi-purpose*
+
+#cite(<dormansCyclicGeneration2017>):
+"Particular keys are the only thing that unlocks a particular lock, whereas several nonparticular keys might unlock a single lock."
+
+-> keys: *particular or non-particular*
+
+#cite(<dormansCyclicGeneration2017>):
+"Keys that are destroyed somehow in the process of unlocking a door are consumable, while keys that are not are persistent."
+
+-> keys: *consumable or persistent*
+
+#cite(<dormansCyclicGeneration2017>):
+"Levers and switches are the best example of keys that are fixed in place (and typically single purpose and particular as well)."
+
+-> keys: *fixed or not*
+
+
 
 
 #load-bib()

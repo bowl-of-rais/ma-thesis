@@ -5,7 +5,7 @@
 
 == Results of Comparative Questions by Whiteboard Experience <app_cq_by_wb_exp>
 
-#todo("hint shared y-axis")
+The following plots visualize the answer distributions to the four questions comparing Miro to StatePx stratified by indicated whiteboard experience on a shared y-axis.
 
 #figure(
   image("assets/app/c-q1-by-wb-exp.png"),
