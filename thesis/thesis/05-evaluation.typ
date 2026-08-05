@@ -42,24 +42,50 @@
     caption: "Definition of the 4 user study participant groups"
 )
 
-- use case: zelda dungeons #cite(<summervilleVGLCVideoGame2016>) -> ensure realistic tasks. data pool big enough to choose 2 comparable dungeons per task. same game: consistency in terms of details like item/key types, dungeon structure, etc. dataset provides graphs for each level and full layout/map of dungeons.
 - target demographic: people with some understanding of game design -> recruitment: university lecture in games engineering study course, also computer science students who are familiar with videogames
 - complete tasks (all dungeons) + answer keys in appendix #todo("add to appendix")
+
+=== Zelda Dungeons from the VGLC dataset
+
+- use case: zelda dungeons #cite(<summervilleVGLCVideoGame2016>) -> ensure realistic tasks. data pool big enough to choose 2 comparable dungeons per task. same game: consistency in terms of details like item/key types, dungeon structure, etc.
+- choice: Link's Awakening #todo("add reasoning")
+- dataset provides graphs for each level and full layout/map of dungeons. graphs are annotated with game-specific concepts. relevant here: locks/keys, presence of enemies, start/boss/end (triforce) rooms.
+
+#todo("describe data further")
 
 === Modeling Zelda Dungeons
 
 ==== General Modeling
 
 - rooms numbered based on location in map (approx from bottom left to top right)
-- some rooms spanned multiple screens and were split (e.g. 9-1, 9-2, 9-3) to more accurately reflect pacing (e.g. enemies that are technically in the same room but do not spawn/become visible and defeatable until the respective screen/part of room is entered)
+- some rooms spanned multiple screens (see @multiscreen-example) and were split/modeled with multiple nodes (see @multiscreen-node-numbers) to more accurately reflect pacing (e.g. enemies that are technically in the same room but do not spawn/become visible and defeatable until the respective screen/part of room is entered)
 
-#todo("image showing room numbering")
+#grid(
+  columns: 2,
+  grid.cell([
+    #figure(
+      image("assets/05/multiscreen-room-example-la2.png", width: 90%),
+      caption: [Example of multi-screen room in level LA_2 #cite(<summervilleVGLCVideoGame2016>)]
+    ) <multiscreen-example>
+  ]),
+  grid.cell([
+    #figure(
+      image("assets/05/multiscreen-numbering-example-miro.png", width: 90%),
+      caption: "Corresponding node numbering"
+    ) <multiscreen-node-numbers>
+  ])
+)
 
 ==== pix:e vs Miro
 
 pix:e: rooms: node. use in-built functionalities for keys/items and other room data (components). visualization: as described previously
 
-Miro: rooms: sticky notes. write all information into sticky notes. heavier use of emoji encoding: to more easily differentiate between different key types/lock types
+Miro: rooms: sticky notes. write all information into sticky notes. heavier use of emoji encoding: to more easily differentiate between different key types/lock types + sticky note with legend
+
+#figure(
+  image("assets/05/miro-legend.png", width: 40%),
+  caption: "Legend provided with on the Miro task boards"
+)
 
 comparison: pix:e has more dedicated functionality + logic, but ui is less mature (zoomed out view, editing features). emoji encoding in Miro.
 
@@ -67,16 +93,49 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 - larger Zelda dungeons
 - Link's Awakening LA_3, LA_4 #cite(<summervilleVGLCVideoGame2016>)
-- selection criteria: size -> non-trivial while still being feasible manually in Miro. comparable size (35 vs 41 nodes) + complexity (outgoing ranks of nodes), similar number of keys/locks. #todo("add details")
+- selection criteria: size -> non-trivial while still being feasible manually in Miro. also not so big as to negatively impact performance in pix:e too much and be handleable in zoomed-out view. (75th percentile in VGLC Zelda data)
+- subsequent levels from the same game -> comparable size + complexity (outgoing ranks of nodes), similar number of keys/locks, see @solvability-dungeon-numbers.
 
-#todo("images: original maps/graphs, versions in Miro/pix:e")
+#figure(
+  table(
+    columns: (auto, auto, auto, auto, auto, auto),
+    inset: 7pt,
+    align: horizon,
+    table.header(
+      [*Level*], [*Nodes*], [*Edges*], [*Locks*], [*Keys*], [*Avg Outgoing Edges*]
+    ),
+    [LA_3], [41], [83], [26], [11], [2.02],
+    [LA_4], [35], [70], [24], [8], [2.0]
+  ),
+  caption: "Complexity of selected dungeon graphs for solvability tasks, calculated from VGLC data"
+) <solvability-dungeon-numbers>
 
 - slight adaptations: #todo("add adaptations")
   - structural: #todo("add structural adaptations")
   - information: remove puzzles, "vision" edges, enemies
+  - added 4 nodes, 3 edges, 4 keys to LA_4 to make it more similar in size to LA_3
 
 - added issues: 6 for each dungeon, of varying difficulty
   - 2x missing key(s), 1x no outgoing edge, 1x unreachable due to edge directionality, 2x softlock
+
+- see @la3-vglc and @la3-miro for an impression of the original dungeon layout and adapted version (with issues) in Miro for LA_3. for full-size images and pix:e versions see @app-s-dungeons.
+
+#grid(
+  columns: 2,
+  inset: 5pt,
+  grid.cell([
+    #figure(
+      image("assets/05/la3-vglc.png"),
+      caption: [Annotated screen captures of LA_3 from the VLGC #cite(<summervilleVGLCVideoGame2016>)]
+    ) <la3-vglc>
+  ]),
+  grid.cell([
+    #figure(
+      image("assets/05/la3-miro.png", width: 80%),
+      caption: "LA_3 representation in Miro"
+    ) <la3-miro>
+  ])
+)
 
 - task: find as many issues -> specified kinds of issues
 - participants were allowed to use tool functionalities
@@ -87,18 +146,50 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 - smaller Zelda dungeons
 - Link's Awakening LA_1, LA_2 #cite(<summervilleVGLCVideoGame2016>)
-- selection criteria: size, number of keys/locks. comparable size + complexity #todo("add details").
+- selection criteria: smaller than dungeons for previous task (to account for additional task complexity due to calculations). (25th percentile in VGLC Zelda data)
+- again, subsequent levels comparable size, number of keys/locks/complexity comparable size + complexity, see @pacing-dungeon-numbers.
+
+#figure(
+  table(
+    columns: (auto, auto, auto, auto, auto, auto),
+    inset: 7pt,
+    align: horizon,
+    table.header(
+      [*Level*], [*Nodes*], [*Edges*], [*Locks*], [*Keys*], [*Avg Outgoing Edges*], [*Nodes with Enemies*]
+    ),
+    [LA_1], [21], [41], [12], [5], [1.96], [12],
+    [LA_2], [27], [55], [18], [9], [2.04], [18]
+  ),
+  caption: "Complexity of selected dungeon graphs for solvability tasks, calculated from VGLC data"
+) <pacing-dungeon-numbers>
+
 - additional criterium: little backtracking, clear division into three sections that can be used for comparative analysis of component values along (sub-)paths:
   - A: start to ability
   - B: ability to boss key
   - C: boss key to boss fight
 
-#todo("images: original maps/graphs, versions in Miro/pix:e")
-
 - adaptations: #todo("add adaptations")
   - structural: #todo("add structural adaptations")
   - information: remove puzzles, "vision" edges. locks/keys stay.
-  - additional information: completion time and enemy count based on YouTube walkthrough (100% completion to get data for all rooms) #todo("add ref to walkthroughs").
+  - additional information: completion time and enemy count based on YouTube walkthrough (100% completion to get accurate data for all rooms) #cite(<theretrogamersLegendZeldaLinks2014>), #cite(<theretrogamersLegendZeldaLinks2014a>). enemies that cannot/do not need to be beat are ignored.
+- see @la1-vglc and @la1-miro for an impression of the original dungeon layout and Miro representation for LA_1. for full-size images and pix:e versions see @app-p-dungeons.
+
+#grid(
+  columns: 2,
+  inset: 5pt,
+  grid.cell([
+    #figure(
+      image("assets/05/la1-vglc.png"),
+      caption: [Annotated screen captures of LA_1 from the VLGC #cite(<summervilleVGLCVideoGame2016>)]
+    ) <la1-vglc>
+  ]),
+  grid.cell([
+    #figure(
+      image("assets/05/la1-miro.png", width: 80%),
+      caption: "LA_1 representation in Miro"
+    ) <la1-miro>
+  ])
+)
 
 - task: answer questions about pacing. includes comparisons of path sections, overall enemy distribution in nodes:
 
@@ -115,9 +206,7 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 === Collected Data and Processing
 
-- demographics: age, gender, background, occupation experience, previous experience with whiteboard tools. collected via Google Forms
-
-#todo("add complete demographics")
+- demographics: age, gender, background/education, occupational experience,number of projects/games worked on, previous experience with whiteboard tools and game design tools. collected via Google Forms
 
 - recorded during tasks: issues found/questions answered + timestamps, comments, clarifications/hints, observations about tool use
   - semi-structured live protocol, written in Markdown with YAML frontmatter for participant data (id, group)

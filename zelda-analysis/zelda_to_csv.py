@@ -23,6 +23,7 @@ def avg_node_out_rank(graph: pydot.Graph, edge_subset: list[pydot.Edge] = []) ->
 def level_dot_to_dict(game: str, path: str) -> dict:
     graph = pydot.graph_from_dot_file(path)[0]
     true_edges = [edge for edge in graph.get_edges() if 's' not in edge.obj_dict['attributes']['label']]
+    nodes_with_enemies = [node for node in graph.get_nodes() if 'e' in node.obj_dict['attributes']['label']]
 
     res = {
         "game" : game,
@@ -40,6 +41,7 @@ def level_dot_to_dict(game: str, path: str) -> dict:
         "number_switch_locks": count_across_edges(graph, 'S'),
         "avg_out_rank" : avg_node_out_rank(graph),
         'avg_true_out_rank' : avg_node_out_rank(graph, true_edges),
+        "nodes_with_enemies" : len(nodes_with_enemies)
     }
 
     return res
@@ -77,6 +79,7 @@ with open("zelda_data.csv", "w", newline="") as f:
         'number_switch_locks',
         'avg_out_rank',
         'avg_true_out_rank',
+        'nodes_with_enemies'
     ])
     w.writeheader()
     w.writerows(data)

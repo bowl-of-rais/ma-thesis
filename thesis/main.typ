@@ -183,7 +183,7 @@
 #set page(numbering: "i")
 #counter(page).update(1)
 
-#include("thesis/a1-user-study.typ")
+#include("thesis/a1-user-study-tasks.typ")
 #include("thesis/a2-user-study-data.typ")
 #include("thesis/a3-further-evaluation.typ")
 

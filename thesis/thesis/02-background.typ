@@ -11,6 +11,10 @@
 
 #todo("")
 
+== Statecharts
+
+#todo("add section on statecharts?")
+
 == PaceMaker
 
 #cite(<geheebPaceMakerPracticalTool2024>)

@@ -390,6 +390,9 @@ modular architecture for extendability and maintainability. 4 main components:
 == Testing
 
 - #todo("describe test cases")
+- mainly exploratory testing
+- smaller charts: target specific configurations
+- larger chart: eastern palace -> sanity check on performance. #todo("count nodes"). 
 
 == Limitations and Future Work
 
@@ -398,6 +401,6 @@ modular architecture for extendability and maintainability. 4 main components:
 - difficulty estimation #todo("add citation")
 - recommendations for lock/key types #cite(<dormansCyclicGeneration2017>)
 - LLM-based consistency check with descriptions
-- implementation: currently done in frontend. may benefit from porting to backend + specialized algorithm. trade-off: maintainability/extendability
+- implementation: currently done in frontend. reasonably performant up to around 50 nodes at least, but for other use cases, larger graphs may be needed #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?"). may benefit from porting to backend + specialized algorithm. trade-off: maintainability/extendability?
 
 #load-bib()
