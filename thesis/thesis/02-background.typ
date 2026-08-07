@@ -113,6 +113,11 @@ by #cite(<dormansCyclicGeneration2017>)
 
 -> keys: *fixed or not*
 
+== Inventory-Based Search Algorithms
+
+#todo("explain concept and what of it is relevant to here, what of it is not")
+
+- inventory-based jump-point search #cite(<aversaPathPlanningInventoryDriven2015>) is grid-based. statechart could be mapped to grid, but would probably be suboptimal because nodes have generally low rank and don't necessarily conform to neighboring structure of a grid. concept of inventory is still relevant, though.
 
 
 

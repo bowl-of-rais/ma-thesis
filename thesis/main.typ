@@ -74,6 +74,7 @@
 #set par(leading: 0.9em, first-line-indent: 1.8em, justify: true)
 #set par(spacing: 1em)
 #set table(inset: 6.5pt)
+#set figure(gap: 1em)
 #show table: set par(justify: false)
 #show figure: it => [#v(1em) #it #v(1em)]
 
@@ -84,10 +85,12 @@
 
 
 // Pagebreak after level 1 headings
+/*
 #show heading.where(level: 1): it => [
   #pagebreak(weak: true)
   #it
 ]
+*/
 
 // Names for headings
 #set heading(supplement: it => {

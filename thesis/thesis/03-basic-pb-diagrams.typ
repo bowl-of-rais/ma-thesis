@@ -17,12 +17,21 @@
 - selected path is highlighted (visual feedback)
 - path is subsequently used for diagram generation
 
+#figure(
+  image("assets/03/high-level-path-calculation.drawio.png", width: 90%),
+  caption: "High-Level Logic for Pathfinding"
+)
+
 === Implementation
 
-- select start + end node, optionally intermediate nodes -> calculate path using dijkstra
-- `pathsApi.ts`: to allow for different algorithms in the future (e.g. specific pathfinding for nestedness and concurrency)
-
-#todo("add high-level flowchart for path calculation logic (from node selection to highlighting)")
+- `pathsApi.ts` composable encapsulates path calculation logic (= dijkstra)
+  - allows for different algorithms in the future (e.g. specific pathfinding for nestedness and concurrency)
+  - interface:
+    - input nodes and edges (VueFlow), selected nodes
+    - provided functions path calculation (includes toasting), highlighting, reset of result + highlight
+- selection of start + end node (optionally intermediate nodes) detected in `PxChartCanvas` componend -> call path calculation function
+- changing node selection triggers re-calculation
+- resetting node selection (= 0 nodes selected) resets path calculation + highlight
 
 === Workflow
 
@@ -41,7 +50,7 @@
 
 - calculation fully done in frontend
 - paths are not persisted
-- no visual indicator for start/end nodes
+- no visual indicator for/distinction between start/end nodes
 
 == Diagram Generation
 

@@ -39,7 +39,7 @@ DATA_KEYS = [
     's_sob_pixie',
     's_used_miro',
     'p_used_miro',
-    'miro_usage'
+    'miro_usage',
 ]
 
 with open("protocol-data.csv", "w", newline="") as f:

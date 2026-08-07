@@ -25,18 +25,19 @@ figure(
     width: 100%,
     clip: false,
   [#align(left)[#content]]),
+  gap: 1em,
   caption: [#caption],
   supplement: "Pseudocode",
   kind: "code",
   outlined: true
 )}
 
-= Locks and Keys <impl_lk>
+= Locks and Keys <impl-lk>
 
 - novel functionality (not in PaceMaker)
 - can be used both low-level (e.g. to model individual puzzles/dungeons) or high-level (e.g. to model storylines and their prerequisites) -> some range in use cases. possible high complexity in lock/key type puzzles #todo("add citation"), so analysis/verification/debugging functionality has potential for high impact.
 
-== Requirements
+== Requirements <lk-requirements>
 
 - use @bg-lock-key-taxonomy as reference for requirements to the lock/key functionality in pix:e
 - in statechart: conditional transition
@@ -56,7 +57,7 @@ figure(
     - modeled via bidirectional edges with locks vs two uni-directional edges, one with lock and one without
 - locks: *safe or unsafe*: not currently modeled
 
-== Resulting Data Model
+== Resulting Data Model <lk-data-model>
 
 #figure(
   image("assets/04/lock-key-data-model.drawio.png"),
@@ -69,7 +70,7 @@ figure(
 - in particular, a lock definition can be assigned multiple key definitions that unlock it. the same key definition can also be assigned to multiple lock definitions as an unlocking key type. additionally, both lock and key definitions can be reused across assignments.
 - each pair of lock definitions and edge/key definition and node may have at most one assignment. assignments record `count` to model multiplicity.
 
-== Creation and Visualization of Locks and Keys
+== Creation and Visualization of Locks and Keys <lk-creation-visualization>
 
 #cite(<brownHowMyBoss2026>): high-level visual representation. only focuses on locks and keys and where they are in relation to each other
 
@@ -121,7 +122,7 @@ to integrate into player experience chart: assign keys to nodes and locks to edg
   caption: "Modal for creating/editing lock assignments for an edge"
 ) <edit_lock_modal>
 
-== Pathfinding with Locks and Keys
+== Pathfinding with Locks and Keys <lk-pathfinding>
 
 === Basic Dijkstra with Locks and Keys
 

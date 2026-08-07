@@ -7,6 +7,10 @@
 
 #todo("collect from other chapters")
 
+=== Internals
+
+- move calculation into backend
+
 === UI/UX
 
 - easier editing of component/key assignments #todo("add reference")
@@ -15,6 +19,8 @@
 === Existing Functionalities
 
 === Extended and Additional Functionalities
+
+- persist calculated paths
 
 branching out:
 - using LLMS:

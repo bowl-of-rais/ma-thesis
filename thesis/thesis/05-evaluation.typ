@@ -18,6 +18,15 @@
 
 == Methodology
 
+=== Goal
+
+main questions to answer: are implemented analyses
+1. helpful
+2. interesting?
+
+- helpful -> give tasks, see if tool improves performance
+- interesting -> questionnaires, freeform feedback
+
 === High-Level User Study Design
 
 - joint user study/team effort. first part of study was concerned with usability, participants asked to model zelda dungeon in tool (including locks & keys) -> participants were already familiarized with context and basic functions of the tool when approaching the tasks described here. task-specific functionalities (pathfinding + solvability-related highlightings, diagrams) were shown to participants prior to respective tasks.
@@ -25,23 +34,24 @@
   - two task variants, varying order of tools + dungeons -> 4 groups:
 
 #figure(
-    table(
-    columns: (auto, auto, auto),
-    inset: 10pt,
-    align: horizon,
-    table.header(
-        [], [*Miro first*], [*StatePx first*],
-    ),
-    [*Variant A first*],
-    [MA],
-    [PA],
-    [*Variant B first*],
-    [MB],
-    [PB],
-    ),
-    caption: "Definition of the 4 user study participant groups"
+  table(
+  columns: (auto, auto, auto),
+  inset: 10pt,
+  align: horizon,
+  table.header(
+      [], [*Miro first*], [*StatePx first*],
+  ),
+  [*Variant A first*],
+  [MA],
+  [PA],
+  [*Variant B first*],
+  [MB],
+  [PB],
+  ),
+  caption: "Definition of the 4 user study participant groups"
 )
 
+- #todo("why miro?")
 - target demographic: people with some understanding of game design -> recruitment: university lecture in games engineering study course, also computer science students who are familiar with videogames
 - complete tasks (all dungeons) + answer keys in appendix #todo("add to appendix")
 
@@ -104,8 +114,8 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
     table.header(
       [*Level*], [*Nodes*], [*Edges*], [*Locks*], [*Keys*], [*Avg Outgoing Edges*]
     ),
-    [LA_3], [41], [83], [26], [11], [2.02],
-    [LA_4], [35], [70], [24], [8], [2.0]
+    [*LA_3*], [41], [83], [26], [11], [2.02],
+    [*LA_4*], [35], [70], [24], [8], [2.0]
   ),
   caption: "Complexity of selected dungeon graphs for solvability tasks, calculated from VGLC data"
 ) <solvability-dungeon-numbers>
@@ -151,14 +161,14 @@ comparison: pix:e has more dedicated functionality + logic, but ui is less matur
 
 #figure(
   table(
-    columns: (auto, auto, auto, auto, auto, auto),
+    columns: (auto, auto, auto, auto, auto, auto, auto),
     inset: 7pt,
     align: horizon,
     table.header(
       [*Level*], [*Nodes*], [*Edges*], [*Locks*], [*Keys*], [*Avg Outgoing Edges*], [*Nodes with Enemies*]
     ),
-    [LA_1], [21], [41], [12], [5], [1.96], [12],
-    [LA_2], [27], [55], [18], [9], [2.04], [18]
+    [*LA_1*], [21], [41], [12], [5], [1.96], [12],
+    [*LA_2*], [27], [55], [18], [9], [2.04], [18]
   ),
   caption: "Complexity of selected dungeon graphs for solvability tasks, calculated from VGLC data"
 ) <pacing-dungeon-numbers>
@@ -235,7 +245,7 @@ post-processing:
 
 === Results Solvability
 
-#todo("compare A/B groups and orderings")
+#todo("give overview over subsection")
 
 ==== Data Processing
 
@@ -302,11 +312,77 @@ post-processing:
 
 - #todo("times to first identified issues")
 
+==== Differences Between Groups
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-total-by-group.png"),
+        caption: "Distribution of total issues claimed by group"
+    ) <fig:s_total_by_group> ]),
+    grid.cell([#figure(
+        image("assets/05/solvability-f1-by-group.png"),
+        caption: "Distribution of F1 scores by group"
+    ) <fig:s_f1_by_group> ])
+)
+
+- overall: no evidence for distribution of any group dominating in either tool for total claimed issues (Miro: $1.0379656160458535, 0.792066472134847$, pix:e: 6.302259887005658, 0.09779572832771925) or F1 score (Miro: Kruskal-Wallis $H$ = 6.782330648981534, $p$ = 0.07916893329942976, pix:e:$H$ = 6.1209961685823835, $p$ = 0.10586961600347922)
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-total-by-first-tool.png"),
+        caption: "Distribution of total claimed issues by first tool"
+    ) <fig:s_total_by_first_tool> ]),
+    grid.cell([#figure(
+        image("assets/05/solvability-f1-by-first-tool.png"),
+        caption: "Distribution of F1 scores by first tool"
+    ) <fig:s_f1_by_first_tool> ])
+)
+
+- when aggregating group results by first tool: no evidence for total number of identified issues in either tool differing based on which tool was used first (in pix:e: 56.0, 0.17586687210000918, in Miro: 61.0, 0.5252085487808955). also, still significantly more issues claimed in miro than pix:e, regardless of which tool was used first (Miro first: 113.5, 0.007119626847890099, pix:e first: 109.5, 0.013911974800880097).
+- similar effects for F1 scores between different first tools. #todo("add significance tests?") slightly higher median in both tools for pix:e-first group, though not significantly (in Miro: 34.5, 0.012881216468546798, in pix:e: 36.0, 0.01752989821262875)
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-total-by-first-task.png"),
+        caption: "Distribution of total claimed issues by first task version"
+    ) <fig:s_total_by_first_task> ]),
+    grid.cell([#figure(
+        image("assets/05/solvability-f1-by-first-task.png"),
+        caption: "Distribution of F1 scores by first task version"
+    ) <fig:s_f1_by_first_task> ])
+)
+
+- when aggregating group results by first task (@fig:s_f1_by_first_task), no significant difference (test pix:e f1 by first task version: 76.5, 0.8122816289421281. test miro f1 by first task version: 51.0, 0.2166759185112942.) #todo("add other numbers?")
+
+==== Differences Between Task Versions
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-total-a-vs-b.png"),
+        caption: "Distribution of total issues claimed by task version"
+    ) <fig:s_total_a_vs_b> ]),
+    grid.cell([#figure(
+        image("assets/05/solvability-f1-a-vs-b.png"),
+        caption: "Distribution of F1 scores by task version"
+    ) <fig:s_f1_a_vs_b> ])
+)
+
+- distribution of total issues claimed skews a bit lower for task variant B (see @fig:s_total_a_vs_b) but not significantly so (one-sided Wilcoxon $T = 186.0$, $p=0.06887389294090047$)
+- distributions of f1 scores also comparable between the two task variants (two-sided Wilcoxon 114.5, 0.30990274795652073)
+
 === Results Pacing
 
+#todo("give overview over subsection or reference previous overview")
 #todo("add disclaimer human error")
 #todo("effect sizes")
-#todo("compare A/B groups and orderings")
 
 ==== Data Processing
 
@@ -314,7 +390,7 @@ analogous to solvability task:
 - spoken answers recorded in protocol -> manual count of total answered questions, manual check against answer key and count of correct answers.
 - inspection of miro boards -> modifications to boards and if so, which ones
 
-==== Task Completion
+==== Task Completion <res-p-task-completion>
 
 - total number of answered questions: no indication of significant difference in distributions according to Wilcoxon signed-rank test ($T = 96.5$, $p=0.7473513186644183$).
 //median of number of answered questions higher for pix:e, even though distribution skews higher for miro. within participants: median same, but 25th percentile skews a bit lower.
@@ -391,6 +467,70 @@ analogous to solvability task:
 ==== Recorded Times
 
 - #todo("time per question")
+
+==== Differences Between Groups
+
+- #todo("differences between groups")
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-total-by-group.png"),
+        caption: "Distribution of total questions answered by group"
+    ) <fig:p_total_by_group> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-right-by-group.png"),
+        caption: "Distribution of correctly answered questions by group"
+    ) <fig:p_right_by_group> ])
+)
+
+- in pix:e: no evidence for significant difference in distributions across groups for either total questions answered (Kruskal 2.1110353190844298, 0.54968347133725) or correctly answered questions (Kruskal 3.083672853478187, 0.378903521375986)
+- in Miro: significant difference in distributions for both total questions answered (12.251221001220992, 0.006570308655445982) and correctly answered questions (10.57124213112236, 0.01428532721234054). dunn's post-hoc test reveals: difference between BM and BP significant in both Miro (0.0035502324285740213) and pix:e (0.007839024134852761).
+- possible explanation: task B apparently more challenging (see @res-p-a-vs-b). when encountering it as a first task, previously mentioned (@res-p-task-completion) slightly higher median in pix:e may be amplified.
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-total-by-first-tool.png"),
+        caption: "Distribution of total answered questions by first tool"
+    ) <fig:p_total_by_first_tool> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-right-by-first-tool.png"),
+        caption: "Distribution of correctly answered questions by first tool"
+    ) <fig:p_right_by_first_tool> ])
+)
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-total-by-first-task.png"),
+        caption: "Distribution of total answered questions by first task version"
+    ) <fig:p_total_by_first_task> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-right-by-first-task.png"),
+        caption: "Distribution of correctly answered questions by first task version"
+    ) <fig:p_right_by_first_task> ])
+)
+
+==== Differences Between Task Versions <res-p-a-vs-b>
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-total-a-vs-b.png"),
+        caption: "Distribution of total questions answered by task version"
+    ) <fig:p_total_a_vs_b> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-right-a-vs-b.png"),
+        caption: "Distribution of questions answered correctly by task version"
+    ) <fig:p_right_a_vs_b> ])
+)
+
+- both distribution of total answered questions (see @fig:p_total_a_vs_b) and distribution of correctly answered questions (see @fig:p_right_a_vs_b) skew lower for task variant B. for both distributions, the difference is statistically significant: Wilcoxon test for distributions of total answered questions $T = 176.0$, $p=0.003564421270173578$, for distributions of correctly answered questions $T = 195.0$ $0.0003341210561220924$.
 
 === Results UEQ-S
 
