@@ -83,6 +83,11 @@
 #show heading.where(level: 3): set block(above: 1.75em, below: 1em)
 #show heading.where(level: 4): set block(above: 1.55em, below: 1em)
 
+#set grid(inset: 5pt)
+#set enum(indent: 1em)
+#set list(indent: 1em)
+//#show enum: set block(above: 1.5em, below: 1em)
+//#show list: set block(above: 1.5em, below: 1em)
 
 // Pagebreak after level 1 headings
 /*
@@ -91,6 +96,11 @@
   #it
 ]
 */
+
+#show heading.where(level: 5): it => {
+  h(-1.8em)
+  box(strong(it.body))
+}
 
 // Names for headings
 #set heading(supplement: it => {
@@ -116,8 +126,7 @@
 #show ref: it => {
   let el = it.element
   if el != none and el.func() == heading {
-
-    [#it (#el.body)]
+    [#it #el.body]
   } else [#it]
 }
 

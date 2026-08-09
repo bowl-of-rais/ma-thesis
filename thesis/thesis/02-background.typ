@@ -1,7 +1,7 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= Background <backg>
+= Background <background>
 
 == Game Design Tools??
 

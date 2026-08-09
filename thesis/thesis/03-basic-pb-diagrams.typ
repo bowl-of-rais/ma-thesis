@@ -1,7 +1,7 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= Path-Based Diagrams <basic_diagrams>
+= Path-Based Diagrams <impl-diagrams>
 
 #todo("potentially refactor: 1 chapter for implementation, provide context (tech stack etc)")
 
@@ -44,7 +44,7 @@
 #figure(
   image("assets/03/path-selected-highlight.png"),
   caption: [Path highlighted in state chart],
-) <fig_path_hl>
+) <fig:path-hl>
 
 === Limitations
 
@@ -63,7 +63,7 @@
 #figure(
   image("assets/03/diagram-expandable-addable.png"),
   caption: [Upper section of the charts page with expandable element and UI for diagram creation],
-) <fig_diagram_area>
+) <fig:diagram-area>
 
 - selection of one or multiple component definitions for the y axis
 - optionally selection of one component for the x axis (e.g. estimated playtime)
@@ -73,7 +73,7 @@
 #figure(
   image("assets/03/diagram-axis-selection.png"),
   caption: [Selectors for components to be mapped to X/Y axes],
-) <fig_axis_sel>
+) <fig:axis-sel>
 
 - selected path along x axis
 	- if no path selected: all nodes, in no specific order

@@ -1,9 +1,10 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= User Study Tasks and Descriptions <app_us_design>
+= User Study Tasks and Descriptions <app-us-design>
 
 #todo("add pix:e versions")
+#todo("add task descriptions")
 
 == Dungeons for Solvability Tasks <app-s-dungeons>
 

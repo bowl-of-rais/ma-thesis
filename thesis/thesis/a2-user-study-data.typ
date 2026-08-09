@@ -1,9 +1,9 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= User Study Data <app_us_data>
+= User Study Data <app-us-data>
 
-== Results of Comparative Questions by Whiteboard Experience <app_cq_by_wb_exp>
+== Results of Comparative Questions by Whiteboard Experience <app-cq-by-wb-exp>
 
 The following plots visualize the answer distributions to the four questions comparing Miro to StatePx stratified by indicated whiteboard experience on a shared y-axis.
 
@@ -27,7 +27,7 @@ The following plots visualize the answer distributions to the four questions com
   caption: "Distribution of answers to C-Q4 by indicated whiteboard tool experience"
 )
 
-== Written Feedback <app_written_feedback>
+== Written Feedback <app-written-feedback>
 
 === After Part 1
 

@@ -1,7 +1,7 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= Introduction <prop_intro>
+= Introduction <prop-intro>
 
 == Context/Motivation
 

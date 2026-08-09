@@ -1,7 +1,7 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= Background <prop_background>
+= Background <prop-background>
 
 == Usability Guidelines and Metrics
 

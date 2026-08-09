@@ -79,18 +79,18 @@ to integrate into player experience chart: assign keys to nodes and locks to edg
 === Defining Types of Locks and Keys
 
 - for both locks and keys: definitions separate from instantiations in nodes, analogous to PxComponents -> same logic behind both concepts
-- both defined on same page so users can e.g. refer to details about key definitions while creating lock definitions and vice versa. page can be seen in @lk_defs. layout: creation forms on the left (with help texts and indicators for necessary inputs), respective `ScrollArea`s for existing lock/key definitions next to it.
+- both defined on same page so users can e.g. refer to details about key definitions while creating lock definitions and vice versa. page can be seen in @lk-defs. layout: creation forms on the left (with help texts and indicators for necessary inputs), respective `ScrollArea`s for existing lock/key definitions next to it.
 
 #figure(
   image("assets/04/lock-key-definitions-page.png"),
   caption: "Page 'Lock and Key Definitions'"
-) <lk_defs>
+) <lk-defs>
 
 === Modeling Keys
 
 - multiple instances of same definition possible per node as defined in data model
-- icon button in node (see @node_with_keys) opens modal (see @key_creation_modal) where users can choose a key definition (from all definitions without an existing assignment) and respective count. both are technically required, count has default value 1.
-- key assignments in nodes are represented by chips (count + definition name, see @node_with_keys), choice made due to compactness. chips have included button for deletion.
+- icon button in node (see @node-with-keys) opens modal (see @key-creation-modal) where users can choose a key definition (from all definitions without an existing assignment) and respective count. both are technically required, count has default value 1.
+- key assignments in nodes are represented by chips (count + definition name, see @node-with-keys), choice made due to compactness. chips have included button for deletion.
 
 #grid(
   columns: 2,
@@ -99,13 +99,13 @@ to integrate into player experience chart: assign keys to nodes and locks to edg
     #figure(
       image("assets/04/add-key-modal.png"),
       caption: "Modal for creating a key assignment for a node"
-    ) <key_creation_modal>
+    ) <key-creation-modal>
   ]),
   grid.cell([
     #figure(
       image("assets/04/node-with-key-assignment.png", width: 75%),
       caption: "Visual representation of two key assignments in a node"
-    ) <node_with_keys>
+    ) <node-with-keys>
   ])
 )
 
@@ -115,12 +115,12 @@ to integrate into player experience chart: assign keys to nodes and locks to edg
 
 - same as keys, multiple instances of same definition possible per edge, see data model.
 - different from keys: edges are chart-specific and not represented in UI except for in the chart themselves. intention: make it clear that adding a lock to an edge is specific to that edge. vueflow framework does not offer built-in context menu for edges. possible future improvement: custom button implementation to simulate context menu (also for other actions like edge deletion). current workaround: buttons that are only visible if exactly one edge is selected. benefit: edge selection is easily detected.
-- lock creation modal (see @edit_lock_modal): overview of all available lock definitions and instance counts on selected edge -> multiple and different kinds of locks can be edited/added in the same modal. key icon in each row shows unlocking key definitions.
+- lock creation modal (see @edit-lock-modal): overview of all available lock definitions and instance counts on selected edge -> multiple and different kinds of locks can be edited/added in the same modal. key icon in each row shows unlocking key definitions.
 
 #figure(
   image("assets/04/edit-lock-modal.png", width: 50%),
   caption: "Modal for creating/editing lock assignments for an edge"
-) <edit_lock_modal>
+) <edit-lock-modal>
 
 == Pathfinding with Locks and Keys <lk-pathfinding>
 
@@ -373,7 +373,7 @@ definition:
 
 == Code Architexture
 
-- building on implementation for diagrams @basic_diagrams, pathfinding itself has higher complecity -> refactor into multiple files/composables
+- building on implementation for diagrams @impl-diagrams, pathfinding itself has higher complecity -> refactor into multiple files/composables
 
 #todo("add diagram for code architecture + interactions?")
 
