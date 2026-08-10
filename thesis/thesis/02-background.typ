@@ -7,7 +7,7 @@
 
 #todo("")
 
-== Player Experience
+== Player Experience <bg-player-experience>
 
 #todo("")
 
@@ -15,7 +15,7 @@
 
 #todo("add section on statecharts?")
 
-== PaceMaker
+== PaceMaker <bg-pacemaker>
 
 #cite(<geheebPaceMakerPracticalTool2024>)
 
@@ -49,7 +49,7 @@
 - usability issues
 - nesting/concurrency
 
-== Lock-and-Key Puzzles
+== Lock-and-Key Puzzles <bg-locks-and-keys>
 
 === Definition
 
@@ -113,7 +113,7 @@ by #cite(<dormansCyclicGeneration2017>)
 
 -> keys: *fixed or not*
 
-== Inventory-Based Search Algorithms
+== Inventory-Based Search Algorithms <bg-inventory-search>
 
 #todo("explain concept and what of it is relevant to here, what of it is not")
 

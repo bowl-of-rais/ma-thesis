@@ -9,6 +9,10 @@
 - main design guideline: build upon high configurability already present in the system
 - following sections describe functionalities, implementation choices and wokflow/usage of these features implemented in pixe
 
+== Initial State of the System
+
+#todo("introduce components, nodes/pxchart")
+
 == Path Selection
 
 === Functionality

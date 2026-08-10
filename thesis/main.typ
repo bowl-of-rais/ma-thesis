@@ -97,10 +97,12 @@
 ]
 */
 
+
 #show heading.where(level: 5): it => {
   h(-1.8em)
   box(strong(it.body))
 }
+
 
 // Names for headings
 #set heading(supplement: it => {
