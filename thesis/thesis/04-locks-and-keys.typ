@@ -122,7 +122,7 @@ The forms offer help texts and indicators for necessary inputs to assist users.
   caption: "Page 'Lock and Key Definitions'"
 ) <lk-defs>
 
-=== Instantiating Locks
+=== Instantiating Locks <instantiating-locks>
 
 //- same as keys, multiple instances of same definition possible per edge, see data model.
 Edges are chart-specific and not represented in the UI except for in the chart itself, so users must be able to instante locks on the chart page.
@@ -194,6 +194,8 @@ Internally, this is modeled via so-called `PxKeySet`s, which are mappings of key
 In its basic form, the inventory associated with a node reflects keys collected along the shortest path to this node as well as keys made available in this node.
 Inventory contents are propagated to neighboring nodes during iteration.
 In later implementation steps, the concept is extended to account for consumable keys and backtracking.
+
+#todo("add diagram about inventory propagation")
 
 ==== Unlocking Function
 
@@ -300,9 +302,10 @@ In case of multiple options for consumed keys, multiple keysets are added to the
 
 ==== Pathfinding with Consumable Keys
 
+#h(1.8em)
 ===== Extending Unlocking Check
-
-given multiset of keys in inventory $K$ and locks on edge $L$:
+@code:canunlock-consumable shows how the extended `canUnlock` function performs the unlock check considering consumable keys.
+It takes a multiset of keys in inventory $K$ and locks on edge $L$ as inputs.
 
 #pseudocode(
     [```
@@ -319,7 +322,7 @@ given multiset of keys in inventory $K$ and locks on edge $L$:
     <code:canunlock-consumable>
 )
 
-- note: subset of multiset
+The crucial difference to the version without consumable keys is that by requiring the unlocking keyset $U$ to be a subset of the available multi-set of keys $K$, the required multiplicity of consumable keys is accounted for.
 - consider the same example as earlier, except now keys of type $X$ are consumable, so to unlock the two locks $A$ and $B$, now either two keys of type $X$ or one key of type $X$ and one of type $Y$ are needed.
 
 #pad(
@@ -333,9 +336,11 @@ given multiset of keys in inventory $K$ and locks on edge $L$:
 
 - now: $I = {X, Z}$ -> false
 
+#h(1.8em)
 ===== Removing Consumable Keys from Inventory
+In contrast to the `canUnlock` function, which only checks whether a given keyset may unlock a set of locks, the removal of consumable keys from the propagated inventory requires information about which specific keys might have been used.
 
-given inventory $I$ containing multisets of keys $K$ and locks on edge $L$:
+@code:remove-consumable contains the `removeConsumable` function. Given an inventory $I$ containing multisets of keys $K_i$ and locks on edge $L$, it determines all keysets that are subsets of any of the unlocking keysets and computes an inventory variant without the consumable keys for each.
 
 #pseudocode(
     [```
@@ -344,7 +349,7 @@ given inventory $I$ containing multisets of keys $K$ and locks on edge $L$:
             return TRUE
         consumableRequirements = locks with at least one consumable key unlocking	
         unlockingKeysets = required(l1) × ... × required(ln)
-        updatedInventory = {}
+        updatedInventory = []
         for K_i ∈ I:
             if ∃ U ∈ unlockingKeysets with K_i ⊆ U:
                 updatedInventory.push(K_i - { key∈U. consumable(key)})	
@@ -371,11 +376,14 @@ given inventory $I$ containing multisets of keys $K$ and locks on edge $L$:
 
 ==== Soft-Locks
 
-definition:
+Consumable keys may give rise to so-called *soft-locks*.
+As desribed by #cite(<mawhorterSoftlockDetectionSuper2021>), a softlock occurs when players may get stuck in a level or game due to how they traverse it.
+The authors formally define gameplay to be softlock-free if 
 "it is possible to reach the goal state from every reachable state"
-#cite(<mawhorterSoftlockDetectionSuper2021>):
+#cite(<mawhorterSoftlockDetectionSuper2021>).
 
-- here: not nodes, but _states_ in which nodes are visited
+In the context of a path calculated in pix:e with locks and keys, a potential softlock thus occurs when a path may or may not be found depending on the choice of (consumable) keys used. 
+To rephrase it in terms of the aforementioned definition, a path is soft-lock-free if it is possible to reach the target node from every other node on the path, no matter which inventory it was visited with (or: _state_ it was visited in).
 
 #pad(
   rest: 10pt,
@@ -386,18 +394,43 @@ definition:
   )
 )
 
-*implementation*:
-- potential soft-lock state: node unlockable with some, but not all keysets
-- when removing consumed keys: remove empty keysets entirely. then, compare inventory length before and after consumption
+In terms of the implementation, a potential soft-lock state occurs when an edge is unlockable with some, but not all keysets.
+During removal of consumable keys (@code:remove-consumable), keysets that do not unlock the given edge are removed from the updated inventory entirely, as the edge could not be traversed with those sets and they should thus not be propagated to the neighboring node.
+A comparison of inventory length before and after consumption is then used to verify whether a potential soft-lock occurs in the current node.
 
 - #todo("example in pixe for consumable keys")
 
+#todo("softlock not found in user study?")
+
 == Bidirectional Edges and Backtracking
 
+One major limitation of the VueFlow framework (and thus the initial statechart in pix:e) is the lack of native support for bidirectional edges.
+Bidirectional edges are, however, crucial for modeling non-linear gameplay.
+The most simple use case would be a dungeon where players may go back a previous room. #todo("add citation?")
+
+This sub-section thus describes the modeling of bidirectional edges themselves and how the pathfinding algorithm was extended to account for bidirectional edges.
+
+=== Modeling Bidirectional Edges
+
+While the framework does not support bidirectional edges, it does allow for arbitrary data to be assigned to edges and used for styling.
+Hence, a flag `bidirectional` was added to edges to indicate whether an edge was uni- or bidirectional.
+Edges were then configured to render with different markers: regular arrows for uni-directional edges, no marker for bi-directional edges.
+Due to the limitations described in @instantiating-locks, another button was added to allow users to change the directionality of a selected edge.
+
+#todo("add screenshot")
+
+=== Backtracking in Pathfinding
+
+With the implementation of bidirectional edges, the pathfinding algorithm was extended by backtracking.
+
+While an implementation of backtracking would have been possible in theory with uni-directional edges, the approach would have been unnecessarily complex.
+A bidirectional edge could be modeled using two uni-directional edges, but this would
+1. prevent any distinction between asymmetrical locks and valves
+2. cause additional overhead as an edge would have to be considered unlocked if the edge in the reverse direction is also unlocked
+3. over-complicate the user experience.
+The existence of bidirectional edges is thus essential for the implementation of backtracking.
+
 - goal: allow for longer/cyclic paths needed to collect keys
-
-#todo("extension of data model to implement bidirectional edges")
-
 - another idea of parallel universes
 - #todo("add citation from julians paper?")
 
@@ -483,13 +516,10 @@ which interact as shown in @fig:modularization:
 - smaller charts: target specific configurations
 - larger chart: eastern palace -> sanity check on performance. #todo("count nodes"). 
 
-== Limitations and Future Work
+== Limitations
 
-- fixed keys for non-adjacent locks
-- in pathfinding: temporary, reversible, collapsible locks
-- difficulty estimation #todo("add citation")
-- recommendations for lock/key types #cite(<dormansCyclicGeneration2017>)
-- LLM-based consistency check with descriptions
-- implementation: currently done in frontend. reasonably performant up to around 50 nodes at least, but for other use cases, larger graphs may be needed #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?"). may benefit from porting to backend + specialized algorithm. trade-off: maintainability/extendability?
+As mentioned previously, not all aspects of lock and key types reflected in the datamodel are considered in the pathfinding algorithm. This specifically concerns fixed keys for non-adjacent locks and temporary, reversible, and collapsible locks.
+
+The path calculation is currently implemented in the frontend of the system. While it is reasonably performant up to a chart size of around 50 nodes, there may be use cases that require larger graphs. #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?"). A future improvement could be to port the calculation to the backend and optimize the algorithm.
 
 #load-bib()
