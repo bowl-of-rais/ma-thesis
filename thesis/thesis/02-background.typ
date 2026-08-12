@@ -36,20 +36,13 @@
 2. experience specification: properties that can be assigned to a beat
 	- name, description, narrative/gameplay/overall intensity, gameplay category, expected playtime
 	- in p:xe: PxComponents, can be defined by user (available datatypes: TODO)
-3. path selection
-	- start/intermediate/end beats -> Dijkstra
-	- path snapshots
-	- implementation in p:xe part of this work
-4. pacing diagrams
-	- visualize intensity or gameplay category per beat
-	- in p:xe: selection based on PxComponents
-  - comparison of different properties per beat
-  - comparison of different paths
 
 - usability issues
 - nesting/concurrency
 
 == Lock-and-Key Puzzles <bg-locks-and-keys>
+
+A particular aspect of game design for which analysis functionality is implementd in this thesis is the concept of locks and keys.
 
 === Definition
 
@@ -65,9 +58,7 @@ may be literal locks and keys, but may also be other items (e.g. weapons) or ski
 
 === Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
 
-by #cite(<dormansCyclicGeneration2017>)
-
-- overview of different aspects/types of locks and keys that may appear in puzzles
+#cite(<dormansCyclicGeneration2017>) provides an overview of different characteristics that locks and keys may have.
 
 #todo("add context on dormans?")
 

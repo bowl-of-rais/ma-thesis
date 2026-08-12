@@ -300,12 +300,13 @@ Additionally, some of the demographic data (education, occupation, previous expe
 
 === Data Analysis
 
-done in python.
-data from multiple sources joined into complete dataset via participant IDs.
+After collection and processing, all data was analyzed in Python using the pandas, sciPy and scikit-learn libraries.
+//data from multiple sources joined into complete dataset via participant IDs.
 
-statistical tests used: Wilcoxon signed-rank test, Mann-Whitney U, Kruskal-Wallis and Dunn's, Levene.
-reasoning: non-parametric tests (no assumptions made about underlying distributions)
+All statistical tests used are non-parametrics, as most of the data is not distributed normally.
+Wilcoxon signed-rank test, Mann-Whitney U, Kruskal-Wallis and Dunn's, Levene.
 for Wilcoxon and mann-whitney U: two-sided unless specified otherwise.
+significance at $p < 0.05$
 #todo("make sure this is true lol")
 
 == User Study Results

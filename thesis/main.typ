@@ -41,7 +41,12 @@
   startDate: "15.10.2025",
   titleEn: "Extension of Pacing Diagrams and Pacing Analysis in pix:e",
   titleDe: "Thesis Proposal: Irgendetwas mit Usability in PIX:E",
-  // abstractEn: [],
+  abstractEn: [
+    *Background/Motivation*: #todo("Why did you study the problem?")
+    *Objective/Problem Statement*: #todo("What problem are you trying to solve?")
+    *Approach*: , two features were added to extend the statechart in pix:e: path-based pacing diagrams and modeling and solvability analysis of lock-and-key puzzles.
+    *Results*: #todo("add task completion results"). Still, participants indicated a preference for pix:e over Miro and gave it an average overall UEQ-S score of 1.104. #todo("summarize feedback?")
+    *Implications*: The features contributed to pix:e, as well as the system itself, are generally appealing to prospective users. With the suggested improvements, it has the potential to #todo("")],
   // abstractDe: [#todo[Hier kommt die deutsche Übersetzung des englischen Abstracts hin]],
   //acknowledgements: [],
   submissionDate: datetime.today().display("[day].[month].[year]"),
@@ -144,8 +149,6 @@
   v(1em, weak: true)
   strong(it)
 }
-
-
 
 
 

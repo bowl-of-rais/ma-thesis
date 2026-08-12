@@ -39,7 +39,7 @@ Unlike the pacing diagrams, this is a novel functionality that did not exist in 
 
 As described in @bg-locks-and-keys, the terms "locks" and "keys" can refer to both literal lock and key items as well as more abstract concepts that present a challenge or obstacle and the respective solutions.
 
-Locks and keys can be used both low-level (e.g., to model individual puzzles/dungeons) or high-level puzzles (e.g., to model storylines and their prerequisites).
+Locks and keys can be used in both a low-level (e.g., when modeling individual puzzles/dungeons) and high-level context (e.g., when modeling storylines and their prerequisites).
 The implementation is thus focused on flexibility and customizability to account for a wide range of use cases.
 Additionally, lock-and-key puzzles have a high complexity ceiling #todo("add citation"), so a dedicated functionality for their analysis and verification has potential for high impact.
 

@@ -3,8 +3,6 @@
 
 = Path-Based Diagrams <impl-diagrams>
 
-#todo("potentially refactor: 1 chapter for implementation, provide context (tech stack etc)")
-
 - basic idea already present in PaceMaker: select path in statechart and visualize data along path
 - main design guideline: build upon high configurability already present in the system
 - following sections describe functionalities, implementation choices and wokflow/usage of these features implemented in pixe
@@ -12,6 +10,23 @@
 == Initial State of the System
 
 #todo("introduce components, nodes/pxchart")
+
+== Requirements
+
+based on PaceMaker:
+
+path selection
+	- start/intermediate/end beats -> Dijkstra
+	- path snapshots
+	- implementation in p:xe part of this work
+
+pacing diagrams
+	- visualize intensity or gameplay category per beat
+	- in pix:e: selection based on PxComponents
+  - comparison of different properties per beat
+  - comparison of different paths
+
+- expansion to variable components: allows for modeling of more than just player experience. pacing -> line is blurry.
 
 == Path Selection
 
@@ -52,7 +67,6 @@
 
 === Limitations
 
-- calculation fully done in frontend
 - paths are not persisted
 - no visual indicator for/distinction between start/end nodes
 
@@ -118,6 +132,6 @@
 
 - diagrams do not persist (reset when reloading page)
 - only line diagrams for now
-- same path selection for all diagrams
+- same path selection for all diagrams, no snapshots
 
 #load-bib()
