@@ -3,9 +3,13 @@
 
 = Path-Based Diagrams <impl-diagrams>
 
-- basic idea already present in PaceMaker: select path in statechart and visualize data along path
-- main design guideline: build upon high configurability already present in the system
-- following sections describe functionalities, implementation choices and wokflow/usage of these features implemented in pixe
+The basic idea for path-based diagrams was already presented in PaceMaker.
+Users were able to select a path in the statechart and visualize data along the path.
+PaceMaker offered a range of pre-defined player experience properties that could be represented in the chart (e.g., gameplay intensity or expected playtime).
+In contrast, pix:e has been implemented with so-called `PxComponent`s, which allow users to define their own properties with a name and data type.
+This highly configurable approach was used as a central guideline for the implementation of path-based diagrams in pix:e.
+
+The following sections describe the functionalities, implementation choices and intended workflow/usage of path-based diagrams in pix:e.
 
 == Initial State of the System
 
@@ -30,6 +34,8 @@ pacing diagrams
 
 == Path Selection
 
+This subsection describes the implementation and usage of the path selection functionality.
+
 === Functionality
 
 - selection of nodes in statechart triggers calculation of path connecting them
@@ -43,22 +49,27 @@ pacing diagrams
 
 === Implementation
 
-- `pathsApi.ts` composable encapsulates path calculation logic (= dijkstra)
-  - allows for different algorithms in the future (e.g. specific pathfinding for nestedness and concurrency)
-  - interface:
-    - input nodes and edges (VueFlow), selected nodes
-    - provided functions path calculation (includes toasting), highlighting, reset of result + highlight
-- selection of start + end node (optionally intermediate nodes) detected in `PxChartCanvas` componend -> call path calculation function
-- changing node selection triggers re-calculation
-- resetting node selection (= 0 nodes selected) resets path calculation + highlight
+The `usePxChartPathCalculation.ts` composable encapsulates path calculation logic.
+The initial implementation uses Dijkstra's algorithm to calculate the shortest path between the selected nodes.
+Given the nodes and edges present in a chart, the composable provides the following functions:
+- `calculatePathFromSelection()`: calculates path from selected nodes and store result internally
+- `updateNodeStyling()`: updates highlighted path based on stored result
+- `resetPathCalculation()`: resets result
+
+Node selection is detected in the main chart component (`PxChartCanvas`), from which the path calculation function is called.
+Each change in node selection triggers a re-calculation of the path.
+A reset of the node selection (= 0 nodes selected) also removes any highlighting.
 
 === Workflow
 
-- selection of at least two nodes
-	- Ctrl + click
-- path is calculated along nodes *in order of selection*
-- if path is found, nodes along the path are highlighted in purple. if not, start/end nodes are highlighted in red.
-- path can be de-selected by removing node selection (clicking anywhere)
+The intended workflow/usage is as follows:
+
+1. Selection of at least two nodes via `Ctrl + click`
+2. If a path exists that connects the nodes, all nodes along the path are highlighted in purple (see @fig:path-hl). If not, the start and end nodes are highlighted in red.
+3. Finally, the path can be de-selected by clicking anywhere outside the nodes. This removes the node selection and any highlighting.
+
+If more than two nodes are selected, the path is calculated along all selected nodesin order of selection.
+This allows users to explore alternative paths to the shortest path.
 
 #figure(
   image("assets/03/path-selected-highlight.png"),
@@ -67,10 +78,13 @@ pacing diagrams
 
 === Limitations
 
-- paths are not persisted
-- no visual indicator for/distinction between start/end nodes
+One limitation of this implementation is that paths are not persisted in any way. #todo("consequence?")
+
+Additionally, there is no visual feedback for the order in which nodes were selected, i.e., what input the path calculation uses.
 
 == Diagram Generation
+
+This subsection describes the implementation and usage of the diagrams feature.
 
 === Functionality
 

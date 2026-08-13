@@ -102,7 +102,6 @@
 ]
 */
 
-
 #show heading.where(level: 5): it => {
   h(-1.8em)
   box(strong(it.body))

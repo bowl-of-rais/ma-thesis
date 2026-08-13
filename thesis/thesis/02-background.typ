@@ -9,7 +9,7 @@
 
 == Player Experience <bg-player-experience>
 
-#todo("")
+#cite(<wiemeyerPlayerExperience2016>): similar to user experience, but considers aspects specific to games.
 
 == Statecharts
 
@@ -42,7 +42,7 @@
 
 == Lock-and-Key Puzzles <bg-locks-and-keys>
 
-A particular aspect of game design for which analysis functionality is implementd in this thesis is the concept of locks and keys.
+A particular aspect of game design for which analysis functionality is implemented in this thesis is the concept of locks and keys.
 
 === Definition
 

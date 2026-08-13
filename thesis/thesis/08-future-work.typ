@@ -49,6 +49,7 @@ Firstly, LLMs could be used to expand on pacing analyses.
 #todo("Experience pillars")
 LLMs could also assist in modeling by creating definitions for components, locks, and keys based on prompts or corresponding assignments based on node descriptions.
 In the same vein, LLMs could be used to verify existing assignments on consistency against description.
+LLMs could also assist in bridging the gap between modeling gameplay and player experience by predicting or suggesting either aspect based on the other.
 
 === Internals
 
@@ -62,7 +63,7 @@ Additionally, the implementation could be made more robust by way of testing and
 == Other
 
 In terms of evaluation, some features were intentionally left out of the evaluation as they were either not the focal point of this work or lower priority.
-Examples include the creation of definitions and some analysis features e.g. soft gates, or diagrams with sums along the x axis.
+Examples include the creation of definitions and some analysis features, e.g. soft gates, or diagrams with sums along the x axis.
 A dedicated evaluation of these feature would be able to assess the user experience more holistically and point to potential issues specific to those features.
 
 In light of the steeper learning curve as reported by some study participants, an extended user study where the system is used and evaluated over a longer amount of time may more accurately assess how well the system and the features contributed by this thesis support the game design process.

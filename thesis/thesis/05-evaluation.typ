@@ -62,6 +62,7 @@ The two task variants necessary for this setup as well as a varying order of too
 
 The chosen baseline tool was Miro.
 #todo("why miro?")
+It was used as a game design tool for several games, e.g. Subnatica #cite(<flayraUsingMiroGame2021>).
 
 To restrict the overall time per participant, especially in context of the joint study design, the tasks were designed in such a way that participants were given a set amount of time (5 minutes) for each task variant.
 
@@ -711,7 +712,7 @@ It provides mean scores for each item and rates the pragmatic, hedonic, and over
 The fourth and weakest item is the pair "confusing vs clear".
 This relatively low (albeit positive) score is in line with participant feedback, which included a number of UI issues (@feedback-written).
 
-pragmatic quality: mean 0.823 (-> below average, i.e. better than 25% of benchmark), hedonic quality: mean 1.385 (-> good, i.e. better than 75% of benchmark), overall: mean 1.104 (-> above average, i.e. better than 50% of benchmark)
+Judging the scores against the provided benchmark, the pragmatic quality is rated _below average_ (i.e. better than 25% of benchmark) with a mean of 0.823, the hedonic quality is rated _good_ with a mean (i.e. better than 75% of benchmark) of 1.385, and the overall score is considered above average (i.e., better than 50% of benchmark) with a mean of 1.104.
 
 #figure(
   image("assets/05/ueq-against-benchmark.png"),
@@ -782,7 +783,9 @@ selecting of various goal nodes for the given start node and subsequent identifi
 
 == Post-Study Improvements
 
-An initial rount of improvements was implemented after the study based on the collected feedback and observations. #todo("reference?")
+An initial round of improvements was implemented after the study based on the collected feedback and observations. #todo("reference?")
+
+This subsection describes the implementation strategy and outcome for each of the improvements.
 
 === Improved Visual Representation of Locks & Keys
 
@@ -790,9 +793,9 @@ In the initial evaluated version, all lock assignments on edges were represented
 A notable number of participants explicitly mentioned that distinct visualization of different lock types would improve the experience or expressed confusion during the tasks due to the initial representation.
 
 Emojis were chosen as the improved visual representation due to their wide range of options and expected familiarity of users with the available symbols.
-The original data model was extended by a `symbol` for both locks and keys.
+The original data model was extended by a `symbol` attribute for both locks and keys.
 Symbols can be selected via an emoji picker when creating or editing definitions.
-The default values are 🔒 for lock definitions and 🔑 for key definitions.
+The default values are a lock emoji (🔒) for lock definitions and a key emoji (🔑) for key definitions.
 
 In the chart view (see @improved-symbols-chart), key assignments are now represented using the symbol, with a tooltip showing the name of definition on hover.
 Edges show the symbols of all assigned locks as their label, including their multiplicity.
@@ -861,7 +864,7 @@ In case of failed pathfinding, unreachable nodes are then highlighted (see @impr
 === Increased Contrast of Nodes Against Background
 
 6 participants reported the low contrast between nodes and background as a usability issue, especially when zoomed out (see @feedback-written).
-This issue was remedied by adding a new color in the css theme specifically for backgrounds and using it in the chart canvas (see @improved-contrast).
+This issue was remedied by adding a dedicated background color in the CSS theme (see @improved-contrast).
 
 #figure(
     grid(
