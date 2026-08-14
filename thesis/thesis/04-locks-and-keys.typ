@@ -35,12 +35,15 @@ set par(justify: false)
 = Solvability Involving Locks and Keys <impl-lk>
 
 The second feature this thesis contributes to pix:e is the concept of locks and keys.
-Unlike the pacing diagrams, this is a novel functionality that did not exist in PaceMaker.
+Unlike the pacing diagrams, this is a functionality that did not exist in PaceMaker.
 
 As described in @bg-locks-and-keys, the terms "locks" and "keys" can refer to both literal lock and key items as well as more abstract concepts that present a challenge or obstacle and the respective solutions.
 
-Locks and keys can be used in both a low-level (e.g., when modeling individual puzzles/dungeons) and high-level context (e.g., when modeling storylines and their prerequisites).
+Complementary to the ability of PxCharts to model player experience in various levels of granularity, locks and keys can thus be used in both a low-level (e.g., when modeling individual puzzles/dungeons) and high-level context (e.g., when modeling storylines and their prerequisites).
 The implementation is thus focused on flexibility and customizability to account for a wide range of use cases.
+
+Locks and keys attach an additional dimension to the structure represented by a statechart and fundamentally impact how players progress through a game.
+The extension of pix:e's player experience capabilities by locks and keys expands its modeling capacities to cover a variety of further use cases.
 Additionally, lock-and-key puzzles have a high complexity ceiling #todo("add citation"), so a dedicated functionality for their analysis and verification has potential for high impact.
 
 This section first concretizes the requirements for the modeling of locks and keys and the associated solvability analysis.
@@ -197,7 +200,7 @@ In later implementation steps, the concept is extended to account for consumable
 
 #todo("add diagram about inventory propagation")
 
-==== Unlocking Function
+==== Unlocking Function <unlocking-basic>
 
 A central part of the algorithm for pathfinding with locks and keys is the `canUnlock()` function.
 Given (multi-)sets of locks and keys, it determines whether the locks can be unlocked.
@@ -222,14 +225,17 @@ While there is a potential for exponential blowup, no optimization is currently 
     <code:canunlock-basic>
 )
 
-==== Example
+The following example illustrates an unlock check as performed by this function.
 
-#todo("add image (graph)?")
+#figure(
+  [#todo("example graph")],
+  caption: ""
+) <unlock-example-graph>
 
-Three locks assigned to one edge:
-- lock $A$ which can be unlocked by keys of type $X$ or $Y$
-- lock $B$ which can be unlocked by keys of type $X$
-- lock $C$ which can be unlocked by keys of type $Z$
+@unlock-example-graph shows a statechart in which three locks assigned to one edge:
+- lock $A$, which can be unlocked by keys of type $X$ or $Y$
+- lock $B$, which can be unlocked by keys of type $X$
+- lock $C$, which can be unlocked by keys of type $Z$
 
 Leaving out consumability of keys: to unlock this edge, one could use the key sets ${X, Z}$ or ${X, Y, Z}$. If either is a subset of the available keys when encountering the edge, it can be unlocked.
 
@@ -242,12 +248,30 @@ Leaving out consumability of keys: to unlock this edge, one could use the key se
   )
 )
 
-- $I = {X, Y}$ -> false
-- $I = X, Y, Z$ -> true
+@unlock-example-success shows a case in which the edge can be unlocked: the available inventory $I = {X, Y, Z}$ contains at least one matching key for each lock.
+In contrast, @unlock-example-failure shows a case in which the edge cannot be unlocked. The inventory $I = {X, Y}$ is a superset of neither unlocking keyset and does not contain a matching key for lock $C$.
 
-#todo("add example in pix:e")
+#grid(
+  columns: 2,
+  grid.cell[
+    #figure(
+      [#todo("example graph: success")],
+      caption: ""
+    ) <unlock-example-success>
+  ],
+  grid.cell[
+    #figure(
+      [#todo("example graph: failure")],
+      caption: ""
+    ) <unlock-example-failure>
+  ],
+)
+
+#todo("add example in pix:e?")
 
 ==== Full Algorithm
+
+@loop-basic visualizes the main loop of Dijkstra's algorithm including the modifications that account for basic locks and keys.
 
 #pad(
   rest: 10pt,
@@ -258,9 +282,9 @@ Leaving out consumability of keys: to unlock this edge, one could use the key se
   ) <loop-basic> ]
 )
 
-==== Example Iteration
-
-- #todo("add small example of iteration")
+//==== Example Iteration
+//
+//- #todo("add small example of iteration")
 
 === Fixed Keys
 
@@ -324,8 +348,9 @@ It takes a multiset of keys in inventory $K$ and locks on edge $L$ as inputs.
 
 The crucial difference to the version without consumable keys is that by requiring the unlocking keyset $U$ to be a subset of the available multi-set of keys $K$, the required multiplicity of consumable keys is accounted for.
 
-@unlocking-multi illustrates an example analogous to the previous one.
+@unlocking-multi illustrates an example analogous to the example presented in @unlocking-basic.
 In this case, keys of type $X$ are consumable, so to unlock the two locks $A$ and $B$ without a key of type $Y$, two keys of type $X$ are necessary.
+The inventory $I = {X, Z}$, with which all locks in the initial example could be unlocked, cannot unlock all three locks when $X$ is consumable.
 
 #pad(
   rest: 10pt,
@@ -335,8 +360,6 @@ In this case, keys of type $X$ are consumable, so to unlock the two locks $A$ an
     gap: 2em
   ) <unlocking-multi> ]
 )
-
-- now: $I = {X, Z}$ -> false
 
 #h(1.8em)
 ===== Removing Consumable Keys from Inventory
@@ -387,20 +410,25 @@ The authors formally define gameplay to be softlock-free if
 In the context of a path calculated in pix:e with locks and keys, a potential softlock thus occurs when a path may or may not be found depending on the choice of (consumable) keys used. 
 To rephrase it in terms of the aforementioned definition, a path is soft-lock-free if it is possible to reach the target node from every other node on the path, no matter which inventory it was visited with (or: _state_ it was visited in).
 
+@softlock-example shows a configuration with a potential soft-lock in node $B$. Assuming an initial inventory $I = {X, Y}$ with both keys of type $Y$ being consumable, the edge from node $B$ to $C$ cannot be unlocked if key $Y$ was already used to unlock the edge from $A$ to $B$.
+
 #pad(
   rest: 10pt,
-  figure(
+  [#figure(
     image("assets/04/soft-lock-example.drawio.png", width: 80%),
     caption: "Example: Soft-lock",
     gap: 2em
-  )
+  ) <softlock-example> ]
 )
 
+#h(1.8em)
 In terms of the implementation, a potential soft-lock state occurs when an edge is unlockable with some, but not all keysets.
 During removal of consumable keys (@code:remove-consumable), keysets that do not unlock the given edge are removed from the updated inventory entirely, as the edge could not be traversed with those sets and they should thus not be propagated to the neighboring node.
 A comparison of inventory length before and after consumption is then used to verify whether a potential soft-lock occurs in the current node.
 
-- #todo("example in pixe for consumable keys")
+==== Example: Pathfinding with Consumable Keys and Soft-Lock Detection in pix:e
+
+- #todo("example in pixe for soft-lock")
 
 // #todo("softlock not found in user study?")
 
@@ -473,7 +501,7 @@ One advantage of the single-node approach is that it is precisely what enables a
 
 In contrast, backtracking causes nodes to have differing inventories based on which path they were approached on, which also affects their distance from the starting node.
 
-=== Example
+=== Example: Pathfinding with Backtracking in pix:e
 
 - #todo("example screenshot from pixe")
 
@@ -539,6 +567,8 @@ The modal (see @fig:settings-modal) was implemented with a tab structure, so the
 
 As mentioned previously, not all aspects of lock and key types reflected in the datamodel are considered in the pathfinding algorithm. This specifically concerns fixed keys for non-adjacent locks and temporary, reversible, and collapsible locks.
 
-The path calculation is currently implemented in the frontend of the system. While it is reasonably performant up to a chart size of around 50 nodes, there may be use cases that require larger graphs. #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?"). A future improvement could be to port the calculation to the backend and optimize the algorithm.
+A second limitation is that when a path includes backtracking, the current highlighting of the nodes and edges included in the path does not communicate at which point the path backtracks.
+
+Finally, the path calculation is currently implemented in the frontend of the system. While it is reasonably performant up to a chart size of around 50 nodes, there may be use cases that require larger graphs. #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?"). A future improvement could be to port the calculation to the backend and optimize the algorithm.
 
 #load-bib()

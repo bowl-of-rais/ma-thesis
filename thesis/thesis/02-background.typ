@@ -7,17 +7,11 @@
 
 #todo("")
 
-== Player Experience <bg-player-experience>
+== Player Experience, Pacing, and PaceMaker <bg-ppp>
 
 #cite(<wiemeyerPlayerExperience2016>): similar to user experience, but considers aspects specific to games.
 
-== Pacing Analysis <bg-pacing>
-
-#todo("explain what pacing analysis is")
-
-== PaceMaker <bg-pacemaker>
-
-#todo("explain what pacing analysis is")
+pacing:
 
 - PaceMaker #cite(<geheebPaceMakerPracticalTool2024>): predecessor of pix:e/PxCharts, toolkit for pacing analysis.
 

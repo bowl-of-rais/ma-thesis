@@ -3,8 +3,8 @@
 
 = Pacing Analysis Using Path-Based Diagrams <impl-diagrams>
 
-PaceMaker already introduced the basic idea for path-based diagrams.
-Users were able to select a path in the statechart and visualize data along the path.
+PaceMaker already presented a protoype for pacing diagrams.
+Users were able to select a path in the statechart, and visualize data along the path.
 PaceMaker offered a range of pre-defined player experience properties that could be represented in the chart (e.g., gameplay intensity or expected playtime).
 In contrast, pix:e allows users to define and create so-called `PxComponent`s, which may be used to represent a variety of player experience, pacing, and gameplay aspects.
 This highly configurable approach was used as a central guideline for the implementation of path-based diagrams in pix:e.
@@ -183,6 +183,7 @@ A possible other visualization as implemented in PaceMaker are stacked bar chart
 Boolean data could either be mapped to numerical values or, when visualized with other data types, be represented by different point shapes (e.g., circles vs squares).
 Overall, the flexibility of `PxComponent`s results in a variety of possible visualizations. 
 Further investigation is needed to determine how this high degree of customizability is best translated into a diagram configuration UI.
+//#cite(<dyrdaPacingDiagramStep2026>) present a formalization of pacing diagrams that may be suitable to this end.
 
 Secondly, as paths are currently not persisted in any way, only one calculated path is available for diagram generation at a time.
 Consequently, all diagrams on a chart page are based on the same path.
