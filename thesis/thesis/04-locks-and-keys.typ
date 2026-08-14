@@ -32,7 +32,7 @@ set par(justify: false)
   outlined: true
 )#label]}
 
-= Locks and Keys <impl-lk>
+= Solvability Involving Locks and Keys <impl-lk>
 
 The second feature this thesis contributes to pix:e is the concept of locks and keys.
 Unlike the pacing diagrams, this is a novel functionality that did not exist in PaceMaker.
@@ -90,7 +90,7 @@ The data model resulting from the previously described modeling approaches can b
 
 #todo("review multiplicities") #todo("add soft gate flag")
 
-Similar to the pre-existing implementation of `PxComponent`s, the data model distinguishes between lock and key _definitions_ and _assignments_.
+Similar to the pre-existing implementation of `PxComponent`s (see @initial-pixie), the data model distinguishes between lock and key _definitions_ and _assignments_.
 The definitions are used to represent different _types_ of locks and keys, including the aforementioned variations.
 They may then be assigned to edges or keys respectively, and each assignment corresponds to an instance of the lock or key type represented by the associated definition.
 The multiplicities in @fig:lk-data-model portray the following conditions: 
@@ -180,7 +180,7 @@ Both would likely benefit from refactoring for easier editing.
 == Pathfinding with Locks and Keys <lk-pathfinding>
 
 As described previously, integrating locks and keys into the pathfinding functionality provides a type of solvability analysis for lock-and-key puzzles.
-This section describes how the pathfinding algorithm implemented in @impl-diagrams was first extended to account for basic locks and keys and then some of their variants.
+This subsection describes how the pathfinding algorithm implemented in @impl-diagrams was first extended to account for basic locks and keys and then some of their variants.
 
 === Dijkstra with Basic Locks and Keys
 
@@ -251,11 +251,11 @@ Leaving out consumability of keys: to unlock this edge, one could use the key se
 
 #pad(
   rest: 10pt,
-  figure(
+  [#figure(
     image("assets/04/lock-key-pathfinding-basic.drawio.png", width: 50%),
     caption: "Main Loop of Pathfinding Algorithm with Locks & Keys (Basic)",
     gap: 2em
-  )
+  ) <loop-basic> ]
 )
 
 ==== Example Iteration
@@ -323,15 +323,17 @@ It takes a multiset of keys in inventory $K$ and locks on edge $L$ as inputs.
 )
 
 The crucial difference to the version without consumable keys is that by requiring the unlocking keyset $U$ to be a subset of the available multi-set of keys $K$, the required multiplicity of consumable keys is accounted for.
-- consider the same example as earlier, except now keys of type $X$ are consumable, so to unlock the two locks $A$ and $B$, now either two keys of type $X$ or one key of type $X$ and one of type $Y$ are needed.
+
+@unlocking-multi illustrates an example analogous to the previous one.
+In this case, keys of type $X$ are consumable, so to unlock the two locks $A$ and $B$ without a key of type $Y$, two keys of type $X$ are necessary.
 
 #pad(
   rest: 10pt,
-  figure(
+  [#figure(
     image("assets/04/can-unlock-with-consume.drawio.png", width: 50%),
     caption: "Calculation of unlocking keysets as multisets",
     gap: 2em
-  )
+  ) <unlocking-multi> ]
 )
 
 - now: $I = {X, Z}$ -> false
@@ -400,7 +402,7 @@ A comparison of inventory length before and after consumption is then used to ve
 
 - #todo("example in pixe for consumable keys")
 
-#todo("softlock not found in user study?")
+// #todo("softlock not found in user study?")
 
 == Bidirectional Edges and Backtracking
 
@@ -430,64 +432,55 @@ A bidirectional edge could be modeled using two uni-directional edges, but this 
 3. over-complicate the user experience.
 The existence of bidirectional edges is thus essential for the implementation of backtracking.
 
-- goal: allow for longer/cyclic paths needed to collect keys
-- another idea of parallel universes
-- #todo("add citation from julians paper?")
-
-*implementation*:
-- alternative used here: track states as well as nodes. nodes are re-added to queue iff they have a different inventory assigned to them than in previous encounters -> only duplicate nodes as needed
-	- for each node, maintain inventories it has been visited with
-		- only re-visit with a different inventory
-	- add limiting constant for revisits
-	- also maintain unlocked edges
-
-#todo("extend example")
+By incorporating backtracking, the path calculation can account for cases where cyclic paths are necessary to collect keys.
+Such a situation is illustrated in @why-backtracking: starting from $A$ and assuming no key of type $X$ has been collected before, a valid path would have to travel to $B$ and back to $A$ before progressing to $C$.
 
 #pad(
   rest: 10pt,
-  figure(
+  [#figure(
     image("assets/04/backtracking.drawio.png", width: 80%),
-    caption: "Example: Backtracking",
+    caption: "Example where backtracking is necessary",
     gap: 2em
-  )
+  ) <why-backtracking>]
 )
 
-- critical path: $A - B - A - C$
+==== Incorporating Backtracking into Dijkstra's Algorithm
 
-#pad(
-  rest: 10pt,
-  figure(
-    image("assets/04/lock-key-pathfinding-backtracking.drawio.png", width: 50%),
-    caption: "Main Loop of Pathfinding Algorithm with Locks & Keys (Extended)",
-    gap: 2em
-  )
-)
+In its original form, Dijkstra's algorithm does not find paths with backtracking, as it is designed to find shortest paths and a path with backtracking is always longer than a direct path.
+The algorithm thus needs to be adapted.
+
+As described previously, the main justification for permitting backtracking is the collection of additional keys.
+This circumstance gives rise to the following approach: 
+Nodes may be re-added to the queue iff they have a different inventory assigned to them than in previous iterations.
+This is implemented by performing Dijkstra's algorithm on _meta-nodes_, which contain a node and the inventory it is visited with.
+This way, nodes are only re-visited when needed and the distance of each (meta-) node from the start node is still as short as possible.
+
+To account for the fact that the same edge may be traversed multiple times, a record of previously unlocked edges is maintained.
+A constant that represents the maximum number of times a node is enqueued prevents infinite loops.
+
+- parallel universes (- #todo("add citation from julians paper?"))
+
+==== Inventory Variants: Consumable Keys vs Backtracking
+
+Both this approach and the method used to extend pathfinding with consumable keys consider different inventories per node.
+The differing implementation approaches can be justified as follows.
+
+In the case of consumable keys, all variants of a node's inventory were collected along the same path.
+While this could also be modelled using meta-nodes, in the context of Dijkstra's algorithm, the distance from the starting node would be identical for all variants.
+Additionally, the set of reachable nodes may vary for the different inventory variants, but in the current implementation, all nodes that can be reached by _any_ of the available keysets in a certain node are considered neighbors in the context of Dijkstra's algorithm.
+Thus, the path calculation would yield the same result no matter whether different inventories from key consumption are modeled using one and the same node or multiple nodes.
+One advantage of the single-node approach is that it is precisely what enables a simple detection of soft-locks.
+
+In contrast, backtracking causes nodes to have differing inventories based on which path they were approached on, which also affects their distance from the starting node.
 
 === Example
 
 - #todo("example screenshot from pixe")
 
-== Chart Settings
-
-To prevent unnecessary complexity during pathfinding in cases where specific lock or key features are not needed, settings were introduced as part of this implementation.
-The settings are persisted on a per-chart basis.
-
-Currently, the settings include general pathfinding settings and settings specific to lock and key types.
-For the pathfinding, locks/keys can be enabled or disabled entirely.
-This reduces pathfinding complexity greatly for projects or charts that do not use locks and keys.
-For locks/keys, users can choose whether consumable keys being consumed during pathfinding, and whether soft locks should be calculated, both sources of additional complexity.
-
-The modal (see @fig:settings-modal) was implemented with a tab structure, so the UI is set up for future extension with chart-specific settings that may be unrelated to pathfinding (e.g., #todo("think of examples")).
-
-#figure(
-  image("assets/04/chart-settings.png", width: 45%),
-  caption: "Settings modal"
-) <fig:settings-modal>
-
 == Code Architexture
 
-After building the initial pathfinding implementation for diagrams @impl-diagrams, the pathfinding calculation is much more extensive.
-The code was thus refactored into multiple files/composables for purposes of further extendability and maintainability. #todo("sth sth oss")
+Compared to the initial pathfinding implementation for diagrams (@impl-diagrams), the additions described in this section make it much more extensive.
+The code was thus refactored into multiple files/composables for purposes of further extendability and maintainability. #todo("sth sth open source software and its consequences")
 
 It was broken down into 4 main components:
 
@@ -507,7 +500,16 @@ which interact as shown in @fig:modularization:
 
 == Full Algorithm
 
-- #todo("make diagram of full algorithm?")
+- #todo("make diagram of full algorithm? add info about which component handles that into following diagram")
+
+#pad(
+  rest: 10pt,
+  [#figure(
+    image("assets/04/lock-key-pathfinding-backtracking.drawio.png", width: 50%),
+    caption: "Main Loop of Pathfinding Algorithm with Locks & Keys (Extended)",
+    gap: 2em
+  ) <loop-full> ]
+)
 
 == Testing
 
@@ -515,6 +517,23 @@ which interact as shown in @fig:modularization:
 - mainly exploratory testing
 - smaller charts: target specific configurations
 - larger chart: eastern palace -> sanity check on performance. #todo("count nodes"). 
+
+== Chart Settings
+
+To prevent unnecessary complexity during pathfinding in cases where specific lock or key features are not needed, settings were introduced as part of this implementation.
+The settings are persisted on a per-chart basis.
+
+Currently, the settings include general pathfinding settings and settings specific to lock and key types.
+For the pathfinding, locks/keys can be enabled or disabled entirely.
+This reduces pathfinding complexity greatly for projects or charts that do not use locks and keys.
+For locks/keys, users can choose whether consumable keys being consumed during pathfinding, and whether soft locks should be calculated, both sources of additional complexity.
+
+The modal (see @fig:settings-modal) was implemented with a tab structure, so the UI is set up for future extension with chart-specific settings that may be unrelated to pathfinding (e.g., #todo("think of examples")).
+
+#figure(
+  image("assets/04/chart-settings.png", width: 45%),
+  caption: "Settings modal"
+) <fig:settings-modal>
 
 == Limitations
 

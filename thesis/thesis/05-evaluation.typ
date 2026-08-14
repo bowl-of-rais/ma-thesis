@@ -37,7 +37,7 @@ The evaluation of the functionalities implemented as part of this work was the s
 The first part of the study was concerned with assessing the usability of the system.
 In particular, participants were asked to model a Zelda dungeon in the tool, including locks and keys.
 Consequently, participants were already familiarized with the use case context and basic functions of the tool when approaching the tasks described here.
-Task-specific functionalities (e.g., pathfinding and highlighting, as well as the diagrams) were introduced to the participants prior to the respective tasks.
+Task-specific functionalities (e.g., pathfinding and highlighting, as well as configuration of diagrams) were introduced to the participants prior to the respective tasks.
 
 The general setup for this evaluation was a within-subject or repeated measures study, in which participants completed the tasks once in StatePx and once in another tool.
 The two task variants necessary for this setup as well as a varying order of tools resulted in the four groups shown in @user-study-groups.
@@ -779,7 +779,7 @@ selecting of various goal nodes for the given start node and subsequent identifi
 == Limitations
 
 - data collection: human errors
-- not all functionality included (e.g. soft gates, creation of component/lock/key definitions, broder functionalities of pix:e)
+- not all functionality included (e.g. soft gates, creation of component/lock/key definitions, summing X axis in diagrams, broader functionalities of pix:e)
 
 == Post-Study Improvements
 

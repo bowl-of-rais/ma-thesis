@@ -11,15 +11,15 @@
 
 #cite(<wiemeyerPlayerExperience2016>): similar to user experience, but considers aspects specific to games.
 
-== Statecharts
+== Pacing Analysis <bg-pacing>
 
-#todo("add section on statecharts?")
+#todo("explain what pacing analysis is")
 
 == PaceMaker <bg-pacemaker>
 
-#cite(<geheebPaceMakerPracticalTool2024>)
+#todo("explain what pacing analysis is")
 
-- PaceMaker: predecessor of PxCharts
+- PaceMaker #cite(<geheebPaceMakerPracticalTool2024>): predecessor of pix:e/PxCharts, toolkit for pacing analysis.
 
 "The toolkit, PaceMaker, allows the user to design a non-linear experience chart and subsequently plot relevant information like intensity or gameplay category of each node along a path on the chart."
 
@@ -32,7 +32,8 @@
 === Functionalities and Evaluation of PaceMaker
 
 1. statecharts for modeling #cite(<harelStatechartsVisualFormalism1987>)
-	- nodes = beats
+	- nodes correspond to beats
+  - #todo("add another sentence about statecharts")
 2. experience specification: properties that can be assigned to a beat
 	- name, description, narrative/gameplay/overall intensity, gameplay category, expected playtime
 	- in p:xe: PxComponents, can be defined by user (available datatypes: TODO)
@@ -58,7 +59,7 @@ may be literal locks and keys, but may also be other items (e.g. weapons) or ski
 
 === Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
 
-#cite(<dormansCyclicGeneration2017>) provides an overview of different characteristics that locks and keys may have.
+#cite(<dormansCyclicGeneration2017>) provides an overview of different characteristics that locks and keys may have. The taxonomy is recounted in the following and summarized by @tab:lk-taxonomy.
 
 #todo("add context on dormans?")
 
@@ -82,6 +83,8 @@ may be literal locks and keys, but may also be other items (e.g. weapons) or ski
 #cite(<dormansCyclicGeneration2017>):
 "Some locks are barriers that might be navigated without a key, but this crossing the barrier might be uncertain or impose a certain risk."
 
+-> soft-gate #todo("citation")
+
 ==== Keys
 
 #cite(<dormansCyclicGeneration2017>):
@@ -104,12 +107,53 @@ may be literal locks and keys, but may also be other items (e.g. weapons) or ski
 
 -> keys: *fixed or not*
 
+#figure(
+  table(
+    columns: 3,
+    inset: 10pt,
+    align: horizon,
+    table.header(
+      [], [*Aspect*], [*Options*],
+    ),
+    // LOCKS
+    table.cell(rowspan: 4, [Locks]),
+    // 1
+    [behavior of lock after unlock],
+    [permanent, temporary, reversible, collapsible],
+    // 2
+    [directionality of locks],
+    [valve, symmetrical],
+    // 3
+    [existance of a key],
+    [safe, unsafe],
+    // 4
+    [necessity of a key],
+    [soft-gate],
+    // KEYS
+    table.cell(rowspan: 4, [Keys]),
+    // 1
+    [whether keys can be used for other purposes],
+    [single-purpose, multi-purpose],
+    // 2
+    [whether there is more than one key that opens a specific lock],
+    [particular, non-particular],
+    // 3
+    [sonsumability of a key],
+    [consumable, persistent],
+    // 4
+    [whether keys can be moved],
+    [fixed, not fixed],
+  ),
+  caption: "Overview: Taxonomy of locks and keys with different aspects and their possible expressions"
+) <tab:lk-taxonomy>
+
 == Inventory-Based Search Algorithms <bg-inventory-search>
 
 #todo("explain concept and what of it is relevant to here, what of it is not")
 
 - inventory-based jump-point search #cite(<aversaPathPlanningInventoryDriven2015>) is grid-based. statechart could be mapped to grid, but would probably be suboptimal because nodes have generally low rank and don't necessarily conform to neighboring structure of a grid. concept of inventory is still relevant, though.
 
+#todo("possibly make connection to petri nets")
 
 
 #load-bib()

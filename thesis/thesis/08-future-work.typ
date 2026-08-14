@@ -18,6 +18,10 @@ One participant specifically suggested adding information about the intermediate
 This may e.g. translate to an overlay providing additional information regarding the solvability analysis.
 Helpful information might include the maximum set of keys that each node could be visited with, or the distance of each node from the start node.
 
+Another observation #todo("reference") was that on occasion, participants moved nodes accidentally while panning and exploring the chart.
+One way to addess this issue would be to introduce different modes of interacting with the chart (e.g., "Edit Mode" and "Analysis Mode"), thus making the editing/moving of nodes and the pathfinding mutually exclusive.
+By disabling path calculation in an edit mode, the node selection functionality would also be available for bulk edits.
+
 === Existing Functionalities
 
 Concerning the functionalities implemented as part of this work, there are a number of smaller possible extensions that are either apparent gaps in the current state of the system or easily implemented.

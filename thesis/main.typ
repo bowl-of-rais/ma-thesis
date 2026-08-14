@@ -56,7 +56,6 @@
 
 // Settings for Body //
 
-
 // Set numbering mode
 #set page(numbering: none)
 #set math.equation(numbering: "(1)")
@@ -95,12 +94,11 @@
 //#show list: set block(above: 1.5em, below: 1em)
 
 // Pagebreak after level 1 headings
-/*
 #show heading.where(level: 1): it => [
   #pagebreak(weak: true)
   #it
 ]
-*/
+
 
 #show heading.where(level: 5): it => {
   h(-1.8em)
