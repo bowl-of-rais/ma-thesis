@@ -6,7 +6,8 @@
 goal of research: identify and implement features that improve pix:e's ability to support game designers
 
 context: player experience module -> more generalized approach, implemented functionalities can be used to model gameplay as well (-> user study).
-an argument is to be made that the two aspects should be considered hand-in-hand: locks and keys are used to model conditions that affect how players move through the modeled experiences. explicitly modeled gameplay could be used to predict player experience.
+an argument is to be made that the two aspects should be considered hand-in-hand: locks and keys are used to model conditions that affect how players move through the modeled experiences.
+explicitly modeled gameplay could be used to predict player experience.
 
 == Implementation
 

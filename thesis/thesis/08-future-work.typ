@@ -28,8 +28,15 @@ By disabling path calculation in an edit mode, the node selection functionality 
 Concerning the functionalities implemented as part of this work, there are a number of smaller possible extensions that are either apparent gaps in the current state of the system or easily implemented.
 
 As mentioned in @impl-diagrams, the diagram generation functionality currently only supports line diagrams, but should be easily extensible to other diagram types.
+A possible other visualization as implemented in PaceMaker are stacked bar charts for categorical (i.e., textual) data.
+Boolean data could either be mapped to numerical values or, when visualized with other data types, be represented by different point shapes (e.g., circles vs squares).
+Overall, the flexibility of `PxComponent`s results in a variety of possible visualizations. 
+Further investigation is needed to determine how this high degree of customizability is best translated into a diagram configuration UI.
+
 Compared to the original PaceMaker system, pix:e also lacks the ability to take path snapshots or save paths.
 Given such a functionality, the system could then be extended to assign different snapshots to different diagrams to allow for an easier comparison of pacing along different paths.
+In the same vein, persisting diagrams would enable users to consistently analyze their data over the course of a project.
+
 Feedback from user study participants also suggested a need for simple data analysis functionalities in the diagrams, such as the display of sums or averages, though this may be rather specific to the use case modeled in the pacing analysis task (see @feedback-written).
 Another observation from the user study was that in some use cases, component values may change when re-visting nodes (e.g. enemies that respawn vs ones that don't).
 This indicates a need for a component-specific setting or attribute that allows users to model components more dynamically.

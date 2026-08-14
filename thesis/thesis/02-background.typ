@@ -3,41 +3,38 @@
 
 = Background <background>
 
-== Game Design Tools??
+#todo("introductory sentence")
 
-#todo("")
+//== Game Design Tools??
+//#todo("")
 
-== Player Experience, Pacing, and PaceMaker <bg-ppp>
+== Player Experience and Pacing <bg-pep>
 
-#cite(<wiemeyerPlayerExperience2016>): similar to user experience, but considers aspects specific to games.
+The two notions of player experience and pacing are a central foundation of this thesis.
 
-pacing:
+#cite(<wiemeyerPlayerExperience2016>) present player experience as a concept analogous to user experience, but translated to the domain of games. 
+According to the authors, the term "denotes the individual and personal experience of playing games" and encompasses elements such as immersion, challenge, and emotion.
 
-- PaceMaker #cite(<geheebPaceMakerPracticalTool2024>): predecessor of pix:e/PxCharts, toolkit for pacing analysis.
+In contrast, "Pacing describes the rhythm that results from the recurring patterns of rhythmic parameters in time." #cite(<geheebPaceMakerPracticalTool2024>)
 
-"The toolkit, PaceMaker, allows the user to design a non-linear experience chart and subsequently plot relevant information like intensity or gameplay category of each node along a path on the chart."
+The two concepts relate to each other as described by #cite(<bagusharisaPacingbasedProceduralDungeon2022>), who "summarize game pacing as the rate flow of activit[ies] in a video game [...] that affect the player's experience".
+Pacing thus refers to the way in which impulses on player experience are arranged in time as players progress through a game.
 
--> presented as prototype/PoC
+== PaceMaker
 
-"Pacing describes the rhythm that results from the recurring patterns of rhythmic parameters in time. Rhythmic parameters are divided into artifact and experience parameters."
+PaceMaker #cite(<geheebPaceMakerPracticalTool2024>) is the predecessor of pix:e's player experience module and a prototype toolkit designed for pacing analysis.
 
--> mostly numerical or categorical
+In PaceMaker, the non-linear structure of can be modeled using statecharts #cite(<harelStatechartsVisualFormalism1987>).
+Each node in the statechart corresponds to a so-called beat, which in turn represents a structural part of a game, such as a scene or level.
+Users can assign a set of properties to a beat to specify the experience associated with it.
+Specifically, these properties include a name, a description, the narrative/gameplay/overall intensity, the gameplay category, and the expected playtime.
+Finally, users can create plots to visualize these properties along a path through the chart.
 
-=== Functionalities and Evaluation of PaceMaker
-
-1. statecharts for modeling #cite(<harelStatechartsVisualFormalism1987>)
-	- nodes correspond to beats
-  - #todo("add another sentence about statecharts")
-2. experience specification: properties that can be assigned to a beat
-	- name, description, narrative/gameplay/overall intensity, gameplay category, expected playtime
-	- in p:xe: PxComponents, can be defined by user (available datatypes: TODO)
-
-- usability issues
-- nesting/concurrency
+In a qualitative study, some limitations identified of PaceMaker were usability issues and a lack of support for nesting and concurrency in the chart. #todo("explain what nesting and concurrency are?")
 
 == Lock-and-Key Puzzles <bg-locks-and-keys>
 
-A particular aspect of game design for which analysis functionality is implemented in this thesis is the concept of locks and keys.
+A particular aspect of game design for which analysis functionality is implemented in this thesis is the concept of locks and keys and related puzzles.
 
 === Definition
 
@@ -47,59 +44,39 @@ A particular aspect of game design for which analysis functionality is implement
 #cite(<ashmoreQuestGeneratedWorld2007>):
 "Obstacles may not be passed until the player obtains some token (such as an item or skill)"
 
-may be literal locks and keys, but may also be other items (e.g. weapons) or skills (e.g. double jump).
+Consequently, locks and keys may refer to both literal locks and keys, but also a wider range of barriers that require certain items (e.g. weapons) or skills (e.g. double jump) to be passed.
 
 #todo("add more content")
 
 === Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
 
-#cite(<dormansCyclicGeneration2017>) provides an overview of different characteristics that locks and keys may have. The taxonomy is recounted in the following and summarized by @tab:lk-taxonomy.
+#cite(<dormansCyclicGeneration2017>) provides an overview of different characteristics that locks and keys may have.
+Four different aspects are described for locks and keys respectively.
+The taxonomy is recounted in the following and summarized by @tab:lk-taxonomy.
 
-#todo("add context on dormans?")
+// #todo("add context on dormans?")
+The first property refers to how locks may behave in different ways after they have been unlocked.
+They may either "remain unlocked forever (permanent), for a short period of time (temporary), or until it is relocked (reversible)" #cite(<dormansCyclicGeneration2017>), or collapse and become unpassable.
 
-==== Locks
+Locks may also have an aspect of directionality.
+Dormans denominates locks that only allow passage in one direction as "valves".
+In contrast, so-called "asymmetrical" locks may be crossed in either direction after they have been unlocked.
 
-#cite(<dormansCyclicGeneration2017>):
-"When you unlock a door, that door might remain unlocked forever (permanent), for a short period of time (temporary), or until it is relocked (reversible). Sometimes, a lock collapses after use, allowing the player only to pass once."
+Dormans also mentions that locks may or may not _have_ a solution or key ("A safe lock is guaranteed to have a solution, while an unsafe lock is not.", #cite(<dormansCyclicGeneration2017>)).
 
--> locks: *permanent, temporary, reversible, collapsible*
+On the other hand, Dormans also mentions that locks may or may not _need_ a key:
+"Some locks are barriers that might be navigated without a key, but this crossing the barrier might be uncertain or impose a certain risk." #cite(<dormansCyclicGeneration2017>)
+In the context of this work, this type of lock will be referred to as a soft-gate.
+The term is used for a similar concept in #cite(<GatesLevelDesign2023>) and distinguishes the concept from soft-locks, which are abstract states in which progression may or may not be possible. #todo("reference")
 
-#cite(<dormansCyclicGeneration2017>):
-"Certain locks allow you to cross only in one direction (valves), while others can only be opened from one direction but traversed in two directions after they are opened (asymmetrical). \[...\] Valves do not always require a key.""
+As previously described, keys may or may not be literal keys.
+Dormans recognizes this fact by distinguishing between single-purpose ("can only be used to open a lock", #cite(<dormansCyclicGeneration2017>)) and multi-purpose keys.
 
--> locks: *valve, asymmetrical*
+In terms of how keys relate to locks, they may be particular, i.e., "the only thing that unlocks a particular lock" #cite(<dormansCyclicGeneration2017>), or one of multiple keys that unlock the same lock (nonparticular.)
 
-#cite(<dormansCyclicGeneration2017>):
-"A safe lock is guaranteed to have a solution, while an unsafe lock is not."
+Analogously to how locks may collapse after use, keys may also be destroyed, or rather consumed, when used to pass a lock. #todo("persistent?")
 
--> locks: *safe or unsafe*
-
-#cite(<dormansCyclicGeneration2017>):
-"Some locks are barriers that might be navigated without a key, but this crossing the barrier might be uncertain or impose a certain risk."
-
--> soft-gate #todo("citation")
-
-==== Keys
-
-#cite(<dormansCyclicGeneration2017>):
-"Single-purpose keys can only be used to open a lock, and for nothing else, while multipurpose keys can also be used in different ways."
-
--> keys: *single-purpose or multi-purpose*
-
-#cite(<dormansCyclicGeneration2017>):
-"Particular keys are the only thing that unlocks a particular lock, whereas several nonparticular keys might unlock a single lock."
-
--> keys: *particular or non-particular*
-
-#cite(<dormansCyclicGeneration2017>):
-"Keys that are destroyed somehow in the process of unlocking a door are consumable, while keys that are not are persistent."
-
--> keys: *consumable or persistent*
-
-#cite(<dormansCyclicGeneration2017>):
-"Levers and switches are the best example of keys that are fixed in place (and typically single purpose and particular as well)."
-
--> keys: *fixed or not*
+Lastly, keys may be "fixed in place" #cite(<dormansCyclicGeneration2017>).
 
 #figure(
   table(
@@ -132,13 +109,13 @@ may be literal locks and keys, but may also be other items (e.g. weapons) or ski
     [whether there is more than one key that opens a specific lock],
     [particular, non-particular],
     // 3
-    [sonsumability of a key],
+    [consumability of a key],
     [consumable, persistent],
     // 4
     [whether keys can be moved],
     [fixed, not fixed],
   ),
-  caption: "Overview: Taxonomy of locks and keys with different aspects and their possible expressions"
+  caption: "Taxonomy of locks and keys with different aspects and their possible expressions"
 ) <tab:lk-taxonomy>
 
 == Inventory-Based Search Algorithms <bg-inventory-search>

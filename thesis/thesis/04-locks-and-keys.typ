@@ -43,11 +43,12 @@ Complementary to the ability of PxCharts to model player experience in various l
 The implementation is thus focused on flexibility and customizability to account for a wide range of use cases.
 
 Locks and keys attach an additional dimension to the structure represented by a statechart and fundamentally impact how players progress through a game.
-The extension of pix:e's player experience capabilities by locks and keys expands its modeling capacities to cover a variety of further use cases.
-Additionally, lock-and-key puzzles have a high complexity ceiling #todo("add citation"), so a dedicated functionality for their analysis and verification has potential for high impact.
+This extension of pix:e's player experience modeling capabilities expands its capacities to cover a variety of further use cases.
+Additionally, lock-and-key puzzles have a high complexity ceiling #todo("add citation").
+A dedicated functionality for their analysis and verification therefore has potential for high impact.
 
 This section first concretizes the requirements for the modeling of locks and keys and the associated solvability analysis.
-It then describes how the representations for locks and keys are made available to users in pix:e.
+It then describes how representations for locks and keys are made available to users in pix:e.
 Finally, it details the extension of the pathfinding functionality by logic specific to different lock and key types.
 #todo("rest of the subsections?")
 
@@ -305,9 +306,12 @@ This circumstance should be reflected in the path highlighting.
 
 As soft gates can technically be passed without a key, locks marked as such are ignored initially during pathfinding.
 If a path has been found, it is re-traced to determine whether the keys that could unlock the soft gate are available or not.
-If not, all nodes in the path after the soft-gated edge are highlighted in yellow ("warning").
+If not, all nodes in the path after the soft-gated edge are highlighted in yellow ("warning") as seen in @soft-gated-path.
 
-- #todo("add example from pixe")
+#figure(
+  [#todo("add example from pixe")],
+  caption: "Partially soft-gated path"
+) <soft-gated-path>
 
 === Consumable Keys and Soft-Lock Detection
 

@@ -99,6 +99,7 @@
   #it
 ]
 
+#show image: it => [#rect(it, stroke: gray, inset: 10pt)]
 
 #show heading.where(level: 5): it => {
   h(-1.8em)
@@ -147,6 +148,13 @@
   strong(it)
 }
 
+// style inline code
+#show raw.where(block:false): box.with(
+  fill: luma(240),
+  inset: (x: 3pt, y: 0pt),
+  outset: (y: 3pt),
+  radius: 2pt,
+)
 
 
 // Draft Settings //

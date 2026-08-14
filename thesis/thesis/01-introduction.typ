@@ -11,7 +11,7 @@
 - pacing analysis and solvability issues
 
 #todo("Problem Statement: What problem are you trying to solve?")
-pix:e is a toolkit for game designers with a focus on player experience.
+pix:e is a web-based toolkit for game designers with a focus on player experience.
 The main goal of this thesis is to expand the statechart feature in pix:e's player experience module and its capability to capture and analyze relevant data during the game design process.
 
 Concretely, the two research questions central to this work are:
