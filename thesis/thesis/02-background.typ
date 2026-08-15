@@ -20,21 +20,23 @@ In contrast, "Pacing describes the rhythm that results from the recurring patter
 The two concepts relate to each other as described by #cite(<bagusharisaPacingbasedProceduralDungeon2022>), who "summarize game pacing as the rate flow of activit[ies] in a video game [...] that affect the player's experience".
 Pacing thus refers to the way in which impulses on player experience are arranged in time as players progress through a game.
 
+#todo("relevance for game design")
+
 == PaceMaker
 
 PaceMaker #cite(<geheebPaceMakerPracticalTool2024>) is the predecessor of pix:e's player experience module and a prototype toolkit designed for pacing analysis.
 
 In PaceMaker, the non-linear structure of can be modeled using statecharts #cite(<harelStatechartsVisualFormalism1987>).
 Each node in the statechart corresponds to a so-called beat, which in turn represents a structural part of a game, such as a scene or level.
-Users can assign a set of properties to a beat to specify the experience associated with it.
+Users can assign a set of pre-defined properties to a beat to specify the experience associated with it.
 Specifically, these properties include a name, a description, the narrative/gameplay/overall intensity, the gameplay category, and the expected playtime.
 Finally, users can create plots to visualize these properties along a path through the chart.
 
-In a qualitative study, some limitations identified of PaceMaker were usability issues and a lack of support for nesting and concurrency in the chart. #todo("explain what nesting and concurrency are?")
+A qualitative study conducted to evaluate PaceMaker identified some limitations, e.g., in terms of usability, participants expressed a definitive interest in PaceMaker's functionalities.
 
 == Lock-and-Key Puzzles <bg-locks-and-keys>
 
-A particular aspect of game design for which analysis functionality is implemented in this thesis is the concept of locks and keys and related puzzles.
+A particular aspect of game design for which analysis functionality is implemented in this thesis is the concept of locks-and-key puzzles.
 
 === Definition
 
@@ -45,8 +47,6 @@ A particular aspect of game design for which analysis functionality is implement
 "Obstacles may not be passed until the player obtains some token (such as an item or skill)"
 
 Consequently, locks and keys may refer to both literal locks and keys, but also a wider range of barriers that require certain items (e.g. weapons) or skills (e.g. double jump) to be passed.
-
-#todo("add more content")
 
 === Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
 
@@ -67,14 +67,14 @@ Dormans also mentions that locks may or may not _have_ a solution or key ("A saf
 On the other hand, Dormans also mentions that locks may or may not _need_ a key:
 "Some locks are barriers that might be navigated without a key, but this crossing the barrier might be uncertain or impose a certain risk." #cite(<dormansCyclicGeneration2017>)
 In the context of this work, this type of lock will be referred to as a soft-gate.
-The term is used for a similar concept in #cite(<GatesLevelDesign2023>) and distinguishes the concept from soft-locks, which are abstract states in which progression may or may not be possible. #todo("reference")
+The term is used for a similar concept in #cite(<GatesLevelDesign2023>) and distinguishes the concept from soft-locks, i.e., abstract states in which progression may or may not be possible. #cite(<mawhorterSoftlockDetectionSuper2021>)
 
 As previously described, keys may or may not be literal keys.
 Dormans recognizes this fact by distinguishing between single-purpose ("can only be used to open a lock", #cite(<dormansCyclicGeneration2017>)) and multi-purpose keys.
 
 In terms of how keys relate to locks, they may be particular, i.e., "the only thing that unlocks a particular lock" #cite(<dormansCyclicGeneration2017>), or one of multiple keys that unlock the same lock (nonparticular.)
 
-Analogously to how locks may collapse after use, keys may also be destroyed, or rather consumed, when used to pass a lock. #todo("persistent?")
+Analogously to how locks may collapse after use, keys may also be destroyed, or rather consumed, when used to pass a lock. Non-consumable keys are also called persistent. #cite(<dormansCyclicGeneration2017>)
 
 Lastly, keys may be "fixed in place" #cite(<dormansCyclicGeneration2017>).
 
@@ -118,7 +118,17 @@ Lastly, keys may be "fixed in place" #cite(<dormansCyclicGeneration2017>).
   caption: "Taxonomy of locks and keys with different aspects and their possible expressions"
 ) <tab:lk-taxonomy>
 
+== Web Technology
+
+#todo("concepts: vue/vueFlow/nuxt")
+
+== Dijkstra's Algorithm
+
+#todo("concise description of the Dijkstra algorithm, supported by relevant sources.")
+
 == Inventory-Based Search Algorithms <bg-inventory-search>
+
+#todo("@Anie: das wird in 4.3 erwähnt, aber idk wie viel ich hier ins detail gehen sollte - eigentlich ist nur das konzept 'inventory' relevant. Vielleicht lieber dort kurz das konzept erklären und inventory-based jump-point search in related works schieben, weil ich ja hier auch eine art inventory-based search algorithm vorstelle?")
 
 #todo("explain concept and what of it is relevant to here, what of it is not")
 

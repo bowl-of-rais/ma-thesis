@@ -47,6 +47,9 @@ This extension of pix:e's player experience modeling capabilities expands its ca
 Additionally, lock-and-key puzzles have a high complexity ceiling #todo("add citation").
 A dedicated functionality for their analysis and verification therefore has potential for high impact.
 
+#todo("describe more how locks and keys relate to player experience")
+- aspect of challenge -> unsolvable/disproportionately difficult or complex puzzles may lead to player frustration #todo("citation")
+
 This section first concretizes the requirements for the modeling of locks and keys and the associated solvability analysis.
 It then describes how representations for locks and keys are made available to users in pix:e.
 Finally, it details the extension of the pathfinding functionality by logic specific to different lock and key types.

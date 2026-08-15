@@ -6,18 +6,19 @@
 #todo("Hook (Optional): What makes the problem exciting for the reader?")
 
 #todo("Motivation: Why did you study the problem?")
+#todo("short sentence about what game design entails")
+Player experience and pacing are two concepts that revolve around how players interact with a game over its course.
+By considering player experience during the game design process, #todo("add reason why considering player experience is important").
 
-- game design tools -> pix:e.
-- pacing analysis and solvability issues
-
-#todo("Problem Statement: What problem are you trying to solve?")
-pix:e is a web-based toolkit for game designers with a focus on player experience.
-The main goal of this thesis is to expand the statechart feature in pix:e's player experience module and its capability to capture and analyze relevant data during the game design process.
+pix:e is a web-based, research-backed toolkit for game designers with a focus on player experience.
+The main goal of this thesis is to expand pix:e's capability to model player experience and pacing via statecharts and allow its users to better capture and analyze relevant data during the game design process.
 
 Concretely, the two research questions central to this work are:
 
-/ RQ1: Which data would be interesting?
-/ RQ2: Which analysis of the data is interesting?
+// RQ1: Which data would be interesting?
+/ RQ1: How can pix:e's player experience module be extended to model relevant data?
+// RQ2: Which analysis of the data is interesting?
+/ RQ2: Which analysis of said data is interesting and/or helpful?
 
 #h(1.8em)
 To this end, this thesis makes the following contributions:
