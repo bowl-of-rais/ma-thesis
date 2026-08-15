@@ -1,7 +1,7 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-#import "@preview/lovelace:0.3.1": *
+//#import "@preview/lovelace:0.3.1": *
 
 /*
 #show raw.where(block: true): it => block(
@@ -77,7 +77,7 @@ This approach translates to high-level modeling: Nodes may be used to represent 
 The first lock feature described in the taxonomy is for how long it stays unlocked (*permanent, temporary, reversible, collapsible*).
 This is modeled using the attribute `unlockMode` for locks, which can then be referred to in the pathfinding logic.
 The distinction between *valve* s and *asymmetrical* locks can be modeled via the choice of edge directionality.
-Valves may be modeled by uni-directional edges, while asymmetrical edges can be represented using a single bidirectional edge with locks.
+Valves may be modeled by uni-directional edges, while asymmetrical locks can be represented on a single bidirectional edge.
 *Soft gates* are modeled by a flag (`softGate`) on lock types and then checked during pathfinding.
 In the current implementation, all locks are assumed to be *safe*, so *unsafe* locks cannot be modeled.
 #todo("reasoning?")
@@ -104,7 +104,7 @@ The definitions are used to represent different _types_ of locks and keys, inclu
 They may then be assigned to edges or keys respectively, and each assignment corresponds to an instance of the lock or key type represented by the associated definition.
 The multiplicities in @fig:lk-data-model portray the following conditions: 
 1. A lock definition may be assigned multiple key definitions that unlock it. The same key definition may also be assigned to multiple lock definitions as an unlocking key type. Additionally, both lock and key definitions can be reused across assignments.
-2. Each edge or node may not have more than one assignment of the same definition.  Assignments record a `count` to model multiplicity of instantiations.
+2. Each edge or node may not have more than one assignment of the same definition.  Instead, assignments record a `count` to aggregate multiple instantiations of the same lock or key type.
 
 === Analysis Functionality
 
@@ -143,7 +143,7 @@ This was out of scope for this work.
 The currently implemented workaround is thus a button in the chart's toolbar that is only visible when exactly one edge is selected.
 //benefit for implementation: edge selection is easily detected.
 
-Clicking the button opens the lock creation modal (see @edit-lock-modal), which shows and overview of all available lock definitions and their respective instance counts on the selected edge.
+Clicking the button opens the lock creation modal (see @edit-lock-modal), which shows an overview of all available lock definitions and their respective instance counts on the selected edge.
 Assignments of multiple kinds of locks can be added or removed in the modal by adjusting the respective counts.
 The key icon in each row shows the unlocking key definitions for the corresponding lock type on hover.
 
@@ -180,9 +180,10 @@ The chips show the count and the definition name and include a button for deleti
   ])
 )
 
-One limitation of this implementation is that there is no way to edit and existing assignments.
-This is already a limitation of the PxComponents.
+One limitation of this implementation is that there is no way to edit an existing assignment.
+This is already a limitation present in the PxComponents.
 Both would likely benefit from refactoring for easier editing.
+#todo("connect")
 
 == Pathfinding with Locks and Keys <lk-pathfinding>
 
@@ -208,7 +209,7 @@ In later implementation steps, the concept is extended to account for consumable
 
 A central part of the algorithm for pathfinding with locks and keys is the `canUnlock()` function.
 Given (multi-)sets of locks and keys, it determines whether the locks can be unlocked.
-This check as a high complexity (see @code:canunlock-basic) due to the fact that an edge may be assigned multiple locks, each of which may be unlockable by multiple key types.
+This check has a high complexity (see @code:canunlock-basic) due to the fact that an edge may be assigned multiple locks, each of which may be unlockable by multiple key types.
 While there is a potential for exponential blowup, no optimization is currently implemented as the expected case is less complex.
 #todo("citation?")
 
@@ -231,7 +232,7 @@ While there is a potential for exponential blowup, no optimization is currently 
 
 The following example illustrates an unlock check as performed by this function.
 
-@unlock-example-graph shows a statechart in which three locks assigned to one edge:
+@unlock-example-graph shows a statechart in which three locks are assigned to one edge:
 - lock $A$, which can be unlocked by keys of type $X$ or $Y$
 - lock $B$, which can be unlocked by keys of type $X$
 - lock $C$, which can be unlocked by keys of type $Z$
@@ -255,7 +256,7 @@ Ignoring consumability of keys: to unlock this edge, one could use the key sets 
 */
 
 @unlock-example-success shows a case in which the edge can be unlocked: the available inventory $I = {X, Z}$ contains at least one matching key for each lock.
-In contrast, @unlock-example-failure shows a case in which the edge cannot be unlocked. The inventory $I = {X, Y}$ is a superset of neither unlocking keyset and does not contain a matching key for lock $C$.
+In contrast, @unlock-example-failure shows a case in which the edge cannot be unlocked. The inventory $I = {X, Y}$ is not a superset of either unlocking keyset and does not contain a matching key for lock $C$.
 
 #grid(
   columns: 2,
@@ -275,7 +276,7 @@ In contrast, @unlock-example-failure shows a case in which the edge cannot be un
 
 // #todo("add example in pix:e?")
 
-==== Iteration of Dijkstra's Algorithm with Locks and Keys
+==== Dijkstra's Algorithm with Locks and Keys
 
 @loop-basic visualizes Dijkstra's algorithm including the modifications that account for basic locks and keys.
 

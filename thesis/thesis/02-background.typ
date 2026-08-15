@@ -1,6 +1,24 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
+#let pseudocode(content, caption, label) = {
+set par(justify: false)
+[#figure(
+  block(
+    fill: luma(250), 
+    radius: 3pt,
+    stroke: .6pt + luma(200),
+    inset:	(x: 1em, y: 1em),
+    width: 100%,
+    clip: false,
+  [#align(left)[#content]]),
+  gap: 1em,
+  caption: [#caption],
+  supplement: "Pseudocode",
+  kind: "code",
+  outlined: true
+)#label]}
+
 = Background <background>
 
 #todo("introductory sentence")
@@ -128,7 +146,35 @@ Lastly, keys may be "fixed in place" #cite(<dormansCyclicGeneration2017>).
 
 == Dijkstra's Algorithm
 
-#todo("concise description of the Dijkstra algorithm, supported by relevant sources.")
+Dijkstra's algorithm #cite(<dijkstraNoteTwoProblems1959>) is a shortest-path algorithm for non-negative weighted graphs.
+Its central idea is to iterate over the graph's nodes in ascending order of distance from a given start node.
+As the graph is traversed, the node distances are updated.
+The node distances are typically managed in a priority queue.
+Additionally, the algorithm records the predecessor for each node, from which the shortest path can be constructed.
+
+#pseudocode(
+  [```
+    dijkstra(start)
+    dist = [∞, ..., ∞]              // distances of nodes from start
+    prev = [null, ..., null]        // node predecessors
+    q = []                          // priority queue
+    dist[start] = 0
+    q.insert(s)
+
+    while q not empty do
+        n = q.pop()
+        for each edge e = (n, m) in E do
+            if dist(n) + weight(e) < dist(m) then
+                dist(m) = dist(n) + weight(e)
+                pred(m) = n
+                if v not in q then q.insert(v)
+                sort q using dist as priority
+    
+    return dist, prev  
+  ```],
+  [Dijkstra's algorithm, adapted from #cite(<mehlhornShortestPaths2008>)],
+  <dijkstra-pseudo>
+)
 
 == Inventory-Based Search Algorithms <bg-inventory-search>
 

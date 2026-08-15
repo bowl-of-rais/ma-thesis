@@ -65,8 +65,11 @@ For unsuccessful pathfinding, the selected nodes are highlighted in red (error c
 
 === Implementation
 
+The implementation uses Dijkstra's algorithm with the simplification of uniform edge weights to find the shortest path between two nodes.
+If more than two nodes are selected, the algorithm is run for each pair of subsequent nodes (in order of selection).
+If there exists a path between each such pair, the paths are then combined to form the full path.
+
 All path calculation is encapsulated in a dedicated composable (`usePxChartPathCalculation.ts`).
-The initial implementation uses Dijkstra's algorithm with a priority queue to calculate the shortest path between the selected nodes.
 Given the nodes and edges present in a chart, the composable provides the following functions:
 - `calculatePathFromSelection()` calculates path from selected nodes and stores result internally
 - `resetPathCalculation()` resets the stored result
@@ -87,8 +90,8 @@ The intended workflow/usage is as follows:
 
 2. The path can be de-selected by clicking anywhere outside the nodes. This removes the node selection and any highlighting.
 
-If more than two nodes are selected, the path is calculated along all selected nodes in order of selection.
-This allows users to explore alternative paths to the shortest path.
+//If more than two nodes are selected, the path is calculated along all selected nodes in order of selection.
+//This allows users to explore alternative paths to the shortest path.
 
 #figure(
   image("assets/03/pixie-path-selected-highlight.png"),

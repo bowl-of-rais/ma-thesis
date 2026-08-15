@@ -163,6 +163,7 @@
 )
 
 
+
 // Draft Settings //
 #show cite: set text(fill: blue) if inwriting
 #show footnote: set text(fill: purple) if inwriting
