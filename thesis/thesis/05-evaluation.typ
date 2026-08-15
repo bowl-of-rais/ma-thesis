@@ -802,7 +802,7 @@ Edges show the symbols of all assigned locks as their label, including their mul
 As edge tooltip are not native in the current framework, a legend popover was implemented instead to assist users in understanding the visual representation.
 
 #figure(
-    image("assets/05/improved-symbols-in-chart.png"),
+    image("assets/05/pixie-improved-symbols-in-chart.png"),
     caption: "Improved visual representation of locks and keys in chart"
 ) <improved-symbols-chart>
 
@@ -814,13 +814,13 @@ It shows an overview of available lock and key definitions in separate tabs (see
     align: bottom,
     grid.cell([
         #figure(
-            image("assets/05/improved-symbols-legend-locks.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-legend-locks.png", width: 75%),
             caption: "Legend of lock types, including unlocking keys"
         ) <improved-legend-locks>
     ]),
     grid.cell([
         #figure(
-            image("assets/05/improved-symbols-legend-keys.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-legend-keys.png", width: 75%),
             caption: "Legend of key types, including consumability and key type"
         ) <improved-legend-keys>
     ]),
@@ -833,13 +833,13 @@ To align the visual representation of lock and key types throughout the player e
     align: bottom,
     grid.cell([
         #figure(
-            image("assets/05/improved-symbols-edit-locks.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-edit-locks.png", width: 75%),
             caption: "Lock assignment creation modal with symbols"
         ) <improved-modal-locks>
     ]),
     grid.cell([
         #figure(
-            image("assets/05/improved-symbols-key-creation.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-key-creation.png", width: 75%),
             caption: "Key assignment creation modal with symbols"
         ) <improved-modal-keys>
     ]),
@@ -857,7 +857,7 @@ In case of failed pathfinding, unreachable nodes are then highlighted (see @impr
 #todo("confirm/wait for julians pr feedback")
 
 #figure(
-    image("assets/05/improved-reachability-analysis.png", width: 50%),
+    image("assets/05/pixie-improved-reachability-analysis.png", width: 50%),
     caption: "Improved visual feedback about reachability on failed pathfinding (LA_3 as example)"
 ) <improved-reachability>
 
@@ -870,8 +870,8 @@ This issue was remedied by adding a dedicated background color in the CSS theme 
     grid(
         columns: 2,
         inset: 5pt,
-        image("assets/05/improved-contrast-light.png", width: 90%),
-        image("assets/05/improved-contrast-dark.png", width: 90%)
+        image("assets/05/pixie-improved-contrast-light.png", width: 90%),
+        image("assets/05/pixie-improved-contrast-dark.png", width: 90%)
     ),
     caption: "Increased contrast due to adjusted background color in both light and dark modes"
 ) <improved-contrast>

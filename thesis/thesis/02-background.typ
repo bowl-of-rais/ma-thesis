@@ -15,12 +15,18 @@ The two notions of player experience and pacing are a central foundation of this
 #cite(<wiemeyerPlayerExperience2016>) present player experience as a concept analogous to user experience, but translated to the domain of games. 
 According to the authors, the term "denotes the individual and personal experience of playing games" and encompasses elements such as immersion, challenge, and emotion.
 
-In contrast, "Pacing describes the rhythm that results from the recurring patterns of rhythmic parameters in time." #cite(<geheebPaceMakerPracticalTool2024>)
+In contrast, as articulated by #cite(<geheebPaceMakerPracticalTool2024>), "Pacing describes the rhythm that results from the recurring patterns of rhythmic parameters in time."
+Rhythmic parameters may be concretely specified by game designers (= artifact parameters, e.g., enemy strength), or aspects of experience that are influenced by artifact parameters (= experience parameters, e.g., encounter intensity).
 
-The two concepts relate to each other as described by #cite(<bagusharisaPacingbasedProceduralDungeon2022>), who "summarize game pacing as the rate flow of activit[ies] in a video game [...] that affect the player's experience".
-Pacing thus refers to the way in which impulses on player experience are arranged in time as players progress through a game.
+The two concepts of player experience and pacing relate to each other as described by #cite(<bagusharisaPacingbasedProceduralDungeon2022>), who "summarize game pacing as the rate flow of activit[ies] in a video game [...] that affect the player's experience".
+Pacing thus refers to the way in which impulses on player experience are arranged in time as players progress through a game as visualized in @player-experience-pacing-in-time.
 
-#todo("relevance for game design")
+In this context, "time" may refer to event time (i.e., the time as measured within the game's world) or play time (i.e., the time passing in the real world as a player plays the game). #cite(<nitscheMappingTimeVideo2007>)
+
+#figure(
+    image("assets/02/player-experience-pacing.drawio.png"),
+    caption: "Rhythmic parameters arranged in time influence player experience"
+) <player-experience-pacing-in-time>
 
 == PaceMaker
 
@@ -30,7 +36,7 @@ In PaceMaker, the non-linear structure of can be modeled using statecharts #cite
 Each node in the statechart corresponds to a so-called beat, which in turn represents a structural part of a game, such as a scene or level.
 Users can assign a set of pre-defined properties to a beat to specify the experience associated with it.
 Specifically, these properties include a name, a description, the narrative/gameplay/overall intensity, the gameplay category, and the expected playtime.
-Finally, users can create plots to visualize these properties along a path through the chart.
+Finally, users can create plots to visualize these properties along a path through the chart, with the y-axis representing either event or play time.
 
 A qualitative study conducted to evaluate PaceMaker identified some limitations, e.g., in terms of usability, participants expressed a definitive interest in PaceMaker's functionalities.
 
@@ -40,13 +46,11 @@ A particular aspect of game design for which analysis functionality is implement
 
 === Definition
 
-#cite(<ashmoreQuestGeneratedWorld2007>):
+#cite(<ashmoreQuestGeneratedWorld2007>) define lock-and-key puzzles as follows:
 "The puzzle is finding out what is an obstacle, what and where is a key to overcome it, and finally using the key to master the challenge."
+They further explain that keys may include rather abstract tokens, such as items or skills.
 
-#cite(<ashmoreQuestGeneratedWorld2007>):
-"Obstacles may not be passed until the player obtains some token (such as an item or skill)"
-
-Consequently, locks and keys may refer to both literal locks and keys, but also a wider range of barriers that require certain items (e.g. weapons) or skills (e.g. double jump) to be passed.
+// Consequently, locks and keys as a may refer to both literal locks and keys, but also a wider range of barriers that require certain items (e.g. weapons) or skills (e.g. double jump) to be passed.
 
 === Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
 
@@ -120,7 +124,7 @@ Lastly, keys may be "fixed in place" #cite(<dormansCyclicGeneration2017>).
 
 == Web Technology
 
-#todo("concepts: vue/vueFlow/nuxt")
+#todo("tech stack: vue/nuxt/VueFlow in frontend, django in backend. explain what composables and components are")
 
 == Dijkstra's Algorithm
 

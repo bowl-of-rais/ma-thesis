@@ -1,0 +1,88 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:148.0) Gecko/20100101 Firefox/148.0">
+  <diagram name="Page-1" id="t4wc_bbbwtF9Su-jjRIZ">
+    <mxGraphModel dx="1529" dy="986" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-9" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="npJoCTA6hu1vJIIlRiFJ-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-15" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="npJoCTA6hu1vJIIlRiFJ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#FFFFFF,#6B6B6B);" value="calculatePathForSelection(string[])" vertex="1">
+          <mxGeometry height="60" width="245" x="182.5" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" value="remove fixed keys from inventory" vertex="1">
+          <mxGeometry height="60" width="378.44" x="131.56" y="710" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-31" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=classic;endFill=1;fillColor=#1ba1e2;strokeColor=#006EAF;dashed=1;" target="npJoCTA6hu1vJIIlRiFJ-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" value="&lt;div&gt;initialize queue for Dijkstra, assign inventory to each node&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="410" x="100" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-40" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;fillColor=#a20025;strokeColor=#6F0000;dashed=1;" target="npJoCTA6hu1vJIIlRiFJ-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" value="filter for unlockable edges" vertex="1">
+          <mxGeometry height="60" width="378.44" x="131.56" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-42" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="npJoCTA6hu1vJIIlRiFJ-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="dijkstraInChartMultiple" vertex="1">
+          <mxGeometry height="60" width="190" x="350" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-23" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;dashed=1;fillColor=#60a917;strokeColor=#2D7600;" target="npJoCTA6hu1vJIIlRiFJ-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-30" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;dashed=1;" target="npJoCTA6hu1vJIIlRiFJ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="dijkstraInChart" vertex="1">
+          <mxGeometry height="60" width="120" x="245" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-17" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="PxChartPathCalculationResult" vertex="1">
+          <mxGeometry height="150" width="220" x="580" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-18" parent="npJoCTA6hu1vJIIlRiFJ-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="pathNodes" vertex="1">
+          <mxGeometry height="30" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-19" parent="npJoCTA6hu1vJIIlRiFJ-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="pathEdges" vertex="1">
+          <mxGeometry height="30" width="220" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-20" parent="npJoCTA6hu1vJIIlRiFJ-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;locked&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="220" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-22" parent="npJoCTA6hu1vJIIlRiFJ-17" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div align=&quot;left&quot;&gt;&amp;nbsp;softLocked&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="220" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-29" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;" value="PxKeySet: Record&amp;lt;string, count&amp;gt;" vertex="1">
+          <mxGeometry height="60" width="220" x="580" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" value="update dist/prev for nodes connected by unlocked edges" vertex="1">
+          <mxGeometry height="60" width="350" x="160" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-39" edge="1" parent="1" source="npJoCTA6hu1vJIIlRiFJ-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;fillColor=#a20025;strokeColor=#6F0000;" target="npJoCTA6hu1vJIIlRiFJ-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;spacingLeft=10;" value="&lt;div align=&quot;left&quot;&gt;update target node inventory:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- add current inventory minus consumed/fixed keys&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- check for soft locks&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="350" x="160" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#23445d;fillColor=#bac8d3;align=center;verticalAlign=middle;rounded=0;rotation=-90;" value="for each node" vertex="1">
+          <mxGeometry height="30" width="249.38" x="-10.000000000000004" y="758.45" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-36" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=#23445d;fillColor=#bac8d3;align=center;verticalAlign=middle;rounded=0;rotation=-90;" value="for each neighbor" vertex="1">
+          <mxGeometry height="30" width="127.5" x="80" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-37" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" value="canUnlock" vertex="1">
+          <mxGeometry height="60" width="150" x="615" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="npJoCTA6hu1vJIIlRiFJ-38" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a20025;fontColor=#ffffff;strokeColor=#6F0000;" value="removeConsumed" vertex="1">
+          <mxGeometry height="60" width="150" x="615" y="788.45" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

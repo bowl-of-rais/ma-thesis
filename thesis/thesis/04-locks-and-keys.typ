@@ -47,13 +47,15 @@ This extension of pix:e's player experience modeling capabilities expands its ca
 Additionally, lock-and-key puzzles have a high complexity ceiling #todo("add citation").
 A dedicated functionality for their analysis and verification therefore has potential for high impact.
 
-#todo("describe more how locks and keys relate to player experience")
-- aspect of challenge -> unsolvable/disproportionately difficult or complex puzzles may lead to player frustration #todo("citation")
+Lock-and-key puzzles can affect player experience in various ways.
+For instance, as described by #cite(<brandseLevelFlowPatterns2023>), lock-and-key puzzles are a common way to direct when and where players encounter a challenge or receive a reward, which largely impacts player experience.
+The puzzles themselves also present a type of challenge, which, if disproportionately difficult or complex, may lead to player frustration. #todo("citation")
+In some instances, lock-and-key puzzles are also used to make exploration a focal point of player experience. #cite(<ruelaEvolvingLockandkeyPuzzles2018>)
 
 This section first concretizes the requirements for the modeling of locks and keys and the associated solvability analysis.
 It then describes how representations for locks and keys are made available to users in pix:e.
-Finally, it details the extension of the pathfinding functionality by logic specific to different lock and key types.
-#todo("rest of the subsections?")
+Subsequently, @lk-pathfinding details the extension of Dijkstra's algorithm and pix:e's pathfinding functionality by logic specific to different lock and key types, and some related refactoring.
+Finally, the testing approach, an implementation of settings, and the limitations of lock-and-key related features are described.
 
 == Requirements <lk-requirements>
 
@@ -76,7 +78,7 @@ The first lock feature described in the taxonomy is for how long it stays unlock
 This is modeled using the attribute `unlockMode` for locks, which can then be referred to in the pathfinding logic.
 The distinction between *valve* s and *asymmetrical* locks can be modeled via the choice of edge directionality.
 Valves may be modeled by uni-directional edges, while asymmetrical edges can be represented using a single bidirectional edge with locks.
-*Soft gates* are modeled by a flag (`soft_gate`) on lock types and then checked during pathfinding.
+*Soft gates* are modeled by a flag (`softGate`) on lock types and then checked during pathfinding.
 In the current implementation, all locks are assumed to be *safe*, so *unsafe* locks cannot be modeled.
 #todo("reasoning?")
 
@@ -95,7 +97,7 @@ The data model resulting from the previously described modeling approaches can b
   caption: "Data model for locks and keys"
 ) <fig:lk-data-model>
 
-#todo("review multiplicities") #todo("add soft gate flag")
+#todo("review multiplicities")
 
 Similar to the pre-existing implementation of `PxComponent`s (see @initial-pixie), the data model distinguishes between lock and key _definitions_ and _assignments_.
 The definitions are used to represent different _types_ of locks and keys, including the aforementioned variations.
@@ -125,7 +127,7 @@ The layout pins the creation forms on the left-hand side of the page, while resp
 The forms offer help texts and indicators for necessary inputs to assist users.
 
 #figure(
-  image("assets/04/lock-key-definitions-page.png"),
+  image("assets/04/pixie-lock-key-definitions-page.png"),
   caption: "Page 'Lock and Key Definitions'"
 ) <lk-defs>
 
@@ -145,10 +147,8 @@ Clicking the button opens the lock creation modal (see @edit-lock-modal), which 
 Assignments of multiple kinds of locks can be added or removed in the modal by adjusting the respective counts.
 The key icon in each row shows the unlocking key definitions for the corresponding lock type on hover.
 
-#todo("screenshot of button?")
-
 #figure(
-  image("assets/04/edit-lock-modal.png", width: 50%),
+  image("assets/04/pixie-edit-lock-modal.png", width: 50%),
   caption: "Modal for creating/editing lock assignments for an edge"
 ) <edit-lock-modal>
 
@@ -168,13 +168,13 @@ The chips show the count and the definition name and include a button for deleti
   align: bottom,
   grid.cell([
     #figure(
-      image("assets/04/add-key-modal.png"),
+      image("assets/04/pixie-add-key-modal.png"),
       caption: "Modal for creating a key assignment for a node"
     ) <key-creation-modal>
   ]),
   grid.cell([
     #figure(
-      image("assets/04/node-with-key-assignment.png", width: 75%),
+      image("assets/04/pixie-node-with-key-assignment.png", width: 75%),
       caption: "Visual representation of two key assignments in a node"
     ) <node-with-keys>
   ])
@@ -187,7 +187,7 @@ Both would likely benefit from refactoring for easier editing.
 == Pathfinding with Locks and Keys <lk-pathfinding>
 
 As described previously, integrating locks and keys into the pathfinding functionality provides a type of solvability analysis for lock-and-key puzzles.
-This subsection describes how the pathfinding algorithm implemented in @impl-diagrams was first extended to account for basic locks and keys and then some of their variants.
+This subsection describes how Dijkstra's algorithm was first extended to account for basic locks and keys and then some of their variants.
 
 === Dijkstra with Basic Locks and Keys
 
@@ -231,17 +231,18 @@ While there is a potential for exponential blowup, no optimization is currently 
 
 The following example illustrates an unlock check as performed by this function.
 
-#figure(
-  [#todo("example graph")],
-  caption: ""
-) <unlock-example-graph>
-
 @unlock-example-graph shows a statechart in which three locks assigned to one edge:
 - lock $A$, which can be unlocked by keys of type $X$ or $Y$
 - lock $B$, which can be unlocked by keys of type $X$
 - lock $C$, which can be unlocked by keys of type $Z$
 
-Leaving out consumability of keys: to unlock this edge, one could use the key sets ${X, Z}$ or ${X, Y, Z}$. If either is a subset of the available keys when encountering the edge, it can be unlocked.
+#figure(
+  image("assets/04/example-unlock-check-graph.drawio.png", width: 75%),
+  caption: ""
+) <unlock-example-graph>
+
+/*
+Ignoring consumability of keys: to unlock this edge, one could use the key sets ${X, Z}$ or ${X, Y, Z}$. If either is a subset of the available keys when encountering the edge, it can be unlocked.
 
 #pad(
   rest: 10pt,
@@ -251,36 +252,37 @@ Leaving out consumability of keys: to unlock this edge, one could use the key se
     gap: 2em
   )
 )
+*/
 
-@unlock-example-success shows a case in which the edge can be unlocked: the available inventory $I = {X, Y, Z}$ contains at least one matching key for each lock.
+@unlock-example-success shows a case in which the edge can be unlocked: the available inventory $I = {X, Z}$ contains at least one matching key for each lock.
 In contrast, @unlock-example-failure shows a case in which the edge cannot be unlocked. The inventory $I = {X, Y}$ is a superset of neither unlocking keyset and does not contain a matching key for lock $C$.
 
 #grid(
   columns: 2,
   grid.cell[
     #figure(
-      [#todo("example graph: success")],
+      image("assets/04/example-unlock-check-success.drawio.png"),
       caption: ""
     ) <unlock-example-success>
   ],
   grid.cell[
     #figure(
-      [#todo("example graph: failure")],
+      image("assets/04/example-unlock-check-failure.drawio.png"),
       caption: ""
     ) <unlock-example-failure>
   ],
 )
 
-#todo("add example in pix:e?")
+// #todo("add example in pix:e?")
 
-==== Full Algorithm
+==== Iteration of Dijkstra's Algorithm with Locks and Keys
 
-@loop-basic visualizes the main loop of Dijkstra's algorithm including the modifications that account for basic locks and keys.
+@loop-basic visualizes Dijkstra's algorithm including the modifications that account for basic locks and keys.
 
 #pad(
   rest: 10pt,
   [#figure(
-    image("assets/04/lock-key-pathfinding-basic.drawio.png", width: 50%),
+    image("assets/04/lock-key-pathfinding-basic.drawio.png", width: 80%),
     caption: "Main Loop of Pathfinding Algorithm with Locks & Keys (Basic)",
     gap: 2em
   ) <loop-basic> ]
@@ -292,7 +294,7 @@ In contrast, @unlock-example-failure shows a case in which the edge cannot be un
 
 === Fixed Keys
 
-The main constraint concerning fixed keys is that they can only be used within the node they are assigned to.
+The main constraint imposed by the definition of fixed keys is that they can only be used within the node they are assigned to.
 This aspect is easily implemented by _not_ propagating fixed keys in a node to its neighbor's inventories.
 
 One limitation of the current data model and implementation is that there is no way to model remote fixed keys.
@@ -312,7 +314,7 @@ If a path has been found, it is re-traced to determine whether the keys that cou
 If not, all nodes in the path after the soft-gated edge are highlighted in yellow ("warning") as seen in @soft-gated-path.
 
 #figure(
-  [#todo("add example from pixe")],
+  image("assets/04/pixie-soft-gate-example.png"),
   caption: "Partially soft-gated path"
 ) <soft-gated-path>
 
@@ -359,14 +361,21 @@ The crucial difference to the version without consumable keys is that by requiri
 In this case, keys of type $X$ are consumable, so to unlock the two locks $A$ and $B$ without a key of type $Y$, two keys of type $X$ are necessary.
 The inventory $I = {X, Z}$, with which all locks in the initial example could be unlocked, cannot unlock all three locks when $X$ is consumable.
 
+#figure(
+  image("assets/04/example-unlock-check-consumable-failure.drawio.png", width: 75%),
+  caption: ""
+) <unlocking-multi>
+
+/*
 #pad(
   rest: 10pt,
   [#figure(
     image("assets/04/can-unlock-with-consume.drawio.png", width: 50%),
     caption: "Calculation of unlocking keysets as multisets",
     gap: 2em
-  ) <unlocking-multi> ]
+  ) <unlocking-multi-check> ]
 )
+*/
 
 #h(1.8em)
 ===== Removing Consumable Keys from Inventory
@@ -393,6 +402,7 @@ In contrast to the `canUnlock` function, which only checks whether a given keyse
 
 #todo("review pseudocode correctness")
 
+/*
 #pad(
   rest: 10pt,
   figure(
@@ -405,6 +415,7 @@ In contrast to the `canUnlock` function, which only checks whether a given keyse
 - $I = \{X, X, Z\}$ -> $\{Z\}$
 
 - #todo("example in pixe for consumable keys")
+*/
 
 ==== Soft-Locks
 
@@ -433,9 +444,12 @@ In terms of the implementation, a potential soft-lock state occurs when an edge 
 During removal of consumable keys (@code:remove-consumable), keysets that do not unlock the given edge are removed from the updated inventory entirely, as the edge could not be traversed with those sets and they should thus not be propagated to the neighboring node.
 A comparison of inventory length before and after consumption is then used to verify whether a potential soft-lock occurs in the current node.
 
-==== Example: Pathfinding with Consumable Keys and Soft-Lock Detection in pix:e
+If a soft-lock is identified during pathfinding, the node in which it occurs is highlighted in blue ("info") as seein in @pixie-soft-lock.
 
-- #todo("example in pixe for soft-lock")
+#figure(
+    image("assets/04/pixie-soft-lock-example.png"),
+    caption: ""
+) <pixie-soft-lock>
 
 // #todo("softlock not found in user study?")
 
@@ -452,9 +466,12 @@ This sub-section thus describes the modeling of bidirectional edges themselves a
 While the framework does not support bidirectional edges, it does allow for arbitrary data to be assigned to edges and used for styling.
 Hence, a flag `bidirectional` was added to edges to indicate whether an edge was uni- or bidirectional.
 Edges were then configured to render with different markers: regular arrows for uni-directional edges, no marker for bi-directional edges.
-Due to the limitations described in @instantiating-locks, another button was added to allow users to change the directionality of a selected edge.
+Due to the limitations described in @instantiating-locks, another toolbar button was added to allow users to change the directionality of a selected edge (see @edge-direction-button).
 
-#todo("add screenshot")
+#figure(
+  image("assets/04/pixie-edit-edge-buttons.png"),
+  caption: "Button for toggling directionality of a selected edge in the toolbar"
+) <edge-direction-button>
 
 === Backtracking in Pathfinding
 
@@ -510,9 +527,22 @@ In contrast, backtracking causes nodes to have differing inventories based on wh
 
 === Example: Pathfinding with Backtracking in pix:e
 
-- #todo("example screenshot from pixe")
+As seen in @pixie-backtracking, valid paths that contain backtracking are highlighted the same way as regular paths.
 
-== Code Architexture
+#figure(
+    image("assets/04/pixie-example-backtracking.png"),
+    caption: ""
+) <pixie-backtracking>
+
+== Final Algorithm and Code Architexture
+
+The full algorithm for pathfinding with locks and keys is visualized in @fig:full-algo-modularization.
+#todo("fixed keys?")
+
+#figure(
+  image("assets/04/lock-key-pathfinding-extended.drawio.png"),
+  caption: "Final extended Dijkstra's algorithm with modularization"
+) <fig:full-algo-modularization>
 
 Compared to the initial pathfinding implementation for diagrams (@impl-diagrams), the additions described in this section make it much more extensive.
 The code was thus refactored into multiple files/composables for purposes of further extendability and maintainability. #todo("sth sth open source software and its consequences")
@@ -524,27 +554,7 @@ It was broken down into 4 main components:
 - `PathResult`: data type for results + computed values
 - `PathStyling`: styling of edges/nodes based on results
 
-which interact as shown in @fig:modularization:
-
-#todo("add diagram for code architecture + interactions?")
-
-#figure(
-  image("../images/dummy_image.svg", width: 50%),
-  caption: "Modular architecture for pathfinding calculation"
-) <fig:modularization>
-
-== Full Algorithm
-
-- #todo("make diagram of full algorithm? add info about which component handles that into following diagram")
-
-#pad(
-  rest: 10pt,
-  [#figure(
-    image("assets/04/lock-key-pathfinding-backtracking.drawio.png", width: 50%),
-    caption: "Main Loop of Pathfinding Algorithm with Locks & Keys (Extended)",
-    gap: 2em
-  ) <loop-full> ]
-)
+The functional domains of the individual components are highlighted in @fig:full-algo-modularization as well.
 
 == Testing
 
@@ -566,7 +576,7 @@ For locks/keys, users can choose whether consumable keys being consumed during p
 The modal (see @fig:settings-modal) was implemented with a tab structure, so the UI is set up for future extension with chart-specific settings that may be unrelated to pathfinding (e.g., #todo("think of examples")).
 
 #figure(
-  image("assets/04/chart-settings.png", width: 45%),
+  image("assets/04/pixie-chart-settings.png", width: 45%),
   caption: "Settings modal"
 ) <fig:settings-modal>
 

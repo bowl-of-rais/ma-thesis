@@ -4,9 +4,9 @@
 = Pacing Analysis Using Path-Based Diagrams <impl-diagrams>
 
 PaceMaker already presented a protoype for pacing diagrams.
-#todo("mention positive feedback again + predecessor -> motivation for why this is implemented in pix:e now too")
-
 Users were able to select a path in the statechart and visualize data along the path.
+This feature was found to be of interest and should thus be included in pix:e's player experience module.
+
 PaceMaker offered a range of pre-defined player experience properties that could be represented in the chart (e.g., gameplay intensity or expected playtime).
 In contrast, pix:e allows users to define and create so-called `PxComponent`s, which may be used to represent a variety of player experience, pacing, and gameplay aspects.
 This highly configurable approach was used as a central guideline for the implementation of path-based diagrams in pix:e.
@@ -23,17 +23,16 @@ Analogously to PaceMaker, a `PxChart` is a statechart in which users can structu
 Nodes in `PxChart`s (so-called `PxNodes`) are given a name and description and can be connected via edges.
 As pix:e does not have pre-defined node properties, users first need to create `PxComponentDefinition`s, which specify the name (e.g., "Intensity") and the data type (one of "number", "string", "boolean") of a property.
 They may then add a `PxComponent` to a node by selecting the desired definition and specifying its value for the node in question as seen in @component-creation-modal.
+This setup allows users to model a wide range of both artifact and experience parameters.
 
 #figure(
-  image("assets/03/component-creation-modal.png", width: 50%),
+  image("assets/03/pixie-component-creation-modal.png", width: 50%),
   caption: "pix:e's component creation modal"
 ) <component-creation-modal>
 
-#todo("tech stack: vue/nuxt/VueFlow in frontend, django in backend. explain what composables and components are")
-
 == Requirements <diagrams-requirements>
 
-To implement the functionalities available in PaceMaker in pix:e, two main elements are required. #todo("A")
+The implementation of PaceMaker's functionalities in pix:e requires two main elements.
 
 The first part concerns path calculation based on the statechart.
 Users should be able to specify start and end nodes (optionally: intermediate nodes) as inputs to the path calculation.
@@ -44,8 +43,7 @@ The second element is the visualization of data along a selected path in diagram
 As described previously, pix:e offers users to customize which data is assigned to nodes by defining `PxComponent`s.
 Users should thus be able to configure which of the available `PxComponent`s is visualized and how.
 Ideally, this would enable users to compare different properties per node and compare different paths.
-
-#todo("expansion to variable components -> now modeling more than just player experience is possible. line to pacing is blurry. explain this here or elsewhere?")
+Additionally, a visualization of the values over both event time and play time should be possible.
 
 == Path Selection
 
@@ -64,8 +62,6 @@ For unsuccessful pathfinding, the selected nodes are highlighted in red (error c
   image("assets/03/high-level-path-calculation.drawio.png", width: 90%),
   caption: "High-Level Logic for Pathfinding"
 )
-
-#todo("adapt diagram: select 2+ nodes -> detect selection of 2+ nodes, consistent subject")
 
 === Implementation
 
@@ -95,13 +91,13 @@ If more than two nodes are selected, the path is calculated along all selected n
 This allows users to explore alternative paths to the shortest path.
 
 #figure(
-  image("assets/03/path-selected-highlight.png"),
+  image("assets/03/pixie-path-selected-highlight.png"),
   caption: [Path highlighted in state chart],
 ) <fig:path-hl>
 
 === Limitations
 
-One limitation of this implementation is that calculated paths are not persisted in any way. #todo("consequence?")
+One limitation of this implementation is that calculated paths cannot  be saved or persisted in any way as opposed to the snapshot functionality in PaceMaker. #todo("consequence?")
 
 Additionally, there is no visual feedback for the order in which nodes were selected, i.e., what input the path calculation uses.
 
@@ -117,21 +113,21 @@ The implementation supports the creation of multiple diagrams to display and com
 Individual diagrams can be removed as well.
 
 #figure(
-  image("assets/03/diagram-expandable-addable.png"),
+  image("assets/03/pixie-diagram-expandable-addable.png"),
   caption: [Upper section of the charts page with expandable element and UI for diagram creation],
 ) <fig:diagram-area>
 
 #h(1.8em)
 This implementation focuses specifically on line diagrams displaying numerical data.
 The main configuration options for line diagrams are the two axes.
-For the vertical x-axis, one or more numerical components may be selected in a drop-down menu to visualize the values for each node.
+For the vertical y-axis, one or more numerical components may be selected in a drop-down menu to visualize the values for each node.
 
-By default, the nodes in a selected path --- or, if no path is selected, all existing nodes --- are arranged equidistantly on the horizontal y-axis.
-By default, the nodes are arranged equidistantly.pix
-However, the spacing of nodes on the y-axis can optionally be configured to be based on a component.
-In this case, the values of the component are summed up along the selected path or across all nodes, resulting in variable distances.
-This configuration can be used when components are used to model data related to the timing of player progression through a game, e.g., estimated playtime.
-The components selected for the x-axis are then visualized along the path based on said progression metric.
+By default, the nodes in a selected path --- or, if no path is selected, all existing nodes --- are arranged equidistantly on the horizontal x-axis.
+This models event time, assuming that nodes have comparable event times.
+However, the spacing of nodes on the x-axis can optionally be configured to be based on a component.
+In this case, the values of the component are summed up along the selected path or across all nodes to calculate the elapsed time up until a node.
+This configuration can be used when components are used to model play time, or alternatively event times that vary between nodes.
+As a result, nodes are placed in variable distances on the x-axis, which implicitly models the mapping between event and play time mentioned in @bg-pep.
 
 === Implementation
 
@@ -156,7 +152,7 @@ For the diagram generation, the intended workflow is as follows:
 Any changes in the diagram configuration or path selection are reflected in the diagram in real time.
 
 #figure(
-  image("assets/03/diagram-axis-selection.png"),
+  image("assets/03/pixie-diagram-axis-selection.png"),
   caption: [Selectors for components to be mapped to X/Y axes],
 ) <fig:axis-sel>
 
@@ -164,11 +160,11 @@ Any changes in the diagram configuration or path selection are reflected in the 
   columns: 2,
   gutter: 1em,
   figure(
-    image("assets/03/diagram-selected-path.png"),
+    image("assets/03/pixie-diagram-selected-path.png"),
     caption: [Diagram visualizing component along selected path]
   ),
   figure(
-    image("assets/03/diagram-all-nodes.png"),
+    image("assets/03/pixie-diagram-all-nodes.png"),
     caption: [Diagram visualizing component across all nodes]
   )
 )

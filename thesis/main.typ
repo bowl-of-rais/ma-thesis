@@ -99,7 +99,13 @@
   #it
 ]
 
-#show image: it => [#rect(it, stroke: gray, inset: 10pt)]
+#show image: it => {
+  if it.source.contains("pixie") { 
+    return [#rect(it, stroke: gray, inset: 10pt)] 
+  } else {
+    return it
+  }
+}
 
 #show heading.where(level: 5): it => {
   h(-1.8em)
