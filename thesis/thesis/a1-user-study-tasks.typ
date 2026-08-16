@@ -6,9 +6,11 @@
 #todo("add pix:e versions")
 #todo("add task descriptions")
 
-== Dungeons for Solvability Tasks <app-s-dungeons>
+== Dungeons <app-dungeons>
 
-=== LA_3: "Key Cavern"
+=== Dungeons for Solvability Tasks <app-s-dungeons>
+
+==== LA_3: "Key Cavern"
 
 #figure(
   image("assets/05/la3-vglc.png"),
@@ -20,7 +22,7 @@
   caption: "LA_3 representation in Miro"
 )
 
-=== LA_4: "Angler's Tunnel"
+==== LA_4: "Angler's Tunnel"
 
 #figure(
   image("assets/05/la4-vglc.png"),
@@ -32,9 +34,9 @@
   caption: "LA_4 representation in Miro"
 )
 
-== Dungeons for Pacing Tasks <app-p-dungeons>
+=== Dungeons for Pacing Tasks <app-p-dungeons>
 
-=== LA_1: "Tail Cave"
+==== LA_1: "Tail Cave"
 
 #figure(
   image("assets/05/la1-vglc.png"),
@@ -46,7 +48,7 @@
   caption: "LA_1 representation in Miro"
 )
 
-=== LA_2: "Bottle Grotto"
+==== LA_2: "Bottle Grotto"
 
 #figure(
   image("assets/05/la2-vglc.png"),

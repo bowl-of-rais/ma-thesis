@@ -49,17 +49,17 @@ A dedicated functionality for their analysis and verification therefore has pote
 
 Lock-and-key puzzles can affect player experience in various ways.
 For instance, as described by #cite(<brandseLevelFlowPatterns2023>), lock-and-key puzzles are a common way to direct when and where players encounter a challenge or receive a reward, which largely impacts player experience.
-The puzzles themselves also present a type of challenge, which, if disproportionately difficult or complex, may lead to player frustration. #todo("citation")
+The puzzles themselves also present a type of challenge, which, if disproportionately difficult or complex, may lead to player frustration.
 In some instances, lock-and-key puzzles are also used to make exploration a focal point of player experience. #cite(<ruelaEvolvingLockandkeyPuzzles2018>)
 
-This section first concretizes the requirements for the modeling of locks and keys and the associated solvability analysis.
+This chapter first concretizes the requirements for the modeling of locks and keys and the associated solvability analysis.
 It then describes how representations for locks and keys are made available to users in pix:e.
 Subsequently, @lk-pathfinding details the extension of Dijkstra's algorithm and pix:e's pathfinding functionality by logic specific to different lock and key types, and some related refactoring.
 Finally, the testing approach, an implementation of settings, and the limitations of lock-and-key related features are described.
 
 == Requirements <lk-requirements>
 
-The previously described taxonomy (see @bg-lock-key-taxonomy) serves as the main reference for the requirements for modeling locks and keys in pix:e.
+The previously described taxonomy by Dormans (see @bg-lock-key-taxonomy) serves as the main reference for the requirements for modeling locks and keys in pix:e.
 This subsection first describes how the different aspects of locks and keys are implemented in pix:e, presents the resulting data model and outlines the main analysis functionality provided for lock-and-key puzzles.
 
 === Locks and Keys in the Statechart
@@ -111,7 +111,7 @@ The multiplicities in @fig:lk-data-model portray the following conditions:
 A fundamental question for lock-and-key puzzles is the one of solvability.
 Hence, solvability analysis is the main analysis functionality concering locks and keys implemented in this work.
 
-Locks and keys translate to conditional transitions in the statechart #todo("reference?"), which in turn affects pathfinding.
+Locks and keys introduce conditional transitions to the statechart, which in turn affects pathfinding.
 By integrating the constraints placed on pathfinding via lock and key assignments into the pathfinding logic, users of the tool can assess solvability based on lock and key placements and judge their impact on possible progression paths throughout a level or game.
 This includes the existing feedback on whether a path between two selected nodes exists or not, as well as hints about possible pitfalls.
 
@@ -180,11 +180,6 @@ The chips show the count and the definition name and include a button for deleti
   ])
 )
 
-One limitation of this implementation is that there is no way to edit an existing assignment.
-This is already a limitation present in the PxComponents.
-Both would likely benefit from refactoring for easier editing.
-#todo("connect")
-
 == Pathfinding with Locks and Keys <lk-pathfinding>
 
 As described previously, integrating locks and keys into the pathfinding functionality provides a type of solvability analysis for lock-and-key puzzles.
@@ -196,21 +191,23 @@ As an initial step, the previously implemented pathfinding algorithm was extende
 This basic version assumes permanent unlock of all lock types, ignores whether keys are consumable or fixed, and treats soft gates as regular locks that always require a key.
 In short, the main addition to the algorithm at this point is a check whether edges can be traversed based on the keys collected up to that point.
 
-This is implemented using node-specific inventories, which track any keys collected along the path to a specific node and are used to determine whether edges can be unlocked.
-	- inventory similar to #cite(<aversaPathPlanningInventoryDriven2015>) #todo("")
+This is implemented using node-specific inventories inspired by #cite(<aversaPathPlanningInventoryDriven2015>), who present a path planning algorithm in the context of grid-based game maps.
+The general idea behind inventories is to track any keys collected along the path to a specific node in order to determine whether the adjacent edges can be unlocked.
 Internally, this is modeled via so-called `PxKeySet`s, which are mappings of key definitions to counts that aggregate multiple instantiations of the same key definition into one.
 In its basic form, the inventory associated with a node reflects keys collected along the shortest path to this node as well as keys made available in this node.
 Inventory contents are propagated to neighboring nodes during iteration.
 In later implementation steps, the concept is extended to account for consumable keys and backtracking.
+On successful path calculation, the final inventory in the target node is saved. 
+This enables the repeated execution of the algorithm with different starting points in the case where users select more than two nodes to find a path between.
 
-#todo("add diagram about inventory propagation")
+// #todo("add diagram about inventory propagation")
 
 ==== Unlocking Function <unlocking-basic>
 
 A central part of the algorithm for pathfinding with locks and keys is the `canUnlock()` function.
-Given (multi-)sets of locks and keys, it determines whether the locks can be unlocked.
+Given sets of locks and keys, it determines whether the locks can be unlocked.
 This check has a high complexity (see @code:canunlock-basic) due to the fact that an edge may be assigned multiple locks, each of which may be unlockable by multiple key types.
-While there is a potential for exponential blowup, no optimization is currently implemented as the expected case is less complex.
+While this circumstance harbors a potential for exponential blowup, no optimization is currently implemented as the expected case is less complex.
 #todo("citation?")
 
 @code:canunlock-basic shows the logic behind the `canUnlock` function given a set of keys in inventory $K$ and locks on edge $L$:
@@ -356,7 +353,7 @@ It takes a multiset of keys in inventory $K$ and locks on edge $L$ as inputs.
     <code:canunlock-consumable>
 )
 
-The crucial difference to the version without consumable keys is that by requiring the unlocking keyset $U$ to be a subset of the available multi-set of keys $K$, the required multiplicity of consumable keys is accounted for.
+The crucial difference to the version without consumable keys is that by requiring the unlocking multi-keyset $U$ to be a subset of the available multi-set of keys $K$, the required multiplicity of consumable keys is accounted for.
 
 @unlocking-multi illustrates an example analogous to the example presented in @unlocking-basic.
 In this case, keys of type $X$ are consumable, so to unlock the two locks $A$ and $B$ without a key of type $Y$, two keys of type $X$ are necessary.
@@ -389,7 +386,7 @@ In contrast to the `canUnlock` function, which only checks whether a given keyse
     removeConsumable(I, L):
         if L = ∅
             return TRUE
-        consumableRequirements = locks with at least one consumable key unlocking	
+        consumableRequirements = { l. ∃ key. key ∈ unlockedBy(l) and consumable(key)}	
         unlockingKeysets = required(l1) × ... × required(ln)
         updatedInventory = []
         for K_i ∈ I:
@@ -458,7 +455,7 @@ If a soft-lock is identified during pathfinding, the node in which it occurs is 
 
 One major limitation of the VueFlow framework (and thus the initial statechart in pix:e) is the lack of native support for bidirectional edges.
 Bidirectional edges are, however, crucial for modeling non-linear gameplay.
-The most simple use case would be a dungeon where players may go back a previous room. #todo("add citation?")
+The most simple use case would be a dungeon where players may go back to a previous room. #todo("add citation?")
 
 This sub-section thus describes the modeling of bidirectional edges themselves and how the pathfinding algorithm was extended to account for bidirectional edges.
 
@@ -471,7 +468,7 @@ Due to the limitations described in @instantiating-locks, another toolbar button
 
 #figure(
   image("assets/04/pixie-edit-edge-buttons.png"),
-  caption: "Button for toggling directionality of a selected edge in the toolbar"
+  caption: "Button (rightmost in the toolbar) for toggling directionality of a selected edge"
 ) <edge-direction-button>
 
 === Backtracking in Pathfinding
@@ -480,10 +477,10 @@ With the implementation of bidirectional edges, the pathfinding algorithm was ex
 
 While an implementation of backtracking would have been possible in theory with uni-directional edges, the approach would have been unnecessarily complex.
 A bidirectional edge could be modeled using two uni-directional edges, but this would
-1. prevent any distinction between asymmetrical locks and valves
-2. cause additional overhead as an edge would have to be considered unlocked if the edge in the reverse direction is also unlocked
-3. over-complicate the user experience.
-The existence of bidirectional edges is thus essential for the implementation of backtracking.
+1. Prevent any distinction between asymmetrical locks and valves
+2. Cause additional overhead as an edge would have to be considered unlocked if the edge in the reverse direction is also unlocked
+3. Over-complicate the user experience.
+The existence of bidirectional edges is thus essential for a viable implementation of backtracking.
 
 By incorporating backtracking, the path calculation can account for cases where cyclic paths are necessary to collect keys.
 Such a situation is illustrated in @why-backtracking: starting from $A$ and assuming no key of type $X$ has been collected before, a valid path would have to travel to $B$ and back to $A$ before progressing to $C$.
@@ -497,7 +494,7 @@ Such a situation is illustrated in @why-backtracking: starting from $A$ and assu
   ) <why-backtracking>]
 )
 
-==== Incorporating Backtracking into Dijkstra's Algorithm
+=== Incorporating Backtracking into Dijkstra's Algorithm
 
 In its original form, Dijkstra's algorithm does not find paths with backtracking, as it is designed to find shortest paths and a path with backtracking is always longer than a direct path.
 The algorithm thus needs to be adapted.
@@ -505,14 +502,12 @@ The algorithm thus needs to be adapted.
 As described previously, the main justification for permitting backtracking is the collection of additional keys.
 This circumstance gives rise to the following approach: 
 Nodes may be re-added to the queue iff they have a different inventory assigned to them than in previous iterations.
-This is implemented by performing Dijkstra's algorithm on _meta-nodes_, which contain a node and the inventory it is visited with.
-This way, nodes are only re-visited when needed and the distance of each (meta-) node from the start node is still as short as possible.
+This is implemented by performing Dijkstra's algorithm on _meta-nodes_, which wrap a node, the inventory it is visited with, and the edges that have been unlocked on the prior path.
+This way, nodes are only re-visited when needed and the distance of each meta-node from the start node is still as short as possible.
 
-To account for the fact that the same edge may be traversed multiple times, a record of previously unlocked edges is maintained.
-A constant that represents the maximum number of times a node is enqueued prevents infinite loops.
+// - parallel universes (- #todo("add citation from julians paper?"))
 
-- parallel universes (- #todo("add citation from julians paper?"))
-
+/*
 ==== Inventory Variants: Consumable Keys vs Backtracking
 
 Both this approach and the method used to extend pathfinding with consumable keys consider different inventories per node.
@@ -522,9 +517,10 @@ In the case of consumable keys, all variants of a node's inventory were collecte
 While this could also be modelled using meta-nodes, in the context of Dijkstra's algorithm, the distance from the starting node would be identical for all variants.
 Additionally, the set of reachable nodes may vary for the different inventory variants, but in the current implementation, all nodes that can be reached by _any_ of the available keysets in a certain node are considered neighbors in the context of Dijkstra's algorithm.
 Thus, the path calculation would yield the same result no matter whether different inventories from key consumption are modeled using one and the same node or multiple nodes.
-One advantage of the single-node approach is that it is precisely what enables a simple detection of soft-locks.
+The choice for consumable keys fell on the single-node approach, is that it is precisely what enables a simple detection of soft-locks.
 
 In contrast, backtracking causes nodes to have differing inventories based on which path they were approached on, which also affects their distance from the starting node.
+*/
 
 === Example: Pathfinding with Backtracking in pix:e
 
@@ -538,7 +534,6 @@ As seen in @pixie-backtracking, valid paths that contain backtracking are highli
 == Final Algorithm and Code Architexture
 
 The full algorithm for pathfinding with locks and keys is visualized in @fig:full-algo-modularization.
-#todo("fixed keys?")
 
 #figure(
   image("assets/04/lock-key-pathfinding-extended.drawio.png"),
@@ -546,7 +541,8 @@ The full algorithm for pathfinding with locks and keys is visualized in @fig:ful
 ) <fig:full-algo-modularization>
 
 Compared to the initial pathfinding implementation for diagrams (@impl-diagrams), the additions described in this section make it much more extensive.
-The code was thus refactored into multiple files/composables for purposes of further extendability and maintainability. #todo("sth sth open source software and its consequences")
+The code was thus refactored into multiple files/composables for purposes of further extendability and maintainability.
+// #todo("sth sth open source software and its consequences")
 
 It was broken down into 4 main components:
 
@@ -574,7 +570,7 @@ For the pathfinding, locks/keys can be enabled or disabled entirely.
 This reduces pathfinding complexity greatly for projects or charts that do not use locks and keys.
 For locks/keys, users can choose whether consumable keys being consumed during pathfinding, and whether soft locks should be calculated, both sources of additional complexity.
 
-The modal (see @fig:settings-modal) was implemented with a tab structure, so the UI is set up for future extension with chart-specific settings that may be unrelated to pathfinding (e.g., #todo("think of examples")).
+The modal (see @fig:settings-modal) was implemented with a tab structure, so the UI is set up for future extension with chart-specific settings that may be unrelated to pathfinding.
 
 #figure(
   image("assets/04/pixie-chart-settings.png", width: 45%),
@@ -583,10 +579,18 @@ The modal (see @fig:settings-modal) was implemented with a tab structure, so the
 
 == Limitations
 
+One limitation in the modeling functionality for keys is that there is no way to edit an existing assignment.
+This is already a limitation present in the PxComponents.
+Both would likely benefit from refactoring for easier editing.
+#todo("connect")
+
 As mentioned previously, not all aspects of lock and key types reflected in the datamodel are considered in the pathfinding algorithm. This specifically concerns fixed keys for non-adjacent locks and temporary, reversible, and collapsible locks.
 
 A second limitation is that when a path includes backtracking, the current highlighting of the nodes and edges included in the path does not communicate at which point the path backtracks.
 
-Finally, the path calculation is currently implemented in the frontend of the system. While it is reasonably performant up to a chart size of around 50 nodes, there may be use cases that require larger graphs. #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?"). A future improvement could be to port the calculation to the backend and optimize the algorithm.
+Finally, the path calculation is currently implemented in the frontend of the system.
+While it is reasonably performant at a chart size of around 40 nodes, there may be use cases that require much larger charts.
+// #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?").
+A future improvement could be to port the calculation to the backend and optimize the algorithm.
 
 #load-bib()

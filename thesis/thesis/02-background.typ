@@ -33,11 +33,12 @@ The two notions of player experience and pacing are a central foundation of this
 #cite(<wiemeyerPlayerExperience2016>) present player experience as a concept analogous to user experience, but translated to the domain of games. 
 According to the authors, the term "denotes the individual and personal experience of playing games" and encompasses elements such as immersion, challenge, and emotion.
 
-In contrast, as articulated by #cite(<geheebPaceMakerPracticalTool2024>), "Pacing describes the rhythm that results from the recurring patterns of rhythmic parameters in time."
+In contrast, #cite(<geheebPaceMakerPracticalTool2024>) define pacing as "the rhythm that results from the recurring patterns of rhythmic parameters in time."
 Rhythmic parameters may be concretely specified by game designers (= artifact parameters, e.g., enemy strength), or aspects of experience that are influenced by artifact parameters (= experience parameters, e.g., encounter intensity).
 
 The two concepts of player experience and pacing relate to each other as described by #cite(<bagusharisaPacingbasedProceduralDungeon2022>), who "summarize game pacing as the rate flow of activit[ies] in a video game [...] that affect the player's experience".
-Pacing thus refers to the way in which impulses on player experience are arranged in time as players progress through a game as visualized in @player-experience-pacing-in-time.
+Pacing thus refers to the way in which impulses on player experience are arranged in time as players progress through a game.
+This interplay is visualized in @player-experience-pacing-in-time.
 
 In this context, "time" may refer to event time (i.e., the time as measured within the game's world) or play time (i.e., the time passing in the real world as a player plays the game). #cite(<nitscheMappingTimeVideo2007>)
 
@@ -50,17 +51,17 @@ In this context, "time" may refer to event time (i.e., the time as measured with
 
 PaceMaker #cite(<geheebPaceMakerPracticalTool2024>) is the predecessor of pix:e's player experience module and a prototype toolkit designed for pacing analysis.
 
-In PaceMaker, the non-linear structure of can be modeled using statecharts #cite(<harelStatechartsVisualFormalism1987>).
+In PaceMaker, non-linear structures of game progression can be modeled using statecharts #cite(<harelStatechartsVisualFormalism1987>).
 Each node in the statechart corresponds to a so-called beat, which in turn represents a structural part of a game, such as a scene or level.
 Users can assign a set of pre-defined properties to a beat to specify the experience associated with it.
 Specifically, these properties include a name, a description, the narrative/gameplay/overall intensity, the gameplay category, and the expected playtime.
 Finally, users can create plots to visualize these properties along a path through the chart, with the y-axis representing either event or play time.
 
-A qualitative study conducted to evaluate PaceMaker identified some limitations, e.g., in terms of usability, participants expressed a definitive interest in PaceMaker's functionalities.
+In a qualitative study conducted to evaluate PaceMaker, participants were found to express a definitive interest in PaceMaker's functionalities.
 
 == Lock-and-Key Puzzles <bg-locks-and-keys>
 
-A particular aspect of game design for which analysis functionality is implemented in this thesis is the concept of locks-and-key puzzles.
+A particular aspect of game design for which analysis functionality is implemented in this thesis are locks-and-key puzzles.
 
 === Definition
 
@@ -70,11 +71,11 @@ They further explain that keys may include rather abstract tokens, such as items
 
 // Consequently, locks and keys as a may refer to both literal locks and keys, but also a wider range of barriers that require certain items (e.g. weapons) or skills (e.g. double jump) to be passed.
 
-=== Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
+=== Dormans' Taxonomy for Locks and Keys <bg-lock-key-taxonomy>
 
 #cite(<dormansCyclicGeneration2017>) provides an overview of different characteristics that locks and keys may have.
 Four different aspects are described for locks and keys respectively.
-The taxonomy is recounted in the following and summarized by @tab:lk-taxonomy.
+The rest of this section recounts Dorman's taxonomy and summarizes it in @tab:lk-taxonomy.
 
 // #todo("add context on dormans?")
 The first property refers to how locks may behave in different ways after they have been unlocked.
@@ -115,9 +116,9 @@ Lastly, keys may be "fixed in place" #cite(<dormansCyclicGeneration2017>).
     [permanent, temporary, reversible, collapsible],
     // 2
     [directionality of locks],
-    [valve, symmetrical],
+    [valve, asymmetrical],
     // 3
-    [existance of a key],
+    [existence of a key],
     [safe, unsafe],
     // 4
     [necessity of a key],
@@ -175,16 +176,5 @@ Additionally, the algorithm records the predecessor for each node, from which th
   [Dijkstra's algorithm, adapted from #cite(<mehlhornShortestPaths2008>)],
   <dijkstra-pseudo>
 )
-
-== Inventory-Based Search Algorithms <bg-inventory-search>
-
-#todo("@Anie: das wird in 4.3 erwähnt, aber idk wie viel ich hier ins detail gehen sollte - eigentlich ist nur das konzept 'inventory' relevant. Vielleicht lieber dort kurz das konzept erklären und inventory-based jump-point search in related works schieben, weil ich ja hier auch eine art inventory-based search algorithm vorstelle?")
-
-#todo("explain concept and what of it is relevant to here, what of it is not")
-
-- inventory-based jump-point search #cite(<aversaPathPlanningInventoryDriven2015>) is grid-based. statechart could be mapped to grid, but would probably be suboptimal because nodes have generally low rank and don't necessarily conform to neighboring structure of a grid. concept of inventory is still relevant, though.
-
-#todo("possibly make connection to petri nets")
-
 
 #load-bib()

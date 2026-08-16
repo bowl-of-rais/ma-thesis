@@ -14,6 +14,8 @@ explicitly modeled gameplay could be used to predict player experience.
 
 lots of groundwork with focus on extendability and flexible design -> hopefully solid basis to build upon
 
+#todo("potential bugs")
+
 many possible improvements and extensions already identified during implementation
 
 one round of improvements done after user study to address common criticisms

@@ -60,9 +60,8 @@ The two task variants necessary for this setup as well as a varying order of too
   caption: "Definition of the 4 user study participant groups"
 ) <user-study-groups>
 
-The chosen baseline tool was Miro.
-#todo("why miro?")
-It was used as a game design tool for several games, e.g. Subnatica #cite(<flayraUsingMiroGame2021>).
+The chosen baseline tool was Miro, a general-purpose whiteboard tool that is used as a game design tool.
+As a notable example, it was used in the development of "Subnatica: Below Zero" to create the in-game world's layout and how players may progress through it. #cite(<flayraUsingMiroGame2021>).
 
 To restrict the overall time per participant, especially in context of the joint study design, the tasks were designed in such a way that participants were given a set amount of time (5 minutes) for each task variant.
 
@@ -84,14 +83,12 @@ For the complete task description including all dungeons and the respective answ
 ==== Zelda Dungeons from the VGLC dataset
 
 The use cases chosen for this study were dungeons from the Legend of Zelda video game series.
-#todo("reasoning?") -> ensure realistic tasks.
 As the use case is concerned with modeling individual dungeons or levels, it corresponds to a low-level modeling approach.
 This is more fitting for this particular study as the individual charts are self-contained and sufficiently complex while also being taken from the same context.  
 
 The exact level designs were extracted from the Video Game Level Corpus #cite(<summervilleVGLCVideoGame2016>).
-While the dataset provides data from three different Legend of Zelda game, the dungeons for both tasks and all variants were chosen from the same game to ensure consistency in details such as item, lock, or key types and the overall complexity and structure of the dungeons.
-The dungeons from the game "The Legend of Zelda: Link's Awakening" were best suited for the evaluation tasks.
-#todo("add reasoning, incl two comparable dungeons per task")
+While the dataset provides data from three different Legend of Zelda game, the dungeons for both tasks and all variants were chosen from the same game, "The Legend of Zelda: Link's Awakening" #cite(<linksAwakening1993>), to ensure consistency in details such as item, lock, or key types and the overall complexity and structure of the dungeons.
+// The dungeons from the game "The Legend of Zelda: Link's Awakening" were found to be best suited for the evaluation tasks. #todo("reason")
 
 Apart from the full level layout and map of each dungeon, the dataset provides level graphs that are annotated with game-specific concepts.
 Relevant for the following task designs were the overall graph structure as well as placements of locks, keys (including so-called key items), and enemies, and the locations of start/boss rooms.
@@ -112,13 +109,13 @@ For instance, when passing through one portion (one screen) of a room, any enemi
   grid.cell([
     #figure(
       image("assets/05/multiscreen-room-example-la2.png", width: 90%),
-      caption: [Example of multi-screen room in level LA_2 #cite(<summervilleVGLCVideoGame2016>)]
+      caption: [Example of a multi-screen room in level LA_2 #cite(<summervilleVGLCVideoGame2016>)]
     ) <multiscreen-example>
   ]),
   grid.cell([
     #figure(
       image("assets/05/multiscreen-numbering-example-miro.png", width: 90%),
-      caption: "Corresponding node numbering"
+      caption: "Modeling of a multi-screen room in Miro"
     ) <multiscreen-node-numbers>
   ])
 )
@@ -127,14 +124,14 @@ For instance, when passing through one portion (one screen) of a room, any enemi
 ===== Modeling Dungeons in pix:e vs Miro
 In pix:e, each room was modeled by a node.
 Any keys, items, and other room data were modeled by the built-in functionalities.
-This resulting visualization is as described previously in @impl-diagrams and @impl-lk.
-#todo("refine")
+The resulting visualization is as described previously in @impl-diagrams and @impl-lk.
 
-Miro as a general-purpose whiteboard tool offers sticky notes, which can be connected by arrows/lines.
+Miro as a general-purpose whiteboard tool offers sticky notes that can be connected by arrows/lines.
 They were thus used to represent the individual nodes.
 Node-specific information was simply written into the sticky notes as text, and locks were added as edge labels.
 The different lock and key types were encoded as emojis, and an additional sticky note served as a legend (see @miro-legend).
 This encoding was used to obtain a visualization that is as clear and straightforward as possible given the available options in Miro.
+Both visualizations can be seen in @app-dungeons.
 
 #figure(
   image("assets/05/miro-legend.png", width: 40%),
@@ -155,7 +152,7 @@ The dungeons chosen for the two variants of this tasks were the third (LA_3) and
 Dungeon LA_3 is used in variant A of the task, and dungeon LA_4 is used in variant B.
 The main criterion for this choice was the dungeons' size, as they are sufficiently large and thus make the task sufficiently complex while still being feasible manually in Miro.
 Their node count is around the 75th percentile across all VGLC Zelda data.
-The two dungeons, being subsequent levels from the same game, have comparable size and complexity (based on the outgoing ranks of nodes) and similar numbers of keys/locks (see @solvability-dungeon-numbers).
+The two dungeons, being subsequent levels from the same game, have comparable size and complexity (based on the outgoing ranks of nodes) and similar numbers of keys/locks (see @solvability-dungeon-numbers). LA_4 was additionally extended by four nodes, three edges, and four keys to accommodate the size difference between the two dungeons. #todo("check for further adaptations")
 
 #figure(
   table(
@@ -171,17 +168,14 @@ The two dungeons, being subsequent levels from the same game, have comparable si
   caption: "Complexity of selected dungeon graphs for solvability tasks, calculated from VGLC data"
 ) <solvability-dungeon-numbers>
 
-- slight adaptations: #todo("add adaptations")
-  - structural: #todo("add structural adaptations")
-The charts included information regarding the locations of locks and keys and indicated start and boss nodes.
-Additionally, LA_4 was extended by four nodes, three edges, and four keys to accommodate the size difference between the two dungeons.
+For this task, the charts included information regarding the locations of locks and keys and indicated start and boss nodes.
 
 To make the dungeons unsolvable, 6 issues of varying difficulty were added in each dungeon.
 For both, this included
-- two instances of missing key(s), i.e., an edge not being unlockable with the keys a player could have collected on any path from the start node
-- one node with no outgoing edge
-- one area (group of nodes) that is unreachable due to wrong edge directionality
-- two softlocks
+- 2 instances of missing key(s), i.e., an edge not being unlockable with the keys a player could have collected on any path from the start node
+- 1 node with no outgoing edge
+- 1 area (group of nodes) that is unreachable due to wrong edge directionality
+- 2 softlocks
 
 See @la3-vglc for an impression of the original dungeon layout and @la3-miro for the adapted version with issues in Miro for LA_3.
 Full-size imagess and pix:e versions are included in @app-s-dungeons.
@@ -214,7 +208,7 @@ For this task, the choice fell on smaller dungeons, in particular the first and 
 Variant A of the task uses LA_1, while variant B uses LA_2.
 Size was again a key criterion, though in contrast to the Solvability task, the dungeons for this task were deliberately selected to have a smaller size (25th percentile in VGLC Zelda data).
 The intention was to account for expected higher task complexity due to manual pathfinding and calculations in the Miro version.
-The two levels are again subsequent levels of comparable size and complexity with similar numbers of locks and keys (see @pacing-dungeon-numbers).
+The two levels are again subsequent levels of comparable size and complexity with similar numbers of locks and keys (see @pacing-dungeon-numbers). #todo("check for adaptations")
 
 #figure(
   table(
@@ -236,8 +230,6 @@ An additional criterium for this task was a clear division of the critical path 
   - C: from the room with the boss key to the boss fight room
 A consequence of this aspect is the critical paths containing little backtracking, which is also beneficial as nodes (and thus likely component values) are more distinct between sections.
 
-- adaptations: #todo("add adaptations")
-  - structural: #todo("add structural adaptations")
 The information provided in the charts included the placement and types locks/keys and, for rooms containing enemies, the enemy count and the time required to beat all enemies.
 As the VGLC only includes data on whether rooms contain enemies, the completion time and enemy count were based on YouTube walkthroughs (specifically 100% completion walkthroughs to best approximate accurate data for all rooms) #cite(<theretrogamersLegendZeldaLinks2014>), #cite(<theretrogamersLegendZeldaLinks2014a>).
 Enemies that cannot be beat are ignored in the counts.
@@ -287,17 +279,12 @@ Moreover, as separate pix:e accounts and Miro boards were used for each particip
 After completing all tasks, participants were given the UEQ-S #cite(<schreppDesignEvaluationShort2017>) and a short questionnaire comparing Miro and StatePx (see @res-comparative-questions).
 Like the demographic data, the reponses were collected via Google Forms.
 
-#todo("disclaimer: questionnaires team effort")
-
 After collection, portions of the data were further processed to enable analysis using Python.
 Participants' responses to the tasks were manually tagged to obtain total counts of identified issues for the solvability task and total counts of answered questions for the pacing analysis tasks, as well as number of correct responses for both according to the answer key.
-
 Additionally, some of the demographic data (education, occupation, previous experience with whiteboard tools) was collected in a free-form format and was manually codified.
+Despite best efforts, there results may thus contain minor errors due to manual processing.
 
-#todo("mention parsing of protocol into csv?")
-#todo("mention different sets of data?")
-
-#todo("disclaimer human error")
+The choices of which demographic data to collect and which questionnaires to use were done in the team to align all parts of the user study.
 
 === Data Analysis
 
@@ -315,18 +302,18 @@ significance at $p < 0.05$
 === Participants
 
 In total, 24 people participated in the study.
-Ages ranged from 19 to 32 years, with an average of 23.625 years.
+Ages ranged from 19 to 32 years, with an average of about 24 years.
 15 indicated their gender as male, 5 as female and 4 preferred not to say.
 #todo("educational/occupational background")
 15 participants, or 62.5%, indicated previous experience with whiteboard tools.
-No participants indicated previous experience with tools specific to game design.
+No participants indicated meaningful previous experience with tools specific to game design.
 #todo("projects")
 
 // #todo("group breakdown?")
 
 === Results Solvability
 
-#todo("give overview over subsection") task completion, differences between groups, differences between task versions
+This sub-section presents the results for the solvability task in terms of task completion, compared between the two tools and additional stratifications (such as previous experience of participants with whiteboard tools or the different user study groups).
 
 /*
 ==== Data Processing
@@ -500,8 +487,7 @@ The distributions of F1 scores (see @fig:s-f1-a-vs-b) are comparable between the
 
 === Results Pacing
 
-#todo("give overview over subsection") task completion, differences between groups, differences between task versions
-#todo("add disclaimer human error")
+This sub-section presents the results for the pacing analysis task in terms of task completion, again compared between the two tools and additional stratifications (such as previous experience of participants with whiteboard tools or the different user study groups).
 #todo("effect sizes")
 
 ==== Task Completion <res-p-task-completion>
@@ -519,7 +505,6 @@ Regarding the total number of answered questions (see @fig:p-total), there is no
 //within participants: median same, but 25th percentile skews a bit lower.
 The same holds for both the correctly answered questions ($T=98.5$, $p approx 0.806$) and the wrongly answered questions ($T=53.5$, $p approx 0.702$), as visualized in @fig:p-right and @fig:p-wrong.
 There is a slight trend towards a higher median in total and correct answers in pix:e, but overall the distribution skews higher for miro.
-#todo("interpret?") #todo("adjust image zoom?")
 
 #grid(
     columns: 3,
@@ -543,7 +528,7 @@ There is a slight trend towards a higher median in total and correct answers in 
 Within pix:e, participants with whiteboard experience tended to answer significantly more questions (see @fig:p-total-by-wb-exp): the median 4 with whiteboard experience, 3 without whiteboard experience, Mann-Whitney $U = 103.5$, $p approx 0.015$.
 They also gave significantly more correct answers (see @fig:p-right-by-wb-exp): median 3 with whiteboard experience, 2 without, Mann-Whitney $U = 103.0$, $p approx 0.017$.
 - slight skews in median/distribution: number of answered questions higher in pix:e than miro for participants with whiteboard experience, total number and number of correct answers lower in pix:e than Miro for people without whiteboard experience.
-however, differences in distribution do not seem to be statistically significant (Wilcoxon signed-rank test: $T = 38.0$, $p approx 0.326$ for total answers in pix:e vs Miro from participants with Whiteboard experience, $T = 15.0$, $p approx 0.207$ for total answers from participants without whiteboard experience)
+However, the differences in distribution do not seem to be statistically significant (Wilcoxon signed-rank test: $T = 38.0$, $p approx 0.326$ for total answers in pix:e vs Miro from participants with Whiteboard experience, $T = 15.0$, $p approx 0.207$ for total answers from participants without whiteboard experience)
 
 #grid(
     columns: 3,
@@ -719,7 +704,7 @@ Judging the scores against the provided benchmark, the pragmatic quality is rate
   caption: "Comparison of UEQ-S scores against benchmark"
 )
 
-#todo("control for whiteboard experience?")
+//#todo("control for whiteboard experience?")
 
 === Results Comparative Questions <res-comparative-questions>
 
@@ -779,7 +764,7 @@ selecting of various goal nodes for the given start node and subsequent identifi
 == Limitations
 
 - data collection: human errors
-- not all functionality included (e.g. soft gates, creation of component/lock/key definitions, summing X axis in diagrams, broader functionalities of pix:e)
+- not all functionality included (e.g. soft gates, creation of component/lock/key definitions, play time on x axis in diagrams, broader functionalities of pix:e)
 
 == Post-Study Improvements
 
