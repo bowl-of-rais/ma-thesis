@@ -226,7 +226,7 @@
 /*
 #heading(numbering: none)[List of Acronyms]
 #print-glossary(glossary)
-*/
+
 
 // List of figures.
 #heading(numbering: none)[List of Figures]
@@ -241,7 +241,7 @@
   title: none,
   target: figure.where(kind: table)
 )
-
+*/
 
 
 // --- Bibliography ---

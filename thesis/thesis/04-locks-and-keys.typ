@@ -220,7 +220,7 @@ Any related optimization was therefore deemed not a priority in this work.
         else
             return FALSE
     ```],
-    "Function checking whether a set of locks L can be unlocked by keys K",
+    [Function checking whether a set of locks $L$ can be unlocked by keys $K$],
     <code:canunlock-basic>
 )
 
@@ -233,7 +233,7 @@ The following example illustrates an unlock check as performed by this function.
 
 #figure(
   image("assets/04/example-unlock-check-graph.drawio.png", width: 75%),
-  caption: ""
+  caption: "Example: Multiple locks assigned to one edge"
 ) <unlock-example-graph>
 
 /*
@@ -257,13 +257,13 @@ In contrast, @unlock-example-failure shows a case in which the edge cannot be un
   grid.cell[
     #figure(
       image("assets/04/example-unlock-check-success.drawio.png"),
-      caption: ""
+      caption: "Example: Unlock possible with available keyset"
     ) <unlock-example-success>
   ],
   grid.cell[
     #figure(
       image("assets/04/example-unlock-check-failure.drawio.png"),
-      caption: ""
+      caption: "Example: Unlock not possible with available keyset"
     ) <unlock-example-failure>
   ],
 )
@@ -278,7 +278,7 @@ In contrast, @unlock-example-failure shows a case in which the edge cannot be un
   rest: 10pt,
   [#figure(
     image("assets/04/lock-key-pathfinding-basic.drawio.png", width: 80%),
-    caption: "Main Loop of Pathfinding Algorithm with Locks & Keys (Basic)",
+    caption: "Dijkstra's Algorithm with Locks & Keys (Basic)",
     gap: 2em
   ) <loop-basic> ]
 )
@@ -310,7 +310,7 @@ If not, all nodes in the path after the soft-gated edge are highlighted in yello
 
 #figure(
   image("assets/04/pixie-soft-gate-example.png"),
-  caption: "Partially soft-gated path"
+  caption: "Partially soft-gated path highlighted in pix:e"
 ) <soft-gated-path>
 
 === Consumable Keys and Soft-Lock Detection
@@ -327,8 +327,6 @@ In case of multiple options for consumed keys, multiple keysets are added to the
 
 ==== Pathfinding with Consumable Keys
 
-#h(1.8em)
-===== Extending Unlocking Check
 @code:canunlock-consumable shows how the extended `canUnlock` function performs the unlock check considering consumable keys.
 It takes a multiset of keys in inventory $K$ and locks on edge $L$ as inputs.
 
@@ -343,7 +341,7 @@ It takes a multiset of keys in inventory $K$ and locks on edge $L$ as inputs.
         else
             return FALSE
     ```],
-    "Function checking whether a set of locks L can be unlocked by keys K, considering consumable keys",
+    [Function checking whether a set of locks $L$ can be unlocked by keys $K$, considering consumable keys],
     <code:canunlock-consumable>
 )
 
@@ -355,7 +353,7 @@ The inventory $I = {X, Z}$, with which all locks in the initial example could be
 
 #figure(
   image("assets/04/example-unlock-check-consumable-failure.drawio.png", width: 75%),
-  caption: ""
+  caption: "Example: Unlock not possible due to key consumption"
 ) <unlocking-multi>
 
 /*
@@ -369,8 +367,6 @@ The inventory $I = {X, Z}$, with which all locks in the initial example could be
 )
 */
 
-#h(1.8em)
-===== Removing Consumable Keys from Inventory
 In contrast to the `canUnlock` function, which only checks whether a given keyset may unlock a set of locks, the removal of consumable keys from the propagated inventory requires information about which specific keys might have been used.
 
 @code:remove-consumable contains the `removeConsumable` function. Given an inventory $I$ containing multisets of keys $K_i$ and locks on edge $L$, it determines all keysets that are subsets of any of the unlocking keysets and computes an inventory variant without the consumable keys for each.
@@ -389,7 +385,7 @@ In contrast to the `canUnlock` function, which only checks whether a given keyse
                     updatedInventory.push(K_i - { key ∈ U. consumable(key)})	
         return updatedInventory
     ```],
-    "Function removing keys required to unlock all locks in L from K",
+    [Function removing keys required to unlock all locks in $L$ from $K$],
     <code:remove-consumable>
 )
 
@@ -429,7 +425,7 @@ To rephrase it in terms of the aforementioned definition, a path is soft-lock-fr
 )
 
 #h(1.8em)
-In terms of the implementation, a potential soft-lock state occurs when an edge may be unlocked with some, but not all available keysets.
+In terms of the implementation, a potential softlock state occurs when an edge may be unlocked with some, but not all available keysets.
 During removal of consumable keys (@code:remove-consumable), keysets that do not unlock the given edge are removed from the updated inventory entirely, as the edge could not be traversed with those sets and they should thus not be propagated to the neighboring node.
 A comparison of inventory length before and after consumption is then used to verify whether a potential soft-lock occurs in the current node.
 
@@ -437,7 +433,7 @@ If a soft-lock is identified during pathfinding, the node in which it occurs is 
 
 #figure(
     image("assets/04/pixie-soft-lock-example.png"),
-    caption: ""
+    caption: "Softlock highlighted in pix:e"
 ) <pixie-soft-lock>
 
 // #todo("softlock not found in user study?")
@@ -518,7 +514,7 @@ As seen in @pixie-backtracking, valid paths that contain backtracking are highli
 
 #figure(
     image("assets/04/pixie-example-backtracking.png"),
-    caption: ""
+    caption: "Path with backtracking highlighted in pix:e"
 ) <pixie-backtracking>
 
 == Final Algorithm and Code Architecture
@@ -562,12 +558,12 @@ For the pathfinding, locks/keys can be enabled or disabled entirely.
 This reduces pathfinding complexity greatly for projects or charts that do not use locks and keys.
 For locks/keys, users can choose whether consumable keys being consumed during pathfinding, and whether soft locks should be calculated, both sources of additional complexity.
 
-The modal (see @fig:settings-modal) was implemented with a tab structure, so the UI is set up for future extension with chart-specific settings that may be unrelated to pathfinding.
-
 #figure(
-  image("assets/04/pixie-chart-settings.png", width: 45%),
+  image("assets/04/pixie-chart-settings.png", width: 43%),
   caption: "Settings modal"
 ) <fig:settings-modal>
+
+The modal (see @fig:settings-modal) was implemented with a tab structure, so the UI is set up for future extension with chart-specific settings that may be unrelated to pathfinding.
 
 == Limitations
 

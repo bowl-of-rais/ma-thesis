@@ -370,11 +370,11 @@ A similar effect can be observed for the F1 scores, as the median F1 score in pi
     columns: 2,
     inset: (x: 5pt, y: 5pt),
     grid.cell([#figure(
-        image("assets/05/solvability-total-by-wb-exp.png"),
+        image("assets/05/solvability-total-by-wb-exp.png", width: 97%),
         caption: "Distribution of total number of identified issues by tool and indicated whiteboard tool experience"
     ) <fig:s-total-by-wb-exp>]),
     grid.cell([#figure(
-        image("assets/05/solvability-f1-by-wb-exp.png"),
+        image("assets/05/solvability-f1-by-wb-exp.png", width: 97%),
         caption: "Distribution of F1 scores by tool and indicated whiteboard tool experience"
     ) <fig:s-f1-by-wb-exp> ])
 )
@@ -391,11 +391,11 @@ This is supported by the Mann-Whitney U test (total issues: $U = 57.5$, $p appro
     columns: 2,
     inset: (x: 5pt, y: 5pt),
     grid.cell([#figure(
-        image("assets/05/solvability-total-by-miro-usage.png"),
+        image("assets/05/solvability-total-by-miro-usage.png", width:97%),
         caption: "Distribution of total number of identified issues by tool and use of Miro functionalities"
     ) <fig:s-total-by-miro-usage> ]),
     grid.cell([#figure(
-        image("assets/05/solvability-f1-by-miro-usage.png"),
+        image("assets/05/solvability-f1-by-miro-usage.png", width:97%),
         caption: "Distribution of F1 scores by tool and use of Miro functionalities"
     ) <fig:s-f1-by-miro-usage> ])
 )
@@ -757,7 +757,7 @@ The responses to the UEQ-S questionnaire were evaluated using the analysis tool 
 It provides mean scores for each item and rates the pragmatic, hedonic, and overall score against benchmark scores collected for Amazon and Skype.
 
 #figure(
-  image("assets/05/ueq-mean-value-per-item.png"),
+  image("assets/05/ueq-mean-value-per-item.png", width: 90%),
   caption: "Mean values per item in the UEQ-S"
 ) <fig:ueqs-means>
 
@@ -768,7 +768,7 @@ This relatively low (albeit positive) score is in line with participant feedback
 Judging the scores against the provided benchmark, the pragmatic quality is rated _below average_ (i.e. better than 25% of benchmark) with a mean of 0.823, the hedonic quality is rated _good_ with a mean (i.e. better than 75% of benchmark) of 1.385, and the overall score is considered above average (i.e., better than 50% of benchmark) with a mean of 1.104.
 
 #figure(
-  image("assets/05/ueq-against-benchmark.png"),
+  image("assets/05/ueq-against-benchmark.png", width: 90%),
   caption: "Comparison of UEQ-S scores against benchmark"
 )
 
@@ -889,13 +889,13 @@ It shows an overview of available lock and key definitions in separate tabs (see
     align: bottom,
     grid.cell([
         #figure(
-            image("assets/05/pixie-improved-symbols-legend-locks.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-legend-locks.png", width: 85%),
             caption: "Legend of lock types, including unlocking keys"
         ) <improved-legend-locks>
     ]),
     grid.cell([
         #figure(
-            image("assets/05/pixie-improved-symbols-legend-keys.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-legend-keys.png", width: 85%),
             caption: "Legend of key types, including key type and whether they are consumable"
         ) <improved-legend-keys>
     ]),
@@ -908,13 +908,13 @@ To align the visual representation of lock and key types throughout the player e
     align: bottom,
     grid.cell([
         #figure(
-            image("assets/05/pixie-improved-symbols-edit-locks.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-edit-locks.png", width: 85%),
             caption: "Lock assignment creation modal with symbols"
         ) <improved-modal-locks>
     ]),
     grid.cell([
         #figure(
-            image("assets/05/pixie-improved-symbols-key-creation.png", width: 75%),
+            image("assets/05/pixie-improved-symbols-key-creation.png", width: 85%),
             caption: "Key assignment creation modal with symbols"
         ) <improved-modal-keys>
     ]),
@@ -932,7 +932,7 @@ In case of failed pathfinding, unreachable nodes are then highlighted (see @impr
 // #todo("confirm/wait for julian's pr feedback")
 
 #figure(
-    image("assets/05/pixie-improved-reachability-analysis.png", width: 50%),
+    image("assets/05/pixie-improved-reachability-analysis.png", width: 75%),
     caption: "Improved visual feedback about reachability on failed pathfinding (LA_3 as example)"
 ) <improved-reachability>
 
