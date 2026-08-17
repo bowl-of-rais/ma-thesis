@@ -18,8 +18,8 @@ This may e.g. translate to an overlay providing additional information regarding
 Helpful information might include the maximum set of keys that each node could be visited with, or the distance of each node from the start node.
 Additionally, as mentioned in @impl-lk, the highlighting and general visualization of paths involving backtracking could be improved to better communicate at which points backtracking occurs.
 
-Another observation #todo("reference") was that on occasion, participants moved nodes accidentally while panning and exploring the chart.
-One way to addess this issue would be to introduce different modes of interacting with the chart (e.g., "Edit Mode" and "Analysis Mode"), thus making the editing/moving of nodes and the pathfinding mutually exclusive.
+Another finding was that on occasion, participants would move nodes accidentally while panning and exploring the chart (see @feedback-written).
+One way to address this issue would be to introduce different modes of interacting with the chart (e.g., "Edit Mode" and "Analysis Mode"), thus making the editing/moving of nodes and the pathfinding mutually exclusive.
 By disabling path calculation in an edit mode, the node selection functionality would also be available for bulk edits.
 
 == Existing Functionalities
@@ -66,7 +66,7 @@ Lastly, LLMs could be used to generate textual analyses regarding pacing along p
 
 == Internals
 
-Path calculation, especially including locks and keys, may become arbitrarily complex #todo("citation").
+Path calculation, especially including locks and keys with the multiplicities supported by the current data model, may become arbitrarily complex.
 In the current implementation however, it is fully performed in the frontend.
 In order to improve performance, an optimized implementation may be added in the backend.
 The aforementioned path snapshot functionality could be designed in such a way that allows the path calculation to leverage previously computed paths to reduce the computational load.

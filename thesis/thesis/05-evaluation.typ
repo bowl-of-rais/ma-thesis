@@ -302,13 +302,12 @@ Apart from visual inspection of histograms and box plots, data was analyzed usin
 All statistical tests used are non-parametric, i.e. do not assume normal distribution of the data.
 The Wilcoxon and Mann-Whitney U tests were conducted assuming a two-sided alternative hypothesis (i.e., the distributions differ in either direction) unless specified otherwise.
 For all tests, $p < 0.05$ is considered significant.
-#todo("make sure this is true lol")
 
 == User Study Results
 
 === Participants
 
-In total, 24 people participated in the study.
+In total, 24 people participated in the study, i.e., 6 per group.
 Ages ranged from 19 to 32 years, with an average of about 24 years.
 15 indicated their gender as male, 5 as female and 4 preferred not to say.
 Most participants reported an educational background in Games Engineering (13) or Informatics (5), with one participants having a Master's in Bioinformatics.
@@ -342,8 +341,8 @@ The two main metrics used to measure task completion are
 This part of the analysis will first compare the two task completion metrics between the tools across all participants, and then assess the impact of indicated whiteboard tool experience and use of Miro functionalities respectively.
 
 ===== Overall Task Completion
-Overall, participants claimed significantly less (Wilcoxon signed-rank test: $T = 48.5$, $p = 0.00564929988211376$) solvability issues in pix:e, see @fig:s-total.
-The overall answer quality as measured by the F1 score (see @fig:s-f1) is also significantly lower in pix:e (Wilcoxon signed-rank test, $T = 34.0$, $p = 0.0009066055498154164$).
+Overall, participants claimed significantly less (Wilcoxon signed-rank test: $T = 48.5$, $p approx 0.006$) solvability issues in pix:e, see @fig:s-total.
+The overall answer quality as measured by the F1 score (see @fig:s-f1) is also significantly lower in pix:e (Wilcoxon signed-rank test, $T = 34.0$, $p approx 0.001$).
 
 #grid(
     columns: 2,
@@ -360,10 +359,8 @@ The overall answer quality as measured by the F1 score (see @fig:s-f1) is also s
 
 #h(1.8em)
 ===== Impact of Whiteboard Tool Experience
-In pix:e, participants who indicated previous experience with whiteboard tools tended to claim more issues than participants, see @fig:s-total-by-wb-exp.
-median 1 for participants without whiteboard experience, 2 for participants with whiteboard experience, Mann-Whitney $U = 96.5$, $p < 0.05$.
+In pix:e, participants who indicated previous experience with whiteboard tools claimed significantly more issues (Mann-Whitney $U = 96.5$, $p < 0.05$) than participants who did not (see @fig:s-total-by-wb-exp).
 // #todo("effect size").
-#todo("difference between performance in Miro").
 However, the performance difference between the two tools still remains, as participants with whiteboard tool experience still identified significantly fewer issues in pix:e than in Miro (Wilcoxon signed-rank test: $T = 97.5$, $p < 0.05$).
 A similar effect can be observed for the F1 scores, as the median F1 score in pix:e is significantly higher (Mann-Whitney $U = 99.5$, $p < 0.05$) in participants who indicated previous whiteboard experience, see @fig:s-f1-by-wb-exp.
 //F1 medians 0.25 and 0.285, Mann-Whitney
@@ -388,8 +385,7 @@ Only 6 participants used any editing functionality in Miro.
 3 participants marked issues, 1 participant highlighted valid paths, and 2 participants tracked the available inventory for pathfinding.
 Of the 6 participants, 5 had indicated previous experience with whiteboard tools.
 As suggested by @fig:s-total-by-miro-usage and @fig:s-f1-by-miro-usage, there is no obvious impact of Miro tool use on the task completion metrics within Miro.
-#todo("phrasing") total issues identified: median 2 without Miro usage, 2.5 with Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$. //#todo("effect size?")
-F1: median 0.5 with Miro usage, 0.39285714285714285 without Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$.// #todo("effect size?")
+This is supported by the Mann-Whitney U test (total issues: $U = 57.5$, $p approx 0.417$, F1: $U = 57.5$, $p approx 0.417$).// #todo("effect size?")
 
 #grid(
     columns: 2,
@@ -411,13 +407,9 @@ Within pix:e, participants who reported previous experience with whiteboard tool
 A possible explanation for this observation is that pix:e may cater more to power users.
 Within Miro, participants who made use of built-in Miro functionalities did not achieve significantly better results than other participants.
 Basic Miro functionalities (without involved custom setup/templating) seem to be less suited to support users with this specific analytical task type.
-- #todo("reference feedback")
+// - #todo("reference feedback")
 
-==== Recorded Times
-
-- #todo("times to first identified issues")
-
-==== Differences Between Groups
+==== Differences Between Groups <s-completion-by-groups>
 
 To assess differences between the 4 user study groups, the two task completion metrics for both tools will be compared across all four groups, and additionally via the two variation dimensions (tool order and task version order).
 
@@ -441,8 +433,10 @@ While there is some variation in task completion metrics across the four groups 
 ===== First Tool
 There is no evidence for the distribution of total number of identified issues (see @fig:s-total-by-first-tool) in either tool differing based on which tool was used first (in pix:e: $U = 56.0$, $p approx 0.176$, in Miro: $U=  61.0$, $p approx 0.525$).
 Also, participants still claimed significantly more issues in Miro than pix:e, regardless of which tool was used first (Miro first: $U = 113.5$, $p approx 0.007$, pix:e first: $U=109.5$, $p approx 0.014$).
-However, for the F1 scores (see @fig:s-f1-by-first-tool), the tool order does seem to make a difference: The pix:e-first group achieved higher median F1 score in both tools, with the difference being significant according to the Mann-Whitney U test (in Miro: $U = 34.5$, $p approx 0.013$, in pix:e: $U = 36.0$, $p approx 0.018$).
-#todo("speculate why?") The difference in F1 scores between the two tools for the pix:e-first group remains significant ($U = 120.5$, $p approx 0.002$).
+However, for the F1 scores (see @fig:s-f1-by-first-tool), the tool order does seem to make a difference:
+The pix:e-first group achieved higher median F1 score in both tools, with the difference being significant according to the Mann-Whitney U test (in Miro: $U = 34.5$, $p approx 0.013$, in pix:e: $U = 36.0$, $p approx 0.018$).
+However, the difference in F1 scores between the two tools for the pix:e-first group remains significant (one-sided Mann-Whitney $U = 120.5$, $p approx 0.002$).
+A potential reason for the higher F1 score in participants of the pix:e-first group is that those participants were introduced to the different issue types more thoroughly due to the explanation of the different highlighting options in pix:e.
 
 #grid(
     columns: 2,
@@ -494,6 +488,39 @@ The distributions of F1 scores (see @fig:s-f1-a-vs-b) are comparable between the
     ) <fig:s-f1-a-vs-b> ])
 )
 
+==== Distribution of Issues Found Over Time
+
+In order to estimate how efficiently participants were able to complete the task, this section analyzes how long it took participants to identify solvability issues.
+The time it took each participant to identify their first issue was extracted from the timestamped data.
+Additionally, an estimate of times spent to identify each issue was calculated as the delta between subsequent identified issues.
+Both the initial timestamp and the calculated deltas may contain additional time spent on clarifications or comments.
+
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/solvability-first-issue-events-hist.png"),
+        caption: "Distribution of first issue found events across time"
+    ) <fig:first-ife> ]),
+    grid.cell([#figure(
+        image("assets/05/solvability-first-issue-events-map-box.png"),
+        caption: "Distribution of first issue found events across time by tool"
+    ) <fig:first-ife-by-tool> ])
+)
+
+As visualized in @fig:first-ife, there is split in how long it took participants to identify a first issue in pix:e.
+This seems to be caused by the different task variants: as seen in @fig:first-ife-by-tool, the time to first issue tends to be higher for task variant B.
+While the task completion metrics were not distributed significantly differently between the four groups, the median number of total issues claimed was lowest for those assigned task B in pix:e (see @s-completion-by-groups).
+This may be caused by task variant B being structured less clearly than its counterpart, as there is an early branching in the possible paths (see @dungeon-la4-miro, room 3).
+In combination with the identified usability issues in pix:e (e.g., low contrast of nodes against the background, see @feedback-written), participants may have needed more time to orient themselves in the chart.
+
+The estimated times it took participants to identify each issue are distributed relatively similarly across both tools and task variants (see @solvability-deltas-by-variant).
+
+#figure(
+    image("assets/05/solvability-issue-event-deltas-map-box.png"),
+    caption: "Distributions of time deltas between issue found events by tool and task variant"
+) <solvability-deltas-by-variant>
+
 === Results Pacing
 
 This sub-section presents the results for the pacing analysis task in terms of task completion, again compared between the two tools and additional stratifications (such as previous experience of participants with whiteboard tools or the different user study groups).
@@ -535,9 +562,10 @@ There is a slight trend towards a higher median in total and correct answers in 
 #h(1.8em)
 ===== Impact of Whiteboard Tool Experience
 Within pix:e, participants with whiteboard experience tended to answer significantly more questions (see @fig:p-total-by-wb-exp): the median 4 with whiteboard experience, 3 without whiteboard experience, Mann-Whitney $U = 103.5$, $p approx 0.015$.
-They also gave significantly more correct answers (see @fig:p-right-by-wb-exp): median 3 with whiteboard experience, 2 without, Mann-Whitney $U = 103.0$, $p approx 0.017$.
-- slight skews in median/distribution: number of answered questions higher in pix:e than miro for participants with whiteboard experience, total number and number of correct answers lower in pix:e than Miro for people without whiteboard experience.
-However, the differences in distribution do not seem to be statistically significant (Wilcoxon signed-rank test: $T = 38.0$, $p approx 0.326$ for total answers in pix:e vs Miro from participants with Whiteboard experience, $T = 15.0$, $p approx 0.207$ for total answers from participants without whiteboard experience)
+They also gave significantly more correct answers (see @fig:p-right-by-wb-exp, Mann-Whitney $U = 103.0$, $p approx 0.017$).
+
+There are some slight skews in median/distribution between the two tools: the number of answered questions tends to be higher in pix:e than Miro for participants who indicated experience with whiteboard tools, while both the total number of answered questions and the number of correct answers tends to be lower in pix:e than Miro for people who did not.
+However, the differences in distribution do not seem to be statistically significant (Wilcoxon signed-rank test: $T = 38.0$, $p approx 0.326$ for total answers in pix:e vs Miro from participants with Whiteboard experience, $T = 15.0$, $p approx 0.207$ for total answers from participants without).
 
 #grid(
     columns: 3,
@@ -560,9 +588,11 @@ However, the differences in distribution do not seem to be statistically signifi
 
 #h(1.8em)
 ===== Impact of Miro Tool Usage
-- control for usage of Miro functionalities (6 participants): 1x sticky note color change to highlight a node/room, 4x calculations in textbox/sticky note/via pen, 1x recording path in textbox
-- median of total answered questions and correctly answered questions in Miro lower for participants using functionality in Miro (see @fig:p-total-by-miro-usage and @fig:p-right-by-miro-usage), but not significantly so (Mann-Whitney test: $U = 32.5$, $p=0.07540184146884174$ for total answers, $U = 33.5$, $p=0.08497339144083382$ for correct answers).
-- also, median for total number of answered questions and number of correctly answered questions larger in pix:e than miro for participants using Miro functionality, but not statistically significant (Wilcoxon signed-rank test: $T = 11.0$, $p=0.1875$ for total answers, $T=13.5$, $p=0.296875$ for correct answers)
+Again, 6 participants used additional functionalities in Miro. 1 participant changed sticky note colors to highlight specific nodes, 4 participants noted down calculations in textboxes, sticky note, or using the pen tool, and 1 participant recorded a valid path in a textbox.
+
+The median of total answered questions and correctly answered questions in Miro skews lower for participants using functionality in Miro (see @fig:p-total-by-miro-usage and @fig:p-right-by-miro-usage), but not significantly so (Mann-Whitney test: $U = 32.5$, $p approx 0.0754$ for total answers, $U = 33.5$, $p approx 0.085$ for correct answers).
+Additionally, the median for the total number of answered questions and the number of correctly answered questions is larger in pix:e than Miro for participants who did use Miro functionality.
+The difference is however not statistically significant (Wilcoxon signed-rank test: $T = 11.0$, $p approx 0.1875$ for total answers, $T=13.5$, $p approx 0.297$ for correct answers)
 
 #grid(
     columns: 3,
@@ -586,16 +616,12 @@ However, the differences in distribution do not seem to be statistically signifi
 #h(1.8em)
 ===== Summary
 Overall, the data showed no significant difference in task completion and answer quality between tools for the pacing analysis task.
-within pix:e, participants with whiteboard experience achieved better results than participants without.
-within Miro, participants using Miro functionalities did not achieve better results than participants not using Miro functionalities.
+Within pix:e, participants who indicated previous experience with whiteboard tools achieved better results than participants without.
+Within Miro, participants using Miro functionalities even achieved slightly weaker results than participants not using Miro functionalities.
 
-- possible explanation/interpretation: similar to first task.
-pix:e caters better to power users.
-Miro functionalities (without involved custom setup/templating) seem to be less suited to support users with this specific analytical task type.
-
-==== Recorded Times
-
-- #todo("time per question")
+This points to a similar interpretation as in the solvability task:
+pix:e likely caters better to power users.
+Another insight is that Miro functionalities (without involved custom setup/templating) seem to be less suited to support users with this specific analytical task type, highlighting the need for a dedicated pacing analysis tool.
 
 ==== Differences Between Groups
 
@@ -623,9 +649,11 @@ A possible explanation for this contrast is that as task B is apparently more ch
 
 #h(1.8em)
 ===== First Tool
-In Miro, there is a significant difference in task completion metrics between Miro-first and pix:e-first groups in both total answers (Mann-Whitney $U = 23.0$, $p approx 0.002$) and correct answers (Mann-Whitney $U = 39.0$, $p approx 0.027$).
+In Miro, the pix:e-first groups achieved significantly higher metrics compared to the Miro-first groups, both in terms of total answers (Mann-Whitney $U = 23.0$, $p approx 0.002$) and correct answers (Mann-Whitney $U = 39.0$, $p approx 0.027$).
 In pix:e, there is no such difference (Mann-Whitney $U = 67.5$, $p approx 0.813$ for total answers, $U = 70.5$, $p approx 0.953$ for correct answers).
-#todo("interpret")
+
+A possible interpretation may be that the visualizations provided by the diagrams allowed participants of the pix:e-first group to gain a better understanding of the data needed to answer the questions.
+They may consequently have been better equipped to approach the task in Miro.
 
 #grid(
     columns: 2,
@@ -684,11 +712,43 @@ The median of wrongly answered questions is higher for task variant B, though th
 
 These observations point to the conclusion that for the pacing analysis task, variant B may have been more challenging than variant A.
 
+==== Distribution of Times Taken Per Answers
+
+Analogously to the results of the solvability task, this section analyzes how long it took participants to answer questions to obtain an estimate for how efficiently participants were able to complete the task.
+Based on the timestamps attached to answers, an estimate of times spent on each question was calculated as the delta between subsequent answers.
+These deltas may contain additional time spent on clarifications or comments.
+
+/*
+#grid(
+    columns: 2,
+    inset: (x: 5pt, y: 5pt),
+    grid.cell([#figure(
+        image("assets/05/pacing-answer-events-hist.png"),
+        caption: "Distribution of all answer events across time"
+    ) <fig:all-ife> ]),
+    grid.cell([#figure(
+        image("assets/05/pacing-answer-event-deltas.png"),
+        caption: "Distribution of deltas between answer events"
+    ) <fig:first-ife> ])
+)
+*/
+
+As seen in @answer-event-deltas-by-tool-and-map, the distributions of times participants took for each answer are overall comparable across tools and task variants.
+The distribution skews a little higher for task variant B in pix:e.
+This corroborates the insight based on the task completion metrics that task variant B may be more challenging.
+However, in terms of tools, participants achieved similar, if not slightly better task completion metrics in pix:e.
+One possible explanation considering the time deltas is that participants did not have to perform manual pathfinding in pix:e and therefore were able to consider the questions more thoroughly in pix:e.
+
+#figure(
+    image("assets/05/pacing-answer-deltas-by-variant.png"),
+    caption: "Distributions of delta between answer timestamps by tool and map"
+)<answer-event-deltas-by-tool-and-map>
+
 === Results UEQ-S
 
 The UEQ-S consists of 8 items divided into 2 categories:
-- pragmatic quality ("relate to the tasks or goals the user aims to reach") and
-- hedonic quality ("related to pleasure or fun while using the product")
+- Pragmatic quality ("relate to the tasks or goals the user aims to reach" #cite(<schreppDesignEvaluationShort2017>)) and
+- Hedonic quality ("related to pleasure or fun while using the product" #cite(<schreppDesignEvaluationShort2017>))
 
 Each item is a pair of opposing adjectives, and participants were asked to place StatePx on a 7-point scale between the adjectives.
 This translates to a numeric scale ranging from -3 to 3.
@@ -700,8 +760,6 @@ It provides mean scores for each item and rates the pragmatic, hedonic, and over
   image("assets/05/ueq-mean-value-per-item.png"),
   caption: "Mean values per item in the UEQ-S"
 ) <fig:ueqs-means>
-
-#todo("remove title on top")
 
 @fig:ueqs-means shows the mean scores for each item, with the items measuring pragmatic quality colored navy and the items measuring hedonic quality colored yellow.
 The fourth and weakest item is the pair "confusing vs clear".
@@ -735,7 +793,7 @@ Overall, participants indicated a preference for StatePx over Miro, though answe
 This result is in line with the high hedonic quality indicated by the UEQ-S.
 
 A higher score variance/split is observed in participants with whiteboard tool experience in the first three questions, see @app-cq-by-wb-exp.
-For last question however, participants who indicated previous experience with whiteboard tools indicated a particularly strong preference for pix:e as seen in in @cq4-wb-exp.
+For last question however, participants who indicated previous experience with whiteboard tools indicated a particularly strong preference for pix:e as seen in in @cq4-wb-exp (median 5 in participants with, 4 in participants without).
 Answers for the first three questions may be divided because on one hand, these participants may be more used to a Miro-like UI and thus more comfortable using Miro, but on the other hand, they may also be better equipped to recognize the advantage of a dedicated tool compared to a generic whiteboard tool.
 
 #figure(
@@ -745,32 +803,44 @@ Answers for the first three questions may be divided because on one hand, these 
 
 === Written Feedback from Participants <feedback-written>
 
-- context: once after first part of user study (not described here #todo("add to appendix + reference?")), once at very end of study
-- see complete (relevant) freeform answers in Appendix @app-written-feedback
+Written freeform feedback was collected once after the first part of user study (see Task 1 in @app-us-tasks), and once at the very end of study.
+The complete answers are presented in the appendix (@app-written-feedback).
+Each answer is assigned a tag, which is used here to refer to specific answers.
+This section describes the feedback specific to the features implemented as part of this thesis.
 
-==== Usability/UI
+In terms of UI and usability, participants noted the following points.
+5 participants reported confusion about how to add locks due to the menu placement (FQ1-A3, FQ1-A9, FQ1-A10, FQ1-A17, FQ1-A20).
+This was to be expected as the current UI is only a workaround.
+3 participants suggested that keys should be included in the node context menu (FQ1-A4, FQ1-A5, FQ1-A12).
+Especially in the zoomed out view, 4 participants found the contrast between background and nodes to be too little (FQ2-A4, FQ2-A5, FQ2-A8, FQ2-A13), and 3 participants criticized a missing level of detail (FQ2-A9, FQ2-A11, FQ2-A15).
+1 participant reported accidentally moving nodes while panning (FQ2-A9). 
+Another participant expressed confusion about the diagram tick labels (FQ2-A2), as with longer paths, only every second node was labeled on the x axis.
+5 participants mentioned that locks should be visually distinguishable (FQ2-A0, FQ2-A3, FQ2-A5, FQ2-A12, FQ2-A15)
 
-- issues/confusion when adding locks (5x) due to menu placement
-- addition of keys not included in right-click menu of nodes (2x)
-- low contrast between background and nodes (6x)
+Additionally, some participants (e.g., FQ1-A13) reported confusion about the fact that bombs were modeled using keys.
+This is however not an issue with the implemented features, but rather a modeling decision.
 
-==== Functionality
-
-- locks not visually distinguishable (6x)
-- confusion about diagram tick labels
-- sum/average in diagrams, more interactivity in general
-- unclear highlighting in pathfinding (2x)
+With regards to functionality, 3 participants suggested specific functions for calculating sums and averages in diagrams (FQ2-A2, FQ2-A5, FQ2-A15).
+One participant desired more general interactivity in diagrams (FQ2-A7), likely to analyze specific sections of a path more closely (e.g., by zooming in on specific parts).
+As for the pathfinding and solvability features, two participants found the highlighting insufficient as feedback (FQ2-A6, FQ2-A14), and two expressed a desire for more details about intermediate states during pathfinding (FQ2-A10, FQ2-A14), including analyzed paths and which keys may be available in each node.
 
 === Observed Behavior and Verbal Feedback from Participants <observed-verbal>
 
-- all protocol data, thus may contain human error
-- contains: verbal comments/questions while completing the tasks, specific approaches to tool use, verbal feedback
+In addition to the written feedback collected from participants directly, the study protocols include valuable observations about how participants used pix:e and verbal comments from participants.
+As these protocols were created manually while conducting the study, they may be incomplete or slightly inaccurate.
+However, they still offer some further insight into how participants used pix:e.
+The full list of notes is provided in @app-protocol-observations and summarized in this section.
 
-- 5 participants required clarification that all locks were visualized by the same symbol (4 of them completed the task in Miro first, thus may have been primed to expect similar visualization)
-- 10 participants did some form of successive pathfinding in pix:e.
-selecting of various goal nodes for the given start node and subsequent identification of locked edges as those between a node reachable from the start and a node not reachable from the start
-- 3 participants (all Miro-first groups) asked whether enemies respawn for the pacing task. while unclear in task description, still notable that only Miro-first participants asked this. setup in pix:e may have primed participants to understand the respawn implicitly and apply the same principle in Miro. -> potential improvement for diagrams setup, users should be prevented from making/falling victim to implicit assumptions!
+5 participants required clarification that all locks were visualized by the same symbol.
+4 of those participants completed the task in Miro first, thus may have been primed to expect similar visualization.
+This issue was also mentioned multiple times in the written feedback.
 
+10 participants performed a reachability analysis in pix:e by way of successive pathfinding, i.e., selecting different target nodes for the given start node.
+This corroborates the written feedback about providing more insight into which paths were explored during pathfinding.
+
+Lastly, 3 participants (all in Miro-first groups) asked whether enemies respawn for the pacing task.
+While this was indeed unclear from the task description, it is still notable that only Miro-first participants considered the option that enemies may not respawn. The pacing diagrams in pix:e always show values for nodes that occur multiple times on a path.
+This may have primed pix:e-first participants to understand the respawn implicitly and apply the same principle in Miro.
 /*
 === Validity of A/B Test
 
@@ -780,12 +850,15 @@ selecting of various goal nodes for the given start node and subsequent identifi
 
 == Limitations
 
-- data collection: human errors
-- not all functionality included (e.g. soft gates, creation of component/lock/key definitions, play time on x axis in diagrams, broader functionalities of pix:e)
+A main limitation of this study is that time constraints prohibited a proper pilot study, which may have given insight into the more glaring usability issues and differences between task versions.
+
+Additionally, as mentioned previously, the manual data processing methods may have resulted in minor errors in the analyzed data.
+
+Lastly, not all functionality was included in the study (e.g. soft gates, creation of component/lock/key definitions, plotting values against play time).
 
 == Post-Study Improvements
 
-An initial round of improvements was implemented after the study based on the collected feedback and observations. #todo("reference?")
+After an initial assessment of the collected data and feedback, one round of improvements was implemented to address a number of issues that were both common and reasonably simple to fix.
 
 This subsection describes the implementation strategy and outcome for each of the improvements.
 
@@ -849,14 +922,14 @@ To align the visual representation of lock and key types throughout the player e
 
 === Reachability Analysis
 
-Many participants #todo("number + reference") either explicitly reported missing a reachability analysis functionality in open feedback or were observed to conduct a reachability analysis during the solvability task on their own (10 participants, see @observed-verbal).
+A notable number of participants were observed to conduct a reachability analysis during the solvability task on their own (10 participants, see @observed-verbal).
 
 Implementation of this improvement is straightforward as the underlying Dijkstra algorithm already performs an implicit reachability analysis.
 In particular, it tracks distances of nodes from the start nodes, with the initial value being `Infinity`.
-#todo("explain this better") Consequently, all nodes with distance < `Infinity` after the algorithm has concluded are reachable and can simply be filtered for.
+Consequently, all nodes with distance < `Infinity` after the algorithm has concluded are reachable and can simply be filtered for.
 
 In case of failed pathfinding, unreachable nodes are then highlighted (see @improved-reachability).
-#todo("confirm/wait for julian's pr feedback")
+// #todo("confirm/wait for julian's pr feedback")
 
 #figure(
     image("assets/05/pixie-improved-reachability-analysis.png", width: 50%),

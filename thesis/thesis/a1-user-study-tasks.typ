@@ -49,7 +49,7 @@ This section contains the task descriptions for all tasks (including the first p
 #figure(
   image("assets/05/la4-miro.png"),
   caption: "LA_4 representation in Miro"
-)
+) <dungeon-la4-miro>
 
 #figure(
   image("assets/05/la4-pixie.png"),

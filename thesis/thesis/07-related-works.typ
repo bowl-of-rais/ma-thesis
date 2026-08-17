@@ -3,29 +3,32 @@
 
 = Related Works <id>
 
-== Inventory-Based Search Algorithms
+== Lock-and-Key Puzzles
 
-#todo("explain concept and what of it is relevant to here, what of it is not")
+A lot of research concerning lock-and-key puzzles revolves around procedural generation of dungeons or levels with locks and keys #cite(<pereiraEvolvingDungeonMaps2018>), #cite(<ruelaEvolvingLockandkeyPuzzles2018>), #cite(<vianaFeasibleInfeasibleTwoPopulation2022>).
 
-- context: inventory relevant in games, impact on path planning/finding 
-- difference: inventory-based jump-point search #cite(<aversaPathPlanningInventoryDriven2015>) is grid-based. statechart could be mapped to grid, but would probably be suboptimal because nodes have generally low rank and don't necessarily conform to neighboring structure of a grid. - bridge: concept of inventory is still relevant, though.
+In that context, any analysis of lock-and-key puzzles is done automatically and with the goal of generating a variety of puzzles and is concerned with many parameters that users of pix:e would model manually, such as the number of nodes or density of distributed keys.
 
-#cite(<aversaPruningPreprocessingMethods2016>, form: "prose") presents pruning and pre-processing methods for inventory-aware pathfinding in the context of grid maps.
+Automated analysis of lock-and-key puzzles in terms of feasibility or fitness could be integrated into pix:e's analysis functionalities to further guide game designers in the process of designing structures with locks and keys.
+However, such an implementation was out of scope for this thesis.
 
-== Petri Nets
+== Inventory-Based Search
 
-#todo("explain petri nets")
+As inventories are a highly relevant concept in games, inventory-based path planning has been studied in the context of games.
+For instance, #cite(<aversaPathPlanningInventoryDriven2015>) present a so-called inventory-based jump-point search.
+Like the algorithm implemented in this thesis, it is based on the concept of an inventory.
+However, it is grid-based and focuses more on use-cases such as path planning on in-game maps, which imposes different constraints on how the search space may be explored.
 
-- difference: focus/targets a different problem, petri nets consider time to model concurrency in distributed systems. associated algorithms are more about reachability
-- bridge:
+//#cite(<aversaPruningPreprocessingMethods2016>, form: "prose") present pruning and pre-processing methods for inventory-aware pathfinding in the context of grid maps.
 
-== Analysis of Lock-and-Key Puzzles
 
-A lot of research concerning the intricacies of lock-and-key puzzles revolves around procedural generation of dungeons or levels with locks and keys.
-Therefore, any analysis of lock-and-key puzzles is done automatically and with the goal of generating a variety of puzzles.
-Typically, locks and keys in this low-level context refer to literal locks and keys.
-- context: approaches for procedural generation of lock-and-key puzzles: #cite(<pereiraEvolvingDungeonMaps2018>), #cite(<ruelaEvolvingLockandkeyPuzzles2018>), #cite(<vianaFeasibleInfeasibleTwoPopulation2022>)
-- In contrast, this thesis revolves about modeling and analyzing game progression with locks and keys.
-- bridge: generation involves guidelines/feasibility checks to ensure puzzles are solvable, and may be jumping-off point for analysis of lock-and-key puzzles
+//== Petri Nets
+
+//#todo("explain petri nets")
+
+//- difference: focus/targets a different problem, petri nets consider time to model concurrency in distributed systems. associated algorithms are more about reachability
+//- bridge:
+
+
 
 #load-bib()

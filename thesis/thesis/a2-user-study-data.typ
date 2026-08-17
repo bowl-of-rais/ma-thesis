@@ -60,4 +60,18 @@ After entire user study: "Anything else you want to tell us?"
   ]
 )
 
+== Observations in Protocol <app-protocol-observations>
+
+#block(
+  //fill: rgb("e4e5ea"),
+  stroke: 1pt + gray,
+  inset: (left: 5pt, rest: 15pt),
+  radius: 4pt,
+  width: 100%,
+  breakable: true, [
+    #include "assets/app/user-study-protocol.typ"
+  ]
+)
+
+
 #load-bib()

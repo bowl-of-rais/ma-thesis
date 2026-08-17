@@ -37,18 +37,22 @@
   school: "School of Computation, Information and Technology \n Informatics",
   supervisor: "Prof. Dr. Georg Groh",
   advisors: ("Julian Geheeb M.Sc.",),
-  author: "Rai Trouvain",
+  author: "Mira Trouvain",
   startDate: "17.11.2025",
   titleEn: "Extension of Pacing Diagrams and Pacing Analysis in pix:e",
-  titleDe: "Erweiterung von Pacing-Diagrammen und Pacing Analysis in pix:e",
+  titleDe: "",
   abstractEn: [
-    *Background/Motivation*: #todo("Why did you study the problem?")
-    *Objective/Problem Statement*: #todo("What problem are you trying to solve?")
-    *Approach*: , two features were added to extend the statechart in pix:e: path-based pacing diagrams and modeling and solvability analysis of lock-and-key puzzles.
-    *Results*: #todo("add task completion results"). Still, participants indicated a preference for pix:e over Miro and gave it an average overall UEQ-S score of 1.104. #todo("summarize feedback?")
-    *Implications*: The features contributed to pix:e, as well as the system itself, are generally appealing to prospective users. With the suggested improvements, it has the potential to #todo("")],
-  // abstractDe: [#todo[Hier kommt die deutsche Übersetzung des englischen Abstracts hin]],
-  //acknowledgements: [],
+    *Background/Motivation*:
+    pix:e is a game design toolkit that, amongst other features, allows game designers to model player experience.
+    *Objective/Problem Statement*:
+    This thesis extends pix:e's capability to model and analyze player experiences,
+    *Approach*: which includes the implementation of pacing diagrams as well as the addition of lock-and-key puzzles including a solvability analysis. Both features were evaluated in a user study against Miro, a general-purpose whiteboard tool.
+    *Results*: Participants of the study indicated a clear preference for pix:e over Miro and showed interest in the features implemented in this thesis.
+    While pix:e in its evaluated state was not able to provide better support than Miro to participants in the presented tasks, numerous points of improvement were identified.
+    *Implications*: The features contributed to pix:e, as well as the system itself, are generally appealing to prospective users. With the suggested improvements, it has the potential to become a powerful tool for modeling and analyzing player experience.
+  ],
+  // abstractDe: [],
+  acknowledgements: [I would like to thank my advisor Julian for his guidance and my friends for supporting me through this thesis.],
   submissionDate: datetime.today().display("[day].[month].[year]"),
   showTitleInHeader: true,
   draft: draft,
@@ -127,7 +131,7 @@
 
 // Set citation style
 //#set cite(style: "alphanumeric")
-#set cite(style: "association-for-computing-machinery")
+#set cite(style: "ieee")
 
 
 // Table stroke
@@ -215,7 +219,7 @@
 
 #include("thesis/a1-user-study-tasks.typ")
 #include("thesis/a2-user-study-data.typ")
-#include("thesis/a3-further-evaluation.typ")
+// #include("thesis/a3-further-evaluation.typ")
 
 
 // List of Acronyms.
