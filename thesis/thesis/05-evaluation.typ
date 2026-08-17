@@ -107,13 +107,13 @@ For instance, when passing through one portion (one screen) of a room, any enemi
   columns: 2,
   grid.cell([
     #figure(
-      image("assets/05/multi-screen-room-example-la2.png", width: 90%),
+      image("assets/05/multi-screen-room-example-la2.png", width: 95%),
       caption: [Example of a multi-screen room in level LA_2 #cite(<summervilleVGLCVideoGame2016>)]
     ) <multiscreen-example>
   ]),
   grid.cell([
     #figure(
-      image("assets/05/multi-screen-numbering-example-miro.png", width: 90%),
+      image("assets/05/multi-screen-numbering-example-miro.png", width: 95%),
       caption: "Modeling of a multi-screen room in Miro"
     ) <multiscreen-node-numbers>
   ])
@@ -185,7 +185,7 @@ Full-size images and pix:e versions are included in @app-s-dungeons.
   inset: 5pt,
   grid.cell([
     #figure(
-      image("assets/05/la3-vglc.png"),
+      image("assets/05/la3-vglc.png", width: 100%),
       caption: [Annotated screen captures of LA_3 from the VGLC #cite(<summervilleVGLCVideoGame2016>)]
     ) <la3-vglc>
   ]),

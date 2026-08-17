@@ -1,4 +1,4 @@
-#import "@preview/exzellenz-tum-thesis:0.1.0": exzellenz-tum-thesis
+#import "@preview/exzellenz-tum-thesis:0.2.1": exzellenz-tum-thesis
 
 #import "utils.typ": inwriting, draft, todo
 #import "glossary.typ": glossary
@@ -35,13 +35,13 @@
   degree: "Master",
   program: "Informatics",
   school: "School of Computation, Information and Technology \n Informatics",
-  supervisor: "Prof. Dr. Georg Groh",
-  advisors: ("Julian Geheeb M.Sc.",),
+  examiner: "Prof. Dr. Georg Groh",
+  supervisors: ("Julian Geheeb M.Sc.",),
   author: "Mira Trouvain",
-  startDate: "17.11.2025",
-  titleEn: "Extension of Pacing Diagrams and Pacing Analysis in pix:e",
-  titleDe: "",
-  abstractEn: [
+  //startDate: "17.11.2025",
+  title-en: "Extension of Pacing Diagrams and Pacing Analysis in pix:e",
+  title-de: "",
+  abstract-text: [
     *Background/Motivation*:
     pix:e is a game design toolkit that, amongst other features, allows game designers to model player experience.
     *Objective/Problem Statement*:
@@ -53,8 +53,8 @@
   ],
   // abstractDe: [],
   acknowledgements: [I would like to thank my advisor Julian for his guidance and my friends for supporting me through this thesis.],
-  submissionDate: datetime.today().display("[day].[month].[year]"),
-  showTitleInHeader: true,
+  submission-date: datetime.today().display("[day].[month].[year]"),
+  show-title-in-header: true,
   draft: draft,
 )
 

@@ -146,7 +146,7 @@ Assignments of multiple kinds of locks can be added or removed in the modal by a
 The key icon in each row shows the unlocking key definitions for the corresponding lock type on hover.
 
 #figure(
-  image("assets/04/pixie-edit-lock-modal.png", width: 50%),
+  image("assets/04/pixie-edit-lock-modal.png", width: 60%),
   caption: "Modal for creating/editing lock assignments for an edge"
 ) <edit-lock-modal>
 
@@ -250,8 +250,20 @@ Ignoring consumable keys: to unlock this edge, one could use the key sets ${X, Z
 */
 
 @unlock-example-success shows a case in which the edge can be unlocked: the available inventory $I = {X, Z}$ contains at least one matching key for each lock.
+
+#figure(
+    image("assets/04/example-unlock-check-success.drawio.png", width:75%),
+    caption: "Example: Unlock possible with available keyset"
+) <unlock-example-success>
+
 In contrast, @unlock-example-failure shows a case in which the edge cannot be unlocked. The inventory $I = {X, Y}$ is not a superset of either unlocking keyset and does not contain a matching key for lock $C$.
 
+#figure(
+    image("assets/04/example-unlock-check-failure.drawio.png", width:75%),
+    caption: "Example: Unlock not possible with available keyset"
+) <unlock-example-failure>
+
+/*
 #grid(
   columns: 2,
   grid.cell[
@@ -267,6 +279,7 @@ In contrast, @unlock-example-failure shows a case in which the edge cannot be un
     ) <unlock-example-failure>
   ],
 )
+*/
 
 // #todo("add example in pix:e?")
 
@@ -352,7 +365,7 @@ In this case, keys of type $X$ are consumable, so to unlock the two locks $A$ an
 The inventory $I = {X, Z}$, with which all locks in the initial example could be unlocked, cannot unlock all three locks when $X$ is consumable.
 
 #figure(
-  image("assets/04/example-unlock-check-consumable-failure.drawio.png", width: 75%),
+  image("assets/04/example-unlock-check-consumable-failure.drawio.png", width: 80%),
   caption: "Example: Unlock not possible due to key consumption"
 ) <unlocking-multi>
 
@@ -453,7 +466,7 @@ Edges were then configured to render with different markers: regular arrows for 
 Due to the limitations described in @instantiating-locks, another toolbar button was added to allow users to change the directionality of a selected edge (see @edge-direction-button).
 
 #figure(
-  image("assets/04/pixie-edit-edge-buttons.png"),
+  image("assets/04/pixie-edit-edge-buttons.png", width:90%),
   caption: "Button (rightmost in the toolbar) for toggling directionality of a selected edge"
 ) <edge-direction-button>
 
@@ -513,7 +526,7 @@ In contrast, backtracking causes nodes to have differing inventories based on wh
 As seen in @pixie-backtracking, valid paths that contain backtracking are highlighted the same way as regular paths.
 
 #figure(
-    image("assets/04/pixie-example-backtracking.png"),
+    image("assets/04/pixie-example-backtracking.png", width: 90%),
     caption: "Path with backtracking highlighted in pix:e"
 ) <pixie-backtracking>
 
