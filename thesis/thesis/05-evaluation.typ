@@ -14,7 +14,7 @@
 
 = Evaluation <eval>
 
-The implemented functionalities were evaluated via a user study.
+The implemented functionalities were evaluated with a user study.
 This section describes the methodology of the study, including the overall setup and design, and presents its results.
 
 == Methodology
@@ -24,12 +24,9 @@ It then details the chosen use case and task designs and outlines the collected 
 
 === Goal
 
-The main questions the user study was intended to answer are whether the implemented analysis functionalities are
-1. helpful and
-2. interesting.
-
+The user study's main questions were whether the implemented analysis functionalities are both helpful and interesting.
 To assess the helpfulness aspect, participants were given tasks designed to evaluate the impact of the tool on their performance.
-The aspect of interest was then captured via questionnaires and additional participant feedback.
+Their interest was then captured via questionnaires and additional participant feedback.
 
 === High-Level User Study Design
 
@@ -37,7 +34,7 @@ The evaluation of the functionalities implemented as part of this work was the s
 The first part of the study was concerned with assessing the usability of the system.
 In particular, participants were asked to model a Zelda dungeon in the tool, including locks and keys.
 Consequently, participants were already familiarized with the use case context and basic functions of the tool when approaching the tasks described here.
-Task-specific functionalities (e.g., pathfinding and highlighting, as well as configuration of diagrams) were introduced to the participants prior to the respective tasks.
+Task-specific functionalities (e.g., pathfinding and highlighting, as well as configuration of diagrams) were introduced to the participants prior to the respective tasks (see @app-us-tasks).
 
 The general setup for this evaluation was a within-subject or repeated measures study, in which participants completed the tasks once in StatePx and once in another tool.
 The two task variants necessary for this setup as well as a varying order of tools resulted in the four groups shown in @user-study-groups.
@@ -51,25 +48,28 @@ The two task variants necessary for this setup as well as a varying order of too
       [], [*Miro first*], [*StatePx first*],
   ),
   [*Variant A first*],
-  [MA],
-  [PA],
+  [AM],
+  [AP],
   [*Variant B first*],
-  [MB],
-  [PB],
+  [BM],
+  [BP],
   ),
   caption: "Definition of the 4 user study participant groups"
 ) <user-study-groups>
 
 The chosen baseline tool was Miro, a general-purpose whiteboard tool that is used as a game design tool.
-As a notable example, it was used in the development of "Subnatica: Below Zero" to create the in-game world's layout and how players may progress through it. #cite(<flayraUsingMiroGame2021>).
+As a notable example, it was used in the development of "Subnautica: Below Zero" to create the in-game world's layout and how players may progress through it. #cite(<flayraUsingMiroGame2021>).
 
 To restrict the overall time per participant, especially in context of the joint study design, the tasks were designed in such a way that participants were given a set amount of time (5 minutes) for each task variant.
 
 The target demographic was people with some understanding of game design.
-Participants were thus mainly recruited in a university lecture from a games engineering study course, though participants also included computer science students with some familiarity with videogames.
+Participants were thus mainly recruited in a university lecture from a games engineering study course, though participants also included computer science students with some familiarity with video games.
 
 The study was conducted exclusively in person.
 For details on data collection, see @eval-data-collection.
+
+User study participants only interacted with the player experience module.
+It was thus presented as a stand-alone tool called "StatePx".
 
 === Task Designs
 
@@ -78,7 +78,6 @@ Splitting the evaluation into two tasks reduced the context required to understa
 The "Pacing Analysis" task assumed an understanding of pathfinding including locks and keys and was placed after the "Solvability" task.
 
 For the complete task description including all dungeons and the respective answer keys, see @app-us-design.
-#todo("add to appendix")
 
 ==== Zelda Dungeons from the VGLC dataset
 
@@ -108,13 +107,13 @@ For instance, when passing through one portion (one screen) of a room, any enemi
   columns: 2,
   grid.cell([
     #figure(
-      image("assets/05/multiscreen-room-example-la2.png", width: 90%),
+      image("assets/05/multi-screen-room-example-la2.png", width: 90%),
       caption: [Example of a multi-screen room in level LA_2 #cite(<summervilleVGLCVideoGame2016>)]
     ) <multiscreen-example>
   ]),
   grid.cell([
     #figure(
-      image("assets/05/multiscreen-numbering-example-miro.png", width: 90%),
+      image("assets/05/multi-screen-numbering-example-miro.png", width: 90%),
       caption: "Modeling of a multi-screen room in Miro"
     ) <multiscreen-node-numbers>
   ])
@@ -123,7 +122,7 @@ For instance, when passing through one portion (one screen) of a room, any enemi
 #h(1.8em)
 ===== Modeling Dungeons in pix:e vs Miro
 In pix:e, each room was modeled by a node.
-Any keys, items, and other room data were modeled by the built-in functionalities.
+Any keys, and key-like items (e.g. bombs) were modeled as `PxKeys`, and other room data were modeled as `PxComponents`.
 The resulting visualization is as described previously in @impl-diagrams and @impl-lk.
 
 Miro as a general-purpose whiteboard tool offers sticky notes that can be connected by arrows/lines.
@@ -146,13 +145,14 @@ Before starting the task in pix:e, participants were also given a demonstration 
 
 In both tools participants were allowed to use any tool functionalities.
 In Miro, this for instance includes using the pen tool to draw in paths or marking found issues with text or sticky notes.
-An example in pix:e apart from the aforementioned pathfinding/highlighting functions would be fixing issues after reporting to perform pathfinding under different conditions.
+As for pix:e, participants were permitted to use the aforementioned pathfinding/highlighting functions and fix issues (e.g., add a missing key) after reporting them.
+This would have allowed them to perform pathfinding under different conditions and find issues in previously unreachable parts of the chart.
 
-The dungeons chosen for the two variants of this tasks were the third (LA_3) and fourth (LA_4) dungeons from "Link's Awakening" (LA_3 and LA_4 in #cite(<summervilleVGLCVideoGame2016>)).
+The dungeons chosen for the two variants of this tasks were the third (LA_3) and fourth (LA_4) dungeons from "Link's Awakening" (LA_3 and LA_4 in #cite(<summervilleVGLCVideoGame2016>, form: "prose")).
 Dungeon LA_3 is used in variant A of the task, and dungeon LA_4 is used in variant B.
 The main criterion for this choice was the dungeons' size, as they are sufficiently large and thus make the task sufficiently complex while still being feasible manually in Miro.
 Their node count is around the 75th percentile across all VGLC Zelda data.
-The two dungeons, being subsequent levels from the same game, have comparable size and complexity (based on the outgoing ranks of nodes) and similar numbers of keys/locks (see @solvability-dungeon-numbers). LA_4 was additionally extended by four nodes, three edges, and four keys to accommodate the size difference between the two dungeons. #todo("check for further adaptations")
+The two dungeons, being subsequent levels from the same game, have comparable size and complexity (based on the outgoing ranks of nodes) and similar numbers of keys/locks (see @solvability-dungeon-numbers). LA_4 was additionally extended by four nodes, three edges, and four keys to accommodate the size difference between the two dungeons.
 
 #figure(
   table(
@@ -172,13 +172,13 @@ For this task, the charts included information regarding the locations of locks 
 
 To make the dungeons unsolvable, 6 issues of varying difficulty were added in each dungeon.
 For both, this included
-- 2 instances of missing key(s), i.e., an edge not being unlockable with the keys a player could have collected on any path from the start node
-- 1 node with no outgoing edge
 - 1 area (group of nodes) that is unreachable due to wrong edge directionality
-- 2 softlocks
+- 1 hardlock, where players definitely are unable to progress (i.e., a reachable node with no outgoing edge)
+- 2 softlocks, where players may or may not be unable to progress
+- 2 instances of missing key(s), i.e., an edge not being unlockable with the keys a player could have collected on any path from the start node
 
 See @la3-vglc for an impression of the original dungeon layout and @la3-miro for the adapted version with issues in Miro for LA_3.
-Full-size imagess and pix:e versions are included in @app-s-dungeons.
+Full-size images and pix:e versions are included in @app-s-dungeons.
 
 #grid(
   columns: 2,
@@ -186,7 +186,7 @@ Full-size imagess and pix:e versions are included in @app-s-dungeons.
   grid.cell([
     #figure(
       image("assets/05/la3-vglc.png"),
-      caption: [Annotated screen captures of LA_3 from the VLGC #cite(<summervilleVGLCVideoGame2016>)]
+      caption: [Annotated screen captures of LA_3 from the VGLC #cite(<summervilleVGLCVideoGame2016>)]
     ) <la3-vglc>
   ]),
   grid.cell([
@@ -204,11 +204,11 @@ Again, participants were introduced to the relevant component types and given a 
 
 Participants were once again allowed to use any tool functionalities, in particular any text/pen tools in Miro to record a valid path through the dungeon or any calculations.
 
-For this task, the choice fell on smaller dungeons, in particular the first and second dungeons of "Link's Awakening" (LA_1 and LA_2 in #cite(<summervilleVGLCVideoGame2016>)).
+For this task, the choice fell on smaller dungeons, in particular the first and second dungeons of "Link's Awakening" (LA_1 and LA_2 in #cite(<summervilleVGLCVideoGame2016>, form: "prose")).
 Variant A of the task uses LA_1, while variant B uses LA_2.
 Size was again a key criterion, though in contrast to the Solvability task, the dungeons for this task were deliberately selected to have a smaller size (25th percentile in VGLC Zelda data).
 The intention was to account for expected higher task complexity due to manual pathfinding and calculations in the Miro version.
-The two levels are again subsequent levels of comparable size and complexity with similar numbers of locks and keys (see @pacing-dungeon-numbers). #todo("check for adaptations")
+The two levels are again subsequent levels of comparable size and complexity with similar numbers of locks and keys (see @pacing-dungeon-numbers).
 
 #figure(
   table(
@@ -224,7 +224,7 @@ The two levels are again subsequent levels of comparable size and complexity wit
   caption: "Complexity of selected dungeon graphs for solvability tasks, calculated from VGLC data"
 ) <pacing-dungeon-numbers>
 
-An additional criterium for this task was a clear division of the critical path into three sections that can be used for comparative analysis of component values along (sub-)paths:
+An additional criterion for this task was a clear division of the critical path into three sections that can be used for comparative analysis of component values along (sub-)paths:
   - A: from the start room to the room where players obtain a new ability
   - B: from the room with a new ability to the room with the boss key
   - C: from the room with the boss key to the boss fight room
@@ -253,7 +253,7 @@ For full-size images and pix:e versions, see @app-p-dungeons.
   grid.cell([
     #figure(
       image("assets/05/la1-vglc.png"),
-      caption: [Annotated screen captures of LA_1 from the VLGC #cite(<summervilleVGLCVideoGame2016>)]
+      caption: [Annotated screen captures of LA_1 from the VGLC #cite(<summervilleVGLCVideoGame2016>)]
     ) <la1-vglc>
   ]),
   grid.cell([
@@ -276,13 +276,13 @@ Additionally, any comments from participants, any clarifications/hints they requ
 This data was logged in a semi-structured live protocol written in Markdown.
 Moreover, as separate pix:e accounts and Miro boards were used for each participant, any modifications to the charts were also recorded.
 
-After completing all tasks, participants were given the UEQ-S #cite(<schreppDesignEvaluationShort2017>) and a short questionnaire comparing Miro and StatePx (see @res-comparative-questions).
-Like the demographic data, the reponses were collected via Google Forms.
+After completing all tasks, participants were given the UEQ-S #cite(<schreppDesignEvaluationShort2017>) to assess pix:e and a short questionnaire comparing Miro and StatePx (see @res-comparative-questions).
+Like the demographic data, the responses were collected via Google Forms.
 
 After collection, portions of the data were further processed to enable analysis using Python.
 Participants' responses to the tasks were manually tagged to obtain total counts of identified issues for the solvability task and total counts of answered questions for the pacing analysis tasks, as well as number of correct responses for both according to the answer key.
 Additionally, some of the demographic data (education, occupation, previous experience with whiteboard tools) was collected in a free-form format and was manually codified.
-Despite best efforts, there results may thus contain minor errors due to manual processing.
+Despite best efforts, the results may thus contain minor errors due to manual processing.
 
 The choices of which demographic data to collect and which questionnaires to use were done in the team to align all parts of the user study.
 
@@ -291,10 +291,17 @@ The choices of which demographic data to collect and which questionnaires to use
 After collection and processing, all data was analyzed in Python using the pandas, sciPy and scikit-learn libraries.
 //data from multiple sources joined into complete dataset via participant IDs.
 
-All statistical tests used are non-parametrics, as most of the data is not distributed normally.
-Wilcoxon signed-rank test, Mann-Whitney U, Kruskal-Wallis and Dunn's, Levene.
-for Wilcoxon and mann-whitney U: two-sided unless specified otherwise.
-significance at $p < 0.05$
+Apart from visual inspection of histograms and box plots, data was analyzed using the following statistical significance tests:
+
+- Wilcoxon signed-rank test: difference in distributions of matched samples (i.e., two datasets from the same group of participants)
+- Mann-Whitney U test: difference in distributions of unmatched samples (i.e., two datasets from different groups of participants)
+- Kruskal-Wallis test: difference in distributions of more than two independent groups
+- Dunn's test: pairwise difference in distributions of more than two independent groups, typically used after Kruskal-Wallis to identify the deviating distributions
+- Levene's test: difference in variance between two or more groups
+
+All statistical tests used are non-parametric, i.e. do not assume normal distribution of the data.
+The Wilcoxon and Mann-Whitney U tests were conducted assuming a two-sided alternative hypothesis (i.e., the distributions differ in either direction) unless specified otherwise.
+For all tests, $p < 0.05$ is considered significant.
 #todo("make sure this is true lol")
 
 == User Study Results
@@ -304,11 +311,13 @@ significance at $p < 0.05$
 In total, 24 people participated in the study.
 Ages ranged from 19 to 32 years, with an average of about 24 years.
 15 indicated their gender as male, 5 as female and 4 preferred not to say.
-#todo("educational/occupational background")
+Most participants reported an educational background in Games Engineering (13) or Informatics (5), with one participants having a Master's in Bioinformatics.
+The rest of the participants only reported that they were students without specifying their exact study course.
+Most participants (19) were Bachelor's or Master's students at the time.
 15 participants, or 62.5%, indicated previous experience with whiteboard tools.
-No participants indicated meaningful previous experience with tools specific to game design.
-#todo("projects")
-
+All participants indicated little (3) or no (21) previous experience with tools specific to game design.
+For most participants, the number of projects they had worked on is between 1 to 10 (average: 6) projects, with one outlier of 25 projects. 
+In some cases, this number does not contain any game-related projects.
 // #todo("group breakdown?")
 
 === Results Solvability
@@ -353,12 +362,12 @@ The overall answer quality as measured by the F1 score (see @fig:s-f1) is also s
 ===== Impact of Whiteboard Tool Experience
 In pix:e, participants who indicated previous experience with whiteboard tools tended to claim more issues than participants, see @fig:s-total-by-wb-exp.
 median 1 for participants without whiteboard experience, 2 for participants with whiteboard experience, Mann-Whitney $U = 96.5$, $p < 0.05$.
-#todo("effect size").
+// #todo("effect size").
 #todo("difference between performance in Miro").
 However, the performance difference between the two tools still remains, as participants with whiteboard tool experience still identified significantly fewer issues in pix:e than in Miro (Wilcoxon signed-rank test: $T = 97.5$, $p < 0.05$).
 A similar effect can be observed for the F1 scores, as the median F1 score in pix:e is significantly higher (Mann-Whitney $U = 99.5$, $p < 0.05$) in participants who indicated previous whiteboard experience, see @fig:s-f1-by-wb-exp.
 //F1 medians 0.25 and 0.285, Mann-Whitney
-#todo("effect size?")
+//#todo("effect size?")
 
 #grid(
     columns: 2,
@@ -379,8 +388,8 @@ Only 6 participants used any editing functionality in Miro.
 3 participants marked issues, 1 participant highlighted valid paths, and 2 participants tracked the available inventory for pathfinding.
 Of the 6 participants, 5 had indicated previous experience with whiteboard tools.
 As suggested by @fig:s-total-by-miro-usage and @fig:s-f1-by-miro-usage, there is no obvious impact of Miro tool use on the task completion metrics within Miro.
-#todo("phrasing") total issues identified: median 2 without Miro usage, 2.5 with Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$ #todo("effect size?").
-F1: median 0.5 with Miro usage, 0.39285714285714285 without Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$ #todo("effect size?")
+#todo("phrasing") total issues identified: median 2 without Miro usage, 2.5 with Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$. //#todo("effect size?")
+F1: median 0.5 with Miro usage, 0.39285714285714285 without Miro usage, Mann-Whitney $U = 57.5$, $p=0.4169872469244896$.// #todo("effect size?")
 
 #grid(
     columns: 2,
@@ -430,7 +439,7 @@ While there is some variation in task completion metrics across the four groups 
 
 #h(1.8em)
 ===== First Tool
-The no evidence for total number of identified issues (see @fig:s-total-by-first-tool) in either tool differing based on which tool was used first (in pix:e: $U = 56.0$, $p approx 0.176$, in Miro: $U=  61.0$, $p approx 0.525$).
+There is no evidence for the distribution of total number of identified issues (see @fig:s-total-by-first-tool) in either tool differing based on which tool was used first (in pix:e: $U = 56.0$, $p approx 0.176$, in Miro: $U=  61.0$, $p approx 0.525$).
 Also, participants still claimed significantly more issues in Miro than pix:e, regardless of which tool was used first (Miro first: $U = 113.5$, $p approx 0.007$, pix:e first: $U=109.5$, $p approx 0.014$).
 However, for the F1 scores (see @fig:s-f1-by-first-tool), the tool order does seem to make a difference: The pix:e-first group achieved higher median F1 score in both tools, with the difference being significant according to the Mann-Whitney U test (in Miro: $U = 34.5$, $p approx 0.013$, in pix:e: $U = 36.0$, $p approx 0.018$).
 #todo("speculate why?") The difference in F1 scores between the two tools for the pix:e-first group remains significant ($U = 120.5$, $p approx 0.002$).
@@ -488,7 +497,7 @@ The distributions of F1 scores (see @fig:s-f1-a-vs-b) are comparable between the
 === Results Pacing
 
 This sub-section presents the results for the pacing analysis task in terms of task completion, again compared between the two tools and additional stratifications (such as previous experience of participants with whiteboard tools or the different user study groups).
-#todo("effect sizes")
+//#todo("effect sizes")
 
 ==== Task Completion <res-p-task-completion>
 
@@ -651,9 +660,9 @@ There is a significant difference in variance in both metrics for performance in
 
 ==== Differences Between Task Versions <res-p-a-vs-b>
 
-Analogously to the pacing analysis task, this analysis inspects the results for any differences in task completion metrics between the two task versions.
+Analogously to the solvability task, this analysis inspects the results for any differences in task completion metrics between the two task versions.
 As seen in @fig:p-total-a-vs-b and @fig:p-right-a-vs-b, both the distribution of total answered questions and the distribution of correctly answered questions skew lower for task variant B (dungeon LA_2).
-For both distributions, the difference is statistically significant according to sigle-sided Wilcoxon signed-rank tests (total answered questions: $T = 176.0$, $p approx 0.004$, correctly answered questions: $T = 195.0$ $p approx 0.000$).
+For both distributions, the difference is statistically significant according to one-sided Wilcoxon signed-rank tests (total answered questions: $T = 176.0$, $p approx 0.004$, correctly answered questions: $T = 195.0$ $p approx 0.000$).
 The median of wrongly answered questions is higher for task variant B, though the difference is not significant (one-sided Wilcoxon signed-rank: $T = 36.5$, $p approx 0.083$).
 
 #grid(
@@ -685,15 +694,16 @@ Each item is a pair of opposing adjectives, and participants were asked to place
 This translates to a numeric scale ranging from -3 to 3.
 
 The responses to the UEQ-S questionnaire were evaluated using the analysis tool provided by the authors #cite(<hinderksBenchmarkShortVersion2018>).
-It provides mean scores for each item and rates the pragmatic, hedonic, and overall score against a benchmark.
-#todo("what is the benchmark?")
+It provides mean scores for each item and rates the pragmatic, hedonic, and overall score against benchmark scores collected for Amazon and Skype.
 
 #figure(
   image("assets/05/ueq-mean-value-per-item.png"),
   caption: "Mean values per item in the UEQ-S"
 ) <fig:ueqs-means>
 
-@fig:ueqs-means shows the mean scores for each item.
+#todo("remove title on top")
+
+@fig:ueqs-means shows the mean scores for each item, with the items measuring pragmatic quality colored navy and the items measuring hedonic quality colored yellow.
 The fourth and weakest item is the pair "confusing vs clear".
 This relatively low (albeit positive) score is in line with participant feedback, which included a number of UI issues (@feedback-written).
 
@@ -725,8 +735,13 @@ Overall, participants indicated a preference for StatePx over Miro, though answe
 This result is in line with the high hedonic quality indicated by the UEQ-S.
 
 A higher score variance/split is observed in participants with whiteboard tool experience in the first three questions, see @app-cq-by-wb-exp.
-For last question however, participants who indicated previous experience with whiteboard tools indicated a particularly strong preference for pix:e #todo("back this up").
+For last question however, participants who indicated previous experience with whiteboard tools indicated a particularly strong preference for pix:e as seen in in @cq4-wb-exp.
 Answers for the first three questions may be divided because on one hand, these participants may be more used to a Miro-like UI and thus more comfortable using Miro, but on the other hand, they may also be better equipped to recognize the advantage of a dedicated tool compared to a generic whiteboard tool.
+
+#figure(
+  image("assets/app/c-q4-by-wb-exp.png", width: 50%),
+  caption: "Distribution of answers to C-Q4 from participants with (1) and without (0) indicated whiteboard tool experience"
+) <cq4-wb-exp>
 
 === Written Feedback from Participants <feedback-written>
 
@@ -756,10 +771,12 @@ Answers for the first three questions may be divided because on one hand, these 
 selecting of various goal nodes for the given start node and subsequent identification of locked edges as those between a node reachable from the start and a node not reachable from the start
 - 3 participants (all Miro-first groups) asked whether enemies respawn for the pacing task. while unclear in task description, still notable that only Miro-first participants asked this. setup in pix:e may have primed participants to understand the respawn implicitly and apply the same principle in Miro. -> potential improvement for diagrams setup, users should be prevented from making/falling victim to implicit assumptions!
 
+/*
 === Validity of A/B Test
 
 - compare results across groups -> statistical test? (ANOVA for 3+ groups)
 - compare demographics across groups
+*/
 
 == Limitations
 
@@ -792,7 +809,7 @@ As edge tooltip are not native in the current framework, a legend popover was im
 ) <improved-symbols-chart>
 
 The legend is located in the bottom right corner of the chart and can be shown or hidden via a button.
-It shows an overview of available lock and key definitions in separate tabs (see @improved-legend-locks and @improved-legend-keys), including notable features for each definition (e.g. symbol, name, consumability for keys, unlocking key definitions for locks).
+It shows an overview of available lock and key definitions in separate tabs (see @improved-legend-locks and @improved-legend-keys), including notable features for each definition (e.g. symbol, name, consumable for keys, unlocking key definitions for locks).
 
 #grid(
     columns: 2,
@@ -806,7 +823,7 @@ It shows an overview of available lock and key definitions in separate tabs (see
     grid.cell([
         #figure(
             image("assets/05/pixie-improved-symbols-legend-keys.png", width: 75%),
-            caption: "Legend of key types, including consumability and key type"
+            caption: "Legend of key types, including key type and whether they are consumable"
         ) <improved-legend-keys>
     ]),
 )
@@ -839,7 +856,7 @@ In particular, it tracks distances of nodes from the start nodes, with the initi
 #todo("explain this better") Consequently, all nodes with distance < `Infinity` after the algorithm has concluded are reachable and can simply be filtered for.
 
 In case of failed pathfinding, unreachable nodes are then highlighted (see @improved-reachability).
-#todo("confirm/wait for julians pr feedback")
+#todo("confirm/wait for julian's pr feedback")
 
 #figure(
     image("assets/05/pixie-improved-reachability-analysis.png", width: 50%),

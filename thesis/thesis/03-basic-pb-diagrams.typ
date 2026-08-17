@@ -1,11 +1,11 @@
 #import "../utils.typ": todo
 #import "../bib.typ": load-bib
 
-= Pacing Analysis Using Path-Based Diagrams <impl-diagrams>
+= Pacing Diagrams and Pacing Analysis in pix:e <impl-diagrams>
 
-PaceMaker already presented a protoype for pacing diagrams.
+PaceMaker already presented a prototype for pacing diagrams.
 Users were able to select a path in the statechart and visualize data along the path.
-This feature was found to be of interest and should thus be included in pix:e's player experience module.
+This feature was found to be of interest #cite(<geheebPaceMakerPracticalTool2024>) and should thus be included in pix:e's player experience module.
 
 PaceMaker offered a range of pre-defined player experience properties that could be represented in the chart (e.g., gameplay intensity or expected playtime).
 In contrast, pix:e allows users to define and create so-called `PxComponent`s, which may be used to represent a variety of player experience, pacing, and gameplay aspects.
@@ -18,17 +18,20 @@ The following sections describe the functionalities, implementation choices and 
 At the start of this implementation, pix:e included a player experience module with a so-called `PxChart`.
 Analogously to PaceMaker, a `PxChart` is a statechart in which users can structurally model how players progress through a game.
 
-#todo("screenshot of initial statechart if possible")
+//#todo("screenshot of initial statechart if possible")
 
 Nodes in `PxChart`s (so-called `PxNodes`) are given a name and description and can be connected via edges.
 As pix:e does not have pre-defined node properties, users first need to create `PxComponentDefinition`s, which specify the name (e.g., "Intensity") and the data type (one of "number", "string", "boolean") of a property.
-They may then add a `PxComponent` to a node by selecting the desired definition and specifying its value for the node in question as seen in @component-creation-modal.
+They may then add a `PxComponent` to a node by selecting the desired definition and specifying its value for the node in question.
+//as seen in @component-creation-modal
 This setup allows users to model a wide range of both artifact and experience parameters.
 
+/*
 #figure(
   image("assets/03/pixie-component-creation-modal.png", width: 50%),
   caption: "pix:e's component creation modal"
 ) <component-creation-modal>
+*/
 
 == Requirements <diagrams-requirements>
 
@@ -42,7 +45,7 @@ The system should then communicate the result to users, i.e., whether a path exi
 The second element is the visualization of data along a selected path in diagrams.
 As described previously, pix:e offers users to customize which data is assigned to nodes by defining `PxComponent`s.
 Users should thus be able to configure which of the available `PxComponent`s is visualized and how.
-Ideally, this would enable users to compare different properties per node and compare different paths.
+The goal is to enable users to compare different properties per node on different paths.
 Additionally, a visualization of the values over both event time and play time should be possible.
 
 == Path Selection
@@ -71,7 +74,7 @@ If there exists a path between each such pair, the paths are then combined to fo
 
 All path calculation is encapsulated in a dedicated composable (`usePxChartPathCalculation.ts`).
 Given the nodes and edges present in a chart, the composable provides the following functions:
-- `calculatePathFromSelection()` calculates path from selected nodes and stores result internally
+- `calculatePathFromSelection()` calculates path from selected nodes and stores result temporarily
 - `resetPathCalculation()` resets the stored result
 - `updateNodeStyling()` updates highlighting in the chart based on stored result
 
@@ -93,16 +96,17 @@ The intended workflow/usage is as follows:
 //If more than two nodes are selected, the path is calculated along all selected nodes in order of selection.
 //This allows users to explore alternative paths to the shortest path.
 
+/*
 #figure(
   image("assets/03/pixie-path-selected-highlight.png"),
   caption: [Path highlighted in state chart],
 ) <fig:path-hl>
+*/
 
-=== Limitations
-
-One limitation of this implementation is that calculated paths cannot  be saved or persisted in any way as opposed to the snapshot functionality in PaceMaker. #todo("consequence?")
-
-Additionally, there is no visual feedback for the order in which nodes were selected, i.e., what input the path calculation uses.
+#figure(
+  image("assets/03/pixie-pacing-example-chart.png"),
+  caption: [Path highlighted in state chart],
+) <fig:path-hl>
 
 == Diagram Generation
 
@@ -111,14 +115,16 @@ This subsection describes the scope, implementation and usage of the diagrams fe
 === Functionality
 
 Diagrams are available within an expandable element on a `PxChart` page.
-This choice was made to allow users to hide the diagrams while working on the statechart itself.
+This was a design choice to allow users to hide the diagrams while working on the statechart itself.
 The implementation supports the creation of multiple diagrams to display and compare different configurations.
 Individual diagrams can be removed as well.
 
+/*
 #figure(
   image("assets/03/pixie-diagram-expandable-addable.png"),
   caption: [Upper section of the charts page with expandable element and UI for diagram creation],
 ) <fig:diagram-area>
+*/
 
 #h(1.8em)
 This implementation focuses specifically on line diagrams displaying numerical data.
@@ -131,6 +137,7 @@ However, the spacing of nodes on the x-axis can optionally be configured to be b
 In this case, the values of the component are summed up along the selected path or across all nodes to calculate the elapsed time up until a node.
 This configuration can be used when components are used to model play time, or alternatively event times that vary between nodes.
 As a result, nodes are placed in variable distances on the x-axis, which implicitly models the mapping between event and play time mentioned in @bg-pep.
+To emphasize the length of time players spend with a particular experience, play time diagrams use stepped line charts.
 
 === Implementation
 
@@ -145,15 +152,17 @@ The axis configurations are passed on to chartJS to control which components are
 
 For the diagram generation, the intended workflow is as follows:
 
-1. Creation of a new diagram by clicking the "+" panel.
+1. Creation of a new diagram by clicking "+".
 2. In no particular order:
 	
-	- Selection of one or more components for the y axis via drop-down menu
-	- Optionally: Selection of a component for the x axis drop-down menu
+	- Selection of one or more components for the y-axis via drop-down menu
+	- Optionally: Selection of a component for the x-axis drop-down menu
 	- Selection of a path as previously described
 
 Any changes in the diagram configuration or path selection are reflected in the diagram in real time.
+@diagram-event-time and @diagram-play-time show examples of diagrams based on the chart in @fig:path-hl using event time and play time respectively.
 
+/*
 #figure(
   image("assets/03/pixie-diagram-axis-selection.png"),
   caption: [Selectors for components to be mapped to X/Y axes],
@@ -171,24 +180,37 @@ Any changes in the diagram configuration or path selection are reflected in the 
     caption: [Diagram visualizing component across all nodes]
   )
 )
+*/
 
-#todo("replace with screenshots of larger statechart, show chart itself and corresponding diagrams")
+#grid(
+  columns: 2,
+  gutter: 1em,
+  grid.cell[#figure(
+    image("assets/03/pixie-pacing-example-event-time.png"),
+    caption: [Diagram visualizing component along selected path in event time]
+  ) <diagram-event-time> ],
+  grid.cell[#figure(
+    image("assets/03/pixie-pacing-example-play-time.png"),
+    caption: [Diagram visualizing component along selected path in play time]
+  ) <diagram-play-time> ]
+)
 
-#todo("screenshot of diagram with configured y-axis")
-
-=== Limitations
+== Limitations
 
 The current implementation of path-based diagrams has several limitations.
 
-Firstly, only line diagrams are supported for now.
+Firstly, there is no visual feedback for the order in which nodes were selected,
+i.e., what input the path calculation uses.
+
+Secondly, as paths are currently not persisted, only one calculated path is available for diagram generation at a time.
+Consequently, all diagrams on a chart page are based on the same path.
+Therefore, while real-time switching between different paths is possible, a direct comparison of values between different paths is not.
+
+Thirdly, only line diagrams are supported for now.
 This enables the analysis of numerical `PxComponent`s along different paths.
 Textual and boolean data types cannot yet be visualized.
 However, the current modular implementation is designed to be extendable to different diagram types.
 //#cite(<dyrdaPacingDiagramStep2026>) present a formalization of pacing diagrams that may be suitable to this end.
-
-Secondly, as paths are currently not persisted in any way, only one calculated path is available for diagram generation at a time.
-Consequently, all diagrams on a chart page are based on the same path.
-While real-time switching between different paths is possible, a direct comparison of values between different paths is therefore not directly.
 
 Lastly, diagrams are not persisted either and reset when reloading a page.
 This may negatively impact user experience as diagrams need to be configured repeatedly.

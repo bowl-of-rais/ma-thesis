@@ -32,41 +32,39 @@ set par(justify: false)
   outlined: true
 )#label]}
 
-= Solvability Involving Locks and Keys <impl-lk>
+= Solvability Analysis with Locks and Keys in pix:e <impl-lk>
 
-The second feature this thesis contributes to pix:e is the concept of locks and keys.
+The second feature this thesis contributes to pix:e is the integration of locks and keys into the modeling and pathfinding functionalities.
 Unlike the pacing diagrams, this is a functionality that did not exist in PaceMaker.
 
 As described in @bg-locks-and-keys, the terms "locks" and "keys" can refer to both literal lock and key items as well as more abstract concepts that present a challenge or obstacle and the respective solutions.
-
 Complementary to the ability of PxCharts to model player experience in various levels of granularity, locks and keys can thus be used in both a low-level (e.g., when modeling individual puzzles/dungeons) and high-level context (e.g., when modeling storylines and their prerequisites).
-The implementation is thus focused on flexibility and customizability to account for a wide range of use cases.
+The design of lock and key modeling capabilities is thus focused on flexibility and customizability to account for a wide range of use cases.
 
-Locks and keys attach an additional dimension to the structure represented by a statechart and fundamentally impact how players progress through a game.
+Locks and keys attach an additional dimension to the non-linear structure of games and thus fundamentally impact how players progress through a game.
 This extension of pix:e's player experience modeling capabilities expands its capacities to cover a variety of further use cases.
-Additionally, lock-and-key puzzles have a high complexity ceiling #todo("add citation").
+Additionally, lock-and-key puzzles have a high complexity ceiling.
 A dedicated functionality for their analysis and verification therefore has potential for high impact.
 
 Lock-and-key puzzles can affect player experience in various ways.
-For instance, as described by #cite(<brandseLevelFlowPatterns2023>), lock-and-key puzzles are a common way to direct when and where players encounter a challenge or receive a reward, which largely impacts player experience.
+For instance, as described by #cite(<brandseLevelFlowPatterns2023>, form: "prose"), lock-and-key puzzles are a common way to direct when and where players encounter a challenge or receive a reward, which greatly impacts player experience.
 The puzzles themselves also present a type of challenge, which, if disproportionately difficult or complex, may lead to player frustration.
-In some instances, lock-and-key puzzles are also used to make exploration a focal point of player experience. #cite(<ruelaEvolvingLockandkeyPuzzles2018>)
+In some instances, lock-and-key puzzles are also used to make exploration a focal point of player experience #cite(<ruelaEvolvingLockandkeyPuzzles2018>).
 
-This chapter first concretizes the requirements for the modeling of locks and keys and the associated solvability analysis.
+This chapter first specifies the requirements for the modeling of locks and keys and the associated solvability analysis.
 It then describes how representations for locks and keys are made available to users in pix:e.
-Subsequently, @lk-pathfinding details the extension of Dijkstra's algorithm and pix:e's pathfinding functionality by logic specific to different lock and key types, and some related refactoring.
+Subsequently, @lk-pathfinding details the extension of pix:e's pathfinding functionality by logic specific to different lock and key types, and some related refactoring.
 Finally, the testing approach, an implementation of settings, and the limitations of lock-and-key related features are described.
 
 == Requirements <lk-requirements>
 
-The previously described taxonomy by Dormans (see @bg-lock-key-taxonomy) serves as the main reference for the requirements for modeling locks and keys in pix:e.
+The previously described taxonomy by Dormans (see @bg-locks-and-keys) serves as the main reference for the requirements for modeling locks and keys in pix:e.
 This subsection first describes how the different aspects of locks and keys are implemented in pix:e, presents the resulting data model and outlines the main analysis functionality provided for lock-and-key puzzles.
 
 === Locks and Keys in the Statechart
 
-#cite(<brownHowMyBoss2026>) presents a graph-based representation of how locks and keys are distributed throughout a dungeon for the purpose of analyzing existing level designs.
-The focus of that approach lies on determining where locks and keys are located in relation to each other and examining any resulting dependencies.
-However, it includes a key idea that is used in this work to integrate locks and keys into the pix:e statechart: keys are found in rooms, while locks are encountered when moving from one room to another.
+#cite(<brownHowMyBoss2026>, form: "prose") presents a graph-based representation of how locks and keys are distributed throughout a dungeon for the purpose of analyzing existing level designs.
+It includes a basic idea that is used in this work to integrate locks and keys into the pix:e statechart: keys are found in rooms, while locks are encountered when moving from one room to another.
 In the context of the pix:e statechart, users should thus be able to place keys on nodes and locks on edges.
 //For instance, a node may represent a room or level where players obtain a specific item.
 //They may then require this item to progress to another room or level, which would be represented by a lock on the corresponding edge.
@@ -79,8 +77,7 @@ This is modeled using the attribute `unlockMode` for locks, which can then be re
 The distinction between *valve* s and *asymmetrical* locks can be modeled via the choice of edge directionality.
 Valves may be modeled by uni-directional edges, while asymmetrical locks can be represented on a single bidirectional edge.
 *Soft gates* are modeled by a flag (`softGate`) on lock types and then checked during pathfinding.
-In the current implementation, all locks are assumed to be *safe*, so *unsafe* locks cannot be modeled.
-#todo("reasoning?")
+As the main analysis functionality implemented for locks and keys is a solvability analysis, the current implementation focuses on *safe* locks only.
 
 As for keys, the attribute `type` with the possible values `ability`, `item`, and `other` can be used to distinguish between *single-purpose or multi-purpose* keys.
 This also captures the concept of keys as abstract tokens.
@@ -97,7 +94,7 @@ The data model resulting from the previously described modeling approaches can b
   caption: "Data model for locks and keys"
 ) <fig:lk-data-model>
 
-#todo("review multiplicities")
+//#todo("review multiplicities")
 
 Similar to the pre-existing implementation of `PxComponent`s (see @initial-pixie), the data model distinguishes between lock and key _definitions_ and _assignments_.
 The definitions are used to represent different _types_ of locks and keys, including the aforementioned variations.
@@ -108,14 +105,17 @@ The multiplicities in @fig:lk-data-model portray the following conditions:
 
 === Analysis Functionality
 
-A fundamental question for lock-and-key puzzles is the one of solvability.
-Hence, solvability analysis is the main analysis functionality concering locks and keys implemented in this work.
-
+A fundamental question for lock-and-key puzzles is that of solvability.
+Hence, solvability analysis is the main analysis functionality concerning locks and keys implemented in this work.
 Locks and keys introduce conditional transitions to the statechart, which in turn affects pathfinding.
 By integrating the constraints placed on pathfinding via lock and key assignments into the pathfinding logic, users of the tool can assess solvability based on lock and key placements and judge their impact on possible progression paths throughout a level or game.
-This includes the existing feedback on whether a path between two selected nodes exists or not, as well as hints about possible pitfalls.
+This includes the visual feedback (as implemented in @impl-diagrams) on whether a path between two selected nodes exists or not, as well as hints about possible pitfalls.
 
 == Creation and Visualization of Locks and Keys <lk-creation-visualization>
+
+To use locks and keys, users first need to define their desired lock and key types.
+Then, then can assign locks to edges in a `PxChart` and keys to `PxNode`s.
+In the UI, lock assignments and key assignments are referred to as `PxLock`s and `PxKey`s respectively for brevity.
 
 === Defining Lock and Key Types
 
@@ -134,12 +134,10 @@ The forms offer help texts and indicators for necessary inputs to assist users.
 === Instantiating Locks <instantiating-locks>
 
 //- same as keys, multiple instances of same definition possible per edge, see data model.
-Edges are chart-specific and not represented in the UI except for in the chart itself, so users must be able to instante locks on the chart page.
+Edges are chart-specific and not represented in the UI except for in the chart itself, so users must be able to instantiate locks on the chart page.
 To ensure users understand how to use the functionality, the UI should make it clear that adding a lock to an edge is specific to that edge.
 The most straight-forward approach would be to attach a button or menu to each edge.
-However, the Vueflow framework does not offer a built-in context menu for edges.
-A possible future improvement would be a custom edge implementation to simulate a context menu, which could also include other actions like edge deletion.
-This was out of scope for this work.
+However, the library that is currently used to implement `PxChart`s (VueFlow) does not offer a built-in context menu for edges.
 The currently implemented workaround is thus a button in the chart's toolbar that is only visible when exactly one edge is selected.
 //benefit for implementation: edge selection is easily detected.
 
@@ -190,8 +188,7 @@ This subsection describes how Dijkstra's algorithm was first extended to account
 As an initial step, the previously implemented pathfinding algorithm was extended by the general concept of locks and keys.
 This basic version assumes permanent unlock of all lock types, ignores whether keys are consumable or fixed, and treats soft gates as regular locks that always require a key.
 In short, the main addition to the algorithm at this point is a check whether edges can be traversed based on the keys collected up to that point.
-
-This is implemented using node-specific inventories inspired by #cite(<aversaPathPlanningInventoryDriven2015>), who present a path planning algorithm in the context of grid-based game maps.
+This is implemented using node-specific inventories inspired by #cite(<aversaPathPlanningInventoryDriven2015>, form: "prose"), who present a path planning algorithm in the context of grid-based game maps.
 The general idea behind inventories is to track any keys collected along the path to a specific node in order to determine whether the adjacent edges can be unlocked.
 Internally, this is modeled via so-called `PxKeySet`s, which are mappings of key definitions to counts that aggregate multiple instantiations of the same key definition into one.
 In its basic form, the inventory associated with a node reflects keys collected along the shortest path to this node as well as keys made available in this node.
@@ -206,9 +203,9 @@ This enables the repeated execution of the algorithm with different starting poi
 
 A central part of the algorithm for pathfinding with locks and keys is the `canUnlock()` function.
 Given sets of locks and keys, it determines whether the locks can be unlocked.
-This check has a high complexity (see @code:canunlock-basic) due to the fact that an edge may be assigned multiple locks, each of which may be unlockable by multiple key types.
-While this circumstance harbors a potential for exponential blowup, no optimization is currently implemented as the expected case is less complex.
-#todo("citation?")
+This check has a high complexity (see @code:canunlock-basic) due to the fact that an edge may be assigned multiple locks, each of which may be unlocked by multiple key types.
+While this circumstance harbors a potential for exponential blowup, the expected case is less complex.
+Any related optimization was therefore deemed not a priority in this work.
 
 @code:canunlock-basic shows the logic behind the `canUnlock` function given a set of keys in inventory $K$ and locks on edge $L$:
 
@@ -240,7 +237,7 @@ The following example illustrates an unlock check as performed by this function.
 ) <unlock-example-graph>
 
 /*
-Ignoring consumability of keys: to unlock this edge, one could use the key sets ${X, Z}$ or ${X, Y, Z}$. If either is a subset of the available keys when encountering the edge, it can be unlocked.
+Ignoring consumable keys: to unlock this edge, one could use the key sets ${X, Z}$ or ${X, Y, Z}$. If either is a subset of the available keys when encountering the edge, it can be unlocked.
 
 #pad(
   rest: 10pt,
@@ -318,14 +315,11 @@ If not, all nodes in the path after the soft-gated edge are highlighted in yello
 
 === Consumable Keys and Soft-Lock Detection
 
-To reflect consumability of keys, the node-specific key inventories need to be extended.
-
-Due to the fact that a lock may be unlockable by multiple (potentially consumable) keys, the keys available in a node now also depend on a possible _choice_ of which key was used to unlock a specific lock.
-
+To enable the consumption of keys, the node-specific key inventories need to be extended.
+Due to the fact that a lock may be unlocked by multiple (potentially consumable) keys, the keys available in a node now also depend on a possible _choice_ of which key was used to unlock a specific lock.
 This circumstance is modeled by considering multiple variants of a node's inventory.
 The underlying idea is one of 'different realities':
 Nodes exist in different realities if they are approached with different inventories.
-
 This is implemented by maintaining a set of `PxKeySets` per node.
 In the `canUnlock`, the multiplicity of consumable keys is considered.
 When updating the inventories of neighbor nodes during iteration, the consumed keys are removed from the inventory.
@@ -386,19 +380,18 @@ In contrast to the `canUnlock` function, which only checks whether a given keyse
     removeConsumable(I, L):
         if L = ∅
             return TRUE
-        consumableRequirements = { l. ∃ key. key ∈ unlockedBy(l) and consumable(key)}	
-        unlockingKeysets = required(l1) × ... × required(ln)
+        consumableRequirements = { l ∈ L. ∃ key. key ∈ unlockedBy(l) and consumable(key)}	
+        unlockingKeysets = required(l_1) × ... × required(l_n) for l_i ∈ consumableRequirements 
         updatedInventory = []
         for K_i ∈ I:
-            if ∃ U ∈ unlockingKeysets with K_i ⊆ U:
-                updatedInventory.push(K_i - { key∈U. consumable(key)})	
-        return updatedIinventory
+            for U ∈ unlockingKeysets: 
+                if K_i ⊆ U:
+                    updatedInventory.push(K_i - { key ∈ U. consumable(key)})	
+        return updatedInventory
     ```],
     "Function removing keys required to unlock all locks in L from K",
     <code:remove-consumable>
 )
-
-#todo("review pseudocode correctness")
 
 /*
 #pad(
@@ -412,20 +405,18 @@ In contrast to the `canUnlock` function, which only checks whether a given keyse
 
 - $I = \{X, X, Z\}$ -> $\{Z\}$
 
-- #todo("example in pixe for consumable keys")
+- #todo("example in pixie for consumable keys")
 */
 
-==== Soft-Locks
+==== Softlocks
 
 Consumable keys may give rise to so-called *soft-locks*.
-As desribed by #cite(<mawhorterSoftlockDetectionSuper2021>), a softlock occurs when players may get stuck in a level or game due to how they traverse it.
+As described by #cite(<mawhorterSoftlockDetectionSuper2021>, form: "prose"), a softlock occurs when players may get stuck in a level or game due to how they traverse it.
 The authors formally define gameplay to be softlock-free if 
 "it is possible to reach the goal state from every reachable state"
 #cite(<mawhorterSoftlockDetectionSuper2021>).
-
 In the context of a path calculated in pix:e with locks and keys, a potential softlock thus occurs when a path may or may not be found depending on the choice of (consumable) keys used. 
 To rephrase it in terms of the aforementioned definition, a path is soft-lock-free if it is possible to reach the target node from every other node on the path, no matter which inventory it was visited with (or: _state_ it was visited in).
-
 @softlock-example shows a configuration with a potential soft-lock in node $B$. Assuming an initial inventory $I = {X, Y}$ with both keys of type $Y$ being consumable, the edge from node $B$ to $C$ cannot be unlocked if key $Y$ was already used to unlock the edge from $A$ to $B$.
 
 #pad(
@@ -438,11 +429,11 @@ To rephrase it in terms of the aforementioned definition, a path is soft-lock-fr
 )
 
 #h(1.8em)
-In terms of the implementation, a potential soft-lock state occurs when an edge is unlockable with some, but not all keysets.
+In terms of the implementation, a potential soft-lock state occurs when an edge may be unlocked with some, but not all available keysets.
 During removal of consumable keys (@code:remove-consumable), keysets that do not unlock the given edge are removed from the updated inventory entirely, as the edge could not be traversed with those sets and they should thus not be propagated to the neighboring node.
 A comparison of inventory length before and after consumption is then used to verify whether a potential soft-lock occurs in the current node.
 
-If a soft-lock is identified during pathfinding, the node in which it occurs is highlighted in blue ("info") as seein in @pixie-soft-lock.
+If a soft-lock is identified during pathfinding, the node in which it occurs is highlighted in blue ("info") as seen in in @pixie-soft-lock.
 
 #figure(
     image("assets/04/pixie-soft-lock-example.png"),
@@ -453,10 +444,9 @@ If a soft-lock is identified during pathfinding, the node in which it occurs is 
 
 == Bidirectional Edges and Backtracking
 
-One major limitation of the VueFlow framework (and thus the initial statechart in pix:e) is the lack of native support for bidirectional edges.
+One major limitation of the VueFlow library (and thus the initial statechart in pix:e) is the lack of native support for bidirectional edges.
 Bidirectional edges are, however, crucial for modeling non-linear gameplay.
-The most simple use case would be a dungeon where players may go back to a previous room. #todo("add citation?")
-
+For a simple example, consider a dungeon where players may go back to a previous room.
 This sub-section thus describes the modeling of bidirectional edges themselves and how the pathfinding algorithm was extended to account for bidirectional edges.
 
 === Modeling Bidirectional Edges
@@ -497,7 +487,7 @@ Such a situation is illustrated in @why-backtracking: starting from $A$ and assu
 === Incorporating Backtracking into Dijkstra's Algorithm
 
 In its original form, Dijkstra's algorithm does not find paths with backtracking, as it is designed to find shortest paths and a path with backtracking is always longer than a direct path.
-The algorithm thus needs to be adapted.
+This necessitated an adaptation of the algorithm.
 
 As described previously, the main justification for permitting backtracking is the collection of additional keys.
 This circumstance gives rise to the following approach: 
@@ -505,7 +495,7 @@ Nodes may be re-added to the queue iff they have a different inventory assigned 
 This is implemented by performing Dijkstra's algorithm on _meta-nodes_, which wrap a node, the inventory it is visited with, and the edges that have been unlocked on the prior path.
 This way, nodes are only re-visited when needed and the distance of each meta-node from the start node is still as short as possible.
 
-// - parallel universes (- #todo("add citation from julians paper?"))
+// - parallel universes (- #todo("add citation from julian's paper?"))
 
 /*
 ==== Inventory Variants: Consumable Keys vs Backtracking
@@ -531,17 +521,17 @@ As seen in @pixie-backtracking, valid paths that contain backtracking are highli
     caption: ""
 ) <pixie-backtracking>
 
-== Final Algorithm and Code Architexture
+== Final Algorithm and Code Architecture
 
 The full algorithm for pathfinding with locks and keys is visualized in @fig:full-algo-modularization.
 
 #figure(
-  image("assets/04/lock-key-pathfinding-extended.drawio.png"),
+  image("assets/04/lock-key-pathfinding-extended.drawio.png", width: 90%),
   caption: "Final extended Dijkstra's algorithm with modularization"
 ) <fig:full-algo-modularization>
 
-Compared to the initial pathfinding implementation for diagrams (@impl-diagrams), the additions described in this section make it much more extensive.
-The code was thus refactored into multiple files/composables for purposes of further extendability and maintainability.
+Compared to the initial pathfinding implementation for diagrams (@impl-diagrams), the additions described in this section make the related code much more extensive.
+It was thus refactored into multiple files/composables for purposes of further extendability and maintainability.
 // #todo("sth sth open source software and its consequences")
 
 It was broken down into 4 main components:
@@ -553,12 +543,14 @@ It was broken down into 4 main components:
 
 The functional domains of the individual components are highlighted in @fig:full-algo-modularization as well.
 
+/*
 == Testing
 
 - #todo("describe test cases")
 - mainly exploratory testing
 - smaller charts: target specific configurations
 - larger chart: eastern palace -> sanity check on performance. #todo("count nodes"). 
+*/
 
 == Chart Settings
 
@@ -580,17 +572,19 @@ The modal (see @fig:settings-modal) was implemented with a tab structure, so the
 == Limitations
 
 One limitation in the modeling functionality for keys is that there is no way to edit an existing assignment.
-This is already a limitation present in the PxComponents.
-Both would likely benefit from refactoring for easier editing.
-#todo("connect")
+This is already a limitation present in the `PxComponent`s.
+Due to the conceptual similarities between `PxKey`s and `PxComponent`s, the workflow was implemented to be identical.
+However, both would likely benefit from refactoring for easier editing.
 
-As mentioned previously, not all aspects of lock and key types reflected in the datamodel are considered in the pathfinding algorithm. This specifically concerns fixed keys for non-adjacent locks and temporary, reversible, and collapsible locks.
+Another UI-related limitation are the edge-specific toolbar buttons.
+
+As mentioned previously, not all aspects of lock and key types reflected in the data model are considered in the pathfinding algorithm. This specifically concerns fixed keys for non-adjacent locks and temporary, reversible, and collapsible locks.
 
 A second limitation is that when a path includes backtracking, the current highlighting of the nodes and edges included in the path does not communicate at which point the path backtracks.
 
 Finally, the path calculation is currently implemented in the frontend of the system.
 While it is reasonably performant at a chart size of around 40 nodes, there may be use cases that require much larger charts.
-// #todo("add citations for game datasets with lots of quests/story elements. e.g. baldurs gate?").
+// #todo("add citations for game datasets with lots of quests/story elements. e.g. bg3?").
 A future improvement could be to port the calculation to the backend and optimize the algorithm.
 
 #load-bib()

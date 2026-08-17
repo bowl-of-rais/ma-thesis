@@ -38,9 +38,9 @@
   supervisor: "Prof. Dr. Georg Groh",
   advisors: ("Julian Geheeb M.Sc.",),
   author: "Rai Trouvain",
-  startDate: "15.10.2025",
+  startDate: "17.11.2025",
   titleEn: "Extension of Pacing Diagrams and Pacing Analysis in pix:e",
-  titleDe: "Thesis Proposal: Irgendetwas mit Usability in PIX:E",
+  titleDe: "Erweiterung von Pacing-Diagrammen und Pacing Analysis in pix:e",
   abstractEn: [
     *Background/Motivation*: #todo("Why did you study the problem?")
     *Objective/Problem Statement*: #todo("What problem are you trying to solve?")
@@ -126,7 +126,8 @@
 
 
 // Set citation style
-#set cite(style: "alphanumeric")
+//#set cite(style: "alphanumeric")
+#set cite(style: "association-for-computing-machinery")
 
 
 // Table stroke
@@ -167,7 +168,7 @@
 // Draft Settings //
 #show cite: set text(fill: blue) if inwriting
 #show footnote: set text(fill: purple) if inwriting
-#set cite(style: "chicago-author-date") if inwriting
+// #set cite(style: "chicago-author-date") if inwriting
 
 
 #import "bib.typ": load-bib

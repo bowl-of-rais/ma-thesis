@@ -10,7 +10,7 @@
 - context: inventory relevant in games, impact on path planning/finding 
 - difference: inventory-based jump-point search #cite(<aversaPathPlanningInventoryDriven2015>) is grid-based. statechart could be mapped to grid, but would probably be suboptimal because nodes have generally low rank and don't necessarily conform to neighboring structure of a grid. - bridge: concept of inventory is still relevant, though.
 
-#cite(<aversaPruningPreprocessingMethods2016>) presents pruning and pre-processing methods for inventory-aware pathfinding in the context of grid maps.
+#cite(<aversaPruningPreprocessingMethods2016>, form: "prose") presents pruning and pre-processing methods for inventory-aware pathfinding in the context of grid maps.
 
 == Petri Nets
 

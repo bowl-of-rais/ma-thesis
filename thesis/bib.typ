@@ -4,9 +4,11 @@
   counter("bibs").step()
 
   context if main {
-    [#bibliography("ma.bib", style: "association-for-computational-linguistics.csl") <main-bib>]
+    //[#bibliography("ma.bib", style: "association-for-computational-linguistics.csl") <main-bib>]
+    [#bibliography("ma.bib", style: "association-for-computing-machinery") <main-bib>]
   } else if query(<main-bib>) == () and counter("bibs").get().first() == 1 {
     // This is the first bibliography, and there is no main bibliography
-    bibliography("ma.bib", style: "association-for-computational-linguistics.csl")
+    //bibliography("ma.bib", style: "association-for-computational-linguistics.csl")
+    bibliography("ma.bib", style: "association-for-computing-machinery")
   }
 }
